@@ -17,52 +17,33 @@
 
 package client.gui;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.io.File;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.StringTokenizer;
-import java.util.TreeMap;
-import java.util.Vector;
-
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JEditorPane;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.JPanel;
-import javax.swing.JPopupMenu;
-import javax.swing.JScrollPane;
-import javax.swing.ScrollPaneConstants;
-import javax.swing.SpringLayout;
-import javax.swing.border.LineBorder;
-
-import megamek.client.ui.swing.unitDisplay.UnitDisplay;
-import megamek.common.CrewType;
-import megamek.common.Entity;
-import megamek.common.Infantry;
 import client.MWClient;
 import client.campaign.CCampaign;
 import client.campaign.CPlayer;
 import client.campaign.CUnit;
-
 import common.CampaignData;
 import common.House;
 import common.Unit;
 import common.UnitFactory;
 import common.util.SpringLayoutHelper;
 import common.util.UnitUtils;
+import megamek.client.ui.swing.unitDisplay.UnitDisplay;
+import megamek.common.CrewType;
+import megamek.common.Entity;
+import megamek.common.Infantry;
+
+import javax.swing.*;
+import javax.swing.border.LineBorder;
+import javax.swing.text.Document;
+import javax.swing.text.EditorKit;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.File;
+import java.io.StringReader;
+import java.util.*;
 
 /**
  * SHouse Status Panel
@@ -109,6 +90,7 @@ public class CHSPanel extends JPanel {
         mainPane.setEditable(false);
         mainPane.addHyperlinkListener(new MMNetHyperLinkListener(mwclient, this));
         scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPane.setViewportBorder(new LineBorder(new Color(0, 0, 0)));
         scrollPane.setViewportView(mainPane);
         gridBagConstraints = new GridBagConstraints();
@@ -790,8 +772,13 @@ public class CHSPanel extends JPanel {
         }
 
         result.append("</BODY>");
-        mainPane.setText("");
-        mainPane.setText(result.toString());
+        EditorKit editorKit = mainPane.getEditorKit();
+        Document doc = editorKit.createDefaultDocument();
+        try {
+            editorKit.read(new StringReader(result.toString()), doc, 0);
+            mainPane.setDocument(doc);
+        } catch (Exception ignored) {
+        }
         mainPane.repaint();
     }
 
