@@ -63,20 +63,17 @@ public class CHSPanel extends JPanel {
     MyHTMLEditorKit kit = new MyHTMLEditorKit();
     GridBagConstraints gridBagConstraints;
 
-    private JPanel pnlBtns = new JPanel();
-    private JPanel hsButtonSpringPanel = new JPanel();
+    private final JPanel hsButtonSpringPanel;
 
-    private JButton buyNewButton = new JButton();
-    private JButton buyUsedButton = new JButton();
-    private JLabel lblInfo = new JLabel();
-    private BuyPopupListener myPopup = null;
+    private final JLabel lblInfo = new JLabel();
+    private final BuyPopupListener myPopup;
 
     // Needed to internally store SHouse Status
     private String HouseName;
     // hastable of Hashtables
-    private TreeMap<String, String> componentsInfo;
-    private TreeMap<String, TreeMap<String, String>> factoriesInfo;
-    private TreeMap<String, Vector<HSMek>> unitsInfo;
+    private final TreeMap<String, String> componentsInfo;
+    private final TreeMap<String, TreeMap<String, String>> factoriesInfo;
+    private final TreeMap<String, Vector<HSMek>> unitsInfo;
 
     public CHSPanel(MWClient client) {
 
@@ -102,14 +99,16 @@ public class CHSPanel extends JPanel {
         this.add(scrollPane, gridBagConstraints);
 
         // set up the button row
+        JPanel pnlBtns = new JPanel();
         pnlBtns.setLayout(new BoxLayout(pnlBtns, BoxLayout.Y_AXIS));
         hsButtonSpringPanel = new JPanel(new SpringLayout());
 
         // button to buy new units
+        JButton buyNewButton = new JButton();
         buyNewButton.setText("Buy New");
         buyNewButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-                buyNewButtonActionPerformed(evt);
+                buyNewButtonActionPerformed();
             }
         });
         buyNewButton.addMouseListener(new MouseAdapter() {
@@ -121,10 +120,11 @@ public class CHSPanel extends JPanel {
         hsButtonSpringPanel.add(buyNewButton);
 
         // button to buy used units
+        JButton buyUsedButton = new JButton();
         buyUsedButton.setText("Buy Used");
         buyUsedButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-                buyUsedButtonActionPerformed(evt);
+                buyUsedButtonActionPerformed();
             }
         });
         buyUsedButton.addMouseListener(new MouseAdapter() {
@@ -154,9 +154,9 @@ public class CHSPanel extends JPanel {
         this.add(pnlBtns, gridBagConstraints);
 
         // make information holders
-        componentsInfo = new TreeMap<String, String>();
-        factoriesInfo = new TreeMap<String, TreeMap<String, String>>();
-        unitsInfo = new TreeMap<String, Vector<HSMek>>();
+        componentsInfo = new TreeMap<>();
+        factoriesInfo = new TreeMap<>();
+        unitsInfo = new TreeMap<>();
     }
 
     /**
@@ -193,7 +193,7 @@ public class CHSPanel extends JPanel {
         // one
         Vector<HSMek> weightAndTypeVec = unitsInfo.get(weight + "$" + type);
         if (weightAndTypeVec == null) {
-            weightAndTypeVec = new Vector<HSMek>(1, 1);
+            weightAndTypeVec = new Vector<>(1, 1);
             unitsInfo.put(weight + "$" + type, weightAndTypeVec);
         }
 
@@ -211,7 +211,7 @@ public class CHSPanel extends JPanel {
 
         String weight = tokenizer.nextToken();
         String type = tokenizer.nextToken();
-        int unitID = Integer.valueOf(tokenizer.nextToken());
+        int unitID = Integer.parseInt(tokenizer.nextToken());
 
         Vector<HSMek> weightAndTypeVec = unitsInfo.get(weight + "$" + type);
 
@@ -259,14 +259,14 @@ public class CHSPanel extends JPanel {
         StringTokenizer tokenizer = new StringTokenizer(factoryData, "$");
 
         // read factory data
-        int weight = Integer.valueOf(tokenizer.nextToken());
-        int type = Integer.valueOf(tokenizer.nextToken());
+        int weight = Integer.parseInt(tokenizer.nextToken());
+        int type = Integer.parseInt(tokenizer.nextToken());
 
         String founder = tokenizer.nextToken();
         String planet = tokenizer.nextToken();
         String factoryName = tokenizer.nextToken();
 
-        int timeToRefresh = Integer.valueOf(tokenizer.nextToken());
+        int timeToRefresh = Integer.parseInt(tokenizer.nextToken());
         int accessLevel = Integer.parseInt(tokenizer.nextToken());
         
         String factoryID = tokenizer.nextToken();
@@ -279,22 +279,22 @@ public class CHSPanel extends JPanel {
          * :-(
          */
         if (canProduce(Unit.MEK, type)) {
-            addFactoryHelper(weight, new Integer(Unit.MEK), timeToRefresh, founder, planet, factoryName, accessLevel, factoryID);
+            addFactoryHelper(weight, Unit.MEK, timeToRefresh, founder, planet, factoryName, accessLevel, factoryID);
         }
         if (canProduce(Unit.VEHICLE, type)) {
-            addFactoryHelper(weight, new Integer(Unit.VEHICLE), timeToRefresh, founder, planet, factoryName, accessLevel, factoryID);
+            addFactoryHelper(weight, Unit.VEHICLE, timeToRefresh, founder, planet, factoryName, accessLevel, factoryID);
         }
         if (canProduce(Unit.INFANTRY, type)) {
-            addFactoryHelper(weight, new Integer(Unit.INFANTRY), timeToRefresh, founder, planet, factoryName, accessLevel, factoryID);
+            addFactoryHelper(weight, Unit.INFANTRY, timeToRefresh, founder, planet, factoryName, accessLevel, factoryID);
         }
         if (canProduce(Unit.PROTOMEK, type)) {
-            addFactoryHelper(weight, new Integer(Unit.PROTOMEK), timeToRefresh, founder, planet, factoryName, accessLevel, factoryID);
+            addFactoryHelper(weight, Unit.PROTOMEK, timeToRefresh, founder, planet, factoryName, accessLevel, factoryID);
         }
         if (canProduce(Unit.BATTLEARMOR, type)) {
-            addFactoryHelper(weight, new Integer(Unit.BATTLEARMOR), timeToRefresh, founder, planet, factoryName, accessLevel, factoryID);
+            addFactoryHelper(weight, Unit.BATTLEARMOR, timeToRefresh, founder, planet, factoryName, accessLevel, factoryID);
         }
         if (canProduce(Unit.AERO, type)) {
-            addFactoryHelper(weight, new Integer(Unit.AERO), timeToRefresh, founder, planet, factoryName, accessLevel, factoryID);
+            addFactoryHelper(weight, Unit.AERO, timeToRefresh, founder, planet, factoryName, accessLevel, factoryID);
         }
     }
 
@@ -308,8 +308,8 @@ public class CHSPanel extends JPanel {
 
         StringTokenizer tokenizer = new StringTokenizer(factoryData, "$");
 
-        int weight = Integer.valueOf(tokenizer.nextToken());
-        int type = Integer.valueOf(tokenizer.nextToken());
+        int weight = Integer.parseInt(tokenizer.nextToken());
+        int type = Integer.parseInt(tokenizer.nextToken());
 
         String planet = tokenizer.nextToken();
         String factoryName = tokenizer.nextToken();
@@ -347,13 +347,13 @@ public class CHSPanel extends JPanel {
 
         StringTokenizer tokenizer = new StringTokenizer(factoryData, "$");
 
-        int weight = Integer.valueOf(tokenizer.nextToken());
-        int type = Integer.valueOf(tokenizer.nextToken());
+        int weight = Integer.parseInt(tokenizer.nextToken());
+        int type = Integer.parseInt(tokenizer.nextToken());
 
         String planet = tokenizer.nextToken();
         String factoryName = tokenizer.nextToken();
 
-        int timeToRefresh = Integer.valueOf(tokenizer.nextToken());
+        int timeToRefresh = Integer.parseInt(tokenizer.nextToken());
 
         int accessLevel = Integer.parseInt(tokenizer.nextToken());
         
@@ -395,7 +395,7 @@ public class CHSPanel extends JPanel {
         // one
         TreeMap<String, String> weightAndTypeMap = factoriesInfo.get(weight + "$" + type);
         if (weightAndTypeMap == null) {
-            weightAndTypeMap = new TreeMap<String, String>();
+            weightAndTypeMap = new TreeMap<>();
             factoriesInfo.put(weight + "$" + type, weightAndTypeMap);
         }
 
@@ -507,9 +507,7 @@ public class CHSPanel extends JPanel {
         }
 
         if ((test - UnitFactory.BUILDMEK) >= 0) {
-            if (type_id == Unit.MEK) {
-                return true;
-            }
+            return type_id == Unit.MEK;
         }
 
         return false;
@@ -521,7 +519,11 @@ public class CHSPanel extends JPanel {
         StringBuilder result = new StringBuilder("<BODY  TEXT=\"" + mwclient.getConfigParam("CHATFONTCOLOR") + "\" BGCOLOR=\"" + mwclient.getConfigParam("BACKGROUNDCOLOR") + "\">");
         boolean usingAdvanceRepairs = mwclient.isUsingAdvanceRepairs();
         int playerAccessLevel = mwclient.getPlayer().getSubFactionAccess();
-        result.append("<TABLE Border=\"1\"><TR><TH>" + HouseName + "</TH><TH>" + mwclient.getserverConfigs("LightFactoryTypeTitle") + "</TH><TH>" + mwclient.getserverConfigs("MediumFactoryTypeTitle") + "</TH><TH>" + mwclient.getserverConfigs("HeavyFactoryTypeTitle") + "</TH><TH>" + mwclient.getserverConfigs("AssaultFactoryTypeTitle") + "</TH></TR>");
+        result.append("<TABLE Border=\"1\"><TR><TH>").append(HouseName).append("</TH><TH>")
+                .append(mwclient.getserverConfigs("LightFactoryTypeTitle")).append("</TH><TH>")
+                .append(mwclient.getserverConfigs("MediumFactoryTypeTitle")).append("</TH><TH>")
+                .append(mwclient.getserverConfigs("HeavyFactoryTypeTitle")).append("</TH><TH>")
+                .append(mwclient.getserverConfigs("AssaultFactoryTypeTitle")).append("</TH></TR>");
         int factoryGifCounter;
         for (int type_id = 0; type_id < Unit.TOTALTYPES; type_id++) {
         	
@@ -536,7 +538,7 @@ public class CHSPanel extends JPanel {
             }
 
             String factoryTitle = mwclient.getserverConfigs(Unit.getTypeClassDesc(type_id) + "FactoryClassTitle");
-            result.append("<TR><TD VALIGN=MIDDLE><b>" + factoryTitle + "</b></TD>");
+            result.append("<TR><TD VALIGN=MIDDLE><b>").append(factoryTitle).append("</b></TD>");
 
             for (int weight = 0; weight < 4; weight++) {
 
@@ -547,13 +549,12 @@ public class CHSPanel extends JPanel {
                 int comps = Integer.parseInt(ST.nextToken());
                 if ((comps > 0) || (factoriesInfo.get(weight + "$" + type_id) != null)) {
 
-                    result.append("<TD>" + "<img src=\"data/images/miniticks.gif\">:" + comps);
-                    result.append("<img src=\"data/images/units.gif\">:" + ST.nextToken() + "<br>");
+                    result.append("<TD>" + "<img src=\"data/images/miniticks.gif\">:").append(comps);
+                    result.append("<img src=\"data/images/units.gif\">:").append(ST.nextToken()).append("<br>");
 
                     // Needed because of the binary coding.
-                    int typetocheck = type_id;
 
-                    TreeMap<String, String> facs = factoriesInfo.get(weight + "$" + typetocheck);
+                    TreeMap<String, String> facs = factoriesInfo.get(weight + "$" + type_id);
                     if ((facs != null) && Boolean.parseBoolean(thePlayer.getSubFaction().getConfig(buyNew))) {
 
                         boolean hasOpen = false;
@@ -604,11 +605,20 @@ public class CHSPanel extends JPanel {
 
                                 String costString = "(Cost: " + mwclient.moneyOrFluMessage(true, true, cbillCost, false) + ", " + mwclient.moneyOrFluMessage(false, true, fluCost, false) + ", " + ppCost + " Components)";
 
-                                result.append("<a href=\"MEKWARS/c request#" + weight + "#" + type_id + "#" + planet + "#" + factoryName + "\"><img border=\"0\" alt=\"Click to buy a " + founder + " " + Unit.getTypeClassDesc(type_id) + " from " + factoryName + " on " + planet + ". " + costString + "\" src=\"" + openImage + "\"></a>");
+                                result.append("<a href=\"MEKWARS/c request#").append(weight).append("#").append(type_id)
+                                        .append("#").append(planet).append("#").append(factoryName)
+                                        .append("\"><img border=\"0\" alt=\"Click to buy a ").append(founder)
+                                        .append(" ").append(Unit.getTypeClassDesc(type_id)).append(" from ")
+                                        .append(factoryName).append(" on ").append(planet).append(". ")
+                                        .append(costString).append("\" src=\"").append(openImage).append("\"></a>");
                                 hasOpen = true;
 
                             } else {
-                                result.append("<a href=\"MEKWARS/c request#" + weight + "#" + type_id + "#" + planet + "#" + factoryName + "\"<img border=\"0\" alt=\"" + factoryName + " on " + planet + " built by " + founder + " (Refresh Time: " + refreshTime + ")\" src=\"" + closeImage + "\"></a>");
+                                result.append("<a href=\"MEKWARS/c request#").append(weight).append("#").append(type_id)
+                                        .append("#").append(planet).append("#").append(factoryName)
+                                        .append("\"<img border=\"0\" alt=\"").append(factoryName).append(" on ")
+                                        .append(planet).append(" built by ").append(founder).append(" (Refresh Time: ")
+                                        .append(refreshTime).append(")\" src=\"").append(closeImage).append("\"></a>");
                                 if (refreshTime < minrefresh) {
                                     minrefresh = refreshTime;
                                 }
@@ -616,7 +626,7 @@ public class CHSPanel extends JPanel {
                         }
 
                         if (!hasOpen) {
-                            result.append("<img src=\"data/images/clock.gif\">:" + minrefresh);
+                            result.append("<img src=\"data/images/clock.gif\">:").append(minrefresh);
                         }
                     } else {
                         result.append("<img src=\"data/images/absent.gif\">");
@@ -649,7 +659,7 @@ public class CHSPanel extends JPanel {
             }
             if (hasUnits) {
                 String factoryTitle = mwclient.getserverConfigs(Unit.getTypeClassDesc(type) + "FactoryClassTitle");
-                result.append("<b>" + factoryTitle + " Bays</b><br>");
+                result.append("<b>").append(factoryTitle).append(" Bays</b><br>");
             }
 
             // fill out bays
@@ -664,7 +674,12 @@ public class CHSPanel extends JPanel {
                     House foundH = mwclient.getData().getHouseByName(mwclient.getPlayer().getMyHouse().getName());
                     int cbillCost = Math.round(CUnit.getPriceForUnit(mwclient, weight, type, foundH) * foundH.getUsedMekBayMultiplier()) + mwclient.getPlayer().getHangarPurchasePenalty(type, weight);
                     int fluCost = Math.round(CUnit.getInfluenceForUnit(mwclient, weight, type, foundH) * foundH.getUsedMekBayMultiplier());
-                    result.append("<a href=\"MEKWARS/c requestdonated#" + weight + "#" + type + "\"><img border=\"0\" alt=\"Request one of the Units from this bay (Cost: " + mwclient.moneyOrFluMessage(true, true, cbillCost, false) + ", " + mwclient.moneyOrFluMessage(false, true, fluCost, false) + ")\" src=\"data/images/cart.gif\"></a> " + Unit.getWeightClassDesc(weight) + ": ");
+                    result.append("<a href=\"MEKWARS/c requestdonated#").append(weight).append("#").append(type)
+                            .append("\"><img border=\"0\" alt=\"Request one of the Units from this bay (Cost: ")
+                            .append(mwclient.moneyOrFluMessage(true, true, cbillCost, false)).append(", ")
+                            .append(mwclient.moneyOrFluMessage(false, true, fluCost, false))
+                            .append(")\" src=\"data/images/cart.gif\"></a> ")
+                            .append(Unit.getWeightClassDesc(weight)).append(": ");
                     Vector<HSMek> v = unitsInfo.get(weight + "$" + type);
                     HSMek[] entities = new HSMek[v.size()];
                     for (int i = 0; i < v.size(); i++) {
@@ -675,14 +690,11 @@ public class CHSPanel extends JPanel {
                     Arrays.sort(entities, new Comparator<HSMek>() {
                         public int compare(HSMek obj1, HSMek obj2) {
 
-                            HSMek a = obj1;
-                            HSMek b = obj2;
-
                             // if the names are the same, check for damage
-                            if (a.getName().compareTo(b.getName()) == 0) {
+                            if (obj1.getName().compareTo(obj2.getName()) == 0) {
 
-                                Integer gunneryA = a.getEntity().getCrew().getGunnery();
-                                Integer gunneryB = b.getEntity().getCrew().getGunnery();
+                                Integer gunneryA = obj1.getEntity().getCrew().getGunnery();
+                                Integer gunneryB = obj2.getEntity().getCrew().getGunnery();
 
                                 int compare = gunneryA.compareTo(gunneryB);
 
@@ -690,8 +702,8 @@ public class CHSPanel extends JPanel {
                                     return compare;
                                 }
 
-                                Integer pilotingA = a.getEntity().getCrew().getPiloting();
-                                Integer pilotingB = b.getEntity().getCrew().getPiloting();
+                                Integer pilotingA = obj1.getEntity().getCrew().getPiloting();
+                                Integer pilotingB = obj2.getEntity().getCrew().getPiloting();
 
                                 compare = pilotingA.compareTo(pilotingB);
 
@@ -699,13 +711,13 @@ public class CHSPanel extends JPanel {
                                     return compare;
                                 }
 
-                                String damA = a.getBattleDamage();
-                                String damB = b.getBattleDamage();
+                                String damA = obj1.getBattleDamage();
+                                String damB = obj2.getBattleDamage();
 
                                 return damA.compareTo(damB);
                             }
                             // else
-                            return a.getName().compareTo(b.getName());
+                            return obj1.getName().compareTo(obj2.getName());
                         }
                     });
 
@@ -739,12 +751,28 @@ public class CHSPanel extends JPanel {
                         }
 
                         if (m.getType().equalsIgnoreCase("mek") || m.getType().equalsIgnoreCase("vehicle")) {
-                            unitString.append("<a href=\"MEKINFO" + m.getMekFile() + "#" + m.getBV() + "#" + m.getEntity().getCrew().getGunnery() + "#" + m.getEntity().getCrew().getPiloting() + "#" + m.getBattleDamage() + "\">" + m.getName() + " (" + m.getEntity().getCrew().getGunnery() + "/" + m.getEntity().getCrew().getPiloting() + ")");
+                            unitString.append("<a href=\"MEKINFO").append(m.getMekFile()).append("#").append(m.getBV())
+                                    .append("#").append(m.getEntity().getCrew().getGunnery())
+                                    .append("#").append(m.getEntity().getCrew().getPiloting())
+                                    .append("#").append(m.getBattleDamage()).append("\">")
+                                    .append(m.getName()).append(" (").append(m.getEntity().getCrew().getGunnery())
+                                    .append("/").append(m.getEntity().getCrew().getPiloting()).append(")");
                         } else {
                             if ((m.getEntity() instanceof Infantry) && ((Infantry) m.getEntity()).canMakeAntiMekAttacks()) {
-                                unitString.append("<a href=\"MEKINFO" + m.getMekFile() + "#" + m.getBV() + "#" + m.getEntity().getCrew().getGunnery() + "#" + m.getEntity().getCrew().getPiloting() + "#" + m.getBattleDamage() + "\">" + m.getName() + " (" + m.getEntity().getCrew().getGunnery() + "/" + m.getEntity().getCrew().getPiloting() + ")");
+                                unitString.append("<a href=\"MEKINFO").append(m.getMekFile())
+                                        .append("#").append(m.getBV())
+                                        .append("#").append(m.getEntity().getCrew().getGunnery())
+                                        .append("#").append(m.getEntity().getCrew().getPiloting())
+                                        .append("#").append(m.getBattleDamage()).append("\">").append(m.getName())
+                                        .append(" (").append(m.getEntity().getCrew().getGunnery()).append("/")
+                                        .append(m.getEntity().getCrew().getPiloting()).append(")");
                             } else {
-                                unitString.append("<a href=\"MEKINFO" + m.getMekFile() + "#" + m.getBV() + "#" + m.getEntity().getCrew().getGunnery() + "#" + m.getEntity().getCrew().getPiloting() + "#" + m.getBattleDamage() + "\">" + m.getName() + " (" + m.getEntity().getCrew().getGunnery() + ")");
+                                unitString.append("<a href=\"MEKINFO").append(m.getMekFile())
+                                        .append("#").append(m.getBV())
+                                        .append("#").append(m.getEntity().getCrew().getGunnery())
+                                        .append("#").append(m.getEntity().getCrew().getPiloting())
+                                        .append("#").append(m.getBattleDamage()).append("\">").append(m.getName())
+                                        .append(" (").append(m.getEntity().getCrew().getGunnery()).append(")");
                             }
                         }
 
@@ -807,7 +835,7 @@ public class CHSPanel extends JPanel {
     }
 
     public void showInfoWindow(String mekFile, int bv, int gunnery, int piloting, String battleDamage) {
-        Entity unitEntity = null;
+        Entity unitEntity;
         CUnit embeddedUnit = new CUnit();
         embeddedUnit.setUnitFilename(mekFile);
         embeddedUnit.createEntity();
@@ -830,10 +858,10 @@ public class CHSPanel extends JPanel {
     }
 
     // BUY MENU METHODS AND LISTENERS
-    private void buyNewButtonActionPerformed(ActionEvent e) {
+    private void buyNewButtonActionPerformed() {
     }// do nothing on action
 
-    private void buyUsedButtonActionPerformed(ActionEvent e) {
+    private void buyUsedButtonActionPerformed() {
     }// do nothing
 
     // make popup on press or release of New button
@@ -873,7 +901,7 @@ public class CHSPanel extends JPanel {
     private JPopupMenu createBuyNewPopupMenu() {
         JMenu tmenu;
         JPopupMenu buy = new JPopupMenu();
-        JMenuItem menuItem = null;
+        JMenuItem menuItem;
 
         tmenu = new JMenu("Mek");
         buy.add(tmenu);
@@ -1049,7 +1077,7 @@ public class CHSPanel extends JPanel {
     private JPopupMenu createBuyUsedPopupMenu() {
         JMenu tmenu;
         JPopupMenu buy = new JPopupMenu();
-        JMenuItem menuItem = null;
+        JMenuItem menuItem;
 
         tmenu = new JMenu("Mek");
         buy.add(tmenu);
