@@ -1,0 +1,2739 @@
+VERSION HISTORY:
+----------------
++ Moved tracker configuration from serverdata.dat to campaignconfg.date
+  **********************************************************************
+  * NOTE TO OPERATORS                                                  *
+  *                                                                    *
+  * Please take a quick look at the MekWars Wiki                       *
+  * http://www.mekwars.org/mediawiki-1.20.2/index.php/MekWars_Versions *
+  *                                                                    *
+  * This is where I will be detailing upgrade instructions in the      *
+  * future.                                                            *
+  **********************************************************************
+R Released Server, Client, Ded v0.7.0.0
+v 0.7.x.x
++ Updated RSS feed to allow for ITTT/Discord integration. 
+  ***********************************
+  * NOTE TO OPERATORS               *
+  *                                 *
+  * There is a new field in the File*
+  * Path tab in Server Configs.     *
+  * Please fill that in if you want *
+  * to use the RSS                  *
+  ***********************************
+R Released Server v0.7.0.1
++ Added Discord Webhook integration.  Configure the webhook address on
+  the File Path menu.  This removes the need for IFTTT or Zapier
+R Released Client v0.7.0.1
++ New BuildTableViewer that doesn't break with linked tables.  There is still a 
+  little finessing to be done, but it's totally functional
+
+0.6.0.x
++ Bug: Send All Local Op Files erroring if incorrect files in op folder.  
+    This was causing Mac clients (for example) to die on .DS_Store files which are a normal 
+    part of the OS.
++ Updated MM to version 0.43.7-MW20180101-62948ba
+  This will allow for use of PNGs as unit images, meaning we can use Bloodwolf's new images
++ Updated MM to version 0.43.5-MW20171123-00f7619
+- Removed calls to deprecated Crew methods and constructors
++ Added log4j to client/lib files
+  ***********************************
+  * NOTE TO OPERATORS               *
+  *                                 *
+  * Make sure this file gets into   *
+  * your client structure, or your  *
+  * users will not be able to       *
+  * launch a MegaMek session.       *
+  ***********************************
++ Added MekToken to Player.java to track SOL Free Builds
+R Released Server v0.6.0.6
++ Bug: Player flags caused operations to not be saved.
+R Released Server v0.6.0.5
++ Allow for cbills to be purchased with RPs
+R Released Server v0.6.0.3
++ Allow users to activate with negative bays
++ Added IDs to factories in preparation for changing how they are referenced
+R Released Client v0.6.0.1
++ Added MS SpeedFactor option
++ Bug: Christmas scheduler was submitting wrong type of job
++ bv calc mods for some pilot skills (PR,IM)
++ updated help menu's pilot skill descriptions
++ Bug: activity jobs not being stopped after games.
+R Released Server v0.6.0.2
+  ***********************************
+  * NOTE TO OPERATORS               *
+  *                                 *
+  * If you have a directory         *
+  * data/unitfiles, please rename   *
+  * it to data/mechfiles.  The      *
+  * cache loader stopped working    *
+  * with the old location.  I       *
+  * suspect something in MegaMek    *
+  * changed.                        *
+  ***********************************
++ New MegaMek v0.41.26-MW20161026-035e953
++ Changed references to ./data/unitfiles to ./data/mechfiles
+    to come into alignment with MM.  Also, server-side unit
+    cache was failing because of it
++ Implemented the Christmas gift program
+    See http://www.mekwars.org/wiki/index.php/Christmas_Season
+    for more information
++ bv calc mods for some pilot skills (WS,GL,GB,GM)
++ new MegaMek v0.41.24-MW20161013-f18015c
+$ Released Server, Ded, Client v0.6.0.1
+  ***********************************
+  * NOTE TO OPERATORS               *
+  *                                 *
+  * This update will force you to   *
+  * change to Java 1.8              *
+  ***********************************
+0.5.0.x
+R Released Server v0.5.0.2, Client v0.5.0.1
++ Created Interfaces for Quartz jobs
++ Altered flu and comp jobs to make them reschedulable
++ More work on Christmas mechs (almost done!)
++ Added JDatePicker to admin jar
+  ***********************************
+  * NOTE TO OPERATORS               *
+  *                                 *
+  * You will want to need to update *
+  * your client distribution with   *
+  * lib/jdatepicker-1.3.4.jar       *
+  ***********************************
+ 
+R Released Server v0.5.0.1
++ Move influence and component generation into Quartz scheduled jobs
++ added a wrap to the html of the house factories display to avoid offscreen icons. 
+- Removed all traces of MySQL integration.  I will redo it later and better.
+0.4.0.x
++ Bug: SerializeEntity fix megamek/mekwars for unit UUID/IDs -wildj79's fix submitted by BarukKhazad!    
++ new MegaMek v0.41.21-MW20160710-fa26388
+  ***********************************
+  * NOTE TO OPERATORS               *
+  *                                 *
+  * You will want to need to update *
+  * your client distribution with   *
+  * the new mmconf/skins folder     *
+  ***********************************
++ Released Server v0.4.0.12
++ Added AdminResetFactionComponents command
++ Added Announce command to add staff announcements to individual or
+    every faction.  
+  ***********************************
+  * NOTE TO OPERATORS               *
+  *                                 *
+  * You will want to run            *
+  * /annnounce all#clear            *
+  * after the first boot when you   *
+  * move to this version, as the    *
+  * faction announcements are       *
+  * stored in a previously unused   *
+  * but populated part of the       *
+  * toString() output               *
+  ***********************************
++ Bug: Error in MapSize being handed to MM causing IndexOutOfBoundsException
++ Bug: Fixed typos in default planets.xml
++ Server will now log duplicate planet IDs to errlog.0 to help troubleshooting
++ New MM v0.41.18-20160428-e4ffb1a
+  ***********************************
+  * NOTE TO OPERATORS               *
+  *                                 *
+  * This update will require you to *
+  * replace UnitVerifierOptions.xml *
+  * in your clients and server      *
+  ***********************************
++ Bug: UnBanIP command was not working correctly. r1521 in sourceforge.
++ Bug: Updated map's planet tooltip to show % of cp instead of cp.
++ New MM v0.41.16-MW20160229-b867f65
++ Released new Client v0.4.0.7
++ New MM v0.41.12-MW20151223
++ Bug: NPE causing ammo costs not to load, which caused ammo types to not be loadable in units
++ Released new Client v0.4.0.6, Server v0.4.0.11
++ New MM v0.41.12-20151128
++ Fixed issue where all options of type String were being detected as Boolean,
+    causing MM to fail
++ Fixed missing defaults for UseKillCount, GameTurnLimit
++ Added missing MM images to client-dist folder
+- Reverted new MM 
+  - options are not loading, and we need to troubleshoot that.
++ Added new victory conditions to op editor and actual operations
+R Released Client v0.4.0.5
++ Bug: MinOwnIBD sent but client was never configured to receive
+R Released Client v0.4.0.4, Server v0.4.0.10
++ Updated contributors.txt
++ New MM v0.41.11-MW20151022-ebbe819
++ Bug: Map shows incorrect attack options on worlds with > 100cp
++ Disallow promotion of pilot in active army
++ Bug: army BV and available ops not updating when pilot promoted
++ added ops setting MinPlanetOwnershipIgnoredByDefender
++ make megamek not listen to keybindings when MM not focused
++ Fix MegaMek keybindings
++ Added missing MM libraries and config files
++ Added some logging to find source of NPE in game resolution
++ RFE: Added Sand and Planted Fields to Terrain(SAND,PLANTEDFIELD)
++ Bug: NPE occured when loading the Star map.
++ Bug: MekWars Host not working with MWClient. New xstream.1.4.7.jar added to client
+       and server lib folders.
++ Bug #350: Old unit viewer code used by admin jar for create unit dialogue
++ Bug #354: Unit Viewer/Repod Viewer issues
++ Bug: Still trying to parase legacy AdvanceTerrain.xml when it no longer exists.
++ Bug:  AdvTerr.xml was malfored.
++ Bug 355: Build Table Browser does not reload data
++ Bug 356: Set MegaMek Game Options Broken
++ Bug 348: Uploading tables and files from command line is broken
++ Bug: isAntiMek function no longer exists in MegaMek Version 0.41.4-DEV and higher
+R Released Client v0.4.0.3
++ New MegaMek: 0.41.2-MW20150130
++ Bug: Admin and OpEditor links broken in client
++ Bug: Game Entity Iterator broken.
++ Fixed broken links between MW and MM (Needs Testing)
++ Cleaned up some warnings.
+R Released Server v0.4.0.9
++ New MM v0.37.13-MW20140606-10941
++ Added ability to totally disable weather, set in Combat Panel
+R Released Server v0.4.0.8
++ was not cloning the weather choices so instead everyone shared the same results for there games if they were on the same planet/continent
+R Released Server v0.4.0.7
++ changed the display of weather percentage chances for weather conditions to be .1 percent per increment instead of 1%
++ added a line to the resultslog indicating the exact weather conditions used and the number of adverse conditions.
+R Released Server v0.4.0.6
++ changed the percentage chances for weather conditions to be .1 percent per increment instead of 1%
++ updated the default advterr.xml to have more reasonable weather (~75% chance of a clear, windless Day map)
+R Released Server v0.4.0.5
++ fixed bug in when intel messages are sent when game is started.
+R Released Server v0.4.0.4, Client v0.4.0.2
++ fixed bug in display of planet data when game is started.
+R Released Server v0.4.0.3, Client v0.4.0.2
++ fixed minor display issue with planet terrains.
+R Released PlanetDatConverter v4.0.1
++ fixed bug with the map and board size not being removed correctly from the converter
++ fixed bug reading planets with multiple terrains
+R Released Server v0.4.0.2, Client v0.4.0.1
++ fixed bug in static map loader that would fail to load the advterr when they were set at all
+R Released Server v0.4.0.1
++ moved the static maps to the terrain.xml instead of the advterr.xml
++ moved the static maps in code to planetenvironment where it belongs
++ fixed minor formatting bugs
++ added a whole slew of new default templates for advterr.xml
+R Released Server v0.4.0.0, Client v0.4.0.0, PlanetDatConverter v0.4.0.0
++ created AdvancedTerrain Templates
++ changed planet.dat file format to acomodate new Advanced terrain templates
++ created Tool to convert old planet.dat files to the new format
++ fixed bug with Vertigo Editor re: factory buildtable paths
++ updated Vertigo editor to deal with terrain/AdvancedTerrain templates
++ added AdvancedTerrain.xml to define advanced terrain templates
++ updated planets.xml format to deal with advanced terrain templates
++ cleaned up imports across several files
++ fixed formatting bug in weather forcast
++ fixed megamek game option dialog
++ don't set shifting wind strength and direction to true whenever there's wind in a game
+
+v 0.3.7.x
+R Released Server v0.3.7.4, Client v0.3.7.2
++ Removed start Dedicated host from host menu
+R Released Server v0.3.7.4, Client v0.3.7.1
++ Removed "Exit Nobody" notifications
++ New MM v0.37.9-MW20140227-10611
++ Added to OpsViewer documentation
+R Released Server v0.3.7.3
++ Bug 347: Incorrect message when army has not enough levels for Operation
+R Released Server v0.3.7.2
++ Bug: captured units from factories not using PP
++ fix armor tab in unit display in all cases
++ new MM.jar v0.37.5-MW20142601-r10432
++ new MM.jar v0.37.6-MW-r10432
+R Released Server v0.3.7.1
++ RFE 407 introduction of a player XP adjustment
++ Bug in PayoutModifier checked wrong config variable for ELO experience payout skew
+R Released Server, Client, Ded v0.3.7.0
++ Refactored Operation and DefaultOperation into common
++ Added Operation Viewer - documentation found in the
+    server-dist/docs folder
+
+v 0.3.6.x
+R Released Client v0.3.6.5
++ Fixed unitViewer
++ fixed minor bug in SUnitFactory causing NPE updated server to 3.6.4
++ use mechdisplay directly from MM
++ added option to show mod mail in main chat
+R Released Server/Ded v0.3.6.3, Client v0.3.6.4
++ New MegaMek v0.37.0-MW20131125-10128
+R Rolled Ded and server back to v0.3.6.2 versioning - no changes made in last
+    commit to those, so no need to change version number.
++ Updated contributors.txt to add fahr and BarukKhazad
+R Released Server, Ded Client v0.3.6.3
++ Starting cleanup of Memory leaks in ClientThread
+R Released Server, Ded, Client v0.3.6.2
++ New MM v0.37.0-MW20131119-10091
++ BUG: setting burst fire mode failed
+R Released Server, Ded, Client v0.3.6.1
++ New MM v0.37.0-MW20131116-10075
+R Released Server, Ded, Client v0.3.6.0
++ New MM version 0.37.0-MW20131114-10064
++ Updated make targets to 1.7
++ PLEASE NOTE: MM (and therefore MW) now requires Java 1.7
++   This (like most .0 versions) should be heavily tested. Last
++   time we changed required Java versions was a little bit rocky
+
+v 0.3.5.x
+R Released Ded v0.3.5.5, Client v0.3.5.20
++ BUG 344: Dedicated Client uses mwconfig.txt.bak instead of mwconfig.txt
++ RFE 405: Increase DEDMEMORY in cconfig.java to 256
++ BUG 345: Memory hardcoded in mwclient when turned into a ded
++ updated MM.jar
+R Released Server v0.3.5.27
++ Bug 343: Unknown Unit Type in UnitDamageHandlerFactory for Infantry
++ Bug 342: AFR does not work
++ Bug in weightclass when creating units using the gui
++ New MM v0.35.44-MW20131008-9915
+R Released Server v0.3.5.26, client v0.3.5.19
++ Bug with advanced repair dialog
+Moved damage string utilities to their own classes to simplify repairs
+New MegaMek.Jar File to go with spotlight changes.
+Replaced all the old Entity.setSpotlight(Bool) with
+Entity.setExternalSpotlight(Bool)
+-Removed References to Entity.setSpotlight(Bool) as it no longer
+exists in MM.
+R Released Server v0.3.5.25
++ Fixed %BV Spread
++ Pulled spread validation out of Short Validator and into
+  classes of its own
++ New MM v0.35.40.MW2013-06-21-9578
+**************************************************************
+* Additional Note To SOs:
+*
+* You will need to set the CampaignYear in two places - 1st in
+* the Misc Options panel of Server Configs, 2nd in the first
+* screen of the MM Options.  I'll try to figure out a simple
+* way to make this only 1 place, but for now, just do it in
+* both.
+**************************************************************
+R Released Server v0.3.5.24, Client v0.3.5.18
++ Bug 325: Ammo costs for Capital Weapons
++ Bug: Compile error due to missing import
++ New MM v0.35.39.MW20130606-9495
++ Added CampaignYear Server Config.
+**************************************************************
+* NOTE TO SOs:                                               *
+*                                                            *
+* This is set by default to 3071, the default year for BT    *
+* This setting *will* affect the tech levels of equipment    *
+* Please set it to the appropriate setting for your campaign *
+*                                                            *
+* Also, please note that while I've fixed the customize      *
+* screen for Aeros, it still puts us in the position of a    *
+* player being able to customize things that are not allowed *
+* by BT rules - they should not be able to set RapidFire MGs *
+* or non-standard ammo.  I'll fix that next release, but     *
+* thought I should get this commit in.  A server rule may be *
+* in order to keep your players within the rules.            *
+**************************************************************
+R Released Server v0.3.5.22, Client v0.3.5.17
++ Bug 289: Customize Menu on Aeros shows nothing
++ createUser.php script never being called due to missing .
+R Released Server v0.3.5.21
++ Bug 335: Retired pilots pass on wounds to their replacements
++ Bug: /firetechs fails without error message when no number or type
+	of tech is specified
+R Released Client v0.3.5.16
++ Bug: Registration fails when email is required and email address
+	sent non-all-lowercase.
+	Changed client to convert to lowercase when email address is sent.
++ Bug 326: IP Check no done with AFR
+    Added IP check in the AttackFromReserve command
++ Bug 313: Player flags cause 0-byte-files to be written.
+    Added code to replace all spaces in player flag names with
+    underscores
++ Added bot.properties, princess_bot.properties, defaultQuirks.xml, and
+  defaultQuirksSchema.xsl to client-dist/mmconf.  These files should be
+  added to client distributions in the mmconf folder
++ Bug 327: Op Editor - % Win/Loss Mod Field
+  Fixed tooltips to more accurately describe the field's use
+  Please note that SOs should check if this affects their operation
+  design
++ New MegaMek 0.35.39-MW20130507-9382
++ New MegaMek 0.35.38-MW20130503-9354
++ New MegaMek 0.35.38-MW20130503-9352
++ Added client notification on wrong password
+R Released Server v0.3.5.21, Client v0.3.5.15, Ded v0.3.5.5
++ Potential fix for mis-reporting deds
++ Potential fix for b0rked disconnection reports
++ Fix for faction leader army rebuild issues
++ New MM v0.35.38-MW20130502-9345
+R Released Server v0.3.5.21b, client v0.3.5.15b, ded v0.3.5.4b
+  **** IMPORTANT ****
+  This is *not* a production release, but Sourceforge is going to force me
+  to re-check-out due to an upgrade and I do *not* want to lose these changes.
++ Potential fix for non-reporting and mis-reporting deds
++ Fix for faction leader army rebuild issues
+R Released Server v0.3.5.20, client v0.3.5.14
++ New MegaMek v0.35.36-MW20130404-9244
+R Released Server v0.3.5.19
++ Bug in BV Spread %.  Because sometimes I'm not too smart.
+R Released Client v0.3.5.13
++ Updated MegaMek v0.35.33-MW20130325-9004
+R Released Server v0.3.5.18
++ Added Min/Max Attacker/Defender NonSupportUnits for operations
+R Released Server v0.3.5.17, Client v0.3.5.12, Ded v0.3.5.2
++ New MM v0.35.35-MW20130305-9184
+R Released Server v0.3.5.16
++ Added the possibility of BV Spread as a percentage of the army
+R Released Client v0.3.5.11, Server v0.3.5.15
++ Cleaned up Reward tab in Server Config dialogs to remove old RP costs info
+R Released Client v0.3.5.11b (beta), Server v0.3.5.15b (beta)
++ Ability to set RP costs for each type and weight of unit
++ Mew MegaMek v0.35.35-MW20130226-9150
+R Released Server v0.3.5.14, Client v0.3.5.10, Ded v0.3.5.1
++ New MegaMek v0.35.33-MW20121102-9053
++ More repair bug fixes
++ Hopefully fixed db-connection inability to create forum accounts
+    when user name has a space in it
++ New Megamek v0.35.33-MW20121020-9004 (typo in MM version)
++ Fixed repair bug
+R Released Server v0.3.5.13
++ Added MaxJump operation setting
+R Released Server v0.3.5.12, Client v0.3.5.9
++ Reverted Sand & Planted Fields
++ New MegaMek
++ New MegaMek v0.35.28-MW20120221-8724
+R Released Server v0.3.5.11, Client v0.3.5.8
++ Made Princess Bot the default bot
++ New MegaMek v0.35.28-MW20120214-8721
+R Released Server v0.3.5.10
++ Bug: registration not completed when email unable to be sent
+R Release Client v0.3.5.7
++ Bug: NPE when calculating army average skillsum when using a German Locale
+R Released Server v0.3.5.9
++ Bug 3436868: Operation unit limit checking for defender not thorough
+R Released Server v0.3.5.8
++ Bug in new terrain types.  Fixed to MM Standards.  Sometimes,
+  reading is hard for developers.
++ Updated MegaMek to v0.35.27-MW20111214-8644
+R Released Server v0.3.5.7, Client v0.3.5.6
++ Added sand and planted fields to terrain options
+R Released Client v0.3.5.5
++ Bug 3410752: Hangar not sorting on login
+R Released Client v0.3.5.4
++ Bug 3411351: Apparent Rounding Error in Average Gunnery Skill Popup
+R Released Server v0.3.5.6, Client v0.3.5.3
++ Added aero unit ratios to operation setup
+R Released Server v0.3.5.5, Client v0.3.5.2
++ Bug: Units with quotes in the model did not work in MEKINFO links
+R Released Server v0.3.5.4
++ Bug: Defending armies counting support units in BV spread when told not to
+R Released Server v0.3.5.3, Client v0.3.5.1
++ Bug: 3413332: Aero pilot queue gets indented incorrectly
++ RFE: 3413316: Show full carrying capacity in popup and entity displayR Released Server v0.3.5.2
++ Bug: 3410752: Players' hangars not sorting
++ Bug: 3413017: Quotes in unit model (such as "Fire Javelin") corrupt
+  mystatus output
++ Added ability to control payout skew individually for all payment components
+  (flu, RP, exp, money)
+R Released Server v0.3.5.1
++ Bug: repodding fails with a bad index error
+- Removed unnecessary @Overrides
++ Updated server configuration dialog so that it would
+  not be too large when viewed in a screen resolution
+  smaller than 1024 pixels high
+R Released Server, Client, Ded v0.3.5.0
++ New MegaMek v0.35.25-20110720-8479
+  *****************************************************************
+  *                   NOTE TO SOs                                 *
+  *                                                               *
+  * This update will almost certainly cause issues if you are not *
+  * using up to date unit files.  You are strongly encouraged to  *
+  * test this on a test server and update whatever files are      *
+  * necessary from the current MM repository.                     *
+  *****************************************************************
+v 0.3.4.x
++ Bug: NumberFormatException in TableViewer when using German locale
+R Released Server v0.3.4.2
++ Changed PlayerFlags to allow setting them only if attacker/defender
+  is the winner.
+R Released Client v0.3.4.1
++ Bug: 3210851: Build table viewer fails to sort by frequency
++ Removed extraneous player flag logging
+R Released Server v0.3.4.1
++ Added ability to toggle player flags from the staff userlist
+  popup menu
++ Released Server, Client, Ded v0.3.4.0
++ Implemented PlayerFlags, and the ability to require them
+  for operations, and set them upon winning or losing an
+  operation
++ Added the ability to add/edit/save PlayerFlags for operations
+  Note that they are *still* not implemented, but it's close
+R Released Server v0.3.3.19, Client v0.3.3.4
++ Added code for Player Flags.  Note that they are not implemented
+  yet in operations, but work
++ Added continent ID.  Needed for future refinement of save/
+  load/modify routines
++ Bug: Carriage Returns causing problems in House saves
+R Released Client v0.3.3.3
++ RFE 3308955: showing additional info per army
+R Released Server v0.3.3.18
++ Bug: 3315836 - Firing/Donating apilot generates an error
+R Released Server v0.3.3.17
++ Bug: When using real costs, decimal value will be needed for pay-per-BV
+R Released Server v0.3.3.16
++ Bug 3286761: Real Costs & Bugs
+R Released Server v0.3.3.15
+R Released Client v0.3.3.2
++ RFE 3210867: Renamable Reward Points
+R Released Server v0.3.3.14
++ RFE 3305669 - Captured Factories do not auto produce
+  New config setting (in autoproduction panel) to allow for captured
+  factories to join in autoproduction
+R Released Server v0.3.3.13
++ Added HTML Sanitizer for MOTDs.  This fixes issue of the
+  players' ability to embed commands in MOTDs.
+  *****************************************************************
+  *                   NOTE TO SOs                                 *
+  *                                                               *
+  * This will require copying the new jsoap jar to your ./lib     *
+  * or you will not successfully launch your server.  In also,    *
+  * you will need to copy HTMLSanitizer.cfg to your ./data folder *
+  *****************************************************************
+R Released Server v0.3.3.12
++ Added initial support for PHPBB3
+R Released Server v0.3.3.11
++ Bug: Fix for disappearing faction logs for Java versions 1.6_19
+  through 1.6_22 (Oracle fixed this themselves in _23)
+R Released Server v0.3.3.10
++ Bug: Missing MT for Aero.
+R Released Server v0.3.3.9
++ Upgraded version of MySQL-Connector/J to be compatible with MySQL
+  5.1
+  *****************************************************************
+  *                   NOTE TO SOs                                 *
+  *                                                               *
+  * This will require copying the new mysql-connector jar to your *
+  * ./lib folder, or you will not successfully launch your server *
+  *****************************************************************
+R Released Server v0.3.3.8
++ Server now prunes old, defunct campaignconfig.txt settings from
+  the file on each boot.
+  *****************************************************************
+  *                   NOTE TO SOs                                 *
+  *                                                               *
+  * Because I cannot know your faction names, the server will not *
+  * automatically remove the <House>To<House>RewardPointMultiplier*
+  * lines.  If you change houses, and you want these removed from *
+  * campaigconfig.txt, you will need to do this by hand.          *
+  *****************************************************************
+R Released Server v0.3.3.7
++ Added option to disallow activation with damaged units.  This option
+    did not make it over in the merge.
+R Released Server v0.3.3.6
++ Bug: Potential problems with level-up left over from improper merge
+R Released Server v0.3.3.5
++ Bug: Houses without components (SOL) sometimes throwing errors
+	during saves to database
+R Released Server v0.3.3.4
++ Bug: /adminreturnplanetstooriginalowers was resetting all planets
+    to 100CP, even if they'd been changed
++ Started work on separating out panels in ServerConfig.  The code
+    is getting far too difficult to read and find anything in.  The
+    class is simply too big and needs to be broken up.
+R Released Server v0.3.3.3
++ Added ability to reload supportunits.txt without rebooting server
+R Released Server v0.3.3.2
++ Added ability to rename a planet
++ Started moving all planet access to use IDs, rather than
+  names
+R Released Server, Ded, Client v0.3.3.1
++ New MegaMek version 0.35.22-MW20110121-8124
+R Released Server, Ded, Client v0.3.3.0
+- Removed all Cyclops support - the Cyclops project is dead
+    per conversation with Guibod
+R Released Server v0.3.2.11
++ Fixed database issues with mechstats
++ Fixed missing filepaths in configuration menu
+R Released Client v0.3.2.8
++ Client-side option to show Base BV in hangar display
+R Released Server v0.3.2.10, Client v0.3.2.7, DedHost v0.3.2.1
++ New MegaMek v0.35.22-MW20110111-8083
++ Added option for ELO payout skew to always reduce land exchange
+  regardless of winner
+R Released Server v0.3.2.9, Client v0.3.2.6
++ Changed anti-air targeting to add a +1 short-range malus in order
+  to balance out the positive of anti-air.  This will have to do as
+  a short-term fix while waiting on MegaMek RFE 3155624.
+R Released Server v0.3.2.8, Client v0.3.2.5
++ Added ability to designate units as "Support Units".  Support units
+  may be restricted/required for ops, counted or not-counted in the BV
+  spread
+R Released Server v0.3.2.7, Client v0.3.2.4
++ RFE2028023: Unit Ratios based on Tech Level
++ fix infantry weight display in the unit viewer
+R Released Server v0.3.2.6
++ Changed bay loss due to unpaid techs/bays to only cut those you can't pay for
+R Released Server v0.3.2.5
++ Changed leeches so they are tracked by player, rather than by
+  operation.  Players were able to cancel attacks before maximum
+  leech had been reached, thus getting around operation-coded
+  leech limits.
+R Released Server v0.3.2.4, client v0.3.2.3
++ RFE 2717507: Ignore Pilot BV changes in campaign
++ Added ability to ignore Pilot BV changes globally or per-operation
+R Released Server v0.3.2.3
++ RFE 2823485 - RP per BV
+R Released Server v0.3.2.2
++ Added ability to show unit type counts on blind operations
+R Released Client v0.3.2.2
++ Bug: old unused banTarget references stepping on new target bans
+R Released Server, Client v0.3.2.1
++ Added ability to ban targeting systems
+R Released Server, Client, Ded v0.3.2.0
++ Added target system Quirks.  Once tested, will add target system banning back
+v 0.3.1.x
+R Released Server v0.3.1.11
++ Added option for flat BV-per-gun values for Gunnery skills
+R Released Server v 0.3.1.10
++ Bug: Gunnery/<anything> was adding base weapon BV to unit twice
+R Released Client v 0.3.1.1
+  ********************************************************************
+  *** SOs, please note that the "data/names" directory is required ***
+  *** client-side for the new MM version.                          ***
+  ********************************************************************
++ New MegaMek v0.35.19-MW20101001-7892
++ Added names directory to client-dist as required by next MM release.
++ Reverted Back Code for WriterThread to use Thread Pool code instead of Scheduler.
+R Released Server v0.3.1.9
++ RFE 2126734 - option to kick idle users instead of logging them off
+R Released Server v0.3.1.8
++ Added HTML Who is online output
++ New MegaMek v0.35.18-MW20100818-7759
+R Released Server v0.3.1.7
++ Bug: JDBCConnectionHandler not being set in MechStatistics
++ RFE 1937848: Variable price for house-produce BM units
+R Released Server v0.3.1.6
++ Updated UnitUtils.isSameTech to check for two new tech levels added to MegaMek
+R Released Server v0.3.1.5
++ New MegaMek.jar
++ Bug: Units only showing chassis, not model
+R Released Server v0.3.1.4
++ Bug: Defection bugged
+R Released Server v0.3.1.3
++ RFE 3008576: Hide attack from reserve-only from output of checkAttackCommand
+R Released Server v0.3.1.2
++ RFE 3032425: Added option to autoscrap by age of unit
+R Released Server v0.3.1.1
++ Bug 2858706: Team Operations check campaignconfig for MaxBVDifference
+    instead of the op
+R Released Server, Client, MekWarsDed v0.3.1.0
+  * Revved versions because MegaMek.jar was changed, meaning
+  * that the client/server communication could be compromised
+  * We need to stick to this convention, or we will run into
+  * situations where people are using different builds with the same
+  * version numbers - not good
++ Bug 2910055: MekWars favors mwconfig.bak over .txt
+
+v 0.3.0.x
+R Released Server, Client, MekWarsDed v0.3.0.0
++ Re-added "NONE" faction in DB-enabled servers
+
+v 0.2.42.x
+*** NOTE TO SOs *************************************************
+*                                                               *
+* This is NOT a safe build yet - I'm merging in MekWars-MySQL   *
+* and am not positive that this is a solid build.  Please feel  *
+* free to use it on test servers and report any bugs to me, but *
+* stick to 0.2.41.4 for production servers.                     *
+*                                                               *
+* I will rev this to 0.2.43.0 when testing is complete          *
+*****************************************************************
+
+*** ANOTHER NOTE ***
+    If you use hangar limits, please re-visit them.  The config
+    names have changed, to bring them in line with MegaMek's naming
+    conventions.  I.e., MaxHangarLightBA has been changed to
+    MaxHangarLightBattleArmor
+
+R Released Server v0.2.42.15
++ Retiring Pilots have a chance to take their unit with them.
+R Released Client v0.2.42.5
++ Bug: Client still not showing costs correctly
+R Released Server v0.2.42.14, Client v0.2.42.4
++ Bug: Players being charged incorrectly when going over sliding hangar limits
++ Bug: Client not showing correct cost of units when sliding hangar limits enabled.
+R Released Server v0.2.42.13
++ Bug: players can go further negative than MaximumNegativeBaysFromBM
+R Released Server v0.2.42.12
++ Added ability to require attack-capable armies for activation
+R Released Server v0.2.42.11
++ Added unit type- and weight-based AP failure rates
+R Released Server v0.2.42.10
+R Released Client v0.2.42.3
++ Added ability to turn hangar limits into soft limits, costing extra cbills
+    per fight and/or per purchase if over the limits.
+R Released Server v0.2.42.9
++ Option for weight-and-class based autoproduction
+R Released Server v0.2.42.8
++ Bug 1943979 - auto-demotion demoting players to first subfaction they
+  qualify for, rather than highest-level subfaction they qualify for
+R Released Server v0.2.42.7
++ Added maximum number of negative bays for AFR
+R Released Server v0.2.42.6
++ Added Black Market weight skew
+R Released Server v0.2.42.5
++ Added ability to hide demotion notifications
++ Bug: Configuration details missing for ELO Payout skew
+R Released Server v0.2.42.4
++ Bug: error shutting down due to null Connection in MWMysql
+R Released Server v0.2.42.3
++ Bug: missing ELO Payout Modification defaults
++ Added hidden BM
++ Added asymmetric pilot levelling
++ Added ability to restrict BM by unit/weight class per faction
++ Added adminRestartTrackerThread command
+v 0.2.41.4 Released 06/23/2010 20:06 PST GMT-8
+Released server v0.2.41.4
++ Start of DB Branch merge
++ Bug 2956740: Server Config vs. Faction Configs
++ Bug 2996804: Donating of Infantry
++ Bug 2970188: New Infantry from MM 0.35.14-dev
+Released server v0.2.41.3
++ New MegaMek.jar
++ Made some changes to improve thread-safety during iterations over
+    Vectors
++ Bug 2934486: Tileset problem under current SF build
++ Bug 2938714: Variable Repod Costs under current SF build
++ Bug 2938622: Setting No-Play bugged
+
+Released server v0.2.41.2
++ Added Kestrel's patch to disable salvaging parts from pristine units
++ Added TransferRewardPoints command.  Thank you to Targ.
++ Bug: with support units and salvage
++ More Repod issue fixes.
++ Possible fix for Repod issues.
++ Updated code for new MegaMek.jar
++ Bug 2872537: Repods of units that are not on the buildtables
++ Bug 2872768: Omni Units displaying names incorrectly
++ Bug 2869196: Repods still not working
++ Bug 2829144: Repods bugged under current dev
++ RFE: Added AWT/Swing MM Interface selector back into client.
++ Bug 2852434: Setting Faction Tech level to ALL
++ Bug: Planet editor did not have the correct number of Factory Combos
++ Bug 2783184: Trouble Reloading Ammo on Warships
++ Bug: Error when starting the game without any cameo selected
++ Bug 2737874: Planets.xml and Aero Factories
++ Bug 2785407: Unit Class naming in Faction/Server Configs
++ Bug: Unable to add Aero and VTOL factories via planet editor.
++ new MegaMek 0.35.5-MW072009-6942
++ Bug 2823364: Problem with new users registration
++ Bug 2824520: Operation Eligibility does not update when Commanders are se
++ Patch 2822101: Operation Briefings
++ Bug 2811864: "force size to face" not working when no army #0 exists
++ Bug: Ban targetting still showing up in Admin menus
++ Bug 2813301: Parts BM Issue 2.41.1
++ New MegaMek.jar
++ Bug: Client still using AWT interface.
++ Bug: units not loading successfully due to data read error
++ Bug 2819004: Problem with vee and aero crews when getting pilot hits
++ Bug: remove access to AWT Gui modual in MM. Swing now only supported.
++ Bug 2814870: Battle amor can load Mech SRM Ammo
++ new MegaMek.jar
+- Removed Targeting systems as MegaMek now uses that as part of its Quirk code.
+  New quirk related code will be added in the future.
++ Bug in unit limits
+Release Server 0.2.41.1
++ RFE 2210454 - Option to limit number of units by size/type - allows for
+	simple limit to number of units, or to also disallow AFR and/or
+	activation
++ RFE 2515673 - Option to allow separate scrap chances based on legged or
+      gyroed units.
++ RFE: Do not alllow the No play command to be used while active
++ RFE 2717451 - Army commanders shown in /adminplayerstatus
++ Bug: C3 BV Calculations not checking all links
++ Bug: C3 BV calculations off when no C3/Linked units are in army
++ Bug: email vaildation not getting turn off if DB was turned off
++ Bug 2750658: Army BV shows as 0
++ new MegaMek.jar 0.33.44-MW040209-6492
++ Bug 2715228: Parts black market issues
++ Bug: C3 BV mod calculating baddly
++ Bug: able to purchase pilot skills that have a 0 cost.
++ Bug: Promot/Demote Pilot commands not using faction configs.
++ RFE 2407684: Auto salvage all of own units
++ REF 2484487: Faction Parts Cache Overhaul
++ Bug: Wrong Flag being checked for Burst Fire MG Option.
++ RFE 2483961: Exchangeable BA Ammo
++ Bug: Wrong tech levels being set as ALL for parts.
++ RFE: Text dialog only opens with right mouse button click in op editor
++ RFE: Text dialog opens on text fields in op editor
++ RFE: Allow for multiple colors in the overlay map.
+	use the line COLOR###### after the line LINE to change
+	Example COLORCCCCCC would change the lines to hex color CCCCCC
++ Bug: Pilot leveling only reading Server configs not house configs
++ Bug: Targetting systems not staying set for units with Damaged C3 and C3i
++ Bug: Promote/Demote Dialog showing NAG if pilot has NAP skill
++ New MegaMek.jar 0.33.39-MW012009-6348
++ Unoffical Equipment now showing in Ammo and Black Market Dialogs
+Release Client/Ded 0.2.41.1
++ Bug: Reloaded games not adding GameListener
+Release Client/Server 0.2.41.0
+
+v 0.2.40.1
++ New MegaMek.jar 0.33.38-MW010809-6310
++ Bug: Able to resell the same pilot skills over and over again.
++ New MegaMek.jar 0.33.38-MW010609-6307
++ Bug: Saved MM Games not Loading.
++ Bug: Max Mul Infantry pointing to wrong variable.
++ Bug: Error generating Vehicle MUL lists
++ New MegaMek.jar 0.33.38-MW123108-6287
++ RFE 2150385: SO settable pilot promotion options
++ RFE 2462823: separate mul lists for unit type
++ RFE: Deds/Hosts now report games automatically.
++ Bug 2280766: Server ticks
++ Bug 2213581: Salvage being overlooked
++ Bug 2332503: Error log report
++ New MegaMek.jar 0.33.38-MW122308-6281
++ Changed when client reports game finished
++ Bug 2192540: Free scrap after task completion
++ Bug 2401907: Error in Pilot Skill Descriptions
++ Bug: setting XPRollOverCap to 0 caused Inf loop.
++ Bug: Planet Intel can grab weather condition that is out of bounds.
++ Bug: When server is set for non-faction units costing more techs
+       and client set to show tech base, both lines of info were being
+       shown on the same line with no break
++ New MegaMek.jar 0.33.36-MW120208-6200
++ Release Client 0.2.40.1
++ Bug: Unoffical ammo no being loaded.
++ New MegaMek.jar 0.33.36-MW120108-6197
++ Updated Import statments for MechView
+Release Client/Server 0.2.40.0
++ New MegaMek.jar 0.33.36-MW112008-6175
++ RFE 2090509 - Maximum techs limiter
++ RFE 2218604 - Unit tech base shown
++ New MegaMek.jar 0.33.35-MW110408-6144
++ Bug 2160103: Days between promotions doesnt seem to work
++ Bug 2192542: subfaction demotion
++ Added Memory Usage Info Dialog to Help menu
++ Bug: Slites being loaded for Dusk Games
++ Bug: Maximum Wind Strength not getting set for Advanced Terrain without static maps
++ New MegaMek.jar 0.33.34-MW102008-6041
++ Gunnery Laser, Missile, Ballistic and Weapon Specialist BV Mod now
+   calculated by find the weapons total BV and multipling by modified
+   piloting skill modifer. i.e. 4/5 with G/L would use 3/5 modifer.
++ Bug: last promotion date getting set when a player defects
++ New MegaMek.jar 0.33.33-MW100608-6004
++ Max Wind strength now settable for advanced terrains.
++ Bug: bad logic for only allowing powered or standard inf but not both
+v 0.2.39.x
+Release Server/Client/Ded 0.2.39.0
++ Rolled back Server Config. Once again data is gained from the Data port.
++ Bug: Disconnect Thread reporting incorrect Null User
++ Bug: Bay info not showing up.
++ Bug: Factions configs Dialog not loading Server Configs First.
++ Bug: Servers using Faction Configs Caused clients to lockup.
+v 0.2.38.x
+Release Client/Server 0.2.38.0
++ New MegaMek.jar 0.33.33-MW100108-5993
++ Deds now receive only the server configs they need
++ Bug: UTF-8 characters not saving properly to database.
++ Rolled back code change for duplication connection checks.
++ Server Configs now only sends down configs when needed. Need to double check for Deds
++ Bug: Level 1 units not allowed to load non-standard ammo
++ Bugs: Null player getting loaded
++ Bugs: Deds not always reporting unit damage for Advanced Repair
++ Bug 2129359: Special Ammo not loading for Introductory Box Set Level
++ More Socket Changes
++ Change to set Max Wind Speed in MM games.
++ game with fire but no wind have wind set to Light Gale Max
++ Bug: Customize Unit Dialog now showing all ammo.
+v 0.2.37.x
+Release Client/Server 0.2.37.0
++ New Release for tech level changes from MM.
++ New MegaMek.jar 0.33.33-MW092208-5970
+v 0.2.36.x
++ Release Client/Ded 0.2.36.2
++ Fix for Null Reporting Draws
++ New MegaMek.jar 0.33.33-MW09192008-5965
++ Changed RGTS command to not report if game has been reset
++ Bug: missing � in SHouse
++ New MegaMek.jar 0.33.32-MW09152008-5954
+Release Server 0.2.36.2
++ Temp Removal of duplication user disconnection code
+Release Client/Ded 0.2.36.1
++ Bug: MM Game getting reset before reporting has finished.
++ Bug: Concurrent Modification Error
++ refactored Ded Restart code into 1 method
++ Removed legal characters from bad character list
++ BV calculations now include pilot skills.
++ RFE: GUI for buying Aero Pilots and Creating Aero Factories
++ Bug: cockpit crit being added in nonDestruct mode
++ New MegaMek.jar 0.33.31-MW09112008-5930
++ Added more debugging messages Whee
++ Bug: Deds unable to connect due to new Special Character check [ and ] removed from list
++ Character set issue with SHouse.toString() HS removed the HS+Special character
++ Removed old wait code in WriterThread in exchange for scheduler
++ GO command now creates mmconf folder if it does not exist on the players side
++ Added method hasBadChars to StringUtils now used for Player, Pilot, and Army name checks
++ New MegaMek.jar 0.33.31-MW09082008
++ RFE Allow vet pilots out of the queue option instead of being hard coded
++ New MegaMek.jar 0.33.31-MW09012008
++ Added flushing commands for all Loggers
++ Bug: Influence Options not settable in Faction Config dialog
++ Bug: unable to go active with no armies when MUL only armies operations exist
+Release Client/Server 0.2.36.0
++ New MegaMek.jar 0.33.30-MM083008
++ RFE 2040336: Units loaded from MULS as SALVAGE
++ RFE 2048227: Add a 'base map size' setting for the generated map size
++ Bug: Mul Files not loading.
++ Debug: SPlayer.name is getting set to null added to code try and find out why.
++ RFE: Single Message but player option added.
++ New MegaMek.jar 0.33.30-MM082708
++ Bug: Planet Editor Dialog not opening if Advanced Terrain is Null
++ New MegaMek 0.33.30-MM082508
+v 0.2.35.x
++ Release Client 0.2.35.4
++ Bug 2065513: Edge options not loading.
++ New MegaMek.jar 0.33.30-MM082408
++ Bug: SHouse.fromDB() not setting DBId
++ DB Schema updates.
+    NOTE: SOs, this will likely b0rk existing databases, so
+    pay attention to your updates.  Back up your database, then
+    manually remove any create/drop table statements from the
+    backup.  Drop your database, create it, then import
+    full_db_schema_29.txt, import your backup, then import
+    db_schema_29to30.txt.  New full schema will be coming out
+    shortly.
++ Release Server 0.2.35.4
++ Bug: still having unit pilot issues
++ Release Server 0.2.35.3
++ Bug: Setting pilots blows up new units
++ Release Server 0.2.35.2
++ New MegaMek.jar 0.33.30-MW082208
++ Bug: Newly created units getting init() before pilot is set.
++ MegaMek Game Options not being sent down to the player
++ Misc. NPE error fixes
++ New MegaMek.jar 0.33.30-MW082008
++ Release Client 0.2.35.3 & Server 0.2.35.1
++ Bug: Team games not initiating due to attacks no longer being found
++ Bug: Operation report not able to deal with Draws
++ Bug: C3 not linking in MM via MW.
++ Bug 1809594: MW isn't forcing MM to refresh
++ Release Client 0.2.35.2
++ MekWars MegaMek compatibility fix
++ New MegaMek.jar 0.33.30-MW081908
++ Client 0.2.35.1
++ New MegaMek.jar 0.33.30-MW081808
++ Stream Lined GO command for sending MegaMek Game options to Client
++ Bug: Modes not Loading Correctly for MekWars into MegaMek
++ Release Client & Server 0.2.35.0
++ New method to sending and receiving MegaMek Game Options
++ Pilot Promotion Dialog Finished
++ Initial Check-in of pilot promotion dialog
++ RFE Allow players to promote their pilots
++ New MegaMek.jar 0.33.30-MW081308
+v 0.2.34.x
+Release Client 0.2.34.3
+Release Server 0.2.34.4
++ New MegaMek.jar 0.33.30-MW081208b
++ Bug: Exception thrown when no winner can be found for an op during reporting.
++ Crit External Name now shown by Repair unit command when player does not have enough crits
++ Light wind and Rain chances not getting saved/loaded correctly in Advanced Terrain
+Release Server 0.2.34.3 & Client 0.2.34.2
++ Changing wind direction and strength now set if wind conditions are set
++ Units not loading into MM from MW with correct Modes in their equipment.
++ New MegaMek.jar 0.33.30-MW081208
++ Bug: Equipment modes not loading on server side entities
++ Bug: Defend command no checking for Null Short Op Object
++ New MegaMek.jar 0.33.30-MW08112008A
++ New MegaMek.jar 0.33.30-MW081108
+Release Server 0.2.34.2
++ Bug: Planetary Conditions not getting to set to default
+Release Server 0.2.34.1
++ Bug: Planetary Conditions Wind Direction defaulting to -1 instead of 0
+Release Client 0.2.34.1
++ ATerrains without static map not using Planetary Conditions.
++ Bug: Planet editor not working correctly with Atmosphere JCombo and Static Map check box
++ Changed Dialog locations to be relative to CMainFrame
++ New MegaMek.jar 0.33.30-MW080908
++ Bug: RP could go below 0
+Release Client/Server 0.2.34.0
++ New MegaMek.jar 0.33.30-MW080808
++ added EMI Chance to Advanced Terrain and Planet Editor
++ Changed nightGame Variable to check for Planetary Conditions light condition
++ Planetary Conditions Code Added
++ Bug: Non-Anti-Mek BA not using 5 for their Piloting when calculating BV
++ Changed database load/saves to speed initial player loading considerably.
++ Updated database to v30
++ Bug: Possible Build table Inf Loop
++ More Unit Name formatting issues
++ RFE: Change Server code to show Unit Chassie name if Model name does not exist.
++ Typo in AdminRemoveUnitsOnMarketCommand.java
++ Bug: DisplayPlayerPersonalPilotQueue showing aero pilots list when none exists.
++ RFE: Change Client code to show Unit Chassie name if Model name does not exist.
++ Fixed message syntax for team games
++ kept deds from logging send to misc command as well as pong.
++ Issues with draw games. added more debug logging.
++ Bug: Incomplete board name being sent to MegaMek if in a sub folder
++ Bug: Use Aero check box not showing up in server config dialog
++ Updated duplication connection message to display clients name and print in
+     Debug log instead of error.
++ Bug: boards in sub folders not loading correctly.
++ More ConnectionHandler Roll backs.
++ More Attempts to fix WSOD issue
++ RFE: Ejected Meks now have destroyed cockpits.
++ Bug: Old Server Config Variables still being used.
++ Bug: Banned players reseting auto-resolve timer
++ Confusing Text for Random Repost cost Discount
++ Bug: Deds sending data from old log.0 and error.0 instead of new errlog.0 and infolog.0
++ Typo Cluster ammo
++ Concurrent Modification errors in Market.tick()
++ Bug: Admin UI commands not accessing Aero class
++ Bug: possible to get donated units without pilots
++ RFE: allow 0 unit armies for MUL only ops
++ RFE: allow setting of Static map size for Generated maps per operation
++ Updated Faction config dialog with Aero settings
++ DB-enabled server should save and load aeros now.
++ Bug: Build table viewer not displaying Aeros.
++ Updated DB to v29
++ Game results now saved to database
++ Added Fields to Admin Server Config dialog for Aeros
+v 0.2.33.x
+Release Client/Server 0.2.33.0
++ Added Map Medium selection to Operations
++ Added Aero options to Operations
++ RFE: MegaMek Aero class supported implemented
++ new MegaMek.jar 0.33.28-MW061108-5771
++ removed getDescriptionForID as it was a duplicate of getTypeClassDesc
++ New MegaMek Jar 0.33.27-MW06062008-5731
+v 0.2.32.x
+Release Client/Server 0.2.32.0
++ Bug: PL|SUD sent as chat instead of as a command
++ Bug: Attacking Player not getting flu back when they defend another attack.
++ Change user data transfer to have the server ask for it instead of client
+	sending it blind.
++ Bug: Unit transfers don't stick if players log out before the tick
++ Bug: Armies saving during load occasionally cause army corruption in the DB
++ RFE: admin/mod/leader menus dynamically appear when user level changes
+v 0.2.31.x
+Release Client 0.2.31.1
++ Bug: Units with MegaMek Skills not loading.
++ Bug: Multiple pilots occasionally linked to a single unit in DB
++ Disabled saving during player load, to avoid saving partial data to the database
+      I believe this is causing the un-registration bug.
++ RFE 1899255: Option for no tech levelling or retiring
++ Removed extraneous SQL logging
+Release Client/Server 0.2.31.0
++ RFE: Added MD skills to MekWars Pilots
++ New MegaMek.jar 0.33.26-MW052708-5703
++ New MegaMek.jar 0.33.26-MW052408-5698
++ Bug: No Play not working for DB
++ Bug: Pilots still resetting.  Hopefully fixed now.
++ Updated database to v28
+v 0.2.30.x
+Release Client&Server 0.2.30.0
++ new MekWarsDed.jar 0.2.30.0
++ new MegaMek.jar 0.33.25-MW05162008-5673
++ Bug: BM Units shows as OMG for Show Unit button
++ Bug: Disabled armies still counting towards production
++ Cleaned up code that checks team numbers
++ Bug: Team ops bv check using <= intead of >=
++ RFE: Deds that do not have the correct MM version no longer spam Main with
+	connect and disconnect. They now set max players to 0 and ask to be
+	manually updated.
++ RFE: add Check Access to army popup menu in HQ
++ Bug: Concurrent Modification error while trying to save house to DB.
++ RFE 1883865: Chance for Salvageable mechs to get Destroyed
++ Bug: purging player file used CONFIRMED instead of CONFIRM in unenroll command
++ New MegaMek.jar 0.33.23-MW043008-5623
++ RFE: have units displayed in games of more then 2 for /modgames command
++ Removed more spotlight code that was no longer used
++ Bug: Arty not setting correct side when deep deployment is used.
++ Bug: Cannot clear army name without logging out and in.
++ Bug: Planets with no terrain causing NPE's
++ RFE: Change planet color if black on map.
+v 0.2.29.x
+Release Server&Client 0.2.29.0
++ New MegaMek.jar 0.33.23-MW042508-5617
++ Bug: Multiple Weather conditions where being allowed per operation.
++ RFE: allow multiple environments per terrain to allow for different theme
+	usage and slight terrain variations.
+v 0.2.28.x
++ Release Server 0.2.28.3 & client 0.2.28.2
++ Component Conversion Dialog now checks if you where using Basic/Advance at
+	startup
++ RFE 1941975: Setting Component Conversion
++ Bug: Old faction logo not being replaced by new faction logo when player
+	defected.
++ Typo in the SellCommand
++ Bug: games options not getting reset after game.
++ Bug: Terrains not loading from DB.
++ Spot Lights are now set at game time based on Night/Dusk game options
++ New MegaMek.jar 0.33.22-MW041508-5572
++ Changed phases from int to Phase object for new MegaMek Phase enum
++ Bug: Factory icons not working correctly with normal terrain.
+Release Client 0.2.28.1 & Server 0.2.28.2
++ Bug: Viewing games causes client to lockup.
+Release Server 0.2.28.1
++ RFE: Default amounts in the Omni Variant Cost Dialogs.
++ Bug: Cannot Activate with Tanks
+Release Client/Server 0.2.28.0
++ Bug: Cored tanks are going back into battle.
++ REF: Grant Tech Research Points to Factions
++ Bug: Game Options not always getting to Client before they enter a game
++ Added Refresh button to Build Table viewer.
++ Bug: Defend command was setting negative team numbers
++ RFE 1926953: Operation requirement army average total sills
+v 0.2.27.x
+Release Server 0.2.27.1
++ Bug: Players getting leeched if leeching is set to 0
++ Bug: Multiple Weather patterns happening at once.
+Release Client 0.2.27.1
++ removed Build Table viewer spam from Misc for Non-Staff
++ Bug: Build Table viewer not working for Players
++ Bug: Cored Meks not being left for salvage.
+Release Client/Server 0.2.27.0
++ New MegaMek.jar 0.33.22-MW040708-5570
++ RFE: Added Default Access Level of 0 for create factory dialogs.
++ RFE: Mul's now load in BuildTable viewer, however mul files must exist client side.
++ Bug: CampaignMain.isSynchingBB() not checking if MySQL is being used first.
++ Added self-healing code to fix sporadic disconnection from the phpBB database
++ RequestBuildTable commands now check time stamps on files and only send down newest ones
+v 0.2.26.x
+Release Client/Server 0.2.26.0
++ New Build Table Viewer now more dynamic.
++ Bug: RequestCommand setting price to 0 for non-Real cost using servers
++ Added ability to prune server-side build table backups
+Release Client 0.2.25.2 & Server 0.2.25.5
++ Bug: ComponentConverterDialog did not show parts when  they where
+	all purchased from the BM
++ Bug: if terrain no longer exists planet does not load, now loads first terrain in list
++ Bug: 0 factory refreshing occurs if player has less then 1 production weight
++ RFE: Allow Losing pilots to Level
++ Bug: isKeepingUnitHistory() did not check if SQL Back was being used.
++ Moved CreateEntity to common.UnitUtils.
++ Bug: Fixed all references to removed F_BATTLEARMOR flag.
+v 0.2.25.x
+Release Server 0.2.25.4
++ Bug: request command costing more with real cost then normal.
++ Bug: ArrayIndexOutOfBoundsException in Influences.getOwner
++ new MegaMek.jar 0.33.22-MW040108-5564
+Release Server 0.2.25.3
++ RFE: New option to allow Faction ticks to run at the slice.
++ Bug: Pilots with no ID being saved to database.
++ Bug: Units not removed from database after failed BM run
++ Synchronized SUnit, SPlayer, SPersonalPilotQueues, SPilot and SArmy toDB()
+    methods to avoid ConcurrentModification errors and resulting save failures
+    which were leaking memory
++ RFE 1901445: REPAIR ALL Client Buttom
++ RFE 1899256: Admin ability to grant techs
++ Bug: Unit Customization not surviving client restart.
++ Bug: NPE with setLastCombatPilot
++ Bug: NPE on activation
+Release Client 0.2.25.1 & Server 0.2.25.2
++ Single Faction Servers process 1+ factions per slice
++ Purchase Factory GUI now shows owned Planets only.
++ Cannot Purchase factories that do not have Common build tables
++ Bug: Not calculating planet owned % with new conquest code
+Release Server 0.2.25.1
++ Bug: Faction Cache not removing parts
++ Error if defending army is deleted short ops do not report.
++ Bug: Information Menu item on Star Map not showing anything
++ Bug: Buy new infantry with real cost not costing anything
++ Bug: Parts not getting removed from House Cache
++ Bug: buying donated pilots comes with units.
++ Bug: SQL purge Stale player being called before checking if purge was disabled
++ Bug: House leaders not saved in DB-enabled version
++ Bug: Faction names unable to use apostrophes in DB-enabled version
++ Bug: Pilots being incorrectly linked to units.
++ Bug: weightedArmyNumber subtracting 1 when army cannot attack
+	instead of weightMod
++ Bug: factory being destroyed even if cancelled
+Release Client/Server 0.2.25.0
++ Added GUI for Component Conversion
++ Bug: Advanced Component conversion was not resetting base cost
+v 0.2.24.x
+Release Client/Server 0.2.24.0
++ Added Gui menu item for faction command
++ Bug: Components not getting sent to player
++ Bug: Components not saving for player
++ Bug: NPE when a Unit does not have an explicitly set ID.
+    Now it defaults to 0.
++ Bug: not calculating army weight correctly
++ Bug: Typo in Configuration Dialog
++ Bug: Planet Information not working from popup menu
++ Bug: Temporary reversion of config save-to-DB
++ Bug: multiple units showing in house bays when only 1 exists.
++ Bug: OMG showing in house bays
++ Bug: Units saving before getting Id's set
++ Bug: HouseCommand Show the wrong number of Tech Points Researched
++ Update DB to v27
++ CampaignConfig now saved to/loaded from database.
+Release Client/Server 0.2.23.0
++ New MegaMek.jar 0.33.21-MW031208-5552
++ Added code to produce crits from house components
++ Bug: HSMek not displaying gunnery/piloting
++ Bug: Request Donated giving 0 cost for last unit in bay
++ Added gui to MekWarsAdmin for component to crit conversion vars
++ Added SetComponentConversionCommand
++ Bug: Pilots not being linked to units in DB occasionally.
++ Added tags to Threads
++ RFE: Show units true pilot and gunnery in House bays
++ Change ClientThread.java to only set Entity external Id and not the
+	internal id as well
++ Bug: AutoArmy having MM set id.
++ Bug: Database not backing up on some Unix systems
++ Bug: SQL error in ExclusionList.toDB()
++ Activate command now rebuilds legal ops for players
++ Bug: Production amount not taking into effect each legal ops BV diff
++ Bug: PromtePlayer command not telling Mods when someone is promoted by a
+	leader
++ RFE: Client setting to define where certain system messages go
++ New code for converting components to crits
+v 0.2.22.x
+Release Server 0.2.22.2
++ Bug ResearchTechLevel was using tech level modifer on level 1 factions
++ Added new command ViewFactionPartsCacheCommand
++ Added new command AdminRandomlySetPlanetProductionCommand
++ Added faction parts cache
++ Bug: factory refresh causes delays
+Release Client & Server 0.2.22.1
++ Bug: Single Player factions not being deleted when players unenroll
++ Bug: Research unit not working when client not using zips
++ Resolved potential memory leak in SPilot.java
++ Bug: Add New House command did not compensate for blank logos
++ Bug: NPE in MWDedHost causing deds not to start.
++ RFE 1901440: Piloting/Gunnery settings for Operations
++ Updates to AutoFillBlackMarketSettingCommand
+Release Client & Server 0.2.22.0
++ New MegaMek.jar 0.33.21-MW030608-5545
++ Bug: MM game options not saving to client
++ Moved where timestamp and fullupdate flag is read by client
++ Bug: Fixed PDiff to send houses before planets to fix login bug
++ Updates to AutoFillBlackMarketSetting
++ Added new command AutoFillBlackMarketSetting
++ Added IsLeader() method to MWClient
++ added getUserLevel() method to MWClient
++ Added Purchase Factory gui option for Interstellar map
++ Client side logging only creates Info and Error
+v 0.2.21.x
+Release Client & Server 0.2.21.1
++ New MegaMek.jar 0.33.21-MW0300408-5543
++ Bug: Max BV Percent difference not working
++ Bug: Newly created factions not getting processed by connected players
++ Added Unit Research command and GUI
++ Defect command now gives link to new planet in single faction mode
++ Added Number formatting to Logger time
++ Added Number formating to Money and Flue
++ New MegaMek.jar 0.33.20-MW022908-5526
++ Bug: Images not showing up in Planet info dialog
+- Removed LastSaved code. More trouble then its worth.
++ Rev Client/Server 0.2.21.0
++ New MegaMek.jar 0.33.20-MW022908-5522
++ Added Purchase Factory GUI
++ Bug: Planets and Houses not refreshing correctly on server restarts
++ More work on advanced reporting
++ Fixed potential memory leak in saving / loading planetary terrains
++ Fixed SQL error when saving / loading planetary terrains
++ Added GUI for ResearchTechLevelCommand
++ Added ResearchTechLevelCommand
++ Promote and Demote Player commands now cycle through all armies and check for
+	legal operations.
++ Added visibility settings for Leadership menu and menu items
++ Added PurchaseFactoryCommand.java
++ Bug: MWDedHost not saving CUsers, I thought they didn't need them duh.
+- Removed unused data.xml loader from CampaignData
+- Removed  ./lib/xstream.jar entry in DedHostManifest.txt
++ Bug: Fixed missing entry in DedHostManifest.txt
++ Bug: Players were not being saved if time since last save was greater than
+       60 milliseconds.  Changed save frequency to not more than twice per
+       second.  This should be plenty frequent to avoid data loss and still
+       give the database / file system time to write
+- Removed old hibernation files from server-dist
++ Bug: not creating reward build table correctly for single player factions
++ New MegaMek.jar 0.33.20-MW022608-5521
++ Bug: Defect command defecting players back to Newbie House
++ Bug: Switching planet owner ship was not setting total conquest points
++ Added Factory Purchasing Variables to MWAdmin#ServerConfig Dialog
++ Consolidated all SPlayer.toDB() calls into CampaignMain#savePlayerFile()
++ Save Disk I/O SPlayers are not saved a maximum of once every 60 seconds.
++ Fixed SQLExceptions in SPlayer.toDB() and SUnit.toDB()
++ Added ValidateUser command
++ Bug: Player Leech Penalties not being used correctly
++ Added Single Player Faction Server Configs
++ Added Unit Research Server configs
++ Added Technology Research Server configs
++ Fixed memory leak in SPlayer.toDB();
++ Fixed memory leak in SUnit.toDB();
++ Added TokenReader usage to Client side.
++ Moved TokenReader to common#util
++ Bug: Logger not logging correctly
++ Bug: Single Faction used even when turned off
++ New MegaMek.jar 0.33.19-MW022108-5501
++ Have not tested all the MWLogger changes
+- Removed MWLogger from MWClient
+- Removed MWLogger from MWServ
++ moved MWLogger to Common
+- Removed unused Pilot variables being sent to client
+- Removed pilotSkill bv being sent down twice to Client
++ More Raw Data Type References fixes
++ RFE 1898995: A way for meks to keep their pilots on donation
++ Updated factions.dtd and planets.dtd
++ Bug: Duplicate Scrap Allotment field in Admin Server Config Dialog
++ Fixed several potential NPEs and one guaranteed NPE in RepairTrackingThread.java
++ Added operation config AttackerAllowAgainstUnclaimedLand allows a Player
+  to steal Unclaimed CP from any planet in range
++ New MegaMek.jar 0.33.19-MW022008-5498
++ RFE 1815469: Uncontrolled Planets
++ Added exception logging to all SQLExceptions
++ Added SMWLogger#dbLog(Exception e)
++ Started work on RFE 1815469
++ RFE 1897024: Word wrap for UnitViewerDialog Fluff text
++ Moved SPlayer#playerLevelDescription to MWCyclopsPlayer
++ removed all @supress comments
++ Moved Leader commands to new leader sub folder
++ Bug: Pilot Skill being loaded/saved incorrectly in DB
++ Updated DB to v26
+v 0.2.20.x
+Release Client/Server 0.2.20.0
++ New MegaMek.jar 0.33.19-MW021808-5493
++ Bug: Pilots losing skills after battles
++ Bug: Newly bought units have pilots with high hits
++ RFE 1894532: Integration of Weather Effects into Planet Editor
++ BUG: NPE when calculating costs for Simple Repair
++ RFE: Ability to allow all staffers to to see all commands being used.
++ Added ability for Ded users to set max memory usage for deds with MWDed.jar
+- Removed Legacy restart code
++ Added legacy restart code as an option to dedicated server
+    because of memory issues with the hardcoded startup values
++ Added ability to select which MegaMek UI the player wants Swing vs. AWT
++ BUG: All units loaded with autoeject disabled in DB-enabled server
++ Stared adding Weather Info to advanced Terrain
++ RFE 188985: Admin ability to create pilots
++ Started work on more advanced/complete task reporting
++ New MegaMek.jar 0.33.19-MW021408-5486
++ Bug: AdminReturnPlanetsToOriginalOwners does not clear each houses Planet queue
++ SMTPHOST changed to MAILHOST
++ New MegaMek.jar 0.33.18-MW021308-5480
++ RFE: Added the ability to customize new sounds as well as turn them off
+	individually
++ Bug: Player name not being trimed when creating MegaMek Connection
+- Removed ClientThread from MWDed
++ new MegaMek.jar 0.33.18-MW021208-5477
++ Fixed Code Broken hooks into MegaMek.
+- Removed unneccessary casts in various files
++ Fixed potential NPEs in various files
++ Unit / Pilot kills saved to database historical data
++ New MekWarAutoUpdate 2.0 no longer needs JDK to build manifest
++ RFE: MekWarsAutoUpdate no longer creates or uses Manifest.txt.jar
++ New MegaMek.jar 0.33.18-MW020808-5475
++ Removed all References to MM removal Code Stack Pole
+v 0.2.19.x
+Release Server/Client 0.2.19.0
++ New MegaMek.jar 0.33.18-MW020708-5466
++ Updated MekWars code to Reflect removal of F_PROTOMECH flag
++ Bug high amount of Cbills for donating/scraping salvaged units.
++ Bug 1851185: Pilot of Destroyed Mech and XP
+- AmmoCostTimeStamp.java
+- AmmoCost.java
++ added UpdateServerUnitsCache menu item to mod menu.
++ New mod command UpdateServerUnitsCache
++ Added WebTools/ELORanking.php
++ DB-Enabled server no longer writes EXPRanking.htm or Ranking.htm
++ Added WebTools/EXPRanking.php
++ Bug: Return mail message not using correct font color
++ New MegaMek.jar 0.33.18-MW020508-5464
++ Server now sends full unit file name, i.e. entity.hmp/entity.mtf, to client
++ Server Now uses data/mechfiles folder and MegaMek cache code for finding files
+   NOTE: this is still backwards compatible with data/unitfiles.
++ Client/Server now creates an OMG unit on the fly and no longer needs the HMP
++ Fixed potential NPEs in ShortResolver
++ RFE: Added Cut, Copy, Paste, Delete and Select all Popup menu items to chat box
++ RFE: Added Copy and Select all popup menu items to Chat windows
++ Alphabetized columns in Ammo Cost and Parts Black Market Dialogs.
++ Changed setVisibleRowCount for ArmyList in ArmyViewerDialog from
+	dynamic to static.
+v 0.2.18.x
+Release Server 0.2.18.1
++ Bug: 0 parts damaged being returned
+Release Client/Server 0.2.18.0
++ New MegaMek.jar 0.33.18-MW020208-5463
++ Unit/Pilot histories recorded in CreateUnitCommand
++ RFE: Customize Class/Type in House Bays Display table
++ RFE 1546765: Reset Omni Option In Operations
++ Updated phpBB Synchronization.pdf
++ Force defect now synchs house forum access
++ Added server-dist/WebTools directory for administrative and informational
+     webpages
++ Added WebTools/MechStats.php to take the place of /output/MechStats.html
++ DB-enabled server no longer outputs MechStats.html
++ Bug: Downed MechWarriors in a DRAW game causeing NPE
++ Debugger Logging sending Exception.Message to Error logging.
+- Removed setTime call in MWPasswd.getRecord() not needed.
++ Added unit and pilot history entries on factory and welfare purchase
++ New MegaMek.jar 0.33.17-MW013008-5441
++ Bug: Draw games not reporting
++ New MegaMek.jar 0.33.17-MW013008-5432
++ Null Reporter Debug message added.
++ Updated DB to v25
++ Added toggle for saving unit histories to DB Panel of serverconfig.
++ Updated DB to v24
++ Updated DB to v23 in preparation for storage of Unit and Pilot histories
++ Updated DB to v22
++ Added client-dist/docs folder
++ Added short how-to on ded setup in client-dist/docs folder
++ AdminChangeName command now changes forum account name
+    in phpBB-synching server.
++ Bug: ReloadAllAmmo charging for full ton instead of partial.
++ Bug: Attackers loser Precapture mission but fled destroyed
++ parsed out | in SendToMiscCommand
++ ValidateEmailCommand will now exit if already-validated user issues it
++ Registration Dialog sized dynamically, depending on whether email address
+    is required.
+v 0.2.17.x
+Release Server/Client 0.2.17.0
++ Turned on mute flag when looking for player names in doProcessAutomaticReport
++ Added empty US command back to dedicatedhost
++ Bug: Team games listing winners was not seperating names.
+- Removed AdminUserListPopupMenu.java
++ Added AdminMapPopupMenu.java back.
++ Bug: Inf loop error in shortOperations.captureUnits()
++ Added Display Log command to Deds
++ Added Display Error Log Command to Deds
++ Updated DB to v21
++ Added validateEmail command
++ Added server-dist/docs/phpBB Synchronization.pdf with instructions
+    for synchronizing user accounts between phpBB 2.0.22 and MW
++ Defection now requires a validated forum account if the server is
+    synching with phpBB
++ Added server-dist/lib/smtp.jar
++ Added integrated javamail to server
++ Completed phpBB account activation code
++ Unenrolling will no longer remove phpBB accounts (deletion will)
++ Added debugging messages to games not reporting issue
++ Fix to not allow less then standard targetting system types in client
++ Bug: Old ammo cost was being used for cost check when changing ammo types
+	instead of new ammo.
++ New MegaMek.jar 0.33.17-MW012108-5426
++ Bug: Defender edge being set in Op Deployment instead of attacker
++ Bug: More then one army being locked
++ Added Tech and Pilot submenus to Personnel menu
++ change name on buy and donate pilot to Hire and Fire
++ Refactored Admin and Mod User List Menus into 1 Staff menu
++ NPE when trying to steal a unit from bays and non-exists
++ New MegaMek.jar 0.33.16-MW011608-5387
++ More AM Tag typos
++ RFE: 1870270 Anti 'Mech skill viewable
++ New MegaMek.jar 0.33.16-MW011508-5387
++ Bug: Finished Games getting reprocessed.
++ Update database to v20
++ Player LastPromoted saved to database
++ MG RapidFire fix applied to database loads/saves
++ Bug: NPE when trying to save MercHouse and a player offering a contract
+	has unenrolled/change their name
+v 0.2.16.x
+Release Server 0.2.16.1
++ Bug: Tanks with MG's not saving correctly
+Release Client/Server 0.2.16.0
++ Bug: processing captured units when none existed.
++ New MegaMek.jar 0.33.16-MW011108-5387
++ Bug: rapid fire machine guns not being set correctly.
+- removed backing up of the megameklogs.txt from the deds. recreating any
+	issue should be done from the save game.
++ Bug: Operation Map overriding Advanced Terrain even after op was finished.
++ Patch 1869601: correction for AM Tag in Lobby /roll Command
++ Added MAILHOST, MAILPASSREQUIRED, MAILUSER, MAILPASS to serverconfig.txt
+	to allow for smtp servers requiring authentication
++ Framework for email validation in place
++ Added mailapi.jar to server-dist/lib
++ More missing AM: tags
+v 0.2.15.x
+Release Client/Server0.2.15.0
++ New MegaMek.jar 0.33.15-011008-5362
++ Added new Operation Type, allows players to receive stolen units at the
+	on set of the game.
++ RFE: Army Viewer Dialog now checks to see if you've selected a team and warns
+	you if you have not.
++ Bug: deleting the account of a connected player would not disconnect the player
++ Fixed storage of booleans in SHouse, SUnit, and SPlayer.
++ Fixed deleteUnit to use DBId instead of Id.
++ Updated DB to v19
++ TokenReader added to SHouse, SPlayer, SUnit, SUnitFactory, SPlanet, SArmy
++ New Class TokenReader.java used to encapsulate all StringTokenizer calls
++ RFE: added server/faction param for how long a player has to wait before
+  they can be promoted again.
++ RFE: added promtion date/time to SPlayer
++ Bug: getMyHouse was being used instead of getHouseFighting for in Ops
++ RFE 1848468: Fixed Maps for Operations
++ Fixed Typo in Server config dialog
++ Fixed typo in Operations Editor
++ New Ammo cost code finished
++ Bug: Units not being removed from database after deleteaccount command
++ Added new ammo cost code (needs to be tested)
++ Bug: SOL pilots not being saved properly
++ Bug: Stale data left in DB on stripunits and adminscrap processing
++ New MegaMek.java 0.33.15-MW010508-5362
++ Bug: SQLException when deleting planet
++ Added full_db_schema for single-file db builds
++ Bug: percent BV calculated wrong
++ Bug: Planet booleans (isConquerable, isVacuum, isHomeworld) not saving properly
+	in DB-enabled server
++ Update DB to v18
++ BB-Synching server will now assign/revoke users forum rights to house
+	forums on enroll, unenroll, and defect commands
+	NOTE: This is not yet in effect for force defects.
++ Added check for non conqest target planet in a conquest operation
++ Added Set conquerable config to Planet editor
++ DB-enabled client with email required now makes sure that the email
+	address is valid (not functional, just valid)
++ Groundwork laid for moving players between house forums when defecting
++ DB updated to v17
++ RFE: Client/Server do a full op update when UpdateOperations is called
++ Bug: List of valid Ops not updated on the server when Ops Manger is updated
++ Bug: OpEditor not built with common.util.SpringLayoutHelper
++ Added Solaris Training Company to factions.xml
++ Added ISNEWBIE tag to XMLFactionDataParser
++ Added example to BV Precent difference to show how doubles work
++ Bug: Tech/Bay's per unit in Faction configs not being used.
++ New MegaMek.jar 0.33.15-MW010208-5362
++ Bug: Operations editor not working in stand alone
++ More System Message tags added
++ Removed all references of the blow files from the rest of the code.
+- Removed MMNetSerializable.java no longer used
+- Removed DatReader.java no longer used
+- Removed DatWriter.java no longer used
+- Removed XMLWriter.java no longer used
+- Removed TreeWriter.java no longer used
+- Removed TreeReader.java no longer used
+v 0.2.14.x
+Release Client 0.2.14.1 & Server 0.2.14.2
++ Added more missing system message tags
++ RFE: check if player still meets min requirements for subfaction after Ops.
++ Added House Status refresh commands to Promote/Demote/Request Promotion commands
++ Bug: Client not always updating when factory changes where sent down.
++ Bug: Admin Menu Command Create Factory did not ask for build table or access level
++ Bug: RequestCommand did not check subfaction accesslevel vs factory access
++ Factory Access Levels saved to database
++ Bug: factories not deleted when adminremoveallfactories command issued
+Release Server 0.2.14.1
++ Bug: build table folders saving as standard\
++ New MegaMek.jar 0.33.15-MW010108-5362
++ Bug: MekWarsDed not downloading server configs.
+Release Client/Server 0.2.14.0
++ Updated Planet Editor for BuildTable and AccessLevel
++ New MegaMek.jar 0.33.15-MW123107-5362
++ RFE 1840861: Exclusiv Factory Access for Subfactions
++ Bug: Capitalization error in SPilot.toDB();
++ Bug: Capitalization error in SPlayer.toDB();
++ Stream lined more Ded Host code
++ Bug: SubFactions were not saving / loading properly from database
+v 0.2.13.x
+Release Client/Server 0.2.13.1
++ Added Logic for MekWarsAutoUpdate.jar to start MekWarsDed.jar if AutoUpdater
+  Was run by a Ded
++ Added logic if MWClient is started as ded it will launch MekWarsDed.jar
+  and exit MWClient.
++ New compact MekWarsDed.jar used for just ded installs
++ Bug: planet editor now setting homeworld.
++ Status typo in CheckArmyEligibilityCommand
++ Set CChat cart color to same as chat window foreground color
++ Chat Bar now uses the same background color as the chat window
++ House bays now uses the same background color as the chat window
++ User list now uses the same background color as the chat window
++ Added code to StringUtils.html2Color() to allow for html words like pink,red
++ Added better tracing for bad Ops vars in code
++ Added System Message tag to Admin lock message
++ Bug OMG's showing House Bays when units are viable
++ Fixed capitalization error in subfactions table
++ RFE 1858345: Ability to disable armies
++ "Unlock Army" not shown if army is not locked, "Lock Army" not shown
+     if army is locked
+Release Client/Server 0.2.13.0
++ Added third set of activate button animation
++ Added check to see if socket is closed before flushing.
++ Added new shutdown wav, create by Liz "Jessica Rose" Gibbs.
++ Added activate sound, create by Liz "Jessica Rose" Gibbs.
++ Added activate button images, created by Liz "Jessica Rose" Gibbs.
++ enemy detected.wav now plays when a player goes active message is sent out.
++ New wav file enemy detected.wav
++ New mail.wav file
++ Fixed errors in SQL schemas
++ Added UTF8 to SMWLogger handlers
++ Fixed bug with JProgressBar
++ added client exit.wav
++ NP lists now save to their own table in the database
++ NP lists are checked against database player existence at player load
++ Updated database to v14
++ Updated database to v13
++ UIManager now loaded before SplashWindow
++ Added JProgressBar to SplashWindow.java
++ Added AePlayWave Class uses Java 1.5 javax.sound lib
+- Removed CPlaySound
++ Added sound event to menu selections will play menu.wav or menu popup.wav
+  if client is not muted.
++ Added sound event to closingWindow now plays shutdown.wav if client
+  is not muted
++ Added 3 new sound files menu popup.wav menu.wav shutdown.wav
+  From MechWarrior II GPL Need to add GPL info to CMainFrame.java
++ Added 35 new skin zips. Located in client ./data/skins
++ Added skinlaf.jar for Skinable look and feel
+	NOTE: new client needs this in lib folder!
+v 0.2.12.x
+Release Client/Server 0.2.12.1
++ RFE 1587533: Setting Cross Faction RP costs Per Faction
++ Added ALL option to ListSubFactionsCommand
++ Code Clean up
++ RFE 1512519:  Unit info link in 'Show to Faction'
++ Added Number of units to Army Sort
++ Typo in AdminListAndRemoveOMGCommand
++ RFE 1842569: Army sort options
++ Bug: Concurrent Modification Errors
++ Bug: Ammo not loading with MUL file units
++ RFE: MUL created units have MW pilots skills loaded
++ Bug: RequestCommand charging money and components per unit
+	instead of per batch
++ RFE 1818147: MUL BuildTable possibility
++ RFE: Allow SO's to change Base Army Weight for Component Production
++ Refactored Creating units from MULs to SUnit.createMULUnits(String)
++ Removed Parameterization warnings
++ Added some extra logging (not enough yet) to SHouse.tick(), trying to
+	find where it's hanging
++ SOs can set the DB-enabled version to require email at registration.
+	Email address then saved to phpBB database.
++ Added MegaMek.jar 0.33.13-MW12122007-5258
+Release Client/Server 0.2.12.0
++ RFE 1798401: MUL Files Integration
+v 0.2.11.x
+Release Client 0.2.11.2 & Server 0.2.11.1
++ Fully Implemented MUL armies in Operations.
+	(Note: This break Client/Server Comms)
++ Bug: Able to retire vacant pilots.
++ Moved SpringLayoutHelper to common
++ Moved DefaultOpreation.java to common
++ Checked to see if an Entity is a Mech or Tank before processing battle damage
++ Added synchronized blocks to repairThread.
++ Added GUI for new Operations variables to Ops Editor.
++ Added Operations Variables DefenderReceivesMULArmy,  AttackerReceivesMULArmy,
+	MinDefenderMulArmies,  MaxDefenderMulArmies,  DefenderMulArmyList,
+	MinAttackerMulArmies,  MaxAttackerMulArmies,  AttackerMulArmyList
++ Updated database to v12
++ Bug: Image blocking used a case sensitive search.
++ Factory subfolders saving/loading from database
++ Updated database to v11
++ Started adding code for auto armies created with MUL's
++ RFE: Sub Folders for Factories. You can now add a sub folder to the Standard
+  Folder for each factory and that factroy can have its own set of build tables
++ Added Titles to the new splash screens
++ Rewrote portions of SArmy.matches(). Less int/double casting. Use smaller
+  army's BV to determine BV difference percentages for Op eligibility.
++ Bug: Issue with Factions Status output when in subfactions
++ Bug: CreateArmyFromMul creating all Light Units
++ Bug: Promote/DemotePlayer command sending demoted/promoted players data to
+	command user
++ RFE 1719569: Integrate Ops Editor into Client
++ Bug: Customize Unit dialog not working with Java 1.6
++ Start of Integration of Ops editor into MW Client.
++ Fix splash screen character
++ Replaced deprecated toURL() calls with supported toURI().toURL() calls
++ fix splashscreen on Linux by making it an undecorated JFrame instead of a JWindow
++ new MegaMek.jar 0.33.13-MW11302007-5285
++ Added client.util.SerializeEntity.java
++ RFE: 1616609: Shield Repairs
++ RFE: Sort Armies by Number.
++ Bug: units that are repaired while off line not saving the repair.
++ New MegaMek.jar 0.33.13-MW11282007-5285
++ Fixed typo in Advanced Repair Dialog with Breached parts showing
+	"location" instead of X
++ Patch 1839705: Reload Ammo Fix, few more AM Tags patch
++ Fixed typeo of NOTE: to NOTE
+Release Client 0.2.11.1
++ Changed SUnit.setWeightclass(int) to default to Entity WeightClass if entered
+   Weight is above type Assault.
++ Bug: Clients showing as hosting a game when they are not.
++ Release Server & Client 0.2.11.0
++ Forceupdate command now forces the client to run the update.
++ Bug: Ghost players showing up on clients.
++ Bug: Auto Army clearing Statements going to chat instead of being processed
++ BUG: House MoTD showing in main chat.
++ Bug: MySQL settings being sent in campaignconfig.  Removed from serverdefaults
++ Bug: auto armies/gun emplacements and mines not reseting after op ends
++ Patch 1835344: updated patch for AM: Messages
++ Changed naming on DB backups
++ Sped up gameoption sorting now only !Default options are sent to MM Server
++ Added bold tags to tick reports
++ Patch 1834638: AM: Tags for toUser Commands and Server Messages
++ new MegaMek.jar 0.33.13-MW11162007
++ new sort method only sends game options to mm that are not default
++ Added Patch to allow MW to talk to newer version of MW no only sends 10 game
+  Options at a time instead of all of them.
++ Added More AM: tags
++ Added debuging messages for MM issue with loading units and options
++ added ClientThread to Thread pooling.
++ Moved ThreadManager to common.util.
++ Mercenary contracts loading from database.
++ More admin tags added.
++ Update Database to v10
++ Mercenary contracts saving to database.
++ NPE when trying to write to a closed player socket.
++ Trimed up name of player client side.
++ updated all files that needed to use the AM: tag
++ added AM: tag for True Server Annoucements.
+v 0.2.10.x
+Release Server 0.2.10.9
++ Added MegaMek.jar 0.33.12-MW11132007-5273
++ Added debugging logging for LoadPlayerFile.
++ BUG: build tables picking units with 0 chances.
++ Link unit command using out dated terminology.
++ BUG: Incorrect data being set/saved for FactoryRefreshPoints
++ BUG 1829911: Omnimechs turning into Light Class after repodding
++ BUG 1825583: Disable Force Size Mod
++ RFE 1813023: Non Faction Mechs Require More Techs
++ Factories saving multiple times to the database when planet edited
++ More % instead of CP of planet owned typo's
++ Bug: ISStatus displaying % instead of CP of planet owned.
++ RFE 1552861: flee options
++ Release Server 0.2.10.8
++ Bug: BV and Unit Adjustments on stole components not working.
++ Updated Database to v9
++ SubFactions now saving to database
++ Release Server 0.2.10.7 & Client 0.2.10.2
++ Bug: triming unit file name kept correct units from loading.
++ Release Server 0.2.10.6
+- Debug status message
++ Rolled back Tacker Changes
+Release Server 0.2.10.5
++ Bug: Destroyed Units and Components settings for Ops always destroying
++ Bug: Tracking Causing inf loop if data is older then 7 days.
++ Bug: Sockets not closeing cleanly.
++ Bug: getRandomNumber always returning 0.
++ Updated database to v8
++ Database now saves unit parts and subfaction names for players
++ Release Client 0.2.10.1 & Server 0.2.10.2
++ New MegaMek.jar 0.33.11-MW10312008-5249
++ RFE 1439739: Night/Dusk chance in operation
++ Changed Advance Repair to Advanced Repair
++ Changed AdvanceTerrain to AdvancedTerrain
++ Bug: cannot scrap multiple salvaged units in a tick.
++ Bug: Scrapping salvaged units reports giveing flu.
++ New thread pool is used to manage players I/O to the server. Now each client
+	has their own out bound thread.
+- Removed Dispatcher.java
++ Added WriterThread.java
++ Added ThreadManager.java
++ RFE: Make the length of the MOTD settable
++ Bug: Inf loop created in getRandomNumber method.
++ Added getRandomNumber Method to CampaignMain, this uses higher end numbers
+  for a more random result.
++ More work on increased maintenance for non-House units
++ RFE: allow SO to set the weightclass of a unit based on build table settings
++ RFE: allow force size to face to use float
++ Added "Move Planet Here" back into adminMapPopupMenu.java
++ Bug: ListCommandsCommand used # for parsing string now uses ~
++ Updated Tracker to no longer report servers that have not sent data in 7 days
++ Laid groundwork for increasing costs of non-house units
+Release Server 0.2.10.1
++ Bug: ShortOperations erroring when advance terrain is not used.
++ Bug: OpponentListHelper breaking out too soon.
++ Found 1 more leak in phpBB integration code.  Fixed
++ If a player is not in the database, will look for a pfile before creating a new player
+Release Client & Server 0.2.10.0
++ Eliminated last of the memory leaks from database code
++ Started prep work for saving Mercenary house info to database
++ RFE 1439731 "deployment" tab in op editor
++ Bug: OMG getting created for Gun Emplacements
++ REF 1433520: Allow in house attacks as an operation setting
++ Bug: Server would set client color to black if they had too much red in it
++ Added ability to change foreground, background, and font size on the client
++ RFE 1743658: BV determined by ops vs server setting
++ Bug: Auto Army and Auto Gun Emplacements not reporting after disconnect
++ Bug: Repod check using the wrong ammo name.
++ Bug: Actuators not being salvaged correctly
++ New MegaMek.jar 0.33.10-MW10152007-5217
++ Started working on Technology raid for ops code.
++ Updated Ops Editor to reflect changed made in RFE 1775574
++ RFE 1775574: New operations parameter - raid from factory
++ Stream Lined Build Table code, used Vectors instead of hash tables.
++ fixed SQL error in planetHandler.loadEnvironments()
++ removed debug logging from FactionHandler
++ added AdminRequestBuildTable command
++ added ability to synch build tables to admin menu
++ RFE 1811186: Rare Reward Unit Purchases settable Per faction
++ Bug: Building Destruction Ops not working.
++ RFE 1720368: Cancel Operation Command needs confirmation
++ Bug: Army BV not always being updated when a unit is repaired.
++ Bug: FM mod not being used when BV difference was checked for armies
+v 02.9.x
+Release Client & Server 0.2.9.0
++ Bug: Upload Build Table Gui not working correctly.
++ Added Gui to Admin menu for Mul related commands
++ Added RetrieveAllMulsCommand
++ Added RetrieveMulCommand
++ Added ListMulsCommand
++ Added UploadMulCommand
++ Bug: Repod with parts was using ammo shot counts for ammo bins
++ Bug: default SubFaction not added when player defects or forcedefects
++ Misc typo fixes.
++ Bug: CreateArmyFromMulCommand not sending army data to correct player.
++ RFE: complete data of all damaged units are sent to server during the game.
++ Bug: SubFactions not stopping players from Buy New/Used Units
++ added CreateArmyFrmoMulCommand. Mul files must be located in data/armies and
+  units files must be in data/mechfiles.
++ new MegaMek.jar 0.33.10-MW10052007-5217
++ Bug: allowing Salvage of Non-Mek and Non-Vehicle units.
++ Changes to SubFactionConfigurationDialog to send all changes in one command
++ Filled out syntax for all mod commands
++ ListCommandsCommand now looks for indexOf target word instead of startsWith()
++ Added syntax printout to ListCommandsCommand
++ Filled out syntax for all admin commands
++ Added public String getSyntax(); to command class.
++ Bug: Advance terrain status not updated when Vaccum check box was toggled
++ Bug: Black Market Equipment not setting tech level server side.
++ Bug: Request Promotion Link using incorrect syntax.
++ new MegaMek.jar 0.33.10-MW10042007-5217
++ Bug: NPE when checking leadership on SHouse.doLogin()
++ Added ability for players to lock an army, protecting them from being cleared.
++ Some more memory fixes.
+Release Server & Client 0.2.8.0
++ Bug: Nulls added to the lostSouls hash
++ SPlayer object getting loaded from pfiles up to 6 times upon player login
++ Added new MegaMek.jar 0.33.10-MW10032007
++ SubFaction now shows in fluff
++ Added AddLeaderCommand
++ Added RemoveleaderCommand
++ Added Leadership menu. Anyone with access level >= factionLeaderLevel has
+  access to it. This has the Promote, Demote, Fluff, and mute commands
++ Issues with Faciton Config data loading.
++ More SubFaction stuff.
++ Added Admin.Dialog.SubFactionConfigurationDialog.java
++ Added Command DemotePlayer
++ Added Command PromotePlayer
++ Added Command RequestSubFactionPromotion
++ Bug: OS weapons reloading with more then 1 shot
++ Bug: Faction Tech Levels getting reset to ALL
++ Bug: ActivateCommand was allow Illegal armies to go active.
++ Bug: Rocket Launcher ammo charging full price.
++ Bug: Faction Config Property not clearing all data when getting new data.
++ Bug: Operations sending incorrect data to Client causing attack menu to die
++ Bug: Defender unit bv diff not working.
++ Yet more Subfaction code.
++ Bug 1632824: op flags not checked when attacking from HQ tab or menu
++ Bug: UnenrollCommand accessing old static MMPassword Object.
++ Started adding code for SubFactions
++ Bug: BuyPartsCommand not allow same techlevel factions to buy parts
++ Bug: TransferPilotCommand calculating the max queue size incorrectly
++ fixed typos in TransferPilotCommand
+v 0.2.7.x
+Release Server&Client 0.2.7.0
++ Bug: Auto-Disconnects not resloving correctly.
++ New MegaMek Jar 0.33.10-MW09182007
++ New MegaMek Jar 0.33.10-MW09172007
++ Updated finished game logging per Vertigo's request
++ Bug: Left debug statement in that causes divide by 0 error.
++ Randomized How pilots are removed from Pilot queue when loading player.
++ Changed all Initilization calls for Vectors to use
+	Vector(int initialCapacity, int capacityIncrement)
++ Added trimToSize() calls for vectors client and server side.
++ Bug: Player defecting with armies causing NPE in database-enabled server
+  if lost units are part of the army.
++ Bug: Losing army Starting BV showing up as 0 due to name case mismatch.
++ Bug: Tank crews reported as killed in Action showing up alive.
++ More memory tightening
++ Removed all references to MySQL.getCon and MySQL.getBBCon to make sure
+  there are no hanging Connections causing memory leaks
++ Typo in activation message when unit is not completely full of ammo.
++ RFE: Added AdminSetHouseAbbreviationCommand.java
++ Bug: Admin Planet Editor not setting Planet Comp Production or Warehouses.
++ Planets no longer save Id's to flat files. ID will be assigned at startup.
++ Planets now default to NewbieHouseName as 100% owner if none is listed
++ Removed memory leaks in database code
++ More debugging stuff
++ changed addSeconds in SMWLogger.java to default to true
+v 0.2.6.x
+Release Server 0.2.6.5
++ More Debugging for chat thread issues.
++ RFE 1786762: Added Terrain and Theme information to after-battle log
++ Bug: Gyro hits not checked on quads when forced salavage is turned on.
++ Bug: defect command causing client verison to be wiped out.
++ Bug: Slites not getting set on night ops.
+Release Server 0.2.6.4
++ Fixed Register/Enroll Bug again
+Release Server 0.2.6.3
++ Bug: players not able to log in due to erorrs!!!!!!
++ RFE: Added ability to upload build tables
+Release Server 0.2.6.2
++ RFE: Add actual foce size's to reports.
++ RFE: Add Force Size Modifier Data to Operation Results.
++ Bug: when adding losers suriving units bv to report checking player name was
+	not done in lower case.
++ Added Uber debug messages for Inf Loop House Tick Thingy
++ Player team number saved to database
+Release Client/Server 0.2.6.1
++ Now saving player team number.
++ Bug: Get Reorder not being read in SPlayer.fromString();
++ Updated database to v7
++ Changed code to not allow banned players to show up in the user lists at all.
++ RFE: Cost of used unit now shown in Faction Status window
++ New MegaMek.jar 0.33.9-82807-5162
++ Changed MMServ MMClietnInfo MMNetPasswd and MMNetPasswdRecord to MW file names
++ Updated Database to v6
++ Bug: SArmy.fromString() not reading commander Status
++ Bug: CheckAttackCommand using attacking players info instead of defending
+  players info to see if defending players armies can defend.
++ Bug: Faction configs trying to load from wrong directory
++ Changed Unit Commander from being set per unit to per army
++ Bug: debug log was writing to error log file
++ Added allowUnitCommandVTOL check to SetUnitCommanderCommand
++ Fixed formatting for CheckAttackCommand
++ Database update to v5
++ UnitCommanders saved to database
+Release Client/Server 0.2.6.0
++ new Operations Editor
++ Added Operation variable UseUnitCommander
++ Added Operation variable MinimumUnitCommanders
++ Added Operation Variable MaximumUnitCommanders
++ Added setunit icon commands for client
++ RFE: Slights not added to MM Entites if it is not a night game.
++ New MegaMek.jar 0.33.9-MW08232007-5162
++ Updated Customize Dialog to allow vehicles to use targetting systems.
++ Bug: house info not getting set when TouchCommand is used on off line player
+  that did not have a smallplayer object yet.
++ RFE: CheckAttackCommand now lists all ops Target Army is able to defend
+	against
++ Bug: Concurrent Modification error when using the BanListCommand.
++ Bug: Faction TIMESTAMP wasn't saving to database.
++ Add Hud Icons to client dist
++ Added code to allow users to set unit commanders and see what units
+  where set as unit commanders
++ Added SetUnitCommandCommand
++ Moved Faction config files to ./data folder
++ New unitCommander Boolean for use with the new MM victory option kill
+  all unit commanders
++ Bug: Players again loading / saving properly from database - the removal
+  of the save cache was messing up the initial login / registration of new
+  players
++ Bug: Missing end ")" in FM BV message in SArmy.getDescription.
++ Faction config files now loading from database
++ Players were saving multiple times during load
++ BUG: Short Validator was not checking vehicles for defenders
++ Typo: Changed "Personal" to "Personnel" in Campaign Menu
++ Update database to v3
++ Newly registered users given the url to the server's forum if auto-forum-registered.
++ Change to Forceupdate command.
+v 0.2.5.x
+R Server 0.2.5.7
++ New MegaMek.jar 0.33.9-MW08172007-5162
++ Removed the Save player hash. Players are now saved when ever setSave is
+	called. Also every X slices all players are still saved for good measure.
++ Fixed Registration issue, hopefully.
++ Fixed concurrent Mod issue with Forceupdate command also stream lined the code
++ Fixed Output for Newbie Units when player enrolls.
++ Fixed typo in ShortResolver for gaining/losing points.
++ Fix for ForceUpdate Command.
++ New users now added to phpBB (v 2.0.22) if they are not already registered
+  when server is MySQL-enabled and set to synch phpBB
++ Bug: Bugs with Team Ops.
++ Updated db_schema to v2
++ Server will only attempt to synch with phpBB if a supported version
+  of phpBB is installed.
++ Mech Statistics saving to and loading from database.
++ Added Force Mod BV Info to game info.
++ Bug: NPE when trying to assign last know pilot id to auto created units
++ Typo: On-Line help showing Vet Techs instead of Reg Techs
++ Typo: Finished mispelled in ShortOperation.java and MWTracker.java
++ Exception thrown from goosecommand when a target is not specified.
+Release Client 0.2.5.3 & Server 0.2.5.6
++ GUI Change to Pilot Menus.
++ New MegaMek.jar 0.33.9-08102007-5162
++ Bug: NPE in TouchCommand when updating a player that has not connected since server
+  was restarted.
++ Steam lined the data coming from CheckAttackCommand. Now it only shows the FM
+  BV if your army is bigger then your opponents.
++ Bug: units in the House bays showing as OMG's when click on the view unit link
++ Second database connection now working for connection to phpBB database.
+  In the very near future, this will allow for synching MW and phpBB users,
+  thereby automating the almost-universal mandatory forum account rule for
+  the Server Ops
++ Automated backup now dumping MySQL database to a restore file
+  **************************************************************
+  * Server Ops: If you use the database, please copy the       *
+  * server-dist/dump_db.{sh,bat} files to the server root,     *
+  * then edit them with the pertinent information              *
+  **************************************************************
++ Release Client 0.2.5.2
++ Added code to manually seach the cache file if unit name cannot be found
+  on the first pull, works best for vehicle files.
++ I did something don't remember what --Torren
++ Shutdown command now saves all campaign data before shutting down.
++ Bug: NPE in shutdown when database enabled - fixed
++ Fixed field size error in schema creation.
++ New MegaMek.jar build 0.33.9-MW08062007-5162
++ added line feeds to the DMML command client side.
++ Added check to make sure that database is up to date
+  *************************************************************************
+  * Server Ops: Please note the addition of files in the                  *
+  * server-dist/db_schemas folder.  The txt files MUST be fed to mysql in *
+  * the correct order prior to starting MekWars with the database enabled *
+  *                                                                       *
+  * To do this, navigate to the db_schemas folder, and run (for instance) *
+  *                                                                       *
+  *   mysql -u [user] -p[pass] [database] < db_schema_0to1.txt            *
+  *                                                                       *
+  * Please also note that the database must be created prior to running   *
+  * this command.                                                         *
+  *************************************************************************
++ Players deleted from database on Unenroll / Purge
++ Database backing up in AutomaticBackup
++ New MegaMek.jar 0.33.9-MW08032008-5162
++ New MekWarsAutoUpdate.jar 0.9 No longer needs the lib folder and now stream
+  Lines the manifest creation process by not including useless files/folders
+  I.E. Thumbs.db, logs, data/servers
++ Save methods moved to SUnit / SPlayer / SHouse / SPersonalPilotQueues / SPilot
++ Load methods moved to SUnit / SPlayer
++ Players saving and loading from DB
++ Pilots / Units deleting from DB when retired / destroyed
++ Added Try/Catch to CUnit.getPriceForUnit()
+Release Server 0.2.5.5
++ Added Debug Messaged to Tick to find inf loop bug.
++ New MegaMek.jar 0.33.9-MW08012007-5162
++ Bug: Admin Planet Editor not editing Original Owner.
++ Added Syntax to AdminCreateFaction command
+Release Server 0.2.5.4
++ Bug: Planets without any influence where not loading.
++ Bug: Planets with old Factory toString not loading in 0.2.5.3
++ Bug: Planet Editor Dialog not always creating new Advance Terrains
++ Bug: Planet info now shows "extra bays." instead of "extra ." when a planet
+  has warehouses.
+Release Server 0.2.5.3 & Client 0.2.5.1
++ Bug: Planet Editor sending the wrong planet conquere points
++ Bug: Planet Editor sending the wrong minplanet OwnerShip
++ New MegaMek.jar 0.33.9-MW-07232007-5162
++ Added Syntax Message to AdminSetHomeWorld
++ Added HOMEWORLD Tag to AdminSavePlanetsToXML and XML Parser
++ Bug: NPE when saving ATerrain with Planet editor.
++ Fix to ClientThread.java ouput added Vector<String>
++ New MegaMek.jar 0.33.9-MW07172007-5162
++ Bug: NPE in user password when saving player to database prior to
+  registration.
++ Bug: Vehicles / Infantry calling setAutoEject, crashing the server when
+  loading from database
++ Players saving to database;
++ Units saving and loading from database
++ Pilots saving to and loading from database
++ Factions completely loading from database.
++ Bug: Factions not backed up if using database.
++ Factions loading from database, except units.
++ Bug: updateOperations command not forcing Client to update ops list.
++ Release Server 0.2.5.2
++ Added check for ProtosMustbeGrouped variable to ShortValidator.java
+- Remove Proto check from ActivateCommand. No longer need as Ops can set this.
+R Server & Client 0.2.5.0
++ New MegaMek.jar 0.33.7-MW06042007-5148
++ Change to pilotHandler.savePilot to save weightclass and unit type, to
+  accomodate Personal Pilot Queues.
++ Factions saving to database
+- Removed redundant database linking in SHouse.toString()
++ Changed linkUnitToFaction to use faction ID, rather than Name
++ Fixed several instances of "destroy" being spelled as "destory"
++ Units linked in database on transferring to player and to faction
++ All units, in faction bays or player hangars, now save to database
++ BUG: fixed error in ammo saving
++ Units and pilots saved to database
++ Converted factoryHandler to use PreparedStatements to protect against line
+  escaping issues.
++ Default OriginalOwner to NewbieHouse if loading houses from XML or dat files.
++ Option for all planetary information to load and save to database.
++ BUG: Planets with apostrophes in the name did not save. Fixed string escapes.
++ Pilots now saving to database
++ RFE: Update Operatons no longer kills all short ops.
++ BUG: setArmorRepair(Entity, int, int) throwing exception when location was
+  Greater then Mech.LOC_LLEG
++ BUG: Planet Editor not showing Factions in Factory Factions Combobox when
+  they exist as a planet owner.
++ BUG: removeArmorRepair(Entity, int, int) throwing exception when location was
+  Greater then Mech.LOC_LLEG
++ Added new MegaMek Jar 0.33.7-MW06192007-5114
++ BUG: Auto repair using the wrong location for reparing rear armor
++ BUG: autoreorder parts not working inside repair thread.
++ BUG: buyUnitParts allowing you to buy negative parts
++ BUG: Salvaging Ammo Bins with ammo in them gave multiple bins.
++ BUG: Concurrent Modification errors in LoadPlanets and PDiff.
++ New MM.jar 0.33.7-MW06162007-5114
++ BUG: Loading Unit parts error when Player doesn't have any parts.
+
+v 0.2.4.x (Closed)
+R Server & Client 0.2.4.0
++ RFE 1434391: Complete faction configs in faction config!
++ Added Command SetPlanetConquerPointsCommand
++ Updated Planet Editor dialog to add MinPlanetOwnership and Conquer Points
++ RFE 1716034: Allow SO's to set Planet Conquer Points
++ Added get/setConquestPoints() to SPlanet.java
++ BUG: Repair View command not working in Admin Menu List.
++ BUG: Client wasn't showing current ammo in customization dialog if there were
+  no reloads in the player's cache.
+
+v 0.2.3.X (Closed)
++ Added Auto Reordering of Ammo when reloading.
+R Server & Client 0.2.3.0
++ RFE 1719396: Admin Repair View
++ RFE 1719397: Admin Unit View
++ New MM.jar
++ Fixed bugs in the Bulk Repair Dialog cost calculations.
++ Added tabs to the parts market.
++ Added Scrap feature to Bulk Repair Dialog.
++ Debuging auto reorder parts code.
++ Added new var Player.autoReorderParts
++ Changed more dialog code so more of the dialogs center around CMainFrame
++ Added new command ViewPlayerUnit
++ Added New command SetAutoReorder
++ Fixed some dialog starting locations.
++ Added ability to save planetary information to a MySQL database
++ New MM.jar 0.33.7-MW06092007-5114
+
+v 0.2.2.X (Closed)
++ Added Syntax to CreateUnitCommand.
++ BUG: UnitUtils does not stop at the end of the array when getting damaged
+  crits
++ BUG: Advance Repair dialog not showing cost.
++ Added Command RemovePlayerParts
++ Added Command AddPlayerParts
++ Added Command StripAllPlayerPartsCache
++ BUG: Server adding parts instead of removing them when repairing.
++ Added new command "ViewPlayerParts"
++ Moved MMClientInfo from Common to Server package.
++ Cost to salvage equipment is now based on number of viable crits
++ Cost to repair equipment is now based on number of damaged crits
++ BUG: Fixed a pricing error in get parts costs.
++ Slowed how quickly parts are restored to the Parts Market.
++ Added menu item in admin that sends all local ops data to the server.
++ Added new command "RetrieveAllOperationsCommand"
++ BUG: checking for a single skill in SHouse.fromString() in a string of skills
++ BUG: House techlevel being set to less then 0
++ BUG: basePilotSkills not getting written to the faction data file correctly
++ BUG: getArmorCost(Entity) not returning 0 when using parts repair.
++ BUG: FFA teams would not send the commence link to the original attacker.
++ BUG: Could not repair ammo bins with parts repairs
++ BUG: Was not resending team number and starting edge on reconnect.
++ RFE: Have all team members deploy in the same location.
++ BUG: Breached crits required two repairs.
++ Changed falling prices on parts market to drop a max of 10% at a time.
++ BUG: Randomly selecting Attackers' team can cause the attack to be on their
+  own team. Now attacker starts on team 1.
++ BUG: Pfile ruined if SPilot loading dies.
++ BUG: Defend command still setting teams even if not a team op.
++ Added Random Team Selection
++ Fixes to Team Ops
+R Client & Server 0.2.2.0
++ New MM.jar 0.33.7-MW06012007-5114
++ RFE 1717489 Support for Teams in Operations
++ New MM.jar 0.33.7-MW05312007-5114
++ BUG 1727911: MW does not calculate BV for Semi-Guided Missles
++ RFE 1727907: Make House Player List color use Hex
++ Minor bug fixed to Operations and setClientVersionCommand
++ Added Config Dialog Options for Parts black market to Client.
++ Allow Function Key Macros to combine multiple commands using the ; as a token
++ Changed all Operation value Float.parse statements to use getFloatValue
++ Changed all Operation value Double.parse statements to use getDoubleValue
++ Changed all Operation value Integer.parse statements to use getIntValue
++ Changed all Operation Value Boolean.parse statements to use getBooleanValue
++ Added MM game Option no_force_size_mod to work with UseOperationsRule config
++ PATCH: Mysql Patch authored by Spork/BillyPinHead
+
+v 0.2.1.X (Closed)
++ MM jar 0.33.6-MW05242007-5101
++ BUG: C3i not disabling level 3 Targeting.
++ Debuging PlanetEditorDialog.
++ BUG: Debugging more issues with PlanetEditorDialog
++ BUG: out of bounds error in PlanetEditorDialog
++ BUG: GetFactionConfigsCommand sending FC command as message when timestamp
+  not found
++ Cosmetic changes to the OpEditor.
++ Added access level check to AdminSpoofCommand to see if target could use the
+  command they were being forced to use.
++ Updated AdminCreatePlanet command, now uses fewer params.
++ All menu-driven create planet calls will start the Planet Editor Dialog
++ Finished PlanetEditorDialog, needs testing.
++ Added command AdminUpdatePlanetOwnership
++ Added command AdminRemovePlanetOwnership
++ Updated AdminDestroyTerrain. Now uses Terrain name instead of list position.
++ BUG: Purge was enrolling instead of unenrolling. Oops.
++ RFE: Allow SO's to set Element amount for each unit type when using Force
+  Modifer.
++ More additions to the Planet Editor.
++ Started Planet Editor
++ BUG: Error message for not finding Player DRAW#....
++ REF 1531258: Spotlight enabling.
++ Cleaned up some Warnings.
++ BUG: Able to tab to complete invisible players you could not see.
++ RFE 1675392: Defection List
++ RFE 1686446: Max ELO difrence for Operations
++ RFE 1705469: force refresh factory cmd
++ BUG: Client not updating Parts black market for tech cross over
++ Changed all Boolean/Integer/Double/Float parse methods for server configs to
+  use the corrisponding new config method.
++ Added getBooleanConfig()
++ Added getIntegerConfig()
++ Added getDoubleConfig()
++ Added getFloatConfig()
++ Added new config AllowCrossOverTech. If false factions cannot see parts on
+  the BM with a techlevel different than their own.
++ RFE: Show Force Modifier BV in HQ
++ BUG: C3 BV Mod not working with new BV2.0
++ Can now tab to complete invis player names if your level is >= to theirs.
+R Client & Server 0.2.1.0
++ New MM.jar 0.33.6-MW04272007-5101
++ BUG: Invalid engine names used when salvaging/repairing engines.
++ BUG: level 3 targetting was allowed in units with C3i or C3s
++ BUG: reloading ammo not updating parts cache correctly.
++ BUG: Price set to zero after buying part on the BM.
++ BUG: Clan parts bought off the BM showing as Tech Type All.
++ BUG: Players Parts cached showing as all for Tech type.
++ BUG: Damaged tanks reporting as cored.
+
+v 0.2.0.0 (Closed)
+R Server 0.2.0.4
++ BUG: Damaged tanks reporting as cored.
++ Bug 1678682: adding warehouses not increasing bays for faction members
++ New MM.jar 0.33.6-MW04252007-5083
++ Changed ForceUpdateCommand so it sends update command to Deds instead of
+  disconnecting them.
+R Client 0.2.0.2 & Server 0.2.0.3
++ BUG: SetUnitAmmo and SetUnitAmmoByCrit commands loading all ammo to a bin
++ BUG: Reload All Ammo command charging money but not reloading ammo.
++ BUG: Clients throwing bugs when trying to use die command after leaving host/ded.
++ BUG: GetFactionConfigsCommand would send a PL|FC command without any data,
+  causing the wait command not to be read.
++ Added error trapping for when messages are recieved by the client and a panel
+  doesnt exist.
++ New MM jar 0.33.5-MW04132007-5054
+R Client & Server 0.2.0.0
++ New MM jar 0.33.5-MW04122007
++ New MM jar 0.33.5-MW04102007
++ Bug: House bays not updated when units are destroyed.
++ Added Parts based Repod
++ Added the ability to salvage parts from units
++ Added Parts based repair
++ Added parts black market
++ Added AdminSetHouseTechLevelCommand
+- Removed AdminSetHouseComponentModCommand made obsolete by factionConfig
+- Removed AdminSetHousePriceModCommand made obsolete by factionConfig
+- Removed AdminSetHouseFluModCommand made obsolete by factionConfig
++ Added +4 to tech roll for repairing units that are not a compatible tech
++ Added -4 to tech roll for repairing omnit pods
++ Added House Tech Levels
+
+v 0.1.54.x (Closed 03/22/07)
+R Client & Server 0.1.54.1
++ RFE: Add NonInfantry Units to Operations.
++ BUG 1608412: Problem w/ C3 Linking in client
++ BUG 1428480: c3 networks loading is unreliable
++ RFE 1650744: unti types in client GUI
++ added vector to getRandomSkill to randomize skill selection more and one shot.
++ changed all pilot skills getChange to check house.config first then check
+  campaign Configs.
++ BUG: Fixed SingaSongCommand Admin issue
++ BUG: Misc bug fixes
+R Client & Server 0.1.54.0
++ New MM Jar 0.33.4-MW022707-5022
++ RFE 1436013: Individual init specified in Operations
++ BUG: Torpedos not listed in ammo data set.
++ added force size to request match.
++ added force size.
++ BUG: exception for registerCommand. Helped stream line with new password code.
++ remove all extranious modlog calls and have them all called via doSendModMail
++ BUG: Client side influence was adding instead of updating new changes.
++ BUG: influence tab fubared in Service Config Dialog
++ BUG: in me command sending :|#me instead of #me
++ BUG: unban Player using incorrect format when sending to mod mail
++ BUG: No Mod Mail message for unbanIP
++ RFE: Enable blinking planets again.
++ BUG: Planet refresh still not working.
++ MegaMek.jar 0.33.4-MW021907-5022
+
+v 0.1.53.x (No Release)
+R Client & Server 0.1.53.0
++ BUG 1659227: Destroyed Weapons in Tanks not being repaired
++ RFE 1660827: Typo in command name
++ RFE: don't show people with lower access than user results of a command in
+  mod mail.
++ RFE: /me working in IC House Mod and Mail
++ BUG: DRAW games no longer reporting correctly.
++ BUG: BulkRepairDialog did not select damaged equipment.
++ BUG: CreateUnitCommand was adding skills to pilots incorrectly.
++ moved up house name in toString and fromString in SPlayer (Older string needs
+  to be removed in later versions)
++ BUG: Players could not load because house was checked before house was loaded
++ Moved online Pilot healing from fromString to its own method
++ added REDCOLOR BLUECOLOR GREENCOLOR to XMLFactionDataParser
++ added OriginalOwner & op flags to XMLPlanetDataParser, AdminSavePlanetsToXML
++ BUG: AdminReturnPlanetsToOriginalOwners returns a like with only 1 Confirm
++ new MegaMek.jar
++ added standard rewards and rare folders to the server distribution folders
++ added default CYCLOPSDEBUG=false to serverconfig.txt
++ Removed debug messages from ConnectionHandler.java
++ Removed free ticks in CampaignMain.init() didn't do anything since you needed
+  active players to use it.
++ AdminReturnPlanetsToOriginalOwnersCommand. Grants 100% of every planet to
+  the faction that originally owned the world. Use carefully.
++ Minor Fixes to Mercs.
++ BUG: Mercs buying pilots from contractors' house instead of thier own.
++ Bulk Repair now remembers players last selections for tech and roll.
++ Client now remembers its state size and location on the screen
+R Client/Server 0.1.52.1
++ Another fix for the socket error thread crashing event.
++ BUG: Warbots not reconnecting after players fully disconnect.
++ BUG: Game doesn't report if player sets themself as a team of one.
++ BUG: AdminChangePlanetOwner cmd not setting timestamp, breaking refresh.
+
+v 0.1.52.X (Closed 02/18/07)
+R Client 0.1.52.0 / Server 0.1.52.0
++ RFE: Bulk repair auto populates for damaged sections.
++ Bug: Players whining about maps and houses not refreshing.
+
+v 0.1.51.X (Closed 01/15/07)
+Release client & server 0.1.51.0
++ RFE 1635135: Mute Command
++ Bug: empty line caused error in SendToMiscCommand.
++ New client command DMML. Ded Logs no go directly to File.
++ New MegaMek jar 0.33.4-MW01142007-5022
++ Show signs for net and gross pay after game. Negative pay wasn't clear.
+- Removed SUnit.OriginalBV value and supporting methods.
+- Removed SUnit and SArmy .getBV() methods that accepted a "zeroWithDestoryed"
+  boolean. Bloat code, since STATUS_DESTROYED wasn't ever set.
+- Removed Unit.STATUS_DESTROYED, which was a holdover from the ancient MMNET
+  lance system. Was unused.
+
+v 0.1.50.x (Closed 1/7/07)
+R Server 0.1.50.1
++ Check file extensions (mtf, hmp, blk, etc) in BuildTableValidator.
++ Don't show Missing File Extension warning in BuildTableValidator if line
+  matches a faction name. Reduces spaminess when checking crosslinked tables.
++ BUG: Mod MOTD causing out of bounds errors b/c of missing sender name.
++ Switched "NoFactoryRepodFolder" default from "3025" to "standard".
+- Removed support for "WizWom Pilots", which broke gun/pilot stepping.
+- Removed server config "LockFilePath". Lockfile is never created, although
+  we do attempt to delete it, making this silly and dangerous as it could be
+  used by otherwise unprivledged campaign admins to delete arbitrary files :-(
+- Removed server congig "AmmoCharge". Supplanted by per-type settings.
+- Removed server config "MaxBusySlicesToPay". Old. Unused.
+- Removed server config "TotalUnitsPath". Old. Unused.
+- Removed server config "ISSPath". Old. Unused.
++ BUG: NewCostMultiMaxUnitLossPayment acting as a flat max. Oopsie.
++ BUG: XP not cleared by elite retirement.
+R Client 0.1.50.0 / Server 0.1.50.0
++ BUG: Reset button not properly drawing/disappearing after defection.
++ Include unit ID in createunit's return to sender.
++ RFE: Post-game loss compensation. See Resolver.determineLossCompensation().
+  No compensation by default. Set in admin config's new Loss Compensation tab.
++ Alphabetized tabs in admin.dialog.ServerConfigDialog.java.
++ Return int instead of string from SPlayer.doFireUnaidTechnicians().
++ Round floats in doPayTechniciansMath() instead of casting doubles to ints.
+- Removed SPlayer.doPayTechnicians(). TransferCommand and ShortResolver calc
+  pay amounts themselves using SPlayer.getCurrentTechPayment().
++ BUG: Refresh planets was using the local client's time vs local server time,
+  but should use UTC for both.
++ BUG: ReloadAllAmmoCommand was charging full price for fully loaded ammo bins
++ BUG: Ammo cost dialog erroring if a field is blank.
++ BUG: BuildTableValidatorCommand not sending results to user.
++ BUG: Kick idle people was kicking players after they just finished combat.
++ BUG: Error in SPersonPilotQueues.getPilot index out of bound. Now traps and
+  returns null.
++ Patch 1618388: admin calculate house rankings command
++ REF 1602720: Removing factory refresh from Production Dependency
++ RFE: Option to have elite pilots make a retirement rolls (similar to level-up
+  rolls for other pilots). Rolls are against the same 1dX as the pilot's final
+  level. Check "Elite Retirement" in server config's Pilots tab to enable.
++ RFE 1595560: Mod Channel MOTD
++ BUG: SetPlanetCompProduction not updating total CompProduction for Owner House
++ Only show reserve-legal games in dialog after player selects AFR. Filter in
+  AttackMenu.actionPerformed()'s if(name.equals("cmdAttackFromReserve")) block.
++ Only show active-legal games in HQ, Map and Main attack menus. Filter out
+  reserve-only games in AttackMenu.updateMenuItems().
++ Changed CArmy.legalOperations from TreeMap to TreeSet.
++ GUI for options below in OpEditor's "Range & Misc" tab. CBoxes.
++ RFE: Option to make specific operations legal only when on active duty.
++ RFE: Option to make specific operations legal only w/ attack from reserve.
++ Rebuild HQ buttons afer a PL|SH instead of after PI| for the player.
++ Added PI|EX|Name|Experience command to PI.java. Used to update userlist XP.
++ Added PI|RA|Name|Rating command to PI.java. Used to update userlist ELO.
++ Faction abbreviations in data, instead of player update strings.
++ Faction color (for players) info in data, instead of sending w/ each login.
+- Removed abbreviation/addon info from MWClientInfo. Simplifies NU command.
+
+v 0.1.49.x
++ TransferPilotCommand cleanup (use training faction name instead of SOL, etc).
++ Send message to player when they exceed there SPilot Queue Limits.
++ BUG: ConcurrentModificationException in CUserListPanel.
++ RFE 1551230: Server Config Option to Disable Counterattacks. Implemented as
+  an Operation setting instead of a server-wide config value. In the OpEditor's
+  "Range & Misc" tab, check "Forbid Counterattacks" to disable for a given op.
++ Synchronize stopChicken() and doPenalty() in OpsChickenThread.
+- Removed CheckStyleConfig.cfg from CVS, as no on uses CheckStyle anymore.
++ Check for 5-unit proto points when players activate.
+- Removed "InfProtoClusterCount" option. Formerly used by proto grouping code,
+  but no longer needed in MekWars. May still be set through MM game options.
+- Removed "ProtosMustBeGrouped" option. TotalWarfare requires protos to move
+  in groups of 5, so we'll check for full points instead of using this value.
+- Removed SPlayer.hasEmptyArmies(). Was only used in ActivateCommand.
++ RFE 1600090: Option to disallow BA, but allow standard infantry. Separate
+  Attacker and Defender options to "_AllowPoweredInf" and "_AllowStandardInf"
+  replace the old, blanket "AllowPoweredInf" option in OperationEditor.
++ Tell players how to confirm the unenroll command.
++ Explicitly null MM Client objects when leaving games, then suggest a GC. For
+  some reason some portions of the MM client are/were remaining in memory.
++ RFE: Send ded-join message as a PM, and only when joining a dedicated host.
++ Fixed AdminGetUnitComponentsCommmand
++ RFE 1615300: Faction Specific Welfare Tables
++ RFE 1615307: Allow Players to buy multiple pilots at once
++ Added Syntax to OfferContractCommand
++ BUG 1590676: /c modgames not showing defender composition
++ New MegaMek.jar 0.33.3-MW12102006-4968
+R Client/Server 0.1.49.0
++ RFE: AR for Tanks.
++ RFE 1606316: Have buildtablevalidator check all 3 folders. Also check leading
+  spaces and clear lines. Syntax is /c buildtablevalidator#all or, #foldername.
++ Renamed BuildTableListValidatorCommand to BuildTableValidatorCommand
++ Players now reset game options before loading server MM game options.
++ cleaned up CommandAccessLevels so that it sends/recieves faster
++ BUG: when buying a pilot showing skills was inversed.
++ RFE: Allow Factions to have base pilot skills add to pilots from faction pool
++ RFE: Added PurgeHousePilotQueueCommand and RemoveFactionPilotCommand
++ RFE: Add Clan Pilot Training Skill
++ Updated TouchCommand.java
++ BUG: SUnit.toString() setting Hotload to false if maxtech_burst was off
++ New MM.jar 0.33.3-MW12032006-4968
+
+v 0.1.48.x (Closed No Binary Release)
+R Client/Server 0.1.48.0
+- Removed lib folder from CVS root. Libs are in client-dist and server-dist.
+- Removed WEB-INF folder from CVS root. Hibernate remnant.
++ New MM.jar 0.33.3-MW12022006-4968
++ BUG: Reload all was charging 1cbill to reload fully loaded bins.
++ BUG: Reload all was giving OS ammo full reloads
++ RFE: confirmation dialog on reload all
++ Added FixAmmo() as a mod command.
+- Removed FixAmmo() from SPlayer
++ BUG: Internal Structure Damage Icon Not Showing.
++ BUG 1606315: Build Table Viewer Still uses zips
++ RFE: 99 defaults as piloting and gunnery in create unit dialogs.
++ RFE: added Random to createUnit command as well as skill abbrivations.
++ BUG: Time stamp not being saved to campaignconfig.txt correctly.
++ BUG 1605065: Server Settings not saving.
++ BUG: AdminRemovePlanet did not delete a world's saved flat file.
++ BUG: Not sending all login data to client when they reconnect while in combat
++ BUG: Newly registered players did not send client version.
++ BUG: NotifyFighting entered incorrectly in command hash as "NOTFIYFIGHTING"
+
+v 0.1.47.x (Closed no Binary Release)
+R Client 0.1.47.2 Server 01.47.3
++ BUG: Deds not defaulting back to MM game options so it would some times over
+  ride the Settings from Players.
++ BUG 1602704: Custom ammo loads revert after disconnect/reconnect
++ Typo with reload all ammo menu item
++ BUG: null prints for FFA games when multiple defenders from the same faction
+  Exists.
+R Client 0.1.47.1 Server 0.1.47.2
++ BUG: Unit BV needs to be recalculated before sending data to the player
++ BUG 1602441: Mechs are undamaged after games with AR enabled
+R Server 0.1.47.1
++ BUG 1602347: FixPilot prevents pfile loading
+R Client 0.1.47.0 / Server 0.1.47.0
++ BUG 1597839: GUI Not Visible
++ BUG 1597897: Dedicated MM verison mismatch
++ RFE 1560233: Automatically reload customized ammo loadouts
++ RFE: Reload All Ammo.
++ RFE: Parital ammo reloads
++ Added FixPilot to SPLayer to fix vacant pilots in non-Mek Units
++ Added fixAmmo to fix when a units ammo strays from baseline.
++ New MM.jar 0.33.3-MW112206-4968
++ Rolled back to dataport for server configs instead of trying to use chat
+  port	
++ BUG: RequestDonated command using old buildtable path.
++ RFE: Send PM's through NotifyFighting instead of AM's. Players are more
+  likely to read/notice private chat than announcement-text in main chat.
++ BUG: Sign inversion in DonationCommand made players think they got money
+  for turning units in, when they were actually paying to do it. Oops.
+
+v 0.1.46.x (Closed no Binary Release)
+R Client 0.1.46.1 / Server 0.1.46.1
++ BUG: Pilots not added to used non-mek units if PPQ enabled.
++ BUG: Unit viewer throwing errors do to change in MechInfo paint.
++ RFE: Status Icons are painted over Units. both columns appear on the left
+  for now. This allows for a huge number of units per row.
++ BUG 1594624: light and heavy gauss rifle can't be reloaded
++ BUG: AorAn not returning string if set to lowercase, ignoring returnString
+
+R Client/Server 0.1.46.0
++ New MM.jar 0.33.3-MW111206-4968
+- Removed old code for Hot Loading via launchers. Now done in Ammo.
++ BUG 1529394: planet data update on login not working
++ RFE: send message to players to know what ded they entered.
++ RFE: Added current Repair Costs and Life Time Repair costs for every unit.
++ RFE: Dont Allow Pilots to transfer to barracks if they are full. This only
+  affects pilots being sent directly to the barracks, not those being swapped.
++ BUG: Attacker and Defender SalvageCostModifers were defaulting to 0, which
+  caused salvage to default to free on non-AR servers. New default is 1. GAH!
++ GUI controls for new cost multis in Factions tab of ServerConfigDialog.
++ Replaced "DonatingCostsCBills" server option with "DonationCostMultiplier".
++ Replaced "ScrappingCostsCBills" server option with "ScrapCostMultiplier".
++ New server config option, "UsedPurchaseCostMulti", to set the cost of a used
+  unit relative to a new purchase. Default is same as old hardcode: 50% off.
++ Remove pilots from their units upon donation, and put them in the queue.
++ Use JTabbedPane.remove() every time we close a mail or error tab. Using same
+  removal path for all closures should help us find the "reappearing" bug.
++ Improved behaviour of StringUtils' aOrAn() method.
+
+v 0.1.45.x (Closed 11.12.06, no binary release)
+R Client 0.1.45.2 / Server 0.1.45.2
++ BUG: Game results not shown in housemail b/c player names cleared too soon.
++ Changed code in ShortResolver to be ready for MM Change when reporting
+  Stackpoled units
++ RFE: New client config ENABLESPLASHSCREEN if false splash screen does not
+  appear. This option an be set via command line -disableSplash and
+  -enableSplash
++ BUG: Bay lease payments were being made even if payTechs was set to false.
++ New test command AdminGetUnitComponents.
++ BUG: socket not disconnecting from PHPDB in SendDBPHPCommand.
++ BUG 1590400: Autoreserve not honored when game cancelled
++ BUG: Numerous bugs in AcceptAttackFromReserve. Was checking attacking player
+  or army in lieu of the defender in several places (e.g. - vacancy check).
++ BUG: Not always removing player name from battles tab lists on exit/disco.
++ BUG: not sending client's version when reconnecting using the connect option.
++ AutoBackup now updates everything in the data folder, even recursive folders.
++ BUG 1590398: AFR does not honor ModNoPlay
+R Server 0.1.45.1
++ BUG: Divide by zero error if not using components for Unit types i.e. proto's
+  BA, inf, or vee's
++ Code to save and load Campaign Config Options Server side.
++ changed code so that if the DB save/Load of a pfile fails it'll go to files.
++ RFE: Load and Save PFiles using the DB
++ BUG: HTML tags in the RSS description fields.
++ BUG: Factions on BMNoSell should not put overflow units on BM
++ RFE 1560233: Automatically reload customized ammo loadouts
++ New MegaMek.jar 0.33.1-MW103006-4892
++ BUG 1587545: Vee/Ba Pilots moving to mech queue
+R Client 0.1.45.1
++ RFE: If you don't have any of the HUD icons selected the old hangar
+  background colors are used.
++ BUG: New servers did not create a command.dat file if one wasn't found.
++ RFE: Reinstate dull orange for unmaintained units on non-AR servers.
++ BUG: Forgot to add SendDBPHPCommand to CampaignMain.
++ New MM.jar
++ RFE: PHPDB for BillyPinHead
+R Client 0.1.45.0 / Server 0.1.45.0
++ Added "Set House Flu Mod" to admin menu.
++ Added GUI options for Protos and BA to dialogs setting price/flu/comp mods.
++ Save the component, flu and price mods to pricemods.dat file instead of in
+  the standard faction.dats. Save mechanism is slapdash and should probably be
+  changed to be more efficient. Saving outside the usual string will make this
+  easier to adjust at a later date, then incorporate into the normal saves.
+- Removed support for old-style faction saves (monolithic houses.dat file).
++ Show costs in tooltip text when hovering over a factory in CHSPanel.
++ Do NOT reset faction timestamp after every conquer, as nothing relevant to
+  the bin in & bin out sequence is changed when a world is modified.
++ Bump faction timestamp when conq status changed w/ SetHouseConquer cmd.
++ Bump faction timestamp when comp mod is set w/ AdminSetHouseCompMod cmd.
++ Bump faction timestamp when flu mod is set w/ AdminSetHouseFluMod cmd.
++ Bump faction timestamp when price mod is set w/ AdminSetHousePriceMod cmd.
++ Bump faction timestamp when logo is set w/ SetHouseLogo cmd.
++ Bump faction timestamp when color is set w/ ChangeHouseColor cmd.
++ RFE: Ability to set an influence mod, like the component and price mods
+  already available, for unit purchases on a house by house basis.
++ New command, /c AdminSatHouseFluModCommand.java. Identical to pricemod cmd.
++ Moved client-side .getPriceForUnit(), .getInfluenceForUnit() and
+  .getPPForUnit(). Were non-static methods in CPlayer. Are now static methods
+  in CUnit. Used in HS panel and by online help.
++ Moved isInHouseAttacks from House to SHouse and removed from binin and
+  binout. Not used by any client-side code.
++ Moved initialHouseRanking from House to SHouse and removed from binin and
+  binout. Not used by any client-side code.
++ Moved motd from House to SHouse. Sent by server @ signin, not through the
+  binin and binout data streams.
++ BUG: NPE attempting to load planetOpsFlags.dat. Check to see if file exists
+  and skip the load attempt if it is missing or empty.
+
+v 0.1.44.x (Closed 10.17.06, no binary release)
++ RFE: Money/flu/component multipliers applied to purchases from factories not
+  originally owned by the player's faction. Defaults are set to 1.0, which does
+  not change cost. GUI to set is in ServerCongigDialog's Units2 tab.
++ RFE: Only auto-produce units from factories originally owned by a faction.
++ RFE: Peg factory purchase cost to original faction instead of current owner.
++ New MM Jar with SB and Munitions patch and TW rules.
++ Deds attempt to sign on much more slowly after a connectionLost(). This does
+  not stop "rogue" behaviour when two instances of a single ded are running at
+  the same time, but makes it possible for owners to actually shot one down.
+R Client 0.1.44.8
++ BUG: Deds buffering all commands b/c they never have a CMainFrame. I'm dumb.
++ Better logging of startHost() failures when deds first sign on to servers.
++ RFE: Total BV's in /c modgame blocks, w/ finishing values for complete games.
+R Client 0.1.44.7 / Server 0.1.44.7
++ BUG: Deds not forwarding DSD and USD commands to standard parseData().
++ BUG: Transferring a linked C3 Master could cause concurrent mod error.
+R Client 0.1.44.6.
++ Changed place where saved mail request is issued, in the hope that it will
+  fix the "PM Splash Crash" TT users are experiencing with Client 0.1.44.5.
+R Client 0.1.44.5 / Server 0.1.44.6
++ Incoming data (as directed to MWClient.doParseDataInput) checked and stored
+  if the main frame is null. Only data commands (USD, DSD) are allowed to
+  proceed normally. Other commands are processed en block after CMainFrame is
+  constructed. This stops NPE's, but makes the client open more slowly.
++ Moved main frame construction block in MWClient.java. Is now built after the
+  chat connection opens and serverconfig.txt is fetched, to stop NPE's.
++ BUG: Infinite splash screen for any user who connects w/o a local copy of
+  the campaignconfig.txt. Values from campaignconfig were being requested
+  before a connection to the server was opened in order to fetch them, leading
+  to a null MainFrame and unending splash.
++ BUG: Impossible for a new user to log into campaign. Server wasn't allowing
+  /c getserverconfig to pass through and execute unless the issuing player was
+  logged in by SignOn.java, making it impossible for an unenrolled user to get
+  the campaignconfig.txt.
+R Server 0.1.44.5
++ BUG: impossible to buy from worlds your faction controls.
+R Client 0.1.44.4 / Server 0.1.44.4
+0 N 0.1.44.1-44.3 in history, but 44.3 is CVS & on Sol7, so this is 0.1.44.4.
++ RFE: Include duration of games in the resultsLog.
++ RFE: Show duration of games in /c modgames output.
++ RFE 1552224: Ability to not show players' names in Tick Reports. Two new
+  options in ServerConfig's Faction tab. Uncheck to use faction names in place
+  of player names in tick report, news feed entries, or both.
+- Removed CUnit.getWeightclassName(). Dupe of Unit.getWeightClassDesc()
+- Removed CUnit(CCampaign c) constructor. Unused.
+- Removed PL|PD and CPlayer.setPlayerData(String s). Seems to be an unused dupe
+  of the PS| & CPlayer.setData(String s) pair.
+- Removed Army.hasMoreInfantryThanElse() & replaced some enums w/ iterators.
++ BUG: Mezzo ignored when requesting a unit. Feature and associated classes
+  removed instead of being fixed, as no Server Op used or wants the feature.
++ BUG: Status icons where not showing a place for Repair/Maintenace
+  when in !dynamic mode.
++ BUG: visibilty for ops was using its own variable to calculate itself
++ BUG: OpponentListHelper caused an inf loop of people that were active
+  had more then one army. The sort Arraylist was using its own size as an
+  attribute in the For statment and adding to itself while in the for loop.
++ Release Server/Client 0.1.44.0
++ added new MM.jar MegaMek 0.31.14-MW09212006-4827
++ RFE: add configurable settings for status icons
++ Added New status icons
+- Moved Sections below 0.1.40.x of the history.txt to olderHistory.txt
++ Moved GetServerConfigsCommand.java to commands.dataTransferCommands
++ Created new package src.server.campaign.commands.dataTransferCommands
++ RFE: Visibility is broken into 2 halfs for the RNG to create a bell curve
++ RFE: FFA games that have only 2 players in them have players start on
+  opposite ends of the board like normal 2 player games.
++ BUG: FFA games where more then one person per house was in it would cause a
+  null to be listed instead of the number of players.
++ BUG: game visibility was going below min visibilty, due to dusk and night
+  fights
++ Streamlined RequestCommand. Support for old-style MMNET SOL requests wasn't
+  needed anymore. NOTE: There appears to be a bug in RequestCommand which leads
+  to mezzo/pricemods being ignored. More changes to the file are forthcoming.
++ Added to code to move Server Campaign Config data so that it is transfered
+  via the chat port vs data port. First step removing data port.
++ BUG: Engine repair not working in bulk dialog.
+- Removed cheatlog.X. Entries duped in modlog.X, making cheatlog superfluous.
++ RFE: Show use of StripUnits and DeleteAccount in mod channel.
++ Replaced usages of Boolean.valueOf(String s).booleanValue() with Java 1.5's
+  Boolean.parseBoolean(String s). More compact code, and less autoboxing.
+- Removed CUnit.getUnitString(). Unused.
+- Removed CUnit.setUnitData(String). Unused.
++ On-Line help for unit status icons
++ Replaced all instances of "Vacant" with hasVacantPilot checks.
++ added hasVacantPilot to Unit.java
++ Added new icons to client-dist
++ RFE: Use icons instead of colors for unit status
++ Client support of options below. Sell buttons and menu choices disabled as
+  appropriate (Clan & BMNoSell checked). Bid button turned off if BMNoBuy.
++ Admin config menu support of options below.
++ RFE: Option to block sell-side BM access to specified factions.
++ RFE: Option to block buy-side BM access to specified factions.
++ RFE: Option to block sales of Clan-tech units on BM.
+- Removed House.mayUseBM and House.isMayUseBM() in favor of the more
+  granular server options described above. This breaks data compat.
+- Removed "Hibernate" server option default value.
+
+v 0.1.43.x
++ Yet more OLH issues. I really screwd the pooch on this one. @urgru :-(
++ BUG: Out of bounds error in OpponentListHelper.
++ BUG: ClassCastException in OpponentListHelper.
++ BUG: NPE in OpponentListHelper.
+Release Server 0.1.43.1
++ New MM.jar 0.31.15-MW09122006-4827
++ BUG: Repod using case to determine matches. Switched to case insensitive.
++ New MM.jar 0.31.15-MW09112006
++ Remove unnecessary code
++ BUG: fix NPE when resolving ops with auto-added arty.
++ BUG: Players not being removed after unenrolling. Unenroll now checks to see
+  if a player has units under repair and should be safe, but the DeleteAccount
+  command may still fail on players with repairung units.
++ BUG: Opponent lists being built improperly after cancellation of games.
+- Removed ShortValidator.genericAbleToDefend and OpponentListHelper.matches.
+  Folded funtionality into OpponentListHelper.getOpponentsForAll(). This
+  eliminated lots of duplicative checks (activity, sameip, etc).
+Release client/server 0.1.43.0
++ RFE: Set Pilot/Gunner base for each house for each unit type.
++ BUG: ProtMek pilots becoming mek pilots
++ BUG 1555816: customizing A4 unit NPE 0.1.42.0
++ Added new MM munitions on getmunitions tables
++ BUG 1553466: OP Editor
++ Modified many static references to use statics from an ultimate parent class
+  (eg - Unit instead of SUnit when using .LIGHT or .FOR_SALE).
++ More small refactors (foreach loops, direct access to statics, etc).
++ SHouse no longer defined as an abstract class.
+- Removed SHouse.NORMALHOUSE, SHouse.MERCHOUSE, SHouse.NONCONQHOUSE and
+  SHouse.NEWBIEHOUSE. Static variables were only used to set factionType.
+- Removed class NormalHouse. No longer needed w/ removeal of factionType.
+- Removed SHouse.factionType variable and related subclass methods.
++ Tweaks to SHouse and CBattlePanel (unneeded casts, improved for loops, etc)
++ Many more refactors, mostly small, involving loops, generics, and other
+  warnings being thrown in Eclipse 3.2 that weren't caught in 3.1.
+- Removed CampaignMain.getHouseForPlanet(Planet p). Was unused.
+- Removed CampaignMain.getPlanetInfo(String s). Was unused.
+
+v 0.1.42.x
+Release client/server 0.1.42.0
++ New MM: 0.31.13-MW09042006
++ RFE 1250390: Admin Pilot Costs changes
++ RFE 1526527: Configurable Planet "Flags"
++ RFE: have protos count as 1 per 5 proto's when doing infantry counts.
++ RFE: allow Protos to use MG burst
+
+v 0.1.41.x
+- Ran Eclipse Clean-up Wizard to remove unused imports, unused local variables
+  and unnecessary casts. Also added Java 1.5 @Override comments to all methods
+  that override those of superclasses (including generic java.lang.Object).
+- Removed MWChatClient.setAttribute() and getAttribute(). Were unused.
+- Removed MWChatClient.equals() and MWChatClient.hashCode(). Both were simple
+  pass throughs to superclass methods. No unique code/capability.
+- Touch should be updating lastonline time.
+R Server 0.1.41.4
++ BUG: Exploit allowing users to set arbitrary levels.
++ RFE 1535927: Transmit Pilot Details when Transfer to Factionmate
++ RFE 1545928: status color for meks w/o pilots. is a light/washed out green.
++ BUG: Possible to defend AFR while vacant units are in armies.
+R Client 0.1.41.1 / Server 0.1.41.3
+- Removed support for eras. Unecessary code complication. Tables should be in
+  /standard (factory production), /rare (BM production) and /reward (from RP)
+  folders. Welfare.txt belongs in /standard.
++ Add warnings to errlog.0 when reading planets.xml that has TIMEZONE fields.
+- Removed "ProductionTable" var from UnitFactory and subclasses. Unused MMNET
+  remnant. After 2-3 widespread releases, should be able to re-use its token.
++ RFE: Deds no longer connect to data port.
++ BUG: Deds receiving GUI messages boxes, which keep them from reconnecting to
+  a server after a crash.
+R Server 0.1.41.2
++ BUG: ShortResolver.calculatePilotEXP() did not convert ownerName to
+  lowercase, so name could not be found.
+R Client/Server 0.1.41.1
++ RFE: Move Game Status to the Games menu
++ BUG: issue with customize unit dialog GUI when trying reload/switch ammo.
++ BUG: setunitammocommand sending incorrect link to pay for the new ammo.
+R Client/Server 0.1.41.0
++ New MegaMek 0.1.31.11-MW08142006; Improved Hotloading and fixes to shields.
++ Change code for hotloading ammo.
+  NOTE: due to the hotloading being a flag in the units ammo.
+  Units with ammo will throw errors the first time they are loaded
+  This will only cause a minor loss of damage and customizations
+  i.e. slite targetting ammo selections. A Necessary Evil --Torren
++ BUG: NPE when reloading One Shot weapons
+
+v 0.1.40.x
+R Client/Server 0.1.40.0
++ New MegaMek 0.31.10-MW08122006 Has MPod patch and Hotload code
++ Added hotloading settings to customize unit dialog
++ RFE 1536881: Loading Ammo can be Confusing
++ added ShortReslover.calculatePilotEXP() Now pilots get exp even if their
+  unit is salavage or destoryed. Pilots only can level if they win and their
+  unit survives the game.
++ Pilots were not getting EXP from FFA games if they lost but had kills.
++ Pilots were not getting EXP from DRAW games.
