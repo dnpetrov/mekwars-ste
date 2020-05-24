@@ -1,0 +1,4 @@
+25 Achileus [David].blk
+42 IS Standard Battle Armor [LRR].blk
+31 Longinus Battle Armor [David].blk
+19 Phalanx (A).blk

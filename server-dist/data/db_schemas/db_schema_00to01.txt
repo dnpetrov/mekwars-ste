@@ -1,0 +1,299 @@
+-- MySQL dump 10.11
+--
+-- Host: localhost    Database: mekwars
+-- ------------------------------------------------------
+-- Server version	5.0.45-community-nt
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+--
+-- Table structure for table `faction_base_gunnery_piloting`
+--
+
+ALTER DATABASE DEFAULT CHARACTER SET utf8;
+
+
+DROP TABLE IF EXISTS `faction_base_gunnery_piloting`;
+CREATE TABLE `faction_base_gunnery_piloting` (
+  `factionID` int(10) unsigned NOT NULL,
+  `unitType` tinyint(3) unsigned NOT NULL,
+  `baseGunnery` tinyint(3) unsigned NOT NULL,
+  `basePiloting` tinyint(3) unsigned NOT NULL,
+  PRIMARY KEY  (`factionID`,`unitType`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `faction_pilot_skills`
+--
+DROP TABLE IF EXISTS `faction_pilot_skills`;
+CREATE TABLE `faction_pilot_skills` (
+  `factionID` int(10) unsigned NOT NULL,
+  `pilotSkills` tinytext NOT NULL,
+  `skillID` int(10) unsigned NOT NULL,
+  PRIMARY KEY  USING BTREE (`factionID`,`skillID`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `factioncomponents`
+--
+DROP TABLE IF EXISTS `factioncomponents`;
+CREATE TABLE `factioncomponents` (
+  `factionID` tinyint(3) unsigned NOT NULL,
+  `unitType` tinyint(3) unsigned NOT NULL,
+  `unitWeight` tinyint(3) unsigned NOT NULL,
+  `components` int(10) unsigned NOT NULL,
+  PRIMARY KEY  (`factionID`,`unitType`,`unitWeight`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `factions`
+--
+DROP TABLE IF EXISTS `factions`;
+CREATE TABLE `factions` (
+  `fMWID` int(10) unsigned NOT NULL default '0',
+  `fName` varchar(100) NOT NULL,
+  `fLogo` text NOT NULL,
+  `fFluFile` text NOT NULL,
+  `fColor` varchar(10) NOT NULL,
+  `fAbbreviation` varchar(20) NOT NULL,
+  `fPlayerColors` varchar(10) NOT NULL,
+  `fTechLevel` int(11) NOT NULL,
+  `fAllowDefectionsFrom` varchar(10) NOT NULL,
+  `fAllowDefectionsTo` varchar(10) NOT NULL,
+  `fConquerable` varchar(10) NOT NULL,
+  `fMoney` bigint(20) NOT NULL,
+  `fInitialHouseRanking` int(11) NOT NULL,
+  `fMOTD` text NOT NULL,
+  `fInHouseAttacks` varchar(10) NOT NULL,
+  `fBaseGunner` tinyint(3) unsigned NOT NULL,
+  `fBasePilot` tinyint(3) unsigned NOT NULL,
+  `fIsMercHouse` varchar(10) NOT NULL,
+  `fIsNewbieHouse` varchar(10) NOT NULL,
+  `ID` int(10) unsigned NOT NULL auto_increment,
+  PRIMARY KEY  USING BTREE (`ID`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `factories`
+--
+DROP TABLE IF EXISTS `factories`;
+CREATE TABLE `factories` (
+  `FactoryID` int(10) unsigned NOT NULL auto_increment,
+  `FactoryPlanet` text NOT NULL,
+  `FactoryName` text NOT NULL,
+  `FactorySize` tinytext NOT NULL,
+  `FactoryFounder` tinytext NOT NULL,
+  `FactoryTicks` int(11) NOT NULL default '0',
+  `FactoryRefreshSpeed` int(11) NOT NULL default '0',
+  `FactoryType` int(11) NOT NULL default '0',
+  `FactoryisLocked` tinytext NOT NULL,
+  PRIMARY KEY  (`FactoryID`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `pilots`
+--
+DROP TABLE IF EXISTS `pilots`;
+CREATE TABLE `pilots` (
+  `pilotID` int(11) NOT NULL auto_increment,
+  `pilotName` varchar(100) NOT NULL,
+  `pilotExp` int(10) unsigned NOT NULL,
+  `pilotGunnery` tinyint(3) unsigned NOT NULL,
+  `pilotPiloting` tinyint(3) unsigned NOT NULL,
+  `pilotKills` int(10) unsigned NOT NULL,
+  `pilotCurrentFaction` varchar(45) NOT NULL,
+  `pilotHits` tinyint(3) unsigned NOT NULL,
+  `playerID` int(10) unsigned default NULL,
+  `factionID` int(10) unsigned default NULL,
+  `unitID` int(10) unsigned default NULL,
+  `pilotType` int(10) unsigned NOT NULL,
+  `pilotSize` int(11) NOT NULL,
+  `MWID` int(11) NOT NULL,
+  PRIMARY KEY  (`pilotID`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `pilotskills`
+--
+DROP TABLE IF EXISTS `pilotskills`;
+CREATE TABLE `pilotskills` (
+  `pilotID` int(10) unsigned NOT NULL auto_increment,
+  `SkillNum` int(10) unsigned NOT NULL,
+  `SkillData` text,
+  `SkillLevel` tinyint(4) NOT NULL,
+  PRIMARY KEY  (`pilotID`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `planetenvironments`
+--
+DROP TABLE IF EXISTS `planetenvironments`;
+CREATE TABLE `planetenvironments` (
+  `PTID` int(10) unsigned NOT NULL auto_increment,
+  `PlanetID` int(10) unsigned NOT NULL default '0',
+  `ContinentSize` int(10) unsigned NOT NULL default '0',
+  `TerrainData` int(11) NOT NULL default '0',
+  `AdvancedTerrainData` text NOT NULL,
+  PRIMARY KEY  (`PTID`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `planetflags`
+--
+DROP TABLE IF EXISTS `planetflags`;
+CREATE TABLE `planetflags` (
+  `PlanetID` int(10) unsigned NOT NULL default '0',
+  `PlanetFlag` varchar(100) NOT NULL default '',
+  PRIMARY KEY  (`PlanetFlag`,`PlanetID`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `planetinfluences`
+--
+DROP TABLE IF EXISTS `planetinfluences`;
+CREATE TABLE `planetinfluences` (
+  `PlanetID` int(10) unsigned NOT NULL default '0',
+  `FactionName` varchar(100) NOT NULL default '',
+  `Influence` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`PlanetID`,`FactionName`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `planets`
+--
+DROP TABLE IF EXISTS `planets`;
+CREATE TABLE `planets` (
+  `PlanetID` int(10) unsigned NOT NULL auto_increment,
+  `pCompProd` int(10) unsigned NOT NULL default '0',
+  `pXpos` float NOT NULL default '0',
+  `pYpos` float NOT NULL default '0',
+  `pDesc` text NOT NULL,
+  `pBays` int(10) unsigned NOT NULL default '0',
+  `pIsConquerable` tinytext NOT NULL,
+  `plastchanged` varchar(15) NOT NULL default '',
+  `pMWID` int(11) NOT NULL default '0',
+  `pMapSizeWidth` float NOT NULL default '0',
+  `pMapSizeHeight` float NOT NULL default '0',
+  `pBoardSizeWidth` float NOT NULL default '0',
+  `pBoardSizeHeight` float NOT NULL default '0',
+  `pTempWidth` float NOT NULL default '0',
+  `pTempHeight` float NOT NULL default '0',
+  `pGravity` float NOT NULL default '0',
+  `pVacuum` tinytext NOT NULL,
+  `pNightChance` int(11) NOT NULL default '0',
+  `pNightTempMod` int(11) NOT NULL default '0',
+  `pMinPlanetOwnership` int(11) NOT NULL default '0',
+  `pIsHomeworld` tinytext NOT NULL,
+  `pOriginalOwner` text NOT NULL,
+  `pName` text NOT NULL,
+  `pMaxConquestPoints` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`PlanetID`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `playerarmies`
+--
+DROP TABLE IF EXISTS `playerarmies`;
+CREATE TABLE `playerarmies` (
+  `playerID` int(10) unsigned NOT NULL,
+  `armyID` int(10) unsigned NOT NULL,
+  `armyString` text NOT NULL,
+  PRIMARY KEY  USING BTREE (`playerID`,`armyID`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `players`
+--
+DROP TABLE IF EXISTS `players`;
+CREATE TABLE `players` (
+  `playerID` int(10) unsigned NOT NULL auto_increment,
+  `playerName` varchar(45) NOT NULL,
+  `playerMoney` int(10) unsigned NOT NULL,
+  `playerExperience` int(10) unsigned NOT NULL,
+  `playerHouseName` text NOT NULL,
+  `playerLastOnline` text NOT NULL,
+  `playerTotalBays` int(10) unsigned NOT NULL,
+  `playerFreeBays` int(11) NOT NULL,
+  `playerRating` float NOT NULL,
+  `playerInfluence` int(10) unsigned NOT NULL,
+  `playerFluff` text NOT NULL,
+  `playerBaysOwned` int(10) unsigned default NULL,
+  `playerLogo` text NOT NULL,
+  `playerLastAFR` bigint(20) unsigned NOT NULL,
+  `playerGroupAllowance` int(10) unsigned NOT NULL,
+  `playerLastISP` text NOT NULL,
+  `playerIsInvisible` varchar(10) NOT NULL,
+  `playerTechnicians` int(10) unsigned default NULL,
+  `playerRP` int(10) unsigned NOT NULL,
+  `playerXPToReward` int(10) unsigned NOT NULL,
+  `playerAdminExcludeList` text NOT NULL,
+  `playerExcludeList` text NOT NULL,
+  `playerTotalTechsString` text NOT NULL,
+  `playerAvailableTechsString` text NOT NULL,
+  `playerPassword` varchar(45) default NULL,
+  `playerAccess` int(11) NOT NULL,
+  `playerUnitParts` text NOT NULL,
+  `playerAutoReorder` varchar(10) NOT NULL,
+  `playerPassTime` bigint(20) unsigned default NULL,
+  `playerLastModified` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  PRIMARY KEY  (`playerID`),
+  UNIQUE KEY `playerName` (`playerName`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `unit_ammo`
+--
+DROP TABLE IF EXISTS `unit_ammo`;
+CREATE TABLE `unit_ammo` (
+  `unitID` bigint(20) unsigned NOT NULL,
+  `ammoLocation` tinyint(3) unsigned NOT NULL,
+  `ammoHotLoaded` varchar(10) NOT NULL,
+  `ammoType` int(10) unsigned NOT NULL,
+  `ammoInternalName` varchar(100) NOT NULL,
+  `ammoShotsLeft` tinyint(3) unsigned NOT NULL,
+  PRIMARY KEY  (`unitID`,`ammoLocation`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `unit_mgs`
+--
+DROP TABLE IF EXISTS `unit_mgs`;
+CREATE TABLE `unit_mgs` (
+  `unitID` bigint(20) unsigned NOT NULL,
+  `mgLocation` int(10) unsigned NOT NULL,
+  `mgRapidFire` tinytext NOT NULL,
+  PRIMARY KEY  USING BTREE (`unitID`,`mgLocation`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `units`
+--
+DROP TABLE IF EXISTS `units`;
+CREATE TABLE `units` (
+  `MWID` int(10) unsigned NOT NULL,
+  `uFileName` text NOT NULL,
+  `uPosID` int(11) NOT NULL,
+  `uStatus` int(11) NOT NULL,
+  `uProducer` text NOT NULL,
+  `uWeightClass` int(10) unsigned NOT NULL,
+  `uAutoEject` tinytext NOT NULL,
+  `uHasSpotlight` tinytext NOT NULL,
+  `uIsUsingSpotlight` tinytext NOT NULL,
+  `uTargetSystem` int(10) unsigned NOT NULL,
+  `uScrappableFor` int(11) NOT NULL,
+  `uBattleDamage` text NOT NULL,
+  `uLastCombatPilot` int(11) NOT NULL,
+  `uCurrentRepairCost` int(10) unsigned NOT NULL,
+  `uLifetimeRepairCost` int(10) unsigned NOT NULL,
+  `uPlayerID` int(10) unsigned default NULL,
+  `uFactionID` int(10) unsigned default NULL,
+  `ID` bigint(20) unsigned NOT NULL auto_increment,
+  `uType` int(10) unsigned NOT NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `config`
+--
+CREATE TABLE `config` (
+  `config_key` VARCHAR(100) NOT NULL DEFAULT ' ',
+  `config_value` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`config_key`, `config_value`)
+)
+ENGINE = InnoDB;
+--
+-- Insert data for table `config`
+--
+INSERT into `config` SET config_key='mekwars_database_version', config_value='1';
+

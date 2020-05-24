@@ -1,0 +1,5 @@
+#Timestamp=1589743984620
+Assassination*40*#00c090*0*any*none*5*51*0*200*false*false*allFactions*^ ^*^ ^*0*false*
+Deep Strike*20*#B22222*0*any*none*5*51*0*30*false*false*allFactions*^ ^*^ ^*0*false*
+Raid*30*#B2B200*0*any*none*5*51*0*200*false*false*allFactions*^ ^*^ ^*0*false*
+Skirmish*20*#B22222*0*any*none*20*51*20*200*false*false*allFactions*^ ^*^ ^*0*true*

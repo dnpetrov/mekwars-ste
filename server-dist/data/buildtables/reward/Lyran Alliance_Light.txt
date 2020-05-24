@@ -1,0 +1,20 @@
+5 Wasp WSP-3S.mtf
+66 Commando COM-7S.mtf
+45 Tarantula ZPH-2A.mtf
+23 Tarantula ZPH-3A.mtf
+9 Tarantula ZPH-4A.mtf
+7 Battle Hawk BH-K306.mtf
+10 Jackal JA-KL-55.mtf
+24 Osiris OSR-3D.mtf
+5 Osiris OSR-4D.mtf
+26 Razorback RZK-9S.mtf
+13 Razorback RZK-9T.mtf
+23 Urbanmech UM-R69.mtf
+20 Ostscout OTT-9S.mtf
+53 Stiletto STO-4A.mtf
+33 Stiletto STO-4B.mtf
+31 Talon TLN-5Z.mtf
+25 Wolfhound WLF-3S.mtf
+50 LA Special
+25 Clan
+5 Solaris

@@ -1,0 +1,5 @@
+29 Locust LCT-1E.mtf
+12 Locust LCT-1L.mtf
+21 Locust LCT-1V.mtf
+70 Locust LCT-3M.mtf
+7 Locust LCT-3V.mtf

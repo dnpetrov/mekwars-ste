@@ -1,0 +1,5 @@
+ALTER TABLE `unit_history` ADD COLUMN `event_type` INTEGER UNSIGNED NOT NULL DEFAULT 0 AFTER `unit_id`;
+
+ALTER TABLE `pilot_history` ADD COLUMN `event_type` INTEGER UNSIGNED NOT NULL DEFAULT 0 AFTER `event_fluff`;
+
+UPDATE config set config_value='25' WHERE config_key='mekwars_database_version';

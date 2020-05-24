@@ -1,0 +1,6 @@
+30 Locust LCT-1E.mtf
+51 Locust LCT-1V.mtf
+168 Locust LCT-3M.mtf
+10 Locust LCT-3V.mtf
+132 Tarantula ZPH-1A.mtf
+42 Tarantula ZPH-2A.mtf

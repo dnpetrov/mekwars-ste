@@ -1,0 +1,9 @@
+35 Foot Laser Platoon (Flamer).blk
+35 Foot Laser Platoon (Support Laser).blk
+78 Foot Rifle Platoon (Semi-Portable AC).blk
+53 Jump Grenadier Platoon (HGL)(TC).blk
+35 Jump Rifle Platoon (MG)(TC).blk
+35 Jump Vibro-Sword Platoon (Sunbeam)(TC).blk
+53 Motorized Grenadier Platoon (HGL).blk
+35 Motorized Rifle Platoon (MG).blk
+35 Motorized Vibro-Sword Platoon (Sunbeam).blk

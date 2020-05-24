@@ -1,0 +1,14 @@
+36 Mantis Light Attack VTOL.blk
+23 Cavalry Attack Helicopter (Infantry).blk
+45 Hawk Moth Gunship.blk
+45 Hawk Moth Gunship (Armor).blk
+50 Scorpion Light Tank (MRM).blk
+23 Karnov UR Transport (BA).blk
+25 Main Gauche Light Support Tank.blk
+13 Main Gauche Light Support Tank (C3).blk
+13 Main Gauche Light Support Tank (XL).blk
+9 Yellow Jacket Gunship (RAC).blk
+14 Plainsman Medium Hovertank (Scout).blk
+36 Saladin Assault Hover Tank (LB-X).blk
+18 Saladin Assault Hover Tank (Ultra).blk
+39 SLDF Royal

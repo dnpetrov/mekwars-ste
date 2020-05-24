@@ -1,0 +1,7 @@
+ALTER TABLE `factions` ADD COLUMN `fString` TEXT AFTER `ID`;
+ALTER TABLE `players` ADD COLUMN `playerString` TEXT AFTER `playerTeamNumber`;
+
+ALTER TABLE `factions` ADD UNIQUE INDEX `factionNameIndex`(`fName`);
+
+UPDATE config set config_value='30' WHERE config_key='mekwars_database_version';
+

@@ -1,0 +1,12 @@
+5 Awesome AWS-10KM.mtf
+6 BattleMaster BLR-5M.mtf
+42 Longbow LGB-12C.mtf
+38 Stalker STK-6M.mtf
+31 Albatross ALB-4U.mtf
+27 Cerberus MR-V3.mtf
+52 Sirocco SRC-3C.mtf
+63 Sirocco SRC-5C.mtf
+19 Marauder II MAD-4S.mtf
+34 FWL Special
+17 Clan
+3 Solaris

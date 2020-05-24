@@ -1,0 +1,33 @@
+24 Black Hawk-KU BHKU-OE.mtf
+16 Black Hawk-KU BHKU-OR.mtf
+52 Helios HEL-4A.mtf
+50 Helios HEL-C.mtf
+1 Ostroc OSR-4C.mtf
+13 Ostroc OSR-4L.mtf
+66 Ti Ts'ang TSG-9J.mtf
+38 Catapult CPLT-C2.mtf
+53 Catapult CPLT-C5.mtf
+5 Crusader CRD-7L.mtf
+66 Jinggau JN-G8A.mtf
+5 Thunderbolt TDR-7SE.mtf
+5 Thunderbolt TDR-9M.mtf
+5 Thunderbolt TDR-10SE.mtf
+1 Archer ARC-6W.mtf
+6 Archer ARC-7L.mtf
+5 Archer ARC-8M.mtf
+45 Avatar AV1-OD.mtf
+18 Avatar AV1-OF.mtf
+6 Cataphract CTF-4L.mtf
+30 Thunder THR-2L.mtf
+12 Thunder THR-3L.mtf
+6 Warhammer WHM-4L.mtf
+11 Warhammer WHM-8D.mtf
+4 Bandersnatch BNDR-01B.mtf
+40 Lao Hu LHU-2B.mtf
+31 Lao Hu LHU-3B.mtf
+25 Lao Hu LHU-3C.mtf
+6 Marauder MAD-5L.mtf
+16 War Dog WR-DG-03FC.mtf
+79 TA Special
+39 Clan
+8 Solaris

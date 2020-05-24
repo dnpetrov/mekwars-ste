@@ -1,0 +1,8 @@
+22 Ferret Light Scout VTOL.blk
+5 Ferret Light Scout VTOL (Armor) Wild Weasel.blk
+13 Ripper Infantry Transport.blk
+13 Ripper Infantry Transport (ERML).blk
+15 Ripper Infantry Transport (MG).blk
+13 Ripper Infantry Transport (SPL).blk
+9 Marten Scout VTOL (Standard).blk
+9 Marten Scout VTOL (Infantry).blk

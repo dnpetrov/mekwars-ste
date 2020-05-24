@@ -1,0 +1,16 @@
+13 Flatbed Truck (LRM).blk
+13 Flatbed Truck (Mortar).blk
+13 Flatbed Truck (SRM).blk
+19 Packrat LRPV PKR-T5.blk
+3 Packrat LRPV PKR-T5 (ICE).blk
+13 Packrat LRPV PKR-T5 (SRM2).blk
+84 Harasser Missile Platform.blk
+4 Harasser Missile Platform (Flamer).blk
+4 Harasser Missile Platform (Mini-Peggy).blk
+10 Mobile Headquarters.blk
+11 Mobile Headquarters (LL).blk
+11 Mobile Headquarters (LRM).blk
+20 Striker Light Tank.blk
+55 Striker Light Tank (Ammo).blk
+8 Striker Light Tank (LRM).blk
+8 Striker Light Tank (SRM).blk

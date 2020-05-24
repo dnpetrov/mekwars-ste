@@ -1,0 +1,8 @@
+96 Partisan Heavy Tank.blk
+132 Partisan Air Defense Tank.blk
+26 Partisan Air Defense Tank (Company Command).blk
+26 Partisan Air Defense Tank (Lance Command).blk
+26 Partisan Air Defense Tank (XL).blk
+6 Partisan Heavy Tank (AC2).blk
+72 Partisan Heavy Tank (C3).blk
+4 Partisan Heavy Tank (LRM).blk

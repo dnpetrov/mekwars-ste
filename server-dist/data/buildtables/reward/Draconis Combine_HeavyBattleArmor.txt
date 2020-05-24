@@ -1,0 +1,4 @@
+42 IS Standard Battle Armor [LRR].blk
+7 Kage Light Battle Armor (Space).blk
+26 Raiden Battle Armor [MRM].blk
+7 Void Medium Battle Armor.blk

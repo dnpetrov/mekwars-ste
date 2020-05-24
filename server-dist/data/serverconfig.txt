@@ -3,7 +3,7 @@
 
 #SERVER NAME
 #-----------
-SERVERNAME=ExampleTech
+SERVERNAME=Mekwars: StarTerra League
 
 #CHAT SERVER SETUP
 #
@@ -24,7 +24,21 @@ DATAPORT=4867
 
 #TRACKER SETUP
 #
-#This has been moved to CampaignConfig.  Please configure it in the Tracker tab
+#If USETRACKER is false, all other setting in this
+#block may be ignored. Contact the mekwars.org staff
+#for the settings required to list on their tracker.
+#-------------
+USETRACKER=false
+TRACKERADDRESS=banshee.mekwars.org
+TRACKERLINK=https://vk.cc/68SUVB
+TRACKERDESC=Server campaign set in year 3062: Civil War.
+
+#CYCLOPS SETUP
+#-------------
+USECYCLOPS=false
+CYCLOPSIP=muposerver.dyndns.org
+CYCLOPSURL=http://muposerver.dyndns.org/devel/cyclops/XMLRPC/
+CYCLOPSDEBUG=false
 
 #CAMPAIGN CONFIG PATH
 #
@@ -44,5 +58,28 @@ CAMPAIGNCONFIG=./data/campaignconfig.txt
 #The message may be as long as you like, but must be on one line
 #in order for the Java.Properties to read it in correctly.
 #-----------------------
-INFOMESSAGE=<a href="http://www.sourceforge.net/projects/mekwars">Click here to visit the MekWars project page.</a> This is a default message.<br> to make yourself an admin register your player name and then type in the following commands: /adminpassword level#your name#200<br>/Adminsetcommandlevel adminpassword#200<br>/Adminsavecommandlevels Server admins --- you may edit this message in serverconfig.txt
+INFOMESSAGE=empty yet
+
+#MYSQL DataBase setup
+#
+#These settings are used to allow the server to connect to
+#the MYSQL DB.
+#--------------------
+USEMYSQL=false
+MYSQLUSER=sa
+MYSQLPASS=master
+MYSQLHOST=localhost
+MYSQLDB=mekwars
+MYSQL_SYNCHPHPBB=false
+PHPBB_USER=sa
+PHPBB_PASS=master
+PHPBB_HOST=localhost
+PHPBB_DB=phpbb
+PHPBB_MAJOR_VERSION=2
+PHPBB_TABLE_PREFIX=phpbb_
+PHPBB_URL=http://localhost/phpbb/index.php
+MAILHOST=localhost
+MAILPASSREQUIRED=false
+MAILUSER=mailuser
+MAILPASS=mailpassword
 

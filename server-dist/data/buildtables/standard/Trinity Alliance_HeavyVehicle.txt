@@ -1,0 +1,23 @@
+8 AC2 Carrier.blk
+99 Bulldog Medium Tank.blk
+24 Bulldog Medium Tank (AC2).blk
+24 Bulldog Medium Tank (LRM).blk
+13 Laser Carrier.blk
+58 LRM Carrier.blk
+56 LRM Carrier (3055 Upgrade).blk
+99 Manticore Heavy Tank.blk
+79 Pike Support Vehicle.blk
+1 Pike Support Vehicle (AC5).blk
+1 Pike Support Vehicle (Missile).blk
+149 Po Heavy Tank.blk
+70 SRM Carrier.blk
+64 SRM Carrier (3054 Upgrade).blk
+8 Thumper Artillery Vehicle.blk
+4 Rommel Tank (Gauss).blk
+48 Brutus Assault Tank.blk
+26 Brutus Assault Tank (LRM).blk
+26 Brutus Assault Tank (PPC).blk
+11 Brutus Assault Tank (PPC 2).blk
+11 Padilla Heavy Artillery Tank.blk
+14 Padilla Heavy Artillery Tank (LRM).blk
+50 Zhukov Heavy Tank.blk

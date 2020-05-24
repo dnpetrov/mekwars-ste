@@ -1,0 +1,20 @@
+5 Awesome AWS-10KM.mtf
+33 Charger CGR-SA5.mtf
+6 Thug THG-12K.mtf
+26 BattleMaster BLR-CM.mtf
+26 BattleMaster BLR-K3.mtf
+31 Gunslinger GUN-2ERD.mtf
+53 Tai-sho TSH-7S.mtf
+25 Akuma AKU-1XJ.mtf
+10 Mad Cat Mk II.mtf
+40 Mauler MAL-3R.mtf
+26 Sunder SD1-OD.mtf
+17 Sunder SD1-OR.mtf
+30 Cerberus MR-V3.mtf
+33 Naginata NG-C3B.mtf
+13 Naginata NG-C3C.mtf
+16 Atlas C.mtf
+19 Marauder II MAD-4S.mtf
+49 DC Special
+24 Clan
+5 Solaris

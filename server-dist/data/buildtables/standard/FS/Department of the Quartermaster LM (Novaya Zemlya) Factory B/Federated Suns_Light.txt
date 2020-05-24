@@ -1,0 +1,29 @@
+82 Commando COM-5S.mtf
+55 Dart DRT-3S.mtf
+50 Dart DRT-4S.mtf
+50 Dart DRT-6S.mtf
+16 Tarantula ZPH-1A.mtf
+13 Tarantula ZPH-2A.mtf
+87 Battle Hawk BH-K305.mtf
+32 Jackal JA-KL-1532.mtf
+40 Scarabus SCB-9A.mtf
+15 Scarabus SCB-9T.mtf
+13 Falcon Hawk FNHK-9K.mtf
+13 Falcon Hawk FNHK-9K1A.mtf
+43 Firestarter FS9-H.mtf
+109 Firestarter FS9-S.mtf
+78 Firestarter FS9-S1.mtf
+64 Hollander BZK-F3.mtf
+15 Hollander BZK-G1.mtf
+29 Night Hawk NTK-2Q.mtf
+14 Night Hawk NTK-2S.mtf
+25 Owens OW-1.mtf
+25 Owens OW-1A.mtf
+28 Owens OW-1B.mtf
+34 Owens OW-1C.mtf
+25 Owens OW-1D.mtf
+23 Owens OW-1E.mtf
+8 Owens OW-1R.mtf
+53 Spector SPR-5F.mtf
+40 Wolfhound WLF-1.mtf
+120 Wolfhound WLF-2.mtf

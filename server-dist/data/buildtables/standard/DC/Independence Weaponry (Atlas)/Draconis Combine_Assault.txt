@@ -1,0 +1,8 @@
+26 Atlas AS7-C.mtf
+26 Atlas AS7-CM.mtf
+35 Atlas AS7-D.mtf
+4 Atlas AS7-D-DC.mtf
+112 Atlas AS7-K.mtf
+12 Atlas AS7-K-DC.mtf
+5 Atlas AS7-RS.mtf
+7 Atlas C.mtf

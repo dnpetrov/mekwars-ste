@@ -1,0 +1,12 @@
+3 Victor VTR-9A.mtf
+3 Victor VTR-9A1.mtf
+19 Victor VTR-9B.mtf
+101 Victor VTR-9K.mtf
+15 Cerberus MR-5M.mtf
+52 Cerberus MR-V2.mtf
+13 Cerberus MR-V3.mtf
+38 Atlas AS7-D.mtf
+4 Atlas AS7-D-DC.mtf
+105 Atlas AS7-K.mtf
+11 Atlas AS7-K-DC.mtf
+6 Atlas AS7-RS.mtf

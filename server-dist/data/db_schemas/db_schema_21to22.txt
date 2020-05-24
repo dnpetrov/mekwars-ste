@@ -1,0 +1,5 @@
+ALTER TABLE `unit_history` MODIFY COLUMN `event_id` BIGINT UNSIGNED NOT NULL DEFAULT NULL AUTO_INCREMENT,
+ ADD COLUMN `unit_id` INTEGER UNSIGNED NOT NULL AFTER `event_fluff`;
+ 
+UPDATE config set config_value='22' WHERE config_key='mekwars_database_version';
+ 

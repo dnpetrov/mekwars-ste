@@ -1,0 +1,17 @@
+30 Locust LCT-1E.mtf
+33 Locust LCT-1V.mtf
+91 Locust LCT-3M.mtf
+10 Locust LCT-3V.mtf
+25 Thorn THE-S.mtf
+15 Thorn THE-T.mtf
+21 Hussar HSR-200-D.mtf
+45 Hussar HSR-300-D.mtf
+15 Hussar HSR-350-D.mtf
+13 Javelin JVN-10F Fire Javelin.mtf
+77 Javelin JVN-10N.mtf
+32 UrbanMech UM-R60.mtf
+24 Firestarter FS9-H.mtf
+26 Firestarter FS9-S.mtf
+26 Firestarter FS9-S1.mtf
+26 Ostscout OTT-7J.mtf
+27 Ostscout OTT-7K.mtf

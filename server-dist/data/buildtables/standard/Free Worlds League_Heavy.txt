@@ -1,0 +1,76 @@
+31 Anvil ANV-3M.mtf
+20 Anvil ANV-5M.mtf
+18 Anvil ANV-6M.mtf
+18 Anvil ANV-8M.mtf
+12 Champion CHP-1N2.mtf
+18 Champion CHP-2N.mtf
+27 Ostroc OSR-2C.mtf
+46 Ostroc OSR-2D.mtf
+8 Ostroc OSR-2L.mtf
+24 Ostroc OSR-2M.mtf
+8 Ostroc OSR-3C.mtf
+12 Ostsol OTL-4D.mtf
+83 Ostsol OTL-5M.mtf
+65 Quickdraw QKD-4G.mtf
+30 Quickdraw QKD-4H.mtf
+30 Quickdraw QKD-5A.mtf
+47 Quickdraw QKD-5M.mtf
+19 Rifleman RFL-3N.mtf
+90 Rifleman RFL-5M.mtf
+62 Yeoman YMN-6Y.mtf
+33 Bombardier BMB-10D.mtf
+12 Catapult CPLT-C1.mtf
+13 Cestus CTS-6Y.mtf
+31 Crusader CRD-3R.mtf
+166 Crusader CRD-5M.mtf
+8 JagerMech JM6-S.mtf
+20 Tempest TMP-3G.mtf
+96 Tempest TMP-3M.mtf
+20 Tempest TMP-3MA.mtf
+30 Thunderbolt TDR-5S.mtf
+157 Thunderbolt TDR-7M.mtf
+28 Archer ARC-2R.mtf
+122 Archer ARC-4M.mtf
+13 Avatar AV1-O.mtf
+13 Avatar AV1-OA.mtf
+13 Avatar AV1-OB.mtf
+13 Avatar AV1-OC.mtf
+12 Avatar AV1-OD.mtf
+13 Avatar AV1-OG.mtf
+13 Gallowglas GAL-1GLS.mtf
+13 Gallowglas GAL-2GLS.mtf
+44 Grasshopper GHR-5H.mtf
+14 Grasshopper GHR-5J.mtf
+21 Grasshopper GHR-5N.mtf
+14 Grasshopper GHR-C.mtf
+22 Guillotine GLT-4L.mtf
+72 Guillotine GLT-5M.mtf
+51 Hercules HRC-LS-9000.mtf
+20 Hercules HRC-LS-9001.mtf
+26 Warhammer WHM-6R.mtf
+3 Warhammer WHM-6R-DC.mtf
+134 Warhammer WHM-7M.mtf
+15 Warhammer WHM-7M-DC.mtf
+12 Black Knight BL-6-KNT.mtf
+12 Black Knight BL6b-KNT.mtf
+12 Black Knight BL-7-KNT.mtf
+15 Black Knight BL-7-KNT-L.mtf
+25 Marauder MAD-3M.mtf
+3 Marauder MAD-3M-DC.mtf
+10 Marauder MAD-3R.mtf
+167 Marauder MAD-5M.mtf
+37 Orion ON1-K.mtf
+178 Orion ON1-M.mtf
+20 Orion ON1-M-DC.mtf
+27 Orion ON1-MA.mtf
+26 Orion ON1-MB.mtf
+26 Orion ON1-MD.mtf
+11 Orion ON1-V.mtf
+2 Orion ON1-V-DC.mtf
+7 Orion ON1-VA.mtf
+27 Perseus P1 Prime.mtf
+27 Perseus P1 A.mtf
+27 Perseus P1 B.mtf
+27 Perseus P1 C.mtf
+27 Perseus P1 D.mtf
+30 War Dog WR-DG-02FC.mtf

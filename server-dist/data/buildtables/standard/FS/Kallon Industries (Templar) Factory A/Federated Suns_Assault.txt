@@ -1,0 +1,4 @@
+55 Templar TLR1-O.mtf
+46 Templar TLR1-OA.mtf
+46 Templar TLR1-OB.mtf
+42 Templar TLR1-OC.mtf

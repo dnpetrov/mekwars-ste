@@ -1,0 +1,9 @@
+78 Foot Laser Platoon (Dragonsbane).blk
+90 Foot Laser Platoon (Flamer).blk
+135 Foot Laser Platoon (Semi-Portable PPC).blk
+25 Jump Grenadier Platoon (HGL).blk
+55 Jump Rifle Platoon (Tsunami Heavy).blk
+168 Jump Vibro-Katana Platoon (Nakjima).blk
+25 Motorized Grenadier Platoon (HGL).blk
+55 Motorized Rifle Platoon (Tsunami Heavy).blk
+168 Motorized Vibro-Katana Platoon (Nakjima).blk

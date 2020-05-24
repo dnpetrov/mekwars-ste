@@ -1,0 +1,6 @@
+150 Hetzer Wheeled Assault Gun.blk
+20 Hetzer Wheeled Assault Gun (AC10).blk
+20 Hetzer Wheeled Assault Gun (Laser).blk
+20 Hetzer Wheeled Assault Gun (LRM).blk
+10 Hetzer Wheeled Assault Gun (Scout).blk
+20 Hetzer Wheeled Assault Gun (SRM).blk

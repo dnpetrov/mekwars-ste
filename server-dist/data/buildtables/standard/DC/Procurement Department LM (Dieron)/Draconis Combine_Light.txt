@@ -1,0 +1,12 @@
+47 Wasp WSP-1A.mtf
+53 Wasp WSP-1K.mtf
+117 Wasp WSP-3M.mtf
+13 Tarantula ZPH-1A.mtf
+12 Tarantula ZPH-2A.mtf
+17 Copperhead CPR-HD-002.mtf
+15 Hermes HER-4K.mtf
+13 Jackal JA-KL-1532.mtf
+13 Falcon Hawk FNHK-9K1A.mtf
+5 Jenner IIC 4.mtf
+13 Raven RVN-3M.mtf
+12 Talon TLN-5Z.mtf

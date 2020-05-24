@@ -1,0 +1,4 @@
+75 Daimyo DMO-1K.mtf
+20 Daimyo DMO-2K.mtf
+18 Daimyo DMO-4K.mtf
+18 Daimyo DMO-5K.mtf

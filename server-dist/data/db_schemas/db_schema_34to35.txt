@@ -1,0 +1,5 @@
+ALTER TABLE `factions` MODIFY COLUMN `fString` LONGTEXT;
+
+ALTER TABLE `factioncomponents` MODIFY COLUMN `components` INT(10) UNSIGNED NOT NULL DEFAULT 0;
+
+UPDATE config set config_value='35' WHERE config_key='mekwars_database_version';

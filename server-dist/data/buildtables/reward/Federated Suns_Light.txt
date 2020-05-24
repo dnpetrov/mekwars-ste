@@ -1,0 +1,24 @@
+10 Locust LCT-5M.mtf
+5 Wasp WSP-3S.mtf
+48 Raptor RTX1-OF.mtf
+16 Raptor RTX1-OR.mtf
+45 Tarantula ZPH-2A.mtf
+23 Tarantula ZPH-3A.mtf
+9 Tarantula ZPH-4A.mtf
+10 Jackal JA-KL-55.mtf
+40 Javelin JVN-11D.mtf
+26 Osiris OSR-3D.mtf
+5 Osiris OSR-4D.mtf
+24 Razorback RZK-9S.mtf
+14 Urbanmech UM-R68.mtf
+23 Urbanmech UM-R69.mtf
+12 UrbanMech UM-R70.mtf
+7 Valkyrie VLK-QD1.mtf
+7 Valkyrie VLK-QD3.mtf
+40 Garm GRM-01C.mtf
+48 Owens OW-1E.mtf
+16 Owens OW-1R.mtf
+29 Talon TLN-5Z.mtf
+54 FS Special
+27 Clan
+5 Solaris

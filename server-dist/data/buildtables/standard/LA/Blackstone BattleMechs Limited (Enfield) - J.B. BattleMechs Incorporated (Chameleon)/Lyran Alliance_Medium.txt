@@ -1,0 +1,6 @@
+5 Chameleon CLN-7V.mtf
+20 Chameleon CLN-7W.mtf
+20 Chameleon CLN-7Z.mtf
+3 Chameleon TRC-4B.mtf
+15 Enfield END-6J.mtf
+32 Enfield END-6Q.mtf

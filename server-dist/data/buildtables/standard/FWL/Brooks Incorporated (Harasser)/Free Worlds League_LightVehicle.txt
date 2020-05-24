@@ -1,0 +1,5 @@
+37 Harasser Missile Platform.blk
+12 Harasser Laser Platform.blk
+4 Harasser Missile Platform (Mini-Peggy).blk
+4 Harasser Missile Platform (Flamer).blk
+12 Harasser Missile Platform (LRM).blk

@@ -1,0 +1,5 @@
+ALTER TABLE `pilotskills` DROP PRIMARY KEY,
+ ADD PRIMARY KEY  USING BTREE(`pilotID`, `SkillNum`);
+ 
+ UPDATE config set config_value='26' WHERE config_key='mekwars_database_version';
+ 

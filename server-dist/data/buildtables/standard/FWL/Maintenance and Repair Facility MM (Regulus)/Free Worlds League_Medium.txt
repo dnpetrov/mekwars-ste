@@ -1,0 +1,10 @@
+35 Assassin ASN-21.mtf
+12 Clint CLNT-2-3T.mtf
+20 Blackjack BJ-1.mtf
+18 Wyvern WVE-6N.mtf
+9 Centurion CN9-A.mtf
+21 Centurion CN9-D.mtf
+20 Centurion CN9-D3D.mtf
+20 Centurion CN10-B.mtf
+26 Cronus CNS-3M.mtf
+51 Dervish DV-6M.mtf

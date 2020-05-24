@@ -1,0 +1,7 @@
+378 SLDF Royal
+10 Zeus ZEU-5S.mtf
+10 Zeus ZEU-5T.mtf
+1 Ymir BWP-2B.mtf
+1 Ymir BWP-2E.mtf
+10 Ymir BWP-3A.mtf
+10 King Crab KGC-020 Tiger Shark.MTF

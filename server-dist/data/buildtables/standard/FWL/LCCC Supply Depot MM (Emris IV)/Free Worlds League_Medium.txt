@@ -1,0 +1,19 @@
+12 Bishamon BSN-3K.mtf
+16 Firestarter FS9-O.mtf
+16 Firestarter FS9-OA.mtf
+16 Firestarter FS9-OB.mtf
+16 Firestarter FS9-OC.mtf
+16 Firestarter FS9-OD.mtf
+14 Firestarter FS9-OE.mtf
+14 Firestarter FS9-OF.mtf
+5 Firestarter FS9-OR.mtf
+13 Snake SNK-1V.mtf
+12 Blitzkrieg BTZ-3F.mtf
+4 Chameleon CLN-7V.mtf
+18 Chameleon CLN-7W.mtf
+18 Chameleon CLN-7Z.mtf
+3 Chameleon TRC-4B.mtf
+13 Huron Warrior HUR-WO-R4L.mtf
+13 Huron Warrior HUR-WO-R4M.mtf
+12 Lineholder KW1-LH2.mtf
+12 Lineholder KW1-LH3.mtf

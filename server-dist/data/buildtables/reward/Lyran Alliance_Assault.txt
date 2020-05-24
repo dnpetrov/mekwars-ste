@@ -1,0 +1,37 @@
+13 Goliath GOL-3S.mtf
+7 Goliath GOL-4S.mtf
+52 Salamander PPR-6T.mtf
+26 Salamander PPR-7S.mtf
+36 Victor VTR-10S.mtf
+40 Zeus ZEU-9T.mtf
+5 Zeus X ZEU-9WD.mtf
+22 Zeus X ZEU-X.mtf
+38 BattleMaster BLR-4S.mtf
+31 Gunslinger GUN-2ERD.mtf
+42 Longbow LGB-12C.mtf
+24 Stalker STK-8S.mtf
+40 Highlander HGN-694.mtf
+40 Highlander HGN-734.mtf
+10 Mad Cat Mk II.mtf
+48 Mauler MAL-2R.mtf
+26 Sunder SD1-OD.mtf
+17 Sunder SD1-OR.mtf
+40 Banshee BNC-6S.mtf
+33 Banshee BNC-7S.mtf
+27 Cerberus MR-V3.mtf
+33 Hauptmann HA1-O.mtf
+33 Hauptmann HA1-OA.mtf
+33 Hauptmann HA1-OB.mtf
+26 Hauptmann HA1-OC.mtf
+16 Nightstar NSR-9SS.mtf
+53 Atlas AS7-S2.mtf
+40 Atlas AS7-S3.mtf
+16 Atlas C.mtf
+7 Berserker BRZ-C3.mtf
+33 Fafnir FNR-5.mtf
+20 Fafnir FNR-5B.mtf
+19 Marauder II MAD-4S.mtf
+20 Thunder Hawk TDK-7S.mtf
+115 LA Special
+58 Clan
+12 Solaris

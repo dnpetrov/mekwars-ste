@@ -1,0 +1,4 @@
+80 Goblin Medium Tank.blk
+79 Goblin Infantry Support Vehicle.blk
+26 Goblin Medium Tank (LRM).blk
+7 Goblin Medium Tank (SRM).blk

@@ -1,0 +1,3 @@
+20 Tempest TMP-3G.mtf
+96 Tempest TMP-3M.mtf
+20 Tempest TMP-3MA.mtf

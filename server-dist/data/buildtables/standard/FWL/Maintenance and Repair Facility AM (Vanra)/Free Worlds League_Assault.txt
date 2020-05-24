@@ -1,0 +1,15 @@
+22 Charger CGR-1A1.mtf
+12 Zeus ZEU-6S.mtf
+13 Gunslinger GUN-1ERD.mtf
+10 Cyclops CP-10-Q.mtf
+32 Cyclops CP-10-Z.mtf
+4 Cyclops CP-10-Z-DC.mtf
+110 Cyclops CP-11-A.mtf
+12 Cyclops CP-11-A-DC.mtf
+21 Cyclops CP-11-C.mtf
+16 Banshee BNC-3E.mtf
+37 Banshee BNC-3M.mtf
+57 Banshee BNC-3Q.mtf
+13 Banshee BNC-3S.mtf
+4 King Crab KGC-0000.mtf
+21 King Crab KGC-001.mtf

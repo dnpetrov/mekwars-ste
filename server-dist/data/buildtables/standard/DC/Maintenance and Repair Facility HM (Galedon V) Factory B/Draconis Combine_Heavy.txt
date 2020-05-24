@@ -1,0 +1,39 @@
+35 Champion CHP-1N.mtf
+13 Champion CHP-1N2.mtf
+18 Champion CHP-2N.mtf
+85 Lancelot LNC25-01.mtf
+32 Lancelot LNC25-02.mtf
+34 Lancelot LNC25-03.mtf
+30 Ostroc OSR-2C.mtf
+74 Ostroc OSR-2D.mtf
+6 Ostroc OSR-2L.mtf
+4 Ostroc OSR-3C.mtf
+48 Ostsol OTL-4D.mtf
+18 Rifleman C.mtf
+25 Rifleman RFL-3N.mtf
+52 Rifleman RFL-5M.mtf
+4 Vulture (Mad Dog) Prime.mtf
+4 Vulture (Mad Dog) A.mtf
+4 Vulture (Mad Dog) B.mtf
+4 Vulture (Mad Dog) C.mtf
+4 Vulture (Mad Dog) D.mtf
+4 Vulture (Mad Dog) H.mtf
+26 Bombardier BMB-10D.mtf
+6 Cauldron-Born (Ebon Jaguar) Prime.mtf
+6 Cauldron-Born (Ebon Jaguar) A.mtf
+6 Cauldron-Born (Ebon Jaguar) B.mtf
+6 Cauldron-Born (Ebon Jaguar) C.mtf
+5 Cauldron-Born (Ebon Jaguar) D.mtf
+5 Cauldron-Born (Ebon Jaguar) H.mtf
+13 Cestus CTS-6Y.mtf
+12 Exterminator EXT-4D.mtf
+28 Archer ARC-2K.mtf
+13 Archer ARC-2R.mtf
+38 Archer ARC-4M.mtf
+85 Archer ARC-5R.mtf
+13 Archer C.mtf
+19 Guillotine GLT-3N.mtf
+47 Guillotine GLT-4L.mtf
+16 Black Knight BL-6-KNT.mtf
+9 Black Knight BL-7-KNT.mtf
+9 Flashman FLS-7K.mtf

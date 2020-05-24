@@ -1,0 +1,23 @@
+26 Helios HEL-3D.mtf
+8 Thunderbolt C.mtf
+14 Thunderbolt TDR-5S.mtf
+22 Thunderbolt TDR-7M.mtf
+26 Thunderbolt TDR-9S.mtf
+23 Thunderbolt TDR-9SE.mtf
+15 Archer ARC-2R.mtf
+28 Archer ARC-4M.mtf
+31 Archer ARC-5S.mtf
+9 Archer C.mtf
+61 Gallowglas GAL-1GLS.mtf
+16 Gallowglas GAL-2GLS.mtf
+17 Bandersnatch BNDR-01A.mtf
+11 Orion ON1-K.mtf
+20 Orion ON1-M.mtf
+2 Orion ON1-M-DC.mtf
+22 Orion ON1-MA.mtf
+21 Orion ON1-MB.mtf
+21 Orion ON1-MC.mtf
+21 Orion ON1-MD.mtf
+4 Orion ON1-V.mtf
+4 Orion ON1-VA.mtf
+35 War Dog WR-DG-02FC.mtf

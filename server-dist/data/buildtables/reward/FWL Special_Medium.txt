@@ -1,0 +1,9 @@
+423 SLDF Royal
+3 Icarus II ICR-1S.mtf
+5 Kyudo KY2-D-02.mtf
+3 Phoenix Hawk PXH-2.mtf
+10 Wyvern WVE-5Nsl.mtf
+3 Rifleman RFL-1N.mtf
+3 Rifleman RFL-2N.mtf
+10 Trebuchet TBT-3C.mtf
+10 Griffin GRF-2N.mtf

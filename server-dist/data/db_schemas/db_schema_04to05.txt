@@ -1,0 +1,3 @@
+ALTER TABLE `units` ADD COLUMN `uIsUnitCommander` VARCHAR(10) NOT NULL DEFAULT 'false' AFTER `uType`;
+
+UPDATE config set config_value='5' WHERE config_key='mekwars_database_version';

@@ -1,0 +1,4 @@
+33 BattleMaster BLR-1G.mtf
+4 BattleMaster BLR-1G-DC.mtf
+136 BattleMaster BLR-3M.mtf
+15 BattleMaster BLR-3M-DC.mtf

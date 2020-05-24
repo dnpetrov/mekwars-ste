@@ -1,0 +1,5 @@
+61 Fa Shih Battle Armor [Flamer].blk
+61 Fa Shih Battle Armor [Laser].blk
+61 Fa Shih Battle Armor [LRR].blk
+61 Fa Shih Battle Armor [MG].blk
+61 Fa Shih Battle Armor [TAG].blk

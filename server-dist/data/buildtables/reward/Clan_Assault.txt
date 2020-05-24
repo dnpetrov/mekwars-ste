@@ -1,0 +1,36 @@
+18 Man O' War (Gargoyle) Prime.mtf
+18 Man O' War (Gargoyle) A.mtf
+18 Man O' War (Gargoyle) B.mtf
+18 Man O' War (Gargoyle) C.mtf
+18 Man O' War (Gargoyle) D.mtf
+12 Man O' War (Gargoyle) E.mtf
+12 Man O' War (Gargoyle) H.mtf
+12 Masakari (Warhawk) Prime.mtf
+12 Masakari (Warhawk) A.mtf
+12 Masakari (Warhawk) B.mtf
+12 Masakari (Warhawk) C.mtf
+10 Masakari (Warhawk) D.mtf
+10 Masakari (Warhawk) F.mtf
+8 Masakari (Warhawk) H.mtf
+15 Kingfisher Prime.mtf
+15 Kingfisher A.mtf
+15 Kingfisher B.mtf
+15 Kingfisher C.mtf
+15 Kingfisher D.mtf
+10 Kingfisher E.mtf
+10 Kingfisher H.mtf
+18 Gladiator (Executioner) Prime.mtf
+18 Gladiator (Executioner) A.mtf
+18 Gladiator (Executioner) B.mtf
+18 Gladiator (Executioner) C.mtf
+18 Gladiator (Executioner) D.mtf
+12 Gladiator (Executioner) E.mtf
+12 Gladiator (Executioner) H.mtf
+15 Daishi (Dire Wolf)  Prime.mtf
+15 Daishi (Dire Wolf) A.mtf
+15 Daishi (Dire Wolf) B.mtf
+12 Daishi (Dire Wolf) C.mtf
+10 Daishi (Dire Wolf) H.mtf
+12 Daishi (Dire Wolf) S.mtf
+12 Daishi (Dire Wolf) W.mtf
+10 Daishi (Dire Wolf) X.mtf

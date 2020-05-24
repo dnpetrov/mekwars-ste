@@ -1,0 +1,9 @@
+405 SLDF Royal
+10 Wyvern WVE-5Nsl.mtf
+10 Crab CRB-27sl.mtf
+3 Galahad GLH-1D.mtf
+3 Rifleman RFL-1N.mtf
+3 Rifleman RFL-2N.mtf
+3 Alfar AL-A1.mtf
+3 Alfar AL-D1 Dokkalfar.mtf
+10 Griffin GRF-2N.mtf

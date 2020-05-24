@@ -1,0 +1,23 @@
+30 Goliath GOL-1H.mtf
+8 Zeus ZEU-6S.mtf
+29 Longbow LGB-0W.mtf
+30 Longbow LGB-7Q.mtf
+14 Longbow LGB-7V.mtf
+33 Stalker STK-3F.mtf
+6 Stalker STK-3H.mtf
+6 Stalker STK-4N.mtf
+10 Stalker STK-4P.mtf
+71 Stalker STK-5M.mtf
+7 Cyclops CP-10-Q.mtf
+16 Cyclops CP-10-Z.mtf
+2 Cyclops CP-10-Z-DC.mtf
+21 Cyclops CP-11-A.mtf
+2 Cyclops CP-11-A-DC.mtf
+81 Cyclops CP-11-C.mtf
+28 Cyclops CP-12-K.mtf
+13 Emperor EMP-6A.mtf
+22 Banshee BNC-3E.mtf
+53 Banshee BNC-3S.mtf
+4 King Crab KGC-000.mtf
+6 King Crab KGC-0000.mtf
+34 King Crab KGC-001.mtf

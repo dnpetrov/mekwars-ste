@@ -1,0 +1,21 @@
+6 Anvil ANV-3R.mtf
+6 Anvil ANV-5Q.mtf
+63 Anvil ANV-8M.mtf
+18 Ostsol OTL-7M.mtf
+13 Ostsol OTL-8M.mtf
+13 Rifleman RFL-7M.mtf
+63 Yeoman YMN-6Y.mtf
+6 Tempest TMP-3M2_Storm_Tempest.mtf
+5 Thunderbolt TDR-9M.mtf
+5 Archer ARC-8M.mtf
+45 Avatar AV1-OD.mtf
+18 Avatar AV1-OF.mtf
+10 Warhammer WHM-8D.mtf
+16 Black Knight BL-6-KNT.mtf
+19 Black Knight BL6b-KNT.mtf
+31 Orion ON1-MD.mtf
+31 Orion ON2-M.mtf
+18 War Dog WR-DG-03FC.mtf
+46 FWL Special
+23 Clan
+5 Solaris

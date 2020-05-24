@@ -1,0 +1,19 @@
+12 Helios HEL-4A.mtf
+12 Helios HEL-C.mtf
+4 Ha Otoko.mtf
+12 Ha Otoko HKO-1C.mtf
+18 Thunderbolt C.mtf
+25 Thunderbolt TDR-5S.mtf
+52 Thunderbolt TDR-7M.mtf
+57 Gallowglas GAL-1GLS.mtf
+14 Gallowglas GAL-2GLS.mtf
+50 Dragon Fire DGR-3F.mtf
+14 Dragon Fire DGR-4F.mtf
+14 Orion ON1-K.mtf
+26 Orion ON1-M.mtf
+3 Orion ON1-M-DC.mtf
+29 Orion ON1-MA.mtf
+27 Orion ON1-MC.mtf
+4 Orion ON1-V.mtf
+3 Orion ON1-VA.mtf
+69 War Dog WR-DG-02FC.mtf

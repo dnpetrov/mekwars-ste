@@ -1,0 +1,8 @@
+40 Brutus Assault Tank.blk
+10 Brutus Assault Tank (LRM).blk
+10 Brutus Assault Tank (PPC 2).blk
+10 Brutus Assault Tank (PPC).blk
+44 Von Luckner Heavy Tank VNL-K65N.blk
+6 Von Luckner Heavy Tank VNL-K70.blk
+45 Von Luckner Heavy Tank VNL-K75N.blk
+18 Zhukov Heavy Tank.blk

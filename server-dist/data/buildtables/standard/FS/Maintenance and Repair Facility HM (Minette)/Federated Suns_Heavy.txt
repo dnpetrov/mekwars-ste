@@ -1,0 +1,27 @@
+12 Champion CHP-1N.mtf
+12 Champion CHP-1N2.mtf
+18 Champion CHP-2N.mtf
+27 Ostroc OSR-2C.mtf
+34 Ostroc OSR-2D.mtf
+8 Ostroc OSR-2L.mtf
+8 Ostroc OSR-3C.mtf
+55 Ostsol OTL-4D.mtf
+15 Ostsol OTL-4F.mtf
+26 Quickdraw QKD-4G.mtf
+12 Quickdraw QKD-4H.mtf
+12 Quickdraw QKD-5A.mtf
+13 Quickdraw QKD-5M.mtf
+18 Bombardier BMB-10D.mtf
+23 Catapult CPLT-C1.mtf
+15 Catapult CPLT-C3.mtf
+15 Catapult CPLT-C4C.mtf
+24 Crusader CRD-3D.mtf
+23 Crusader CRD-3R.mtf
+142 Crusader CRD-4D.mtf
+25 Crusader CRD-4K.mtf
+24 Crusader CRD-5M.mtf
+41 Crusader CRD-5S.mtf
+38 Guillotine GLT-4L.mtf
+15 Guillotine GLT-5M.mtf
+58 Guillotine GLT-8D.mtf
+19 Black Knight BL-7-KNT.mtf

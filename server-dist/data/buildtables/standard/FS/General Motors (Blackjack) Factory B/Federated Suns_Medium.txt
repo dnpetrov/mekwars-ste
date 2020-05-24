@@ -1,0 +1,5 @@
+24 Blackjack BJ-1.mtf
+6 Blackjack BJ-1DB.mtf
+6 Blackjack BJ-1DC.mtf
+133 Blackjack BJ-2.mtf
+60 Blackjack BJ-3.mtf

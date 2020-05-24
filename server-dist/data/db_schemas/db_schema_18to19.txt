@@ -1,0 +1,45 @@
+UPDATE `factions` set `fAllowDefectionsFrom`='0' WHERE `fAllowDefectionsFrom`='false';
+UPDATE `factions` set `fAllowDefectionsTo`='0' WHERE `fAllowDefectionsTo`='false';
+UPDATE `factions` set `fConquerable`='0' WHERE `fConquerable`='false';
+UPDATE `factions` set `fInHouseAttacks`='0' WHERE `fInHouseAttacks`='false';
+UPDATE `factions` set `fIsMercHouse`='0' WHERE `fIsMercHouse`='false';
+UPDATE `factions` set `fIsNewbieHouse`='0' WHERE `fIsNewbieHouse`='false';
+
+UPDATE `players` set `playerIsInvisible`='0' WHERE `playerIsInvisible`='false';
+UPDATE `players` set `playerAutoReorder`='0' WHERE `playerAutoReorder`='false';
+
+UPDATE `units` set `uAutoEject`='0' WHERE `uAutoEject`='false';
+UPDATE `units` set `uHasSpotlight`='0' WHERE `uHasSpotlight`='false';
+UPDATE `units` set `uIsUsingSpotlight`='0' WHERE `uIsUsingSpotlight`='false';
+
+UPDATE `factions` set `fAllowDefectionsFrom`='1' WHERE `fAllowDefectionsFrom`<>'0';
+UPDATE `factions` set `fAllowDefectionsTo`='1' WHERE `fAllowDefectionsTo`<>'0';
+UPDATE `factions` set `fConquerable`='1' WHERE `fConquerable`<>'0';
+UPDATE `factions` set `fInHouseAttacks`='1' WHERE `fInHouseAttacks`<>'0';
+UPDATE `factions` set `fIsMercHouse`='1' WHERE `fIsMercHouse`<>'0';
+UPDATE `factions` set `fIsNewbieHouse`='1' WHERE `fIsNewbieHouse`<>'0';
+
+UPDATE `players` set `playerIsInvisible`='1' WHERE `playerIsInvisible`<>'0';
+UPDATE `players` set `playerAutoReorder`='1' WHERE `playerAutoReorder`<>'0';
+
+UPDATE `units` set `uAutoEject`='1' WHERE `uAutoEject`<>'0';
+UPDATE `units` set `uHasSpotlight`='1' WHERE `uHasSpotlight`<>'0';
+UPDATE `units` set `uIsUsingSpotlight`='1' WHERE `uIsUsingSpotlight`<>'0';
+
+ALTER TABLE `factions` MODIFY COLUMN `fAllowDefectionsFrom` BOOLEAN NOT NULL DEFAULT 1,
+ MODIFY COLUMN `fAllowDefectionsTo` BOOLEAN NOT NULL DEFAULT 1,
+ MODIFY COLUMN `fConquerable` BOOLEAN NOT NULL DEFAULT 1,
+ MODIFY COLUMN `fInHouseAttacks` BOOLEAN NOT NULL DEFAULT 0,
+ MODIFY COLUMN `fIsMercHouse` BOOLEAN NOT NULL DEFAULT 0,
+ MODIFY COLUMN `fIsNewbieHouse` BOOLEAN NOT NULL DEFAULT 0;
+ 
+ALTER TABLE `players` MODIFY COLUMN `playerIsInvisible` BOOLEAN NOT NULL DEFAULT 0;
+ALTER TABLE `players` MODIFY COLUMN `playerAutoReorder` BOOLEAN NOT NULL DEFAULT 0;
+ALTER TABLE `units` MODIFY COLUMN `uAutoEject` BOOLEAN NOT NULL DEFAULT 0;
+ALTER TABLE `units` MODIFY COLUMN `uHasSpotlight` BOOLEAN NOT NULL DEFAULT 0,
+MODIFY COLUMN `uIsUsingSpotlight` BOOLEAN NOT NULL DEFAULT 0;
+
+ALTER TABLE `factioncomponents` MODIFY COLUMN `factionID` INTEGER UNSIGNED NOT NULL;
+  
+UPDATE config set config_value='19' WHERE config_key='mekwars_database_version';
+ 

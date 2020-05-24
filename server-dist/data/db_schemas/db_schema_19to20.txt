@@ -1,0 +1,13 @@
+ALTER TABLE `players` ADD COLUMN `playerLastPromoted` BIGINT UNSIGNED NOT NULL DEFAULT 0 AFTER `playerForumID`;
+
+UPDATE `unit_mgs` SET `mgRapidFire`=0 WHERE `mgRapidFire`='false';
+UPDATE `unit_mgs` SET `mgRapidFire`=1 WHERE `mgRapidFire`='true';
+
+ALTER TABLE `unit_mgs` MODIFY COLUMN `mgRapidFire` BOOLEAN NOT NULL DEFAULT 0,
+ ADD COLUMN `mgSlot` INTEGER UNSIGNED NOT NULL AFTER `mgRapidFire`;
+
+ALTER TABLE `unit_mgs` DROP PRIMARY KEY,
+ ADD PRIMARY KEY  USING BTREE(`unitID`, `mgLocation`, `mgSlot`);
+
+UPDATE config set config_value='20' WHERE config_key='mekwars_database_version';
+ 

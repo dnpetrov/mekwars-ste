@@ -1,0 +1,32 @@
+40 Assassin ASN-30.mtf
+24 Chimera CMA-1S.mtf
+40 Clint CLNT-5U.mtf
+48 Strider SR1-OF.mtf
+16 Strider SR1-OR.mtf
+63 Cobra CBR-02.mtf
+50 Firestarter FS9-OF.mtf
+25 Firestarter FS9-OG.mtf
+17 Firestarter FS9-OR.mtf
+17 Firestarter FS9-OX.mtf
+26 Hatchetman HCT-6S.mtf
+53 Hollander II BZK-F7.mtf
+7 Phoenix Hawk PXH-7S.mtf
+38 Stealth STH-2D.mtf
+29 Stealth STH-2D1.mtf
+29 Stealth STH-2D2.mtf
+36 Blackjack BJ2-OF.mtf
+42 Blitzkrieg BTZ-3F.mtf
+52 Enfield END-6J.mtf
+33 Hunchback HBK-6S.mtf
+13 Nightsky NGS-6S.mtf
+5 Nightsky NGS-6T.mtf
+26 Uziel UZL-2S.mtf
+16 Uziel UZL-3S.mtf
+33 Bushwacker BSW-L1.mtf
+10 Griffin GRF-6S.mtf
+13 Scorpion SCP-12S.mtf
+16 Shadow Hawk C.mtf
+10 Shadow Hawk SHD-5D.mtf
+98 LA Special
+49 Clan
+10 Solaris

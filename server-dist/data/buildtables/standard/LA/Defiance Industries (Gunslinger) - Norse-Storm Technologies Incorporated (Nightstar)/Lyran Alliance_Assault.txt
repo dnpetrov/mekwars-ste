@@ -1,0 +1,4 @@
+70 Gunslinger GUN-1ERD.mtf
+15 Gunslinger GUN-2ERD.mtf
+15 Nightstar NSR-9FC.mtf
+15 Nightstar NSR-9J.mtf

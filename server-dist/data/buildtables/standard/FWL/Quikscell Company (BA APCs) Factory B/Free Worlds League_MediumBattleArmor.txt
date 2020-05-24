@@ -1,0 +1,9 @@
+32 Heavy Hover APC.blk
+32 Heavy Tracked APC.blk
+32 Heavy Wheeled APC.blk
+12 Karnov UR Transport.blk
+13 Karnov UR Transport (3055 Upgrade).blk
+28 Maxim (I) Heavy Hover Transport.blk
+25 Maxim Heavy Hover Transport (BA Factory Upgrade).blk
+26 Maxim Heavy Hover Transport (BA Field Upgrade).blk
+12 Prowler Multi-Terrain Vehicle (Support).blk

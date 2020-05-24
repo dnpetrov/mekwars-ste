@@ -1,0 +1,15 @@
+ALTER TABLE `units` MODIFY COLUMN `uPosID` INTEGER,
+ MODIFY COLUMN `uStatus` INTEGER,
+ MODIFY COLUMN `uProducer` TEXT CHARACTER SET latin1 COLLATE latin1_swedish_ci,
+ MODIFY COLUMN `uAutoEject` TINYINT(1) DEFAULT 0,
+ MODIFY COLUMN `uHasSpotlight` TINYINT(1) DEFAULT 0,
+ MODIFY COLUMN `uIsUsingSpotlight` TINYINT(1) DEFAULT 0,
+ MODIFY COLUMN `uTargetSystem` INTEGER UNSIGNED,
+ MODIFY COLUMN `uScrappableFor` INTEGER,
+ MODIFY COLUMN `uBattleDamage` TEXT CHARACTER SET latin1 COLLATE latin1_swedish_ci,
+ MODIFY COLUMN `uLastCombatPilot` INTEGER,
+ MODIFY COLUMN `uCurrentRepairCost` INTEGER UNSIGNED,
+ MODIFY COLUMN `uLifetimeRepairCost` INTEGER UNSIGNED;
+
+UPDATE config set config_value='31' WHERE config_key='mekwars_database_version';
+

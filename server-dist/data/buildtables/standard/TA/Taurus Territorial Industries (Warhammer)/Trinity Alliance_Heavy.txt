@@ -1,0 +1,6 @@
+12 Warhammer WHM-6L.mtf
+1 Warhammer WHM-6L-DC.mtf
+15 Warhammer WHM-6R.mtf
+2 Warhammer WHM-6R-DC.mtf
+70 Warhammer WHM-7M.mtf
+7 Warhammer WHM-7M-DC.mtf

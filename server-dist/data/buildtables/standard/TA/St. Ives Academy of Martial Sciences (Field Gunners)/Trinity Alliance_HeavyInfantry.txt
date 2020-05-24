@@ -1,0 +1,17 @@
+75 Field Artillery (Arrow IV).blk
+50 Field Artillery (Sniper).blk
+50 Field Artillery (Thumper).blk
+50 Field Gunners (AC2).blk
+50 Field Gunners (AC5).blk
+50 Field Gunners (AC10).blk
+50 Field Gunners (AC20).blk
+25 Field Gunners (LBX2).blk
+25 Field Gunners (LBX5).blk
+50 Field Gunners (LBX10).blk
+25 Field Gunners (LBX20).blk
+40 Field Gunners (UAC2).blk
+50 Field Gunners (UAC5).blk
+40 Field Gunners (UAC10).blk
+30 Field Gunners (UAC20).blk
+50 Field Gunners (Gauss).blk
+40 Field Gunners (Light Gauss).blk

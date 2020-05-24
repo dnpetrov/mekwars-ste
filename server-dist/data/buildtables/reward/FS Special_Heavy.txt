@@ -1,0 +1,10 @@
+315 SLDF Royal
+10 Thunderbolt TDR-5Sd.mtf
+1 BattleAxe BKX-7K.mtf
+1 BattleAxe BKX-7NC.mtf
+5 Excalibur EXC-B2.mtf
+3 Warhammer WHM-6Rb.mtf
+3 Black Knight BL-6-KNT.mtf
+1 Hammerhands HMH-3D.mtf
+1 Hammerhands HMH-4D.mtf
+10 Marauder MAD-2R.mtf

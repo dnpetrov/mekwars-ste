@@ -1,0 +1,26 @@
+5 Gabriel Reconnaissance Hovercraft.blk
+10 Ripper Infantry Transport.blk
+3 Ripper Infantry Transport (Royal).blk
+5 Beagle.blk
+1 Beagle Hover Scout (LRRP).blk
+10 Maultier Hover APC.blk
+5 Rotunda Scout Vehicle.blk
+1 Vector Transport.blk
+1 Vector (Attack).blk
+1 Vector EW.blk
+1 Vector Scout.blk
+10 Mobile Headquarters.blk
+5 Nightshade ECM VTOL.blk
+3 Nightshade ECM VTOL (Royal).blk
+5 Cobra Transport VTOL.blk
+5 Cobra Transport VTOL (Command).blk
+1 Cobra Transport VTOL (Original).blk
+5 Cyrano Gunship.blk
+3 Cyrano Gunship (Royal).blk
+1 Cyrano Gunship (Fury).blk
+1 Hipparch Cavalry Tank.blk
+1 Ignis Infantry Support Tank.blk
+1 Ignis Infantry Support Tank (SRM).blk
+10 Chevalier Light Tank.blk
+5 Lightning Attack Hovercraft.blk
+3 Lightning Attack Hovercraft (Royal).blk

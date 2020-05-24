@@ -1,0 +1,6 @@
+216 SLDF Royal
+10 Sling SL-1G.mtf
+5 Firefly FFL-3A.mtf
+3 Firebee FRB-2E.mtf
+3 Firestarter FS9-K.mtf
+3 Toro TR-A-6.mtf

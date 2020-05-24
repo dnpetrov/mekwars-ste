@@ -1,0 +1,20 @@
+21 Ostroc OSR-2C.mtf
+47 Ostroc OSR-2D.mtf
+6 Ostroc OSR-2L.mtf
+6 Ostroc OSR-3C.mtf
+40 Ostsol OTL-4D.mtf
+12 Quickdraw QKD-4G.mtf
+12 Quickdraw QKD-4H.mtf
+12 Quickdraw QKD-5A.mtf
+13 Quickdraw QKD-5M.mtf
+33 Rifleman RFL-3N.mtf
+108 Rifleman RFL-5M.mtf
+7 Bombardier BMB-10D.mtf
+14 Cestus CTS-6Y.mtf
+39 JagerMech JM6-S.mtf
+67 Grasshopper GHR-5H.mtf
+78 Grasshopper GHR-5J.mtf
+13 Grasshopper GHR-5N.mtf
+13 Grasshopper GHR-C.mtf
+2 Black Knight BL-6-KNT.mtf
+1 Black Knight BL-7-KNT-L.mtf

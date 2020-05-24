@@ -1,0 +1,11 @@
+558 SLDF Royal
+10 Blackjack BJ-1X.mtf
+5 Kyudo KY2-D-02.mtf
+5 Wyvern WVE-5N.mtf
+3 Galahad GLH-1D.mtf
+3 Rifleman RFL-1N.mtf
+3 Rifleman RFL-2N.mtf
+10 Dervish DV-6Md.mtf
+10 Griffin GRF-2N.mtf
+3 Hoplite HOP-4C.mtf
+10 Shadow Hawk SHD-2Hb.mtf

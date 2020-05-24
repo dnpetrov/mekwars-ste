@@ -1,0 +1,38 @@
+37 Demolisher Heavy Tank (Standard Mk. II).blk
+66 Demolisher Heavy Tank (Arrow IV).blk
+2 Demolisher Heavy Tank (Defensive).blk
+72 Demolisher Heavy Tank (Gauss).blk
+11 Devastator Heavy Tank.blk
+96 Partisan Heavy Tank.blk
+132 Partisan Air Defense Tank.blk
+26 Partisan Air Defense Tank (Company Command).blk
+26 Partisan Air Defense Tank (Lance Command).blk
+26 Partisan Air Defense Tank (XL).blk
+6 Partisan Heavy Tank (AC2).blk
+72 Partisan Heavy Tank (C3).blk
+4 Partisan Heavy Tank (LRM).blk
+24 Rhino Fire Support Tank.blk
+9 Rhino Fire Support Tank (Flamer).blk
+9 Rhino Fire Support Tank (MG).blk
+3 Rhino Fire Support Tank (SL).blk
+18 Schiltron Mobile Fire-Support Platform Prime.blk
+15 Schiltron Mobile Fire-Support Platform A.blk
+18 Schiltron Mobile Fire-Support Platform B.blk
+15 Schiltron Mobile Fire-Support Platform C.blk
+109 Schrek PPC Carrier.blk
+18 Schrek AC Carrier.blk
+6 Schrek PPC Carrier (Anti-Infantry).blk
+55 Sturmfeur Heavy Tank.blk
+13 Sturmfeur Heavy Tank (SRM).blk
+61 Challenger MBT X.blk
+15 Challenger MBT XI.blk
+51 Alacorn Heavy Tank Mk VI.blk
+12 Mobile Long Tom LT-MOB-25.blk
+54 Ontos Heavy Tank.blk
+139 Ontos Heavy Tank (3053 Upgrade).blk
+2 Ontos Heavy Tank (Fusion).blk
+2 Ontos Heavy Tank (LRM).blk
+71 Behemoth Heavy Tank.blk
+7 Behemoth Heavy Tank (Armor).blk
+7 Behemoth Heavy Tank (Flamer).blk
+22 Behemoth Heavy Tank (Kurita).blk

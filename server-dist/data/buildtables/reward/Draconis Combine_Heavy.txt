@@ -1,0 +1,49 @@
+26 Black Hawk-KU BHKU-OE.mtf
+17 Black Hawk-KU BHKU-OR.mtf
+22 Black Hawk-KU BHKU-OX.mtf
+26 Dragon DRG-7N.mtf
+33 Grand Dragon DRG-7K.mtf
+48 Helios HEL-4A.mtf
+48 Helios HEL-C.mtf
+19 Ostsol OTL-6D.mtf
+25 Quickdraw QKD-8K.mtf
+16 Rifleman C.mtf
+6 Vulture (Mad Dog) Prime.mtf
+6 Vulture (Mad Dog) A.mtf
+5 Vulture (Mad Dog) B.mtf
+5 Vulture (Mad Dog) C.mtf
+5 Vulture (Mad Dog) D.mtf
+2 Vulture (Mad Dog) H.mtf
+6 Cauldron-Born (Ebon Jaguar) Prime.mtf
+6 Cauldron-Born (Ebon Jaguar) A.mtf
+5 Cauldron-Born (Ebon Jaguar) B.mtf
+5 Cauldron-Born (Ebon Jaguar) C.mtf
+5 Cauldron-Born (Ebon Jaguar) D.mtf
+3 Cauldron-Born (Ebon Jaguar) H.mtf
+31 Crusader CRD-5K.mtf
+16 Ha Otoko.mtf
+38 Ha Otoko HKO-1C.mtf
+40 Ninja-To NJT-2.mtf
+16 Thunderbolt C.mtf
+16 Archer C.mtf
+50 Avatar AV1-OD.mtf
+20 Avatar AV1-OF.mtf
+22 Avatar AV1-OR.mtf
+66 Daikyu DAI-02.mtf
+7 Daikyu DAI-03.mtf
+5 Excalibur EXC-CS.mtf
+21 Grasshopper GHR-6K.mtf
+7 No-Dachi NDA-2KC.mtf
+66 No-Dachi NDA-2KO.mtf
+16 Warhammer C.mtf
+9 Warhammer WHM-8D.mtf
+48 Dragon Fire DGR-4F.mtf
+30 Flashman FLS-C.mtf
+40 Maelstrom MTR-6E.mtf
+31 Maelstrom MTR-6K.mtf
+16 Marauder C.mtf
+50 Shugenja SJA-7D.mtf
+18 War Dog WR-DG-03FC.mtf
+121 DC Special
+61 Clan
+12 Solaris

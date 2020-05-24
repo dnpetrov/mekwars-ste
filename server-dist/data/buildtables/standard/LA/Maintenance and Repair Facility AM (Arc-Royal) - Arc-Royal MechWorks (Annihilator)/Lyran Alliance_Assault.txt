@@ -1,0 +1,21 @@
+35 Awesome AWS-8Q.mtf
+6 Awesome AWS-8R.mtf
+6 Awesome AWS-8T.mtf
+6 Awesome AWS-8V.mtf
+89 Awesome AWS-9M.mtf
+22 Awesome AWS-9Ma.mtf
+68 Awesome AWS-9Q.mtf
+12 Charger CGR-1A1.mtf
+36 Charger CGR-SB.mtf
+33 Goliath GOL-1H.mtf
+28 Striker STC-2C.mtf
+12 Striker STC-2S.mtf
+6 Cyclops CP-10-Q.mtf
+20 Cyclops CP-10-Z.mtf
+2 Cyclops CP-10-Z-DC.mtf
+31 Cyclops CP-11-A.mtf
+3 Cyclops CP-11-A-DC.mtf
+26 Cyclops CP-11-C.mtf
+12 Mauler MAL-2R.mtf
+13 Grand Titan T-IT-N10M.mtf
+52 Annihilator ANH-2A.mtf

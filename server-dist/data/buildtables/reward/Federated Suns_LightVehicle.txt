@@ -1,0 +1,18 @@
+40 Mantis Light Attack VTOL.blk
+21 Minion Advanced Tactical Vehicle.blk
+20 Minion Advanced Tactical Vehicle (Targeting Computer).blk
+25 Cavalry Attack Helicopter (Infantry).blk
+50 Hawk Moth Gunship.blk
+50 Hawk Moth Gunship (Armor).blk
+50 Scorpion Light Tank (MRM).blk
+23 Karnov UR Transport (BA).blk
+7 Yellow Jacket Gunship (Arrow IV).blk
+10 Yellow Jacket Gunship (RAC).blk
+19 Hunter Light Support Tank Assault Hunter.blk
+38 Hunter Light Support Tank (LPL).blk
+14 Plainsman Medium Hovertank (Scout).blk
+36 Saladin Assault Hover Tank (LB-X).blk
+18 Saladin Assault Hover Tank (Ultra).blk
+42 Striker Light Tank (3061 Upgrade).blk
+40 Striker Light Tank (Laser).blk
+56 SLDF Royal

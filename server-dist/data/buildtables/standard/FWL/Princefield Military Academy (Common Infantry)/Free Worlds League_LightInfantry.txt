@@ -1,0 +1,9 @@
+75 Foot Laser Platoon (Blazer).blk
+162 Foot Laser Platoon (Intek).blk
+90 Foot Laser Platoon (Support Laser).blk
+90 Jump Laser Platoon (Semi-Portable Support Laser).blk
+46 Jump LRM Platoon (FarShot).blk
+65 Jump Rifle Platoon (Imperator AX-22 Assault).blk
+90 Motorized Laser Platoon (Semi-Portable Support Laser).blk
+46 Motorized LRM Platoon (FarShot).blk
+65 Motorized Rifle Platoon (Imperator AX-22 Assault).blk

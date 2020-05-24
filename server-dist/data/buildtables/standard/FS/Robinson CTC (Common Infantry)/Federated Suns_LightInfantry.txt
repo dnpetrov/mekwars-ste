@@ -1,0 +1,9 @@
+140 Foot Rifle Platoon (Grand Mauler).blk
+78 Foot Rifle Platoon (Marx XX).blk
+122 Foot Rifle Platoon (Thunderstroke II).blk
+53 Jump Grenadier Platoon (HGL).blk
+135 Jump Rifle Platoon (Grand Mauler).blk
+140 Jump Rifle Platoon (Serrek 7875D).blk
+53 Motorized Grenadier Platoon (HGL).blk
+135 Motorized Rifle Platoon (Grand Mauler).blk
+140 Motorized Rifle Platoon (Serrek 7875D).blk

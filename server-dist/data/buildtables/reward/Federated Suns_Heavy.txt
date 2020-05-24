@@ -1,0 +1,38 @@
+40 Argus AGS-2D.mtf
+40 Argus AGS-4D.mtf
+26 Black Hawk-KU BHKU-OE.mtf
+17 Black Hawk-KU BHKU-OR.mtf
+20 Ostsol OTL-5D.mtf
+21 Ostsol OTL-6D.mtf
+16 Rifleman C.mtf
+33 Rifleman RFL-6X.mtf
+21 Rifleman RFL-8D.mtf
+10 Crusader CRD-8S.mtf
+40 JagerMech JM7-F.mtf
+16 Thunderbolt C.mtf
+5 Thunderbolt TDR-10SE.mtf
+5 Thunderbolt TDR-7SE.mtf
+7 Thunderbolt TDR-9NAIS.mtf
+16 Archer C.mtf
+50 Avatar AV1-OD.mtf
+20 Avatar AV1-OF.mtf
+7 Caesar CES-4R.mtf
+21 Caesar CES-4S.mtf
+19 Grasshopper GHR-6K.mtf
+36 Guillotine GLT-8D.mtf
+16 Warhammer C.mtf
+10 Warhammer WHM-8D.mtf
+7 Warhammer WHM-9D.mtf
+14 Bandersnatch BNDR-01B.mtf
+33 Black Knight BL-12-KNT.mtf
+31 Maelstrom MTR-6K.mtf
+16 Marauder C.mtf
+29 Orion ON1-MD.mtf
+13 Penetrator PTR-6T.mtf
+26 Rakshasa MDG-2A.mtf
+42 Thanatos TNS-4S.mtf
+31 Thanatos TNS-4T.mtf
+18 War Dog WR-DG-03FC.mtf
+92 FS Special
+46 Clan
+9 Solaris

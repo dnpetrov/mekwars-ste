@@ -1,0 +1,23 @@
+32 Awesome AWS-8Q.mtf
+6 Awesome AWS-8R.mtf
+6 Awesome AWS-8T.mtf
+6 Awesome AWS-8V.mtf
+96 Awesome AWS-9M.mtf
+68 Awesome AWS-9Q.mtf
+2 Charger CGR-1A1.mtf
+87 Charger CGR-1A5.mtf
+33 Charger CGR-1L.mtf
+84 Charger CGR-3K.mtf
+8 Goliath GOL-1H.mtf
+12 Goliath GOL-3M.mtf
+47 Stalker STK-3F.mtf
+6 Stalker STK-3H.mtf
+6 Stalker STK-4N.mtf
+26 Stalker STK-4P.mtf
+173 Stalker STK-5M.mtf
+1 Stalker STK-5S.mtf
+30 Cerberus MR-5M.mtf
+48 Cerberus MR-V2.mtf
+12 Cerberus MR-V3.mtf
+14 Sirocco SRC-3C.mtf
+45 Grand Titan T-IT-N10M.mtf

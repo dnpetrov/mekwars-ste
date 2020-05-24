@@ -1,0 +1,19 @@
+CREATE TABLE `faction_leaders` (
+  `faction_id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `leader_name` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`faction_id`, `leader_name`)
+)
+ENGINE = InnoDB;
+
+ALTER TABLE `merc_contract_info` MODIFY COLUMN `contractHouse` VARCHAR(100) NOT NULL;
+
+ALTER TABLE `merc_contract_info` MODIFY COLUMN `contractDuration` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+ MODIFY COLUMN `contractEarnedAmount` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+ MODIFY COLUMN `contractPayment` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+ MODIFY COLUMN `contractHouse` VARCHAR(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT ' ',
+ MODIFY COLUMN `contractPlayer` VARCHAR(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT ' ',
+ MODIFY COLUMN `contractOfferingPlayer` VARCHAR(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT ' ',
+ MODIFY COLUMN `contractType` INTEGER UNSIGNED NOT NULL DEFAULT 0;
+
+
+UPDATE config set config_value='10' WHERE config_key='mekwars_database_version';

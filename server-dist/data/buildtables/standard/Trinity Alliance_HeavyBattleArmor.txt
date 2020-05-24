@@ -1,0 +1,16 @@
+61 Fa Shih Battle Armor [Flamer].blk
+61 Fa Shih Battle Armor [Laser].blk
+61 Fa Shih Battle Armor [LRR].blk
+61 Fa Shih Battle Armor [MG].blk
+61 Fa Shih Battle Armor [TAG].blk
+3 Gray Death Scout Suit.blk
+1 Infiltrator Mk. I Battle Armor.blk
+2 Infiltrator Mk. II Battle Armor.blk
+59 IS Standard Battle Armor [Flamer].blk
+59 IS Standard Battle Armor [Laser].blk
+54 IS Standard Battle Armor [LRR].blk
+59 IS Standard Battle Armor [MG].blk
+59 IS Standard Battle Armor [SRM].blk
+2 Purifier Adaptive Battle Armor [Laser] (RAF).blk
+2 Purifier Adaptive Battle Armor [Narc] (RAF).blk
+2 Purifier Adaptive Battle Armor [TAG] (RAF).blk

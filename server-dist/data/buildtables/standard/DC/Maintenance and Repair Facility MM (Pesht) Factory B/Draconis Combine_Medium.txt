@@ -1,0 +1,38 @@
+67 Assassin ASN-21.mtf
+12 Clint CLNT-2-3T.mtf
+15 Sentinel STN-3L.mtf
+61 Sentinel STN-3M.mtf
+13 Watchman WTC-4M.mtf
+20 Blackjack BJ-1.mtf
+9 Hatchetman HCT-3F.mtf
+32 Phoenix Hawk PXH-1.mtf
+63 Phoenix Hawk PXH-1K.mtf
+219 Phoenix Hawk PXH-3K.mtf
+19 Phoenix Hawk PXH-3M.mtf
+43 Wyvern WVE-5N.mtf
+40 Wyvern WVE-6N.mtf
+43 Crab CRB-27.mtf
+19 Crab CRB-C.mtf
+9 Enforcer ENF-4R.mtf
+71 Hunchback HBK-4G.mtf
+13 Hunchback HBK-4H.mtf
+13 Hunchback HBK-4J.mtf
+13 Hunchback HBK-4N.mtf
+13 Hunchback HBK-4P.mtf
+9 Hunchback HBK-4SP.mtf
+13 Centurion CN10-B.mtf
+28 Dervish DV-6M.mtf
+10 Kintaro KTO-18.mtf
+14 Kintaro KTO-19.mtf
+45 Kintaro KTO-20.mtf
+19 Kintaro KTO-C.mtf
+17 Kintaro KTO-K.mtf
+5 Ryoken (Stormcrow) Prime.mtf
+5 Ryoken (Stormcrow) A.mtf
+5 Ryoken (Stormcrow) B.mtf
+5 Ryoken (Stormcrow) C.mtf
+5 Ryoken (Stormcrow) D.mtf
+6 Ryoken (Stormcrow) E.mtf
+5 Ryoken (Stormcrow) H.mtf
+5 Ryoken (Stormcrow) I.mtf
+20 Scorpion SCP-1O.mtf

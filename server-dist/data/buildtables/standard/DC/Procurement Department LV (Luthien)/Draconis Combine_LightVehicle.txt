@@ -1,0 +1,17 @@
+76 Scorpion Light Tank.blk
+7 Scorpion Light Tank (LRM).blk
+7 Scorpion Light Tank (ML).blk
+19 Scorpion Light Tank (MRM).blk
+22 Scorpion Light Tank (SRM).blk
+18 Galleon Light Tank GAL-100.blk
+25 Galleon Light Tank GAL-102.blk
+1 Galleon Light Tank GAL-200.blk
+12 Chevalier Light Tank.blk
+20 Plainsman Medium Hovertank.blk
+24 Striker Light Tank.blk
+35 Striker Light Tank (3053 Upgrade).blk
+31 Striker Light Tank (3061 Upgrade).blk
+33 Striker Light Tank (Ammo).blk
+2 Striker Light Tank (LRM).blk
+35 Striker Light Tank (Narc).blk
+2 Striker Light Tank (SRM).blk

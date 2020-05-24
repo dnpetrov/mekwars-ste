@@ -1,0 +1,20 @@
+13 Flatbed Truck (LRM).blk
+13 Flatbed Truck (Mortar).blk
+13 Flatbed Truck (SRM).blk
+28 Packrat LRPV PKR-T5.blk
+4 Packrat LRPV PKR-T5 (ICE).blk
+6 Packrat LRPV PKR-T5 (ML).blk
+56 J. Edgar Light Hover Tank.blk
+5 J. Edgar Light Hover Tank (Flamer).blk
+15 J. Edgar Light Hover Tank (ICE).blk
+5 J. Edgar Light Hover Tank (MG).blk
+19 J. Edgar Light Hover Tank (TAG).blk
+12 Mobile Headquarters.blk
+90 Hunter Light Support Tank.blk
+6 Hunter Light Support Tank (Ammo).blk
+16 Hunter Light Support Tank (LRM10).blk
+16 Hunter Light Support Tank (LRM15).blk
+35 Striker Light Tank.blk
+63 Striker Light Tank (Ammo).blk
+4 Striker Light Tank (LRM).blk
+4 Striker Light Tank (SRM).blk

@@ -1,0 +1,9 @@
+CREATE TABLE `unit_history` (
+  `event_id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `event_time` TIMESTAMP NOT NULL,
+  `event_fluff` TEXT NOT NULL,
+  PRIMARY KEY (`event_id`)
+)
+ENGINE = InnoDB;
+
+UPDATE config set config_value='12' WHERE config_key='mekwars_database_version';

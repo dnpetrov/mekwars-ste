@@ -1,0 +1,102 @@
+39 Black Hawk-KU BHKU-O.mtf
+39 Black Hawk-KU BHKU-OA.mtf
+39 Black Hawk-KU BHKU-OB.mtf
+39 Black Hawk-KU BHKU-OC.mtf
+39 Black Hawk-KU BHKU-OD.mtf
+12 Black Hawk-KU BHKU-OR.mtf
+13 Champion CHP-1N.mtf
+13 Champion CHP-1N2.mtf
+18 Champion CHP-2N.mtf
+18 Ostroc OSR-2C.mtf
+27 Ostroc OSR-2D.mtf
+5 Ostroc OSR-2L.mtf
+5 Ostroc OSR-3C.mtf
+40 Ostsol OTL-4D.mtf
+47 Quickdraw QKD-4G.mtf
+9 Quickdraw QKD-4H.mtf
+9 Quickdraw QKD-5A.mtf
+14 Quickdraw QKD-5M.mtf
+7 Rifleman C.mtf
+21 Rifleman RFL-3N.mtf
+118 Rifleman RFL-5D.mtf
+20 Rifleman RFL-5M.mtf
+95 Axman AXM-1N.mtf
+75 Axman AXM-2N.mtf
+19 Axman AXM-3S.mtf
+8 Bombardier BMB-10D.mtf
+34 Catapult CPLT-C1.mtf
+21 Cestus CTS-6Y.mtf
+15 Cestus CTS-6Z.mtf
+23 Crusader CRD-3R.mtf
+26 Crusader CRD-4K.mtf
+24 Crusader CRD-5M.mtf
+61 Crusader CRD-5S.mtf
+4 Ha Otoko.mtf
+12 Ha Otoko HKO-1C.mtf
+84 JagerMech JM6-DD.mtf
+21 Jagermech JM6-DG.mtf
+19 JagerMech JM6-DGr.mtf
+17 JagerMech JM6-S.mtf
+14 Thunderbolt C.mtf
+14 Thunderbolt TDR-5S.mtf
+31 Thunderbolt TDR-5SS.mtf
+38 Thunderbolt TDR-7M.mtf
+50 Thunderbolt TDR-9S.mtf
+41 Thunderbolt TDR-9SE.mtf
+24 Archer ARC-2R.mtf
+31 Archer ARC-2S.mtf
+35 Archer ARC-4M.mtf
+109 Archer ARC-5S.mtf
+38 Archer ARC-5W.mtf
+12 Archer C.mtf
+26 Avatar AV1-O.mtf
+34 Avatar AV1-OA.mtf
+26 Avatar AV1-OB.mtf
+26 Avatar AV1-OC.mtf
+24 Avatar AV1-OD.mtf
+26 Avatar AV1-OG.mtf
+100 Barghest BGS-1T.mtf
+63 Barghest BGS-2T.mtf
+25 Barghest BGS-3T.mtf
+120 Caesar CES-3R.mtf
+6 Cataphract CTF-1X.mtf
+52 Cataphract CTF-3D.mtf
+85 Gallowglas GAL-1GLS.mtf
+14 Gallowglas GAL-2GLS.mtf
+155 Grasshopper GHR-5H.mtf
+96 Grasshopper GHR-5J.mtf
+21 Grasshopper GHR-5N.mtf
+14 Grasshopper GHR-C.mtf
+33 Guillotine GLT-4L.mtf
+9 Warhammer C.mtf
+19 Warhammer WHM-6R.mtf
+2 Warhammer WHM-6R-DC.mtf
+84 Warhammer WHM-7S.mtf
+12 Black Knight BL-7-KNT.mtf
+15 Dragon Fire DGR-3F.mtf
+20 Dragon Fire DGR-4F.mtf
+44 Falconer FLC-8R.mtf
+19 Flashman FLS-7K.mtf
+57 Flashman FLS-8K.mtf
+37 Maelstrom MTR-5K.mtf
+15 Maelstrom MTR-6K.mtf
+7 Marauder C.mtf
+24 Marauder MAD-3R.mtf
+90 Marauder MAD-5D.mtf
+19 Marauder MAD-5M.mtf
+88 Marauder MAD-5S.mtf
+24 Orion ON1-K.mtf
+40 Orion ON1-M.mtf
+4 Orion ON1-M-DC.mtf
+44 Orion ON1-MA.mtf
+3 Orion ON1-V.mtf
+3 Orion ON1-VA.mtf
+67 Penetrator PTR-4D.mtf
+15 Penetrator PTR-4F.mtf
+76 Penetrator PTR-6M.mtf
+88 Penetrator PTR-6S.mtf
+65 Rakshasa MDG-1A.mtf
+15 Rakshasa MDG-1B.mtf
+13 Thanatos TNS-4S.mtf
+13 Thanatos TNS-4T.mtf
+86 War Dog WR-DG-02FC.mtf

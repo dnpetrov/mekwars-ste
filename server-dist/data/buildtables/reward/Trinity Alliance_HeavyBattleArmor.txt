@@ -1,0 +1,14 @@
+36 Fa Shih Battle Armor [Flamer].blk
+36 Fa Shih Battle Armor [Laser].blk
+36 Fa Shih Battle Armor [LRR].blk
+36 Fa Shih Battle Armor [MG].blk
+36 Fa Shih Battle Armor [TAG].blk
+2 Infiltrator Mk. II Battle Armor.blk
+42 IS Standard Battle Armor [LRR].blk
+29 Purifier Adaptive Battle Armor [Laser] (RAF).blk
+1 Purifier Adaptive Battle Armor [Narc] (RAF).blk
+1 Purifier Adaptive Battle Armor [TAG] (RAF).blk
+1 Asterion Medium Battle Armor [MRR].blk
+1 Asterion Medium Battle Armor [PPC].blk
+1 Theseus Medium Battle Armor.blk
+18 Ying Long Medium Battle Armor.blk

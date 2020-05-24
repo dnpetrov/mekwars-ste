@@ -1,0 +1,17 @@
+25 AC2 Carrier (LB-X).blk
+24 Manticore Heavy Tank (C3M).blk
+24 Manticore Heavy Tank (C3S).blk
+48 Manticore Heavy Tank (LB-X).blk
+16 Morningstar City Command Vehicle.blk
+16 Morningstar City Command Vehicle (Laser).blk
+25 MRM Carrier.blk
+23 Pike Support Vehicle (RAC) Assault Pike.blk
+15 SRM Carrier (C3).blk
+29 Patton Tank (Ultra).blk
+21 Manteuffel Attack Tank Prime.blk
+21 Manteuffel Attack Tank A.blk
+21 Manteuffel Attack Tank B.blk
+20 Typhoon Urban Assault Vehicle (LB-X).blk
+21 Typhoon Urban Assault Vehicle (RAC).blk
+29 Von Luckner Heavy Tank VNL-K75N.blk
+42 SLDF Royal

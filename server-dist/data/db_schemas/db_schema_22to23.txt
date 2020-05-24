@@ -1,0 +1,12 @@
+CREATE TABLE `pilot_history` (
+  `history_id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `pilot_id` INTEGER UNSIGNED NOT NULL,
+  `event_date` DATETIME NOT NULL,
+  `event_fluff` TEXT NOT NULL,
+  PRIMARY KEY (`history_id`)
+)
+ENGINE = InnoDB;
+
+ALTER TABLE `pilot_history` MODIFY COLUMN `event_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
+
+UPDATE config set config_value='23' WHERE config_key='mekwars_database_version';

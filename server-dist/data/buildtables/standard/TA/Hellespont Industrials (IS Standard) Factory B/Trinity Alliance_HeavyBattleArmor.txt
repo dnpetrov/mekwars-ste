@@ -1,0 +1,5 @@
+59 IS Standard Battle Armor [Flamer].blk
+59 IS Standard Battle Armor [Laser].blk
+54 IS Standard Battle Armor [LRR].blk
+59 IS Standard Battle Armor [MG].blk
+59 IS Standard Battle Armor [SRM].blk

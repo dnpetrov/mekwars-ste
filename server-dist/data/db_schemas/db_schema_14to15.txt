@@ -1,0 +1,1 @@
+UPDATE config set config_value='15' WHERE config_key='mekwars_database_version';

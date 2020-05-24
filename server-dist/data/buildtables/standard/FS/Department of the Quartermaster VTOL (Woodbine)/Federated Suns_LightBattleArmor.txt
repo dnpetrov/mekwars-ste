@@ -1,0 +1,13 @@
+15 Warrior H-7 Attack Helicopter.blk
+7 Warrior H-7A Attack Helicopter.blk
+4 Warrior H-7C Attack Helicopter.blk
+33 Warrior H-8 Attack Helicopter.blk
+12 Kestrel VTOL.blk
+12 Kestrel VTOL (ML).blk
+12 Kestrel VTOL (SL).blk
+12 Kestrel VTOL (SRM).blk
+12 Karnov UR Transport.blk
+12 Karnov UR Gunship.blk
+13 Karnov UR Transport (3055 Upgrade).blk
+12 Peregrine Attack VTOL.blk
+12 Peregrine Attack VTOL (Kurita).blk

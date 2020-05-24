@@ -1,0 +1,7 @@
+369 SLDF Royal
+10 Sentinel STN-3Lb.mtf
+10 Phoenix Hawk PXH-1Kk.mtf
+5 Wyvern WVE-5N.mtf
+10 Crab CRB-27sl.mtf
+3 Rifleman RFL-1N.mtf
+3 Rifleman RFL-2N.mtf

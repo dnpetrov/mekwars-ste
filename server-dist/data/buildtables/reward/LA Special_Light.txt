@@ -1,0 +1,5 @@
+297 SLDF Royal
+10 Sling SL-1G.mtf
+10 Sling SL-1H.mtf
+10 Falcon FLC-4Nb.mtf
+3 Firestarter FS9-A.mtf

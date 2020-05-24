@@ -1,0 +1,9 @@
+CREATE TABLE `faction_configs` (
+  `factionID` INTEGER UNSIGNED NOT NULL,
+  `configKey` VARCHAR(100) NOT NULL,
+  `configValue` TEXT,
+  PRIMARY KEY (`factionID`, `configKey`)
+)
+ENGINE = InnoDB;
+
+UPDATE config set config_value='3' WHERE config_key='mekwars_database_version';

@@ -1,0 +1,16 @@
+13 Cicada CDA-3F.mtf
+13 Cicada CDA-3M.mtf
+13 Hermes II HER-5S.mtf
+28 Blackjack BJ-1.mtf
+136 Blackjack BJ-2.mtf
+12 Wyvern WVE-6N.mtf
+19 Centurion CN9-A.mtf
+113 Centurion CN9-D.mtf
+20 Centurion CN10-B.mtf
+45 Trebuchet TBT-5N.mtf
+37 Trebuchet TBT-5S.mtf
+13 Apollo APL-1M.mtf
+11 Shadow Hawk C.mtf
+32 Shadow Hawk SHD-2D2.mtf
+19 Shadow Hawk SHD-2H.mtf
+30 Shadow Hawk SHD-5M.mtf

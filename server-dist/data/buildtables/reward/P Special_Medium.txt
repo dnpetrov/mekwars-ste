@@ -1,0 +1,4 @@
+81 SLDF Royal
+3 Rifleman RFL-1N.mtf
+3 Rifleman RFL-2N.mtf
+3 Talos TLS-1B.mtf

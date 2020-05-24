@@ -1,0 +1,30 @@
+12 AC2 Carrier.blk
+69 Bulldog Medium Tank.blk
+17 Bulldog Medium Tank (AC2).blk
+17 Bulldog Medium Tank (LRM).blk
+13 Laser Carrier.blk
+63 LRM Carrier.blk
+60 LRM Carrier (3055 Upgrade).blk
+38 Manticore Heavy Tank.blk
+64 Manticore Heavy Tank (3055 Upgrade).blk
+58 Manticore Heavy Tank (LB-X).blk
+45 Pike Support Vehicle.blk
+50 SRM Carrier.blk
+54 SRM Carrier (3054 Upgrade).blk
+8 Thumper Artillery Vehicle.blk
+60 Patton Tank.blk
+52 Patton Tank (Ultra).blk
+72 Rommel Tank.blk
+60 Rommel Tank (Gauss).blk
+22 Manteuffel Attack Tank Prime.blk
+22 Manteuffel Attack Tank A.blk
+22 Manteuffel Attack Tank B.blk
+40 Pilum Heavy Tank.blk
+18 Pilum Heavy Tank (Arrow IV).blk
+40 Typhoon Urban Assault Vehicle.blk
+52 Brutus Assault Tank.blk
+13 Brutus Assault Tank (LRM).blk
+13 Brutus Assault Tank (PPC 2).blk
+13 Brutus Assault Tank (PPC).blk
+27 Von Luckner Heavy Tank VNL-K65N.blk
+32 Von Luckner Heavy Tank VNL-K75N.blk

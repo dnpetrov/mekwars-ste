@@ -1,0 +1,31 @@
+3 Rifleman II RFL-3N-2.mtf
+5 Spartan SPT-N2.mtf
+1 Spartan SPT-NF.mtf
+10 Thug THG-11E.mtf
+3 Thug THG-11Eb.mtf
+3 BattleMaster BLR-1Gb.mtf
+3 BattleMaster BLR-1Gbc.mtf
+3 BattleMaster BLR-1Gc.mtf
+1 BattleMaster BLR-1GHE HellSinger.mtf
+8 Crockett CRK-5003-1.mtf
+1 Crockett CRK-5003-1b.mtf
+1 Rampage RMP-2G.mtf
+1 Rampage RMP-4G.mtf
+1 Rampage RMP-5G.mtf
+1 Shogun SHG-2H.mtf
+3 Stalker STK-3Fb.mtf
+10 Emperor EMP-6A.mtf
+10 Highlander HGN-732.mtf
+3 Highlander HGN-732b.mtf
+10 Nightstar NSR-9J.mtf
+3 Atlas II AS7-D-H.mtf
+3 Atlas II AS7-D-H2.mtf
+10 King Crab KGC-000.mtf
+3 King Crab KGC-000b.mtf
+1 King Crab KGC-010.mtf
+1 Mackie MSK-7A.mtf
+1 Mackie MSK-8B.mtf
+1 Mackie MSK-9H.mtf
+1 Mackie MSK-9HKR Kill Roys Little Buddy.mtf
+10 Pillager PLG-3Z.mtf
+10 Thunder Hawk TDK-7X.mtf

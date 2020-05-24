@@ -1,0 +1,4 @@
+ALTER TABLE `pilotskills` MODIFY COLUMN `pilotID` INTEGER NOT NULL DEFAULT -1;
+
+UPDATE config set config_value='28' WHERE config_key='mekwars_database_version';
+ 

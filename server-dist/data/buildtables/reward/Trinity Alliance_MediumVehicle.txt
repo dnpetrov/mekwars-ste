@@ -1,0 +1,8 @@
+33 Hetzer Wheeled Assault Gun (LB-X).blk
+5 Myrmidon Medium Tank.blk
+25 Regulator Hovertank (Arrow IV).blk
+27 Chaparral (MG).blk
+18 Chaparral (SRM).blk
+32 Condor Heavy Hover Tank (Laser).blk
+45 Maxim (I) Heavy Hover Transport.blk
+21 SLDF Royal

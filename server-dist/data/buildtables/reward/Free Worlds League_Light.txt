@@ -1,0 +1,13 @@
+50 Tarantula ZPH-2A.mtf
+25 Tarantula ZPH-3A.mtf
+10 Tarantula ZPH-4A.mtf
+63 Hammer HMR-3P.mtf
+63 Hermes HER-4M.mtf
+10 Jackal JA-KL-55.mtf
+66 Spider SDR-8M.mtf
+23 Urbanmech UM-R69.mtf
+52 Owens OW-1E.mtf
+10 Venom SDR-9KC.mtf
+44 FWL Special
+22 Clan
+4 Solaris

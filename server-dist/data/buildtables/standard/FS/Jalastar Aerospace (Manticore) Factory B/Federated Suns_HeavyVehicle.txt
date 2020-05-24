@@ -1,0 +1,3 @@
+42 Manticore Heavy Tank.blk
+68 Manticore Heavy Tank (3055 Upgrade).blk
+62 Manticore Heavy Tank (LB-X).blk

@@ -1,0 +1,6 @@
+5 Devastator DVS-1D.mtf
+28 Devastator DVS-2.mtf
+19 Devastator DVS-3.mtf
+19 Thunder Hawk TDK-7KMA.mtf
+26 Thunder Hawk TDK-7X.mtf
+19 Thunder Hawk TDK-7Y.mtf

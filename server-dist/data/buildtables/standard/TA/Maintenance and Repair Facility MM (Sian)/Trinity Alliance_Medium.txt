@@ -1,0 +1,22 @@
+2 Assassin ASN-21.mtf
+13 Assassin ASN-23.mtf
+11 Clint CLNT-2-3T.mtf
+3 Clint CLNT-2-4T.mtf
+94 Clint CLNT-2-3U.mtf
+4 Hermes II HER-2S.mtf
+17 Hermes II HER-5S.mtf
+33 Vulcan VL-2T.mtf
+9 Vulcan VL-5T.mtf
+3 Watchman WTC-4M.mtf
+4 Whitworth WTH-1.mtf
+1 Whitworth WTH-2.mtf
+7 Wyvern WVE-6N.mtf
+2 Centurion CN9-A.mtf
+1 Centurion CN9-AH.mtf
+1 Centurion CN9-AL.mtf
+5 Centurion CN9-D.mtf
+13 Centurion CN10-B.mtf
+9 Enforcer ENF-4R.mtf
+8 Dervish DV-6M.mtf
+1 Scorpion SCP-1N.mtf
+12 Scorpion SCP-1O.mtf

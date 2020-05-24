@@ -1,0 +1,15 @@
+12 Champion CHP-1N2.mtf
+18 Champion CHP-2N.mtf
+27 Ostroc OSR-2C.mtf
+46 Ostroc OSR-2D.mtf
+8 Ostroc OSR-2L.mtf
+24 Ostroc OSR-2M.mtf
+8 Ostroc OSR-3C.mtf
+33 Bombardier BMB-10D.mtf
+12 Catapult CPLT-C1.mtf
+13 Cestus CTS-6Y.mtf
+8 JagerMech JM6-S.mtf
+44 Grasshopper GHR-5H.mtf
+14 Grasshopper GHR-5J.mtf
+21 Grasshopper GHR-5N.mtf
+14 Grasshopper GHR-C.mtf

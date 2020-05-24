@@ -1,0 +1,5 @@
+18 Phoenix Hawk PXH-1.mtf
+19 Phoenix Hawk PXH-3M.mtf
+122 Phoenix Hawk PXH-3S.mtf
+52 Starslayer STY-3C.mtf
+40 Starslayer STY-3D.mtf

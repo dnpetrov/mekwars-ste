@@ -1,0 +1,6 @@
+7 Kage Light Battle Armor (DEST).blk
+59 Kage Light Battle Armor [ECM].blk
+59 Kage Light Battle Armor [Flamer].blk
+59 Kage Light Battle Armor [Laser].blk
+59 Kage Light Battle Armor [MG].blk
+59 Kage Light Battle Armor [TAG].blk

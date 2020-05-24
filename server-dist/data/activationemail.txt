@@ -1,0 +1,8 @@
+[SUBJECT]MekWars Account Activation
+[MAILFROM]MekWars Server Operators <donotreply@someDomain.local>
+Welcome to MekWars,
+
+Your account has been registered, but still requires activation.  
+You can activate your account by entering the following command:
+
+/validateemail %USERACTKEY%

@@ -1,0 +1,9 @@
+CREATE TABLE `campaign_config` (
+  `config_name` VARCHAR(100) NOT NULL,
+  `config_value` TEXT NOT NULL,
+  PRIMARY KEY (`config_name`)
+)
+ENGINE = InnoDB;
+
+ UPDATE config set config_value='27' WHERE config_key='mekwars_database_version';
+ 

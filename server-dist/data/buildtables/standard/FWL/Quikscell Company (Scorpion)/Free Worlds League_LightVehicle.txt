@@ -1,0 +1,5 @@
+77 Scorpion Light Tank.blk
+7 Scorpion Light Tank (LRM).blk
+7 Scorpion Light Tank (ML).blk
+19 Scorpion Light Tank (MRM).blk
+22 Scorpion Light Tank (SRM).blk

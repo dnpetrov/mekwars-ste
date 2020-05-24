@@ -1,0 +1,85 @@
+35 Assassin ASN-21.mtf
+16 Cicada CDA-3F.mtf
+17 Cicada CDA-3G.mtf
+68 Cicada CDA-3M.mtf
+12 Clint CLNT-2-3T.mtf
+20 Hermes II HER-2M Mercury.mtf
+49 Hermes II HER-2S.mtf
+30 Hermes II HER-5ME.mtf
+174 Hermes II HER-5S.mtf
+15 Strider SR1-O.mtf
+15 Strider SR1-OA.mtf
+15 Strider SR1-OB.mtf
+15 Strider SR1-OC.mtf
+15 Strider SR1-OD.mtf
+13 Strider SR1-OE.mtf
+13 Strider SR1-OF.mtf
+4 Strider SR1-OR.mtf
+16 Vulcan VL-2T.mtf
+7 Vulcan VL-5T.mtf
+85 Vulcan VT-5M.mtf
+12 Bishamon BSN-3K.mtf
+20 Blackjack BJ-1.mtf
+16 Firestarter FS9-O.mtf
+16 Firestarter FS9-OA.mtf
+16 Firestarter FS9-OB.mtf
+16 Firestarter FS9-OC.mtf
+16 Firestarter FS9-OD.mtf
+14 Firestarter FS9-OE.mtf
+14 Firestarter FS9-OF.mtf
+5 Firestarter FS9-OR.mtf
+33 Phoenix Hawk PXH-1.mtf
+126 Phoenix Hawk PXH-3M.mtf
+13 Snake SNK-1V.mtf
+18 Wyvern WVE-6N.mtf
+23 Blackjack BJ2-O.mtf
+23 Blackjack BJ2-OA.mtf
+23 Blackjack BJ2-OB.mtf
+23 Blackjack BJ2-OC.mtf
+23 Blackjack BJ2-OD.mtf
+22 Blackjack BJ2-OE.mtf
+21 Blackjack BJ2-OF.mtf
+12 Blitzkrieg BTZ-3F.mtf
+9 Centurion CN9-A.mtf
+21 Centurion CN9-D.mtf
+20 Centurion CN9-D3D.mtf
+20 Centurion CN10-B.mtf
+4 Chameleon CLN-7V.mtf
+18 Chameleon CLN-7W.mtf
+18 Chameleon CLN-7Z.mtf
+3 Chameleon TRC-4B.mtf
+65 Hunchback HBK-4G.mtf
+21 Hunchback HBK-4H.mtf
+21 Hunchback HBK-4J.mtf
+21 Hunchback HBK-4N.mtf
+21 Hunchback HBK-4P.mtf
+9 Hunchback HBK-4SP.mtf
+54 Hunchback HBK-5M.mtf
+17 Hunchback HBK-5N.mtf
+18 Hunchback HBK-6N.mtf
+13 Huron Warrior HUR-WO-R4L.mtf
+13 Huron Warrior HUR-WO-R4M.mtf
+22 Trebuchet TBT-3C.mtf
+30 Trebuchet TBT-5J.mtf
+35 Trebuchet TBT-5N.mtf
+15 Trebuchet TBT-5S.mtf
+188 Trebuchet TBT-7M.mtf
+38 Apollo APL-1M.mtf
+17 Apollo APL-1R.mtf
+17 Apollo APL-2S.mtf
+17 Apollo APL-3T.mtf
+55 Buccaneer BCN-3R.mtf
+26 Cronus CNS-3M.mtf
+51 Dervish DV-6M.mtf
+19 Griffin GRF-1N.mtf
+122 Griffin GRF-3M.mtf
+12 Lineholder KW1-LH2.mtf
+12 Lineholder KW1-LH3.mtf
+27 Scorpion SCP-1O.mtf
+27 Shadow Hawk SHD-2H.mtf
+149 Shadow Hawk SHD-5M.mtf
+51 Wolverine WVR-6M.mtf
+63 Wolverine WVR-6R.mtf
+177 Wolverine WVR-7M.mtf
+56 Wraith TR1.mtf
+17 Wraith TR2.mtf

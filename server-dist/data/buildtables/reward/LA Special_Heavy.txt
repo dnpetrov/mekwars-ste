@@ -1,0 +1,6 @@
+135 SLDF Royal
+1 Crossbow CRS-6B.mtf
+1 Crossbow CRS-6C.mtf
+5 Excalibur EXC-B1.mtf
+5 Shootist ST-8A.mtf
+3 Warhammer WHM-6Rb.mtf

@@ -1,12 +1,14 @@
-50 Common
-1 Rare
-2 Liao
-2 Kurita
-3 Rifleman RFL-3C.mtf
-3 Warhammer WHM-6D.mtf
-3 Crusader CRD-3D.mtf
-3 Jagermech JM6-A.mtf
-3 Marauder MAD-3D.mtf
-3 Battleax BTX-7K.mtf
-3 Warhammer WHM-6K.mtf
-3 Rifleman RFL-4D.mtf
+3 Paladin PAL-1.mtf
+2 Paladin PAL-2.mtf
+2 Paladin PAL-3.mtf
+3 Spatha SP1-X.mtf
+1 Morpheus MR-P1.mtf
+8 Morpheus MRP-3S.mtf
+6 Morpheus MRP-3T.mtf
+6 Hachiwara HCA-3T.mtf
+5 Hachiwara HCA-4T.mtf
+4 Hachiwara HCA-4U.mtf
+1 Hachiwara HCA-6P.mtf
+2 Onslaught SA-OS.mtf
+8 Onslaught SA-OS2.mtf
+8 Onslaught SA-OS3.mtf

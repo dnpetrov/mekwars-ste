@@ -1,0 +1,4 @@
+7 Rifleman C.mtf
+21 Rifleman RFL-3N.mtf
+118 Rifleman RFL-5D.mtf
+20 Rifleman RFL-5M.mtf

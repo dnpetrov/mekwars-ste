@@ -1,0 +1,30 @@
+34 Striker STC-2C.mtf
+103 Striker STC-2D.mtf
+11 Thug THG-11E.mtf
+8 Zeus ZEU-6S.mtf
+4 Zeus ZEU-9S.mtf
+8 BattleMaster BLR-1G.mtf
+1 BattleMaster BLR-1G-DC.mtf
+29 BattleMaster BLR-3M.mtf
+3 BattleMaster BLR-3M-DC.mtf
+11 Gunslinger GUN-1ERD.mtf
+22 Cyclops CP-10-Q.mtf
+24 Cyclops CP-10-Z.mtf
+2 Cyclops CP-10-Z-DC.mtf
+82 Cyclops CP-11-A.mtf
+8 Cyclops CP-11-A-DC.mtf
+23 Cyclops CP-11-C.mtf
+19 Banshee BNC-3E.mtf
+10 Banshee BNC-3M.mtf
+17 Banshee BNC-3MC.mtf
+28 Banshee BNC-3S.mtf
+40 Atlas AS7-D.mtf
+4 Atlas AS7-D-DC.mtf
+130 Atlas AS7-K.mtf
+14 Atlas AS7-K-DC.mtf
+6 Atlas AS7-RS.mtf
+2 Atlas AS7-S.mtf
+1 Devastator DVS-1D.mtf
+13 Devastator DVS-2.mtf
+4 King Crab KGC-0000.mtf
+19 King Crab KGC-001.mtf

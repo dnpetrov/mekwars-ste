@@ -1,0 +1,20 @@
+47 Cossack C-SK1.mtf
+30 Flea Fire Ant.mtf
+6 Stinger STG-5R.mtf
+6 Stinger STG-6L.mtf
+6 Wasp WSP-3L.mtf
+41 Tarantula ZPH-2A.mtf
+20 Tarantula ZPH-3A.mtf
+8 Tarantula ZPH-4A.mtf
+33 Anubis ABS-3L.mtf
+26 Anubis ABS-3R.mtf
+7 Anubis ABS-3T.mtf
+2 Firestarter FS9-P.mtf
+8 Urbanmech UM-R69.mtf
+41 Owens OW-1E.mtf
+33 Raven RVN-4L.mtf
+40 Raven RVN-4LC.mtf
+6 Spector SPR-5S.mtf
+43 TA Special
+21 Clan
+4 Solaris

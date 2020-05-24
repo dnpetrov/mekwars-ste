@@ -1,0 +1,8 @@
+89 Manticore Heavy Tank.blk
+8 Thumper Artillery Vehicle.blk
+35 Brutus Assault Tank.blk
+12 Brutus Assault Tank (LRM).blk
+12 Brutus Assault Tank (PPC 2).blk
+12 Brutus Assault Tank (PPC).blk
+33 Von Luckner Heavy Tank VNL-K65N.blk
+36 Von Luckner Heavy Tank VNL-K75N.blk

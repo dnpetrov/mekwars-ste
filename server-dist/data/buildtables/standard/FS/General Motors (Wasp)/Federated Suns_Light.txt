@@ -1,0 +1,3 @@
+52 Wasp WSP-1A.mtf
+62 Wasp WSP-1D.mtf
+106 Wasp WSP-1S.mtf

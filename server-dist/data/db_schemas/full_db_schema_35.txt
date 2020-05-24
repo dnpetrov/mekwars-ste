@@ -1,0 +1,573 @@
+-- MySQL dump 10.11
+-- Host: localhost    Database: mekwars
+-- ------------------------------------------------------
+-- Server version	5.0.45-community-nt
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+--
+-- Table structure for table `faction_base_gunnery_piloting`
+--
+
+ALTER DATABASE DEFAULT CHARACTER SET utf8;
+
+DROP TABLE IF EXISTS `faction_base_gunnery_piloting`;
+CREATE TABLE `faction_base_gunnery_piloting` (
+  `factionID` int(10) unsigned NOT NULL,
+  `unitType` tinyint(3) unsigned NOT NULL,
+  `baseGunnery` tinyint(3) unsigned NOT NULL,
+  `basePiloting` tinyint(3) unsigned NOT NULL,
+  PRIMARY KEY  (`factionID`,`unitType`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `faction_pilot_skills`
+--
+DROP TABLE IF EXISTS `faction_pilot_skills`;
+CREATE TABLE `faction_pilot_skills` (
+  `factionID` int(10) unsigned NOT NULL,
+  `pilotSkills` tinytext NOT NULL,
+  `skillID` int(10) unsigned NOT NULL,
+  PRIMARY KEY  USING BTREE (`factionID`,`skillID`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `factioncomponents`
+--
+DROP TABLE IF EXISTS `factioncomponents`;
+CREATE TABLE `factioncomponents` (
+  `factionID` tinyint(3) unsigned NOT NULL,
+  `unitType` tinyint(3) unsigned NOT NULL,
+  `unitWeight` tinyint(3) unsigned NOT NULL,
+  `components` int(10) unsigned NOT NULL,
+  PRIMARY KEY  (`factionID`,`unitType`,`unitWeight`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `factions`
+--
+DROP TABLE IF EXISTS `factions`;
+CREATE TABLE `factions` (
+  `fMWID` int(10) unsigned NOT NULL default '0',
+  `fName` varchar(100) NOT NULL,
+  `fLogo` text NOT NULL,
+  `fFluFile` text NOT NULL,
+  `fColor` varchar(10) NOT NULL,
+  `fAbbreviation` varchar(20) NOT NULL,
+  `fPlayerColors` varchar(10) NOT NULL,
+  `fTechLevel` int(11) NOT NULL,
+  `fAllowDefectionsFrom` varchar(10) NOT NULL,
+  `fAllowDefectionsTo` varchar(10) NOT NULL,
+  `fConquerable` varchar(10) NOT NULL,
+  `fMoney` bigint(20) NOT NULL,
+  `fInitialHouseRanking` int(11) NOT NULL,
+  `fMOTD` text NOT NULL,
+  `fInHouseAttacks` varchar(10) NOT NULL,
+  `fBaseGunner` tinyint(3) unsigned NOT NULL,
+  `fBasePilot` tinyint(3) unsigned NOT NULL,
+  `fIsMercHouse` varchar(10) NOT NULL,
+  `fIsNewbieHouse` varchar(10) NOT NULL,
+  `ID` int(10) unsigned NOT NULL auto_increment,
+  PRIMARY KEY  USING BTREE (`ID`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `factories`
+--
+DROP TABLE IF EXISTS `factories`;
+CREATE TABLE `factories` (
+  `FactoryID` int(10) unsigned NOT NULL auto_increment,
+  `FactoryPlanet` text NOT NULL,
+  `FactoryName` text NOT NULL,
+  `FactorySize` tinytext NOT NULL,
+  `FactoryFounder` tinytext NOT NULL,
+  `FactoryTicks` int(11) NOT NULL default '0',
+  `FactoryRefreshSpeed` int(11) NOT NULL default '0',
+  `FactoryType` int(11) NOT NULL default '0',
+  `FactoryisLocked` tinytext NOT NULL,
+  PRIMARY KEY  (`FactoryID`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `pilots`
+--
+DROP TABLE IF EXISTS `pilots`;
+CREATE TABLE `pilots` (
+  `pilotID` int(11) NOT NULL auto_increment,
+  `pilotName` varchar(100) NOT NULL,
+  `pilotExp` int(10) unsigned NOT NULL,
+  `pilotGunnery` tinyint(3) unsigned NOT NULL,
+  `pilotPiloting` tinyint(3) unsigned NOT NULL,
+  `pilotKills` int(10) unsigned NOT NULL,
+  `pilotCurrentFaction` varchar(45) NOT NULL,
+  `pilotHits` tinyint(3) unsigned NOT NULL,
+  `playerID` int(10) unsigned default NULL,
+  `factionID` int(10) unsigned default NULL,
+  `unitID` int(10) unsigned default NULL,
+  `pilotType` int(10) unsigned NOT NULL,
+  `pilotSize` int(11) NOT NULL,
+  `MWID` int(11) NOT NULL,
+  PRIMARY KEY  (`pilotID`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `pilotskills`
+--
+DROP TABLE IF EXISTS `pilotskills`;
+CREATE TABLE `pilotskills` (
+  `pilotID` int(10) unsigned NOT NULL auto_increment,
+  `SkillNum` int(10) unsigned NOT NULL,
+  `SkillData` text,
+  `SkillLevel` tinyint(4) NOT NULL,
+  PRIMARY KEY  (`pilotID`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `planetenvironments`
+--
+DROP TABLE IF EXISTS `planetenvironments`;
+CREATE TABLE `planetenvironments` (
+  `PTID` int(10) unsigned NOT NULL auto_increment,
+  `PlanetID` int(10) unsigned NOT NULL default '0',
+  `ContinentSize` int(10) unsigned NOT NULL default '0',
+  `TerrainData` int(11) NOT NULL default '0',
+  `AdvancedTerrainData` text NOT NULL,
+  PRIMARY KEY  (`PTID`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `planetflags`
+--
+DROP TABLE IF EXISTS `planetflags`;
+CREATE TABLE `planetflags` (
+  `PlanetID` int(10) unsigned NOT NULL default '0',
+  `PlanetFlag` varchar(100) NOT NULL default '',
+  PRIMARY KEY  (`PlanetFlag`,`PlanetID`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `planetinfluences`
+--
+DROP TABLE IF EXISTS `planetinfluences`;
+CREATE TABLE `planetinfluences` (
+  `PlanetID` int(10) unsigned NOT NULL default '0',
+  `FactionName` varchar(100) NOT NULL default '',
+  `Influence` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`PlanetID`,`FactionName`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `planets`
+--
+DROP TABLE IF EXISTS `planets`;
+CREATE TABLE `planets` (
+  `PlanetID` int(10) unsigned NOT NULL auto_increment,
+  `pCompProd` int(10) unsigned NOT NULL default '0',
+  `pXpos` float NOT NULL default '0',
+  `pYpos` float NOT NULL default '0',
+  `pDesc` text NOT NULL,
+  `pBays` int(10) unsigned NOT NULL default '0',
+  `pIsConquerable` tinytext NOT NULL,
+  `plastchanged` varchar(15) NOT NULL default '',
+  `pMWID` int(11) NOT NULL default '0',
+  `pMapSizeWidth` float NOT NULL default '0',
+  `pMapSizeHeight` float NOT NULL default '0',
+  `pBoardSizeWidth` float NOT NULL default '0',
+  `pBoardSizeHeight` float NOT NULL default '0',
+  `pTempWidth` float NOT NULL default '0',
+  `pTempHeight` float NOT NULL default '0',
+  `pGravity` float NOT NULL default '0',
+  `pVacuum` tinytext NOT NULL,
+  `pNightChance` int(11) NOT NULL default '0',
+  `pNightTempMod` int(11) NOT NULL default '0',
+  `pMinPlanetOwnership` int(11) NOT NULL default '0',
+  `pIsHomeworld` tinytext NOT NULL,
+  `pOriginalOwner` text NOT NULL,
+  `pName` text NOT NULL,
+  `pMaxConquestPoints` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`PlanetID`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `playerarmies`
+--
+DROP TABLE IF EXISTS `playerarmies`;
+CREATE TABLE `playerarmies` (
+  `playerID` int(10) unsigned NOT NULL,
+  `armyID` int(10) unsigned NOT NULL,
+  `armyString` text NOT NULL,
+  PRIMARY KEY  USING BTREE (`playerID`,`armyID`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `players`
+--
+DROP TABLE IF EXISTS `players`;
+CREATE TABLE `players` (
+  `playerID` int(10) unsigned NOT NULL auto_increment,
+  `playerName` varchar(45) NOT NULL,
+  `playerMoney` int(10) unsigned NOT NULL,
+  `playerExperience` int(10) unsigned NOT NULL,
+  `playerHouseName` text NOT NULL,
+  `playerLastOnline` text NOT NULL,
+  `playerTotalBays` int(10) unsigned NOT NULL,
+  `playerFreeBays` int(11) NOT NULL,
+  `playerRating` float NOT NULL,
+  `playerInfluence` int(10) unsigned NOT NULL,
+  `playerFluff` text NOT NULL,
+  `playerBaysOwned` int(10) unsigned default NULL,
+  `playerLogo` text NOT NULL,
+  `playerLastAFR` bigint(20) unsigned NOT NULL,
+  `playerGroupAllowance` int(10) unsigned NOT NULL,
+  `playerLastISP` text NOT NULL,
+  `playerIsInvisible` varchar(10) NOT NULL,
+  `playerTechnicians` int(10) unsigned default NULL,
+  `playerRP` int(10) unsigned NOT NULL,
+  `playerXPToReward` int(10) unsigned NOT NULL,
+  `playerAdminExcludeList` text NOT NULL,
+  `playerExcludeList` text NOT NULL,
+  `playerTotalTechsString` text NOT NULL,
+  `playerAvailableTechsString` text NOT NULL,
+  `playerPassword` varchar(45) default NULL,
+  `playerAccess` int(11) NOT NULL,
+  `playerUnitParts` text NOT NULL,
+  `playerAutoReorder` varchar(10) NOT NULL,
+  `playerPassTime` bigint(20) unsigned default NULL,
+  `playerLastModified` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  PRIMARY KEY  (`playerID`),
+  UNIQUE KEY `playerName` (`playerName`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `unit_ammo`
+--
+DROP TABLE IF EXISTS `unit_ammo`;
+CREATE TABLE `unit_ammo` (
+  `unitID` bigint(20) unsigned NOT NULL,
+  `ammoLocation` tinyint(3) unsigned NOT NULL,
+  `ammoHotLoaded` varchar(10) NOT NULL,
+  `ammoType` int(10) unsigned NOT NULL,
+  `ammoInternalName` varchar(100) NOT NULL,
+  `ammoShotsLeft` tinyint(3) unsigned NOT NULL,
+  PRIMARY KEY  (`unitID`,`ammoLocation`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `unit_mgs`
+--
+DROP TABLE IF EXISTS `unit_mgs`;
+CREATE TABLE `unit_mgs` (
+  `unitID` bigint(20) unsigned NOT NULL,
+  `mgLocation` int(10) unsigned NOT NULL,
+  `mgRapidFire` tinytext NOT NULL,
+  PRIMARY KEY  USING BTREE (`unitID`,`mgLocation`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `units`
+--
+DROP TABLE IF EXISTS `units`;
+CREATE TABLE `units` (
+  `MWID` int(10) unsigned NOT NULL,
+  `uFileName` text NOT NULL,
+  `uPosID` int(11) NOT NULL,
+  `uStatus` int(11) NOT NULL,
+  `uProducer` text NOT NULL,
+  `uWeightClass` int(10) unsigned NOT NULL,
+  `uAutoEject` tinytext NOT NULL,
+  `uHasSpotlight` tinytext NOT NULL,
+  `uIsUsingSpotlight` tinytext NOT NULL,
+  `uTargetSystem` int(10) unsigned NOT NULL,
+  `uScrappableFor` int(11) NOT NULL,
+  `uBattleDamage` text NOT NULL,
+  `uLastCombatPilot` int(11) NOT NULL,
+  `uCurrentRepairCost` int(10) unsigned NOT NULL,
+  `uLifetimeRepairCost` int(10) unsigned NOT NULL,
+  `uPlayerID` int(10) unsigned default NULL,
+  `uFactionID` int(10) unsigned default NULL,
+  `ID` bigint(20) unsigned NOT NULL auto_increment,
+  `uType` int(10) unsigned NOT NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=InnoDB;
+--
+-- Table structure for table `config`
+--
+CREATE TABLE `config` (
+  `config_key` VARCHAR(100) NOT NULL DEFAULT ' ',
+  `config_value` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`config_key`, `config_value`)
+)
+ENGINE = InnoDB;
+--
+-- Insert data for table `config`
+--
+INSERT into `config` SET config_key='mekwars_database_version', config_value='1';
+
+CREATE TABLE `mechstats` (
+  `ID` INTEGER UNSIGNED AUTO_INCREMENT NOT NULL,
+  `mechFileName` VARCHAR(100) NOT NULL,
+  `mechSize` TINYINT UNSIGNED NOT NULL DEFAULT 0,
+  `gamesWon` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+  `gamesPlayed` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+  `timesScrapped` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+  `currentGamesWon` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+  `currentGamesPlayed` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+  `originalBV` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+  `timesDestroyed` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+  `lastTimeUpdated` DOUBLE NOT NULL DEFAULT 0,
+  PRIMARY KEY (`ID`)
+);
+
+CREATE TABLE `faction_configs` (
+  `factionID` INTEGER UNSIGNED NOT NULL,
+  `configKey` VARCHAR(100) NOT NULL,
+  `configValue` TEXT,
+  PRIMARY KEY (`factionID`, `configKey`)
+)
+ENGINE = InnoDB;
+
+ALTER TABLE `players` MODIFY COLUMN `playerAccess` INTEGER NOT NULL DEFAULT 0;
+
+ALTER TABLE `units` ADD COLUMN `uIsUnitCommander` VARCHAR(10) NOT NULL DEFAULT 'false' AFTER `uType`;
+
+ALTER TABLE `units` DROP COLUMN `uIsUnitCommander`;
+
+ALTER TABLE `players` ADD COLUMN `playerTeamNumber` INTEGER NOT NULL DEFAULT '-1' AFTER `playerLastModified`;
+
+CREATE TABLE `merc_contract_info` (
+  `contractID` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `contractDuration` INTEGER UNSIGNED NOT NULL,
+  `contractEarnedAmount` INTEGER UNSIGNED NOT NULL,
+  `contractPayment` INTEGER UNSIGNED NOT NULL,
+  `contractHouse` INTEGER UNSIGNED NOT NULL,
+  `contractPlayer` VARCHAR(100) NOT NULL,
+  `contractOfferingPlayer` VARCHAR(100) NOT NULL,
+  `contractType` INTEGER UNSIGNED NOT NULL,
+  PRIMARY KEY (`contractID`)
+)
+ENGINE = InnoDB;
+
+ALTER TABLE `players` ADD COLUMN `playerSubFactionName` VARCHAR(100) NOT NULL AFTER `playerUnitParts`;
+
+CREATE TABLE `subfactions` (
+  `subfactionID` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `houseID` INTEGER UNSIGNED NOT NULL,
+  `sf_string` TEXT NOT NULL,
+  PRIMARY KEY (`subfactionID`)
+)
+ENGINE = InnoDB;
+
+ALTER TABLE `subfactions` CHANGE COLUMN `subfactionID` `subfactionName` VARCHAR(100) NOT NULL DEFAULT ' ',
+ DROP PRIMARY KEY,
+ ADD PRIMARY KEY  USING BTREE(`subfactionName`, `houseID`);
+
+CREATE TABLE `faction_leaders` (
+  `faction_id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `leader_name` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`faction_id`, `leader_name`)
+)
+ENGINE = InnoDB;
+
+ALTER TABLE `merc_contract_info` MODIFY COLUMN `contractHouse` VARCHAR(100) NOT NULL;
+
+ALTER TABLE `merc_contract_info` MODIFY COLUMN `contractDuration` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+ MODIFY COLUMN `contractEarnedAmount` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+ MODIFY COLUMN `contractPayment` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+ MODIFY COLUMN `contractHouse` VARCHAR(100) NOT NULL DEFAULT ' ',
+ MODIFY COLUMN `contractPlayer` VARCHAR(100) NOT NULL DEFAULT ' ',
+ MODIFY COLUMN `contractOfferingPlayer` VARCHAR(100) NOT NULL DEFAULT ' ',
+ MODIFY COLUMN `contractType` INTEGER UNSIGNED NOT NULL DEFAULT 0;
+
+
+ALTER TABLE `factories` ADD COLUMN `FactoryBuildTableFolder` TEXT NOT NULL AFTER `FactoryisLocked`;
+
+CREATE TABLE `unit_history` (
+  `event_id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `event_time` TIMESTAMP NOT NULL,
+  `event_fluff` TEXT NOT NULL,
+  PRIMARY KEY (`event_id`)
+)
+ENGINE = InnoDB;
+
+CREATE TABLE `noplay_lists` (
+  `player_id` INTEGER UNSIGNED NOT NULL,
+  `np_name` VARCHAR(100) NOT NULL,
+  `admin_exclude` ENUM('y','n') NOT NULL DEFAULT 'n',
+  PRIMARY KEY (`player_id`)
+)
+ENGINE = InnoDB;
+
+ALTER TABLE `noplay_lists` DROP PRIMARY KEY,
+ ADD PRIMARY KEY  USING BTREE(`player_id`, `np_name`, `admin_exclude`);
+
+ALTER TABLE `players` DROP COLUMN `playerAdminExcludeList`;
+ALTER TABLE `players` DROP COLUMN `playerExcludeList`;
+
+
+ALTER TABLE `factories` ADD COLUMN `FactoryAccessLevel` INTEGER UNSIGNED NOT NULL DEFAULT 0 AFTER `FactoryBuildTableFolder`;
+
+ALTER TABLE `players` ADD COLUMN `playerForumID` INTEGER NOT NULL DEFAULT '-1' AFTER `playerSubFactionName`;
+
+ALTER TABLE `planets` MODIFY COLUMN `pIsConquerable` BOOLEAN NOT NULL DEFAULT 0,
+ MODIFY COLUMN `pVacuum` BOOLEAN NOT NULL DEFAULT 0,
+ MODIFY COLUMN `pIsHomeworld` BOOLEAN NOT NULL DEFAULT 0;
+
+ALTER TABLE `factions` MODIFY COLUMN `fAllowDefectionsFrom` BOOLEAN NOT NULL DEFAULT 1,
+ MODIFY COLUMN `fAllowDefectionsTo` BOOLEAN NOT NULL DEFAULT 1,
+ MODIFY COLUMN `fConquerable` BOOLEAN NOT NULL DEFAULT 1,
+ MODIFY COLUMN `fInHouseAttacks` BOOLEAN NOT NULL DEFAULT 0,
+ MODIFY COLUMN `fIsMercHouse` BOOLEAN NOT NULL DEFAULT 0,
+ MODIFY COLUMN `fIsNewbieHouse` BOOLEAN NOT NULL DEFAULT 0;
+ 
+ ALTER TABLE `players` MODIFY COLUMN `playerIsInvisible` BOOLEAN NOT NULL DEFAULT 0;
+ ALTER TABLE `players` MODIFY COLUMN `playerAutoReorder` BOOLEAN NOT NULL DEFAULT 0;
+ ALTER TABLE `units` MODIFY COLUMN `uAutoEject` BOOLEAN NOT NULL DEFAULT 0;
+ALTER TABLE `units` MODIFY COLUMN `uHasSpotlight` BOOLEAN NOT NULL DEFAULT 0,
+ MODIFY COLUMN `uIsUsingSpotlight` BOOLEAN NOT NULL DEFAULT 0; 
+
+ALTER TABLE `factioncomponents` MODIFY COLUMN `factionID` INTEGER UNSIGNED NOT NULL;
+ 
+ALTER TABLE `players` ADD COLUMN `playerLastPromoted` BIGINT UNSIGNED NOT NULL DEFAULT 0 AFTER `playerForumID`;
+
+ALTER TABLE `unit_mgs` MODIFY COLUMN `mgRapidFire` BOOLEAN NOT NULL DEFAULT 0,
+ ADD COLUMN `mgSlot` INTEGER UNSIGNED NOT NULL AFTER `mgRapidFire`;
+
+ALTER TABLE `unit_mgs` DROP PRIMARY KEY,
+ ADD PRIMARY KEY  USING BTREE(`unitID`, `mgLocation`, `mgSlot`);
+
+ALTER TABLE `players` ADD COLUMN `playerValidated` BOOLEAN NOT NULL DEFAULT 0 AFTER `playerLastPromoted`;
+
+ALTER TABLE `unit_history` MODIFY COLUMN `event_id` BIGINT UNSIGNED NOT NULL DEFAULT NULL AUTO_INCREMENT,
+ ADD COLUMN `unit_id` INTEGER UNSIGNED NOT NULL AFTER `event_fluff`;
+ 
+CREATE TABLE `pilot_history` (
+  `history_id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `pilot_id` INTEGER UNSIGNED NOT NULL,
+  `event_date` DATETIME NOT NULL,
+  `event_fluff` TEXT NOT NULL,
+  PRIMARY KEY (`history_id`)
+)
+ENGINE = InnoDB;
+
+ALTER TABLE `pilot_history` MODIFY COLUMN `event_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
+
+ALTER TABLE `mechstats` ENGINE = InnoDB;
+
+ALTER TABLE `unit_history` ADD COLUMN `event_type` INTEGER UNSIGNED NOT NULL DEFAULT 0 AFTER `unit_id`;
+
+ALTER TABLE `pilot_history` ADD COLUMN `event_type` INTEGER UNSIGNED NOT NULL DEFAULT 0 AFTER `event_fluff`;
+
+ALTER TABLE `pilotskills` DROP PRIMARY KEY,
+ ADD PRIMARY KEY  USING BTREE(`pilotID`, `SkillNum`);
+
+CREATE TABLE `campaign_config` (
+  `config_name` VARCHAR(100) NOT NULL,
+  `config_value` TEXT NOT NULL,
+  PRIMARY KEY (`config_name`)
+)
+ENGINE = InnoDB;
+ 
+ALTER TABLE `pilotskills` MODIFY COLUMN `pilotID` INTEGER NOT NULL DEFAULT -1;
+
+CREATE TABLE `task_history` (
+  `taskID` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `type` VARCHAR(100) NOT NULL DEFAULT ' ',
+  `planet` VARCHAR(100) NOT NULL DEFAULT ' ',
+  `terrain` VARCHAR(100) NOT NULL DEFAULT ' ',
+  `theme` VARCHAR(45) DEFAULT ' ',
+  `attackers` TEXT NOT NULL,
+  `defenders` TEXT NOT NULL,
+  `attackerStartBV` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+  `defenderStartBV` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+  `attackerEndBV` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+  `defenderEndBV` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+  `attackerNumUnits` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+  `defenderNumUnits` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+  `attackerWon` BOOLEAN NOT NULL DEFAULT 0,
+  `drawGame` BOOLEAN NOT NULL DEFAULT 0,
+  `winner` TEXT NOT NULL,
+  `loser` TEXT NOT NULL,
+  `gameLength` VARCHAR(45) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`taskID`)
+)
+ENGINE = InnoDB;
+
+ALTER TABLE `factions` ADD COLUMN `fString` TEXT AFTER `ID`;
+ALTER TABLE `players` ADD COLUMN `playerString` TEXT AFTER `playerTeamNumber`;
+
+ALTER TABLE `factions` ADD UNIQUE INDEX `factionNameIndex`(`fName`);
+
+ALTER TABLE `units` MODIFY COLUMN `uPosID` INTEGER,
+ MODIFY COLUMN `uStatus` INTEGER,
+ MODIFY COLUMN `uProducer` TEXT CHARACTER SET latin1 COLLATE latin1_swedish_ci,
+ MODIFY COLUMN `uAutoEject` TINYINT(1) DEFAULT 0,
+ MODIFY COLUMN `uHasSpotlight` TINYINT(1) DEFAULT 0,
+ MODIFY COLUMN `uIsUsingSpotlight` TINYINT(1) DEFAULT 0,
+ MODIFY COLUMN `uTargetSystem` INTEGER UNSIGNED,
+ MODIFY COLUMN `uScrappableFor` INTEGER,
+ MODIFY COLUMN `uBattleDamage` TEXT CHARACTER SET latin1 COLLATE latin1_swedish_ci,
+ MODIFY COLUMN `uLastCombatPilot` INTEGER,
+ MODIFY COLUMN `uCurrentRepairCost` INTEGER UNSIGNED,
+ MODIFY COLUMN `uLifetimeRepairCost` INTEGER UNSIGNED;
+
+
+
+ALTER TABLE `planets` ADD COLUMN `pString` TEXT NOT NULL AFTER `pMaxConquestPoints`;
+
+ALTER TABLE `planets` MODIFY COLUMN `pCompProd` INTEGER UNSIGNED DEFAULT 0,
+ MODIFY COLUMN `pXpos` FLOAT DEFAULT 0,
+ MODIFY COLUMN `pYpos` FLOAT DEFAULT 0,
+ MODIFY COLUMN `pDesc` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+ MODIFY COLUMN `pBays` INTEGER UNSIGNED DEFAULT 0,
+ MODIFY COLUMN `pIsConquerable` TINYINT(1) DEFAULT 0,
+ MODIFY COLUMN `plastchanged` VARCHAR(15) CHARACTER SET utf8 COLLATE utf8_general_ci,
+ MODIFY COLUMN `pMWID` INTEGER DEFAULT 0,
+ MODIFY COLUMN `pMapSizeWidth` FLOAT DEFAULT 0,
+ MODIFY COLUMN `pMapSizeHeight` FLOAT DEFAULT 0,
+ MODIFY COLUMN `pBoardSizeWidth` FLOAT DEFAULT 0,
+ MODIFY COLUMN `pBoardSizeHeight` FLOAT DEFAULT 0,
+ MODIFY COLUMN `pTempWidth` FLOAT DEFAULT 0,
+ MODIFY COLUMN `pTempHeight` FLOAT DEFAULT 0,
+ MODIFY COLUMN `pGravity` FLOAT DEFAULT 0,
+ MODIFY COLUMN `pVacuum` TINYINT(1) DEFAULT 0,
+ MODIFY COLUMN `pNightChance` INTEGER DEFAULT 0,
+ MODIFY COLUMN `pNightTempMod` INTEGER DEFAULT 0,
+ MODIFY COLUMN `pMinPlanetOwnership` INTEGER DEFAULT 0,
+ MODIFY COLUMN `pIsHomeworld` TINYINT(1) DEFAULT 0,
+ MODIFY COLUMN `pOriginalOwner` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+ MODIFY COLUMN `pName` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+ MODIFY COLUMN `pMaxConquestPoints` INTEGER DEFAULT 0;
+
+
+CREATE TABLE `votetopics` (
+  `voteID` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `voteType` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+  `voteScope` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+  `voteSubmitter` VARCHAR(45) NOT NULL,
+  `voteHouse` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+  `voteSubfaction` VARCHAR(45) DEFAULT NULL,
+  `voteTitle` VARCHAR(100) NOT NULL,
+  `voteExpired` BOOLEAN NOT NULL DEFAULT 0,
+  `voteText` TEXT NOT NULL,
+  PRIMARY KEY (`voteID`)
+)
+ENGINE = InnoDB
+CHARACTER SET utf8;
+
+CREATE TABLE `voteOptions` (
+  `optionID` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `optionText` VARCHAR(100) NOT NULL,
+  `optionTopic` INTEGER UNSIGNED NOT NULL,
+  PRIMARY KEY (`optionID`)
+)
+ENGINE = InnoDB
+CHARACTER SET utf8;
+
+CREATE TABLE `playervotes` (
+  `playerVoteID` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `playerVoteTopic` INTEGER UNSIGNED NOT NULL,
+  `playerVoteResult` INTEGER UNSIGNED NOT NULL COMMENT 'For Yes/No, 1 = Yes, 2 = No.  Otherwise, it will map to an entry in voteoptions.  In both cases, -1 equates to abstain.',
+  PRIMARY KEY (`playerVoteID`)
+)
+ENGINE = InnoDB
+CHARACTER SET utf8;
+
+ALTER TABLE `players` ADD COLUMN `playerSaveMethod` SMALLINT UNSIGNED NOT NULL DEFAULT 0 AFTER `playerString`;
+
+ALTER TABLE `factions` MODIFY COLUMN `fString` LONGTEXT;
+
+ALTER TABLE `factioncomponents` MODIFY COLUMN `components` INT(10) UNSIGNED NOT NULL DEFAULT 0;
+
+UPDATE config set config_value='35' WHERE config_key='mekwars_database_version';

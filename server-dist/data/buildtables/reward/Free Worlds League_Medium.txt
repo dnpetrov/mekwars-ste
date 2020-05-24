@@ -1,0 +1,18 @@
+24 Chimera CMA-C.mtf
+52 Strider SR1-OF.mtf
+17 Strider SR1-OR.mtf
+48 Bishamon BSN-3K.mtf
+25 Bloodhound B1-HND.mtf
+6 Bloodhound B2-HND.mtf
+45 Firestarter FS9-OF.mtf
+23 Firestarter FS9-OG.mtf
+15 Firestarter FS9-OR.mtf
+40 Blackjack BJ2-OF.mtf
+38 Blitzkrieg BTZ-3F.mtf
+48 Centurion CN9-D3D.mtf
+10 Centurion CN9-D4D.mtf
+13 Griffin GRF-5M.mtf
+10 Shadow Hawk SHD-7M.mtf
+49 FWL Special
+25 Clan
+5 Solaris

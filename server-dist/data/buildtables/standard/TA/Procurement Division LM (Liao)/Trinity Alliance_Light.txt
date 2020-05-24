@@ -1,0 +1,16 @@
+16 Eagle EGL-1M.mtf
+29 Eagle EGL-2M.mtf
+54 Tarantula ZPH-1A.mtf
+13 Tarantula ZPH-2A.mtf
+48 Hammer HMR-3M.mtf
+31 Jackal JA-KL-1532.mtf
+29 Spider SDR-5V.mtf
+120 Spider SDR-7M.mtf
+17 Spider SDR-C.mtf
+29 Falcon Hawk FNHK-9K1A.mtf
+21 Owens OW-1.mtf
+19 Owens OW-1A.mtf
+19 Owens OW-1B.mtf
+19 Owens OW-1C.mtf
+21 Owens OW-1D.mtf
+18 Owens OW-1E.mtf

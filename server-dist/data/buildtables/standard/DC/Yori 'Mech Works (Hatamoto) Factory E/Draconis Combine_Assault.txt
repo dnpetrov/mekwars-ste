@@ -1,0 +1,9 @@
+15 Hatamoto-Chi HTM-26T.mtf
+172 Hatamoto-Chi HTM-27T.mtf
+20 Hatamoto-Chi HTM-28T.mtf
+58 Hatamoto-Hi HTM-27U.mtf
+73 Hatamoto-Hi HTM-C.mtf
+146 Hatamoto-Hi HTM-CM.mtf
+73 Hatamoto-Kaze HTM-27V.mtf
+48 Hatamoto-Ku HTM-27W.mtf
+87 Hatamoto-Mizo HTM-27Y.mtf

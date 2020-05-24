@@ -1,0 +1,6 @@
+41 Blackjack BJ2-O.mtf
+41 Blackjack BJ2-OA.mtf
+41 Blackjack BJ2-OB.mtf
+55 Blackjack BJ2-OC.mtf
+55 Blackjack BJ2-OD.mtf
+50 Blackjack BJ2-OF.mtf

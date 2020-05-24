@@ -1,0 +1,7 @@
+7 Marauder C.mtf
+32 Marauder MAD-3D.mtf
+15 Marauder MAD-3R.mtf
+108 Marauder MAD-5D.mtf
+12 Marauder MAD-5D-DC.mtf
+21 Marauder MAD-5M.mtf
+148 Marauder MAD-5S.mtf

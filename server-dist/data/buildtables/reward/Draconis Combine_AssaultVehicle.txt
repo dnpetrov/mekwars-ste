@@ -1,0 +1,8 @@
+30 Demolisher Heavy Tank (Arrow IV).blk
+66 Demolisher Heavy Tank (MRM).blk
+26 Schiltron Mobile Fire-Support Platform D.blk
+29 Challenger MBT XI.blk
+14 Challenger MBT XII.blk
+14 Ontos Heavy Tank (Light Gauss).blk
+31 Behemoth Heavy Tank (Kurita).blk
+23 SLDF Royal

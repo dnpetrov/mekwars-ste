@@ -1,0 +1,14 @@
+1 Charger CGR-2A2.mtf
+13 Victor VTR-10L.mtf
+40 Longbow LGB-12C.mtf
+1 Cyclops CP-11-H.mtf
+24 Sunder SD1-OD.mtf
+66 Yu Huang Y-H9G.mtf
+66 Yu Huang Y-H10G.mtf
+6 Yu Huang Y-H9GC.mtf
+24 Cerberus MR-V3.mtf
+43 Sirocco SRC-3C.mtf
+24 Pillager PLG-4Z.mtf
+37 TA Special
+18 Clan
+4 Solaris

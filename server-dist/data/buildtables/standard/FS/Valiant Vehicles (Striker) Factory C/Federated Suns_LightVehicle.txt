@@ -1,0 +1,8 @@
+36 Striker Light Tank.blk
+42 Striker Light Tank (3053 Upgrade).blk
+38 Striker Light Tank (3061 Upgrade).blk
+39 Striker Light Tank (Ammo).blk
+48 Striker Light Tank (Laser).blk
+4 Striker Light Tank (LRM).blk
+42 Striker Light Tank (Narc).blk
+4 Striker Light Tank (SRM).blk

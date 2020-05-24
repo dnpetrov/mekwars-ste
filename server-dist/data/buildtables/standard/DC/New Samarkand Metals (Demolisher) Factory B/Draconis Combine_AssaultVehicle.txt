@@ -1,0 +1,6 @@
+43 Demolisher Heavy Tank (Standard Mk. II).blk
+49 Demolisher Heavy Tank (Arrow IV).blk
+2 Demolisher Heavy Tank (Defensive).blk
+54 Demolisher Heavy Tank (Gauss).blk
+66 Demolisher Heavy Tank (MRM).blk
+13 Devastator Heavy Tank.blk

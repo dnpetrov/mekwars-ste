@@ -1,0 +1,7 @@
+104 Hetzer Wheeled Assault Gun.blk
+10 Hetzer Wheeled Assault Gun (AC10).blk
+10 Hetzer Wheeled Assault Gun (LRM).blk
+5 Hetzer Wheeled Assault Gun (Scout).blk
+10 Hetzer Wheeled Assault Gun (SRM).blk
+12 Chaparral.blk
+12 Chaparral (MG).blk

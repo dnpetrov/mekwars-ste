@@ -1,0 +1,17 @@
+52 Raptor RTX1-OF.mtf
+17 Raptor RTX1-OR.mtf
+45 Tarantula ZPH-2A.mtf
+23 Tarantula ZPH-3A.mtf
+9 Tarantula ZPH-4A.mtf
+7 Spider SDR-7K.mtf
+14 Urbanmech UM-R68.mtf
+23 Urbanmech UM-R69.mtf
+13 Jenner IIC 4.mtf
+52 Owens OW-1E.mtf
+17 Owens OW-1R.mtf
+26 Panther PNT-12A.mtf
+29 Talon TLN-5Z.mtf
+10 Venom SDR-9KC.mtf
+40 DC Special
+20 Clan
+4 Solaris

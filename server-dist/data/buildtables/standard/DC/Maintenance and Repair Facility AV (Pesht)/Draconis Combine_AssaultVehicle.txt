@@ -1,0 +1,10 @@
+134 Partisan Heavy Tank.blk
+121 Partisan Air Defense Tank.blk
+12 Partisan Heavy Tank (AC2).blk
+12 Partisan Heavy Tank (LRM).blk
+25 Rhino Fire Support Tank.blk
+9 Rhino Fire Support Tank (Flamer).blk
+9 Rhino Fire Support Tank (MG).blk
+3 Rhino Fire Support Tank (SL).blk
+20 Challenger MBT X.blk
+15 Challenger MBT XI.blk

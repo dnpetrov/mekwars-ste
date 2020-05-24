@@ -1,0 +1,4 @@
+46 Pegasus Scout Hover Tank.blk
+87 Pegasus Scout Hover Tank (3058 Upgrade).blk
+10 Pegasus Scout Hover Tank (Missile).blk
+10 Pegasus Scout Hover Tank (Sensors).blk

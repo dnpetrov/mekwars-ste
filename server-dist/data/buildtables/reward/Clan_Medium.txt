@@ -1,0 +1,23 @@
+15 Dragonfly (Viper) Prime.mtf
+15 Dragonfly (Viper) A.mtf
+15 Dragonfly (Viper) B.mtf
+15 Dragonfly (Viper) C.mtf
+15 Dragonfly (Viper) D.mtf
+12 Dragonfly (Viper) E.mtf
+10 Dragonfly (Viper) H.mtf
+18 Fenris (Ice Ferret) Prime.mtf
+18 Fenris (Ice Ferret) A.mtf
+18 Fenris (Ice Ferret) B.mtf
+18 Fenris (Ice Ferret) C.mtf
+18 Fenris (Ice Ferret) D.mtf
+15 Fenris (Ice Ferret) E.mtf
+12 Fenris (Ice Ferret) H.mtf
+10 Black Hawk (Nova) Prime.mtf
+10 Black Hawk (Nova) A.mtf
+10 Black Hawk (Nova) B.mtf
+10 Black Hawk (Nova) C.mtf
+10 Black Hawk (Nova) D.mtf
+8 Black Hawk (Nova) E.mtf
+5 Black Hawk (Nova) H.mtf
+8 Black Hawk (Nova) S.mtf
+18 Hunchback IIC.mtf

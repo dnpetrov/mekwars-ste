@@ -1,0 +1,8 @@
+8 Thumper Artillery Vehicle.blk
+4 Rommel Tank (Gauss).blk
+48 Brutus Assault Tank.blk
+26 Brutus Assault Tank (LRM).blk
+26 Brutus Assault Tank (PPC).blk
+11 Brutus Assault Tank (PPC 2).blk
+11 Padilla Heavy Artillery Tank.blk
+14 Padilla Heavy Artillery Tank (LRM).blk

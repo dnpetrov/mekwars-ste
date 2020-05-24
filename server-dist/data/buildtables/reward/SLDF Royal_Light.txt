@@ -1,0 +1,24 @@
+3 Locust LCT-1Vb.mtf
+5 Mercury MCY-99.mtf
+3 Stinger STG-3Gb.mtf
+8 Thorn THE-N.mtf
+1 Thorn THE-Nb.mtf
+1 Jackrabbit JKR-8T.mtf
+1 Jackrabbit JKR-9R.mtf
+1 Mongoose MON-66GX Gunslinger.mtf
+8 Mongoose MON-66.mtf
+3 Mongoose MON-66b.mtf
+1 Sling SL-1G.mtf
+1 Sling SL-1H.mtf
+1 Falcon FLC-4Nb.mtf
+1 Firefly FFL-3A.mtf
+8 Hermes HER-1S.mtf
+1 Hermes HER-1Sb.mtf
+10 Hussar HSR-200-D.mtf
+3 Hussar HSR-200-Db.mtf
+1 Firestarter FS9-A.mtf
+10 Night Hawk NTK-2Q.mtf
+3 Ostscout OTT-7Jb.mtf
+1 Spector SPR-4F.mtf
+1 Talon TLN-5V.mtf
+10 Talon TLN-5W.mtf

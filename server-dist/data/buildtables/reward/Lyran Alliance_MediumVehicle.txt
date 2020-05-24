@@ -1,0 +1,9 @@
+52 Myrmidon Medium Tank.blk
+13 Glaive Medium Tank.blk
+27 Chaparral (MG).blk
+18 Chaparral (SRM).blk
+40 Condor Heavy Hover Tank (Laser).blk
+10 Condor Heavy Hover Tank (Upgrade).blk
+5 Fulcrum Heavy Hovertank II.blk
+40 Maxim (I) Heavy Hover Transport.blk
+23 SLDF Royal

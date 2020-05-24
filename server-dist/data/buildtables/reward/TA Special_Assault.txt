@@ -1,0 +1,5 @@
+171 SLDF Royal
+10 BattleMaster BLR-1Gb.mtf
+3 Emperor EMP-5A.mtf
+3 Pillager PLG-1N.mtf
+3 Xanthos XNT-3O.mtf

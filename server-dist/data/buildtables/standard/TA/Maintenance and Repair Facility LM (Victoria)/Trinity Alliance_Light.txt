@@ -1,0 +1,16 @@
+9 Javelin JVN-10F Fire Javelin.mtf
+30 Javelin JVN-10N.mtf
+26 UrbanMech UM-R60.mtf
+13 UrbanMech UM-R60L.mtf
+102 UrbanMech UM-R63.mtf
+2 Valkyrie VLK-QA.mtf
+23 Firestarter FS9-H.mtf
+37 Firestarter FS9-S.mtf
+37 Firestarter FS9-S1.mtf
+1 Garm GRM-01A.mtf
+40 Jenner JR7-D.mtf
+8 Jenner JR7-K.mtf
+17 Ostscout OTT-7J.mtf
+14 Ostscout OTT-7K.mtf
+9 Panther PNT-9R.mtf
+1 Wolfhound WLF-1.mtf

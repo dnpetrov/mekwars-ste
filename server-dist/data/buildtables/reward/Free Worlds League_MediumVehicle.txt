@@ -1,0 +1,8 @@
+40 Stygian Strike Tank.blk
+20 Stygian Strike Tank (Armor).blk
+27 Chaparral (MG).blk
+18 Chaparral (SRM).blk
+36 Condor Heavy Hover Tank (Laser).blk
+10 Condor Heavy Hover Tank (Upgrade).blk
+45 Maxim (I) Heavy Hover Transport.blk
+22 SLDF Royal

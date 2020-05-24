@@ -1,0 +1,29 @@
+37 Salamander PPR-5S.mtf
+15 Salamander PPR-5T.mtf
+14 Salamander PPR-6S.mtf
+14 Salamander PPR-6T.mtf
+39 Zeus ZEU-6S.mtf
+21 Zeus ZEU-6T.mtf
+129 Zeus ZEU-9S.mtf
+31 BattleMaster BLR-1D.mtf
+18 BattleMaster BLR-1G.mtf
+2 BattleMaster BLR-1G-DC.mtf
+74 BattleMaster BLR-3M.mtf
+8 BattleMaster BLR-3M-DC.mtf
+115 BattleMaster BLR-3S.mtf
+79 Gunslinger GUN-1ERD.mtf
+14 Gunslinger GUN-2ERD.mtf
+13 Highlander HGN-732.mtf
+5 Mad Cat Mk II.mtf
+26 Banshee BNC-3E.mtf
+13 Banshee BNC-3S.mtf
+100 Banshee BNC-5S.mtf
+46 Cerberus MR-V2.mtf
+13 Cerberus MR-V3.mtf
+17 Berserker BRZ-A3.mtf
+5 Devastator DVS-1D.mtf
+52 Devastator DVS-2.mtf
+16 Devastator DVS-3.mtf
+13 Grand Titan T-IT-N10M.mtf
+6 King Crab KGC-0000.mtf
+26 King Crab KGC-001.mtf

@@ -1,0 +1,35 @@
+26 Chimera CMA-1S.mtf
+26 Chimera CMA-C.mtf
+38 Daimyo DMO-5K.mtf
+18 Sentinel STN-C.mtf
+52 Strider SR1-OF.mtf
+17 Strider SR1-OR.mtf
+24 Watchman WTC-4DM.mtf
+52 Bishamon BSN-3K.mtf
+66 Bishamon BSN-4K.mtf
+50 Firestarter FS9-OF.mtf
+25 Firestarter FS9-OG.mtf
+17 Firestarter FS9-OR.mtf
+17 Firestarter FS9-OX.mtf
+26 Komodo KIM-2C.mtf
+26 Komodo KIM-3C.mtf
+63 Wolf Trap (Tora) WFT-C.mtf
+40 Blackjack BJ2-OF.mtf
+22 Blackjack BJ2-OR.mtf
+10 Hellhound (Conjurer) 2.mtf
+40 Tessen TSN-C3.mtf
+10 Griffin GRF-6S.mtf
+4 Ryoken (Stormcrow) Prime.mtf
+4 Ryoken (Stormcrow) A.mtf
+4 Ryoken (Stormcrow) B.mtf
+4 Ryoken (Stormcrow) C.mtf
+4 Ryoken (Stormcrow) D.mtf
+4 Ryoken (Stormcrow) E.mtf
+4 Ryoken (Stormcrow) H.mtf
+2 Ryoken (Stormcrow) I.mtf
+16 Shadow Hawk C.mtf
+7 Wolverine WVR-8C.mtf
+25 Wolverine WVR-8K.mtf
+88 DC Special
+44 Clan
+9 Solaris

@@ -1,0 +1,7 @@
+48 Myrmidon Medium Tank.blk
+27 Chaparral (MG).blk
+18 Chaparral (SRM).blk
+36 Condor Heavy Hover Tank (Laser).blk
+7 Daimyo HQ 67-K2.blk
+50 Maxim (I) Heavy Hover Transport.blk
+21 SLDF Royal

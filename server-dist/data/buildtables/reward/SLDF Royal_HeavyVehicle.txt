@@ -1,0 +1,15 @@
+8 Demon Tank.blk
+1 Demon Tank (Horned Demon).blk
+1 Demon Tank (PPC).blk
+8 Demon Tank (Royal).blk
+1 Marsden II MBT.blk
+1 Marsden II MBT II-A.blk
+1 Gallant Urban Assault Tank.blk
+5 Magi Infantry Support Vehicle.blk
+8 Burke Defense Tank.blk
+1 Burke Defense Tank (Royal).blk
+1 Merkava Heavy Tank Mk VIII.blk
+10 Padilla Heavy Artillery Tank.blk
+1 Pollux ADA Heavy Tank.blk
+1 Von Luckner Heavy Tank (Royal).blk
+1 Von Luckner Heavy Tank (Star League).blk

@@ -1,0 +1,113 @@
+12 Assassin ASN-21.mtf
+37 Assassin ASN-23.mtf
+16 Cicada CDA-3F.mtf
+14 Cicada CDA-3M.mtf
+6 Clint CLNT-2-3T.mtf
+35 Clint CLNT-2-3U.mtf
+4 Clint CLNT-2-4T.mtf
+13 Hermes II HER-5S.mtf
+15 Hermes II HER-6D.mtf
+13 Sentinel STN-3L.mtf
+112 Sentry SNT-04.mtf
+17 Strider SR1-O.mtf
+17 Strider SR1-OA.mtf
+17 Strider SR1-OB.mtf
+17 Strider SR1-OC.mtf
+17 Strider SR1-OD.mtf
+15 Strider SR1-OE.mtf
+15 Strider SR1-OF.mtf
+5 Strider SR1-OR.mtf
+19 Vulcan VL-2T.mtf
+10 Vulcan VL-5T.mtf
+75 Vulcan VT-5S.mtf
+85 Watchman WTC-4M.mtf
+75 Whitworth WTH-2.mtf
+24 Blackjack BJ-1.mtf
+6 Blackjack BJ-1DB.mtf
+6 Blackjack BJ-1DC.mtf
+133 Blackjack BJ-2.mtf
+60 Blackjack BJ-3.mtf
+34 Firestarter FS9-O.mtf
+26 Firestarter FS9-OA.mtf
+34 Firestarter FS9-OB.mtf
+26 Firestarter FS9-OC.mtf
+26 Firestarter FS9-OD.mtf
+23 Firestarter FS9-OE.mtf
+26 Firestarter FS9-OF.mtf
+8 Firestarter FS9-OR.mtf
+22 Hatchetman HCT-3F.mtf
+24 Hatchetman HCT-5D.mtf
+104 Hatchetman HCT-5S.mtf
+92 Hatchetman HCT-6D.mtf
+106 Hellspawn HSN-7D.mtf
+12 Hollander II BZK-F5.mtf
+21 Phoenix Hawk PXH-1.mtf
+16 Phoenix Hawk PXH-1D.mtf
+147 Phoenix Hawk PXH-3D.mtf
+23 Phoenix Hawk PXH-3M.mtf
+83 Stealth STH-1D.mtf
+15 Stealth STH-2D.mtf
+14 Stealth STH-2D1.mtf
+14 Stealth STH-2D2.mtf
+12 Wyvern WVE-5N.mtf
+18 Wyvern WVE-6N.mtf
+41 Blackjack BJ2-O.mtf
+41 Blackjack BJ2-OA.mtf
+41 Blackjack BJ2-OB.mtf
+55 Blackjack BJ2-OC.mtf
+55 Blackjack BJ2-OD.mtf
+50 Blackjack BJ2-OF.mtf
+28 Centurion CN9-A.mtf
+13 Centurion CN9-AH.mtf
+13 Centurion CN9-AL.mtf
+86 Centurion CN9-D.mtf
+31 Centurion CN9-D3.mtf
+22 Centurion CN9-D3D.mtf
+126 Centurion CN9-D5.mtf
+57 Centurion CN10-B.mtf
+4 Chameleon CLN-7V.mtf
+18 Chameleon CLN-7W.mtf
+18 Chameleon CLN-7Z.mtf
+3 Chameleon TRC-4B.mtf
+14 Enfield END-6J.mtf
+33 Enfield END-6Q.mtf
+56 Enforcer ENF-4R.mtf
+195 Enforcer ENF-5D.mtf
+19 Enforcer III ENF-6G.mtf
+154 Enforcer III ENF-6M.mtf
+110 Enforcer III ENF-6T.mtf
+54 Hunchback HBK-4G.mtf
+13 Hunchback HBK-4H.mtf
+13 Hunchback HBK-4J.mtf
+13 Hunchback HBK-4N.mtf
+13 Hunchback HBK-4P.mtf
+9 Hunchback HBK-4SP.mtf
+47 Nightsky NGS-4S.mtf
+15 Nightsky NGS-4T.mtf
+15 Nightsky NGS-5S.mtf
+20 Nightsky NGS-5T.mtf
+20 Starslayer STY-3C.mtf
+48 Trebuchet TBT-5N.mtf
+9 Trebuchet TBT-5S.mtf
+128 Trebuchet TBT-7M.mtf
+13 Apollo APL-1M.mtf
+40 Bushwacker BSW-S2.mtf
+59 Bushwacker BSW-X1.mtf
+15 Bushwacker BSW-X2.mtf
+37 Dervish DV-6M.mtf
+139 Dervish DV-7D.mtf
+123 Dervish DV-8D.mtf
+54 Griffin GRF-1DS.mtf
+19 Griffin GRF-1N.mtf
+69 Griffin GRF-3M.mtf
+39 Kintaro KTO-18.mtf
+12 Kintaro KTO-19.mtf
+12 Lineholder KW1-LH2.mtf
+12 Lineholder KW1-LH3.mtf
+15 Shadow Hawk C.mtf
+28 Shadow Hawk SHD-2D.mtf
+70 Shadow Hawk SHD-2D2.mtf
+16 Shadow Hawk SHD-2H.mtf
+41 Shadow Hawk SHD-5M.mtf
+28 Wolverine WVR-6R.mtf
+83 Wolverine WVR-7D.mtf

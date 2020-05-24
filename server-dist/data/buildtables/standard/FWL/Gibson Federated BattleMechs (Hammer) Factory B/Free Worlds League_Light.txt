@@ -1,0 +1,4 @@
+20 Hammer HMR-3C.mtf
+142 Hammer HMR-3M.mtf
+18 Hammer HMR-3P.mtf
+20 Hammer HMR-3S.mtf

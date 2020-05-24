@@ -1,0 +1,5 @@
+8 Raiden Battle Armor (Anti-Infantry).blk
+55 Raiden Battle Armor [Flamer].blk
+55 Raiden Battle Armor [Laser].blk
+55 Raiden Battle Armor [MG].blk
+55 Raiden Battle Armor [Tsunami].blk

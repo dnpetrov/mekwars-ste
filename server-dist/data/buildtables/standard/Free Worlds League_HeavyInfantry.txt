@@ -1,0 +1,25 @@
+50 Field Artillery (Arrow IV).blk
+50 Field Artillery (Sniper).blk
+50 Field Artillery (Thumper).blk
+50 Field Gunners (AC2).blk
+50 Field Gunners (AC5).blk
+50 Field Gunners (AC10).blk
+50 Field Gunners (AC20).blk
+0 Field Gunners (LBX2).blk
+0 Field Gunners (LBX5).blk
+50 Field Gunners (LBX10).blk
+0 Field Gunners (LBX20).blk
+75 Field Gunners (UAC2).blk
+75 Field Gunners (UAC5).blk
+75 Field Gunners (UAC10).blk
+75 Field Gunners (UAC20).blk
+0 Field Gunners (RAC2).blk
+0 Field Gunners (RAC5).blk
+75 Field Gunners (Gauss).blk
+75 Field Gunners (Light Gauss).blk
+
+0 ///1,5 разработано этой фракой
+0 ///1,2 разработано дружелюбными соседями
+0 ///0,7 разработано соседями и запущено до 57-го
+0 ///0,5 разработано соседями и запущено после 57-го или не соседями до 57-го
+0 ///0 разработано соседями после 57-шл или не соседями запущено после 57-го

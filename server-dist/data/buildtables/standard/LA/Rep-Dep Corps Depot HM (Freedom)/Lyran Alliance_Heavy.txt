@@ -1,0 +1,17 @@
+4 Ha Otoko.mtf
+12 Ha Otoko HKO-1C.mtf
+84 JagerMech JM6-DD.mtf
+21 Jagermech JM6-DG.mtf
+19 JagerMech JM6-DGr.mtf
+17 JagerMech JM6-S.mtf
+6 Cataphract CTF-1X.mtf
+52 Cataphract CTF-3D.mtf
+85 Gallowglas GAL-1GLS.mtf
+14 Gallowglas GAL-2GLS.mtf
+67 Penetrator PTR-4D.mtf
+15 Penetrator PTR-4F.mtf
+76 Penetrator PTR-6M.mtf
+88 Penetrator PTR-6S.mtf
+65 Rakshasa MDG-1A.mtf
+15 Rakshasa MDG-1B.mtf
+86 War Dog WR-DG-02FC.mtf

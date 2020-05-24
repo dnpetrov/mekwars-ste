@@ -1,9 +1,14 @@
-50 Common
-1 Rare
-2 Liao
-2 Kurita
-5 Battlemaster BLR-1D.mtf
-5 Banshee BNC-3D.mtf
-5 Victor VTR-9D.mtf
-5 Victor VTR-9B.mtf
-5 Atlas AS7-D.mtf
+3 Cudgel CDG-1B.mtf 
+4 Cudgel CDG-2A.mtf
+2 Cudgel CDG-2A.mtf
+4 Sasquatch SQS-TH-001.mtf
+5 Sasquatch SQS-TH-002.mtf
+2 Sasquatch SQS-TH-003.mtf
+3 Juggernaut JG-R9T1.mtf
+7 Juggernaut JG-R9T2.mtf
+5 Juggernaut JG-R9T3.mtf
+3 Colossus CL-P3.mtf
+4 Colossus CLS-4S.mtf
+3 Colossus CLS-5S.mtf
+3 Great Turtle GTR-1.mtf
+2 Great Turtle GTR-2.mtf

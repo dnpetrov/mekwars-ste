@@ -1,0 +1,11 @@
+25 AC2 Carrier (LB-X).blk
+52 Manticore Heavy Tank (LB-X).blk
+25 MRM Carrier.blk
+15 SRM Carrier (C3).blk
+31 Patton Tank (Ultra).blk
+21 Manteuffel Attack Tank Prime.blk
+21 Manteuffel Attack Tank A.blk
+21 Manteuffel Attack Tank B.blk
+19 Typhoon Urban Assault Vehicle (RAC).blk
+29 Von Luckner Heavy Tank VNL-K75N.blk
+29 SLDF Royal

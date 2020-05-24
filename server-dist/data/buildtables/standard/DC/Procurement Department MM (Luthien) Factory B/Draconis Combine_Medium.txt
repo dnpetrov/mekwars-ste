@@ -1,0 +1,33 @@
+13 Cicada CDA-3F.mtf
+13 Cicada CDA-3G.mtf
+13 Cicada CDA-3M.mtf
+9 Hermes II HER-2S.mtf
+23 Hermes II HER-4K Hermes III.mtf
+13 Hermes II HER-5S.mtf
+22 Vulcan VL-2T.mtf
+4 Vulcan VL-5T.mtf
+68 Vulcan VT-5M.mtf
+19 Chameleon CLN-7V.mtf
+35 Chameleon CLN-7W.mtf
+35 Chameleon CLN-7Z.mtf
+3 Chameleon TRC-4B.mtf
+5 Hellhound (Conjurer) 2.mtf
+17 Tessen TSN-C3.mtf
+36 Trebuchet TBT-5N.mtf
+9 Trebuchet TBT-5S.mtf
+12 Trebuchet TBT-7K.mtf
+103 Trebuchet TBT-7M.mtf
+22 Trebuchet TBT-9K.mtf
+13 Apollo APL-1M.mtf
+13 Apollo APL-1R.mtf
+13 Apollo APL-2S.mtf
+13 Apollo APL-3T.mtf
+70 Grim Reaper GRM-R-PR29.mtf
+12 Lineholder KW1-LH2.mtf
+12 Lineholder KW1-LH3.mtf
+29 Shadow Hawk C.mtf
+26 Shadow Hawk SHD-2H.mtf
+19 Shadow Hawk SHD-2K.mtf
+81 Shadow Hawk SHD-5M.mtf
+13 Wraith TR1.mtf
+13 Wraith TR2.mtf

@@ -1,0 +1,24 @@
+CREATE TABLE `task_history` (
+  `taskID` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `type` VARCHAR(100) NOT NULL DEFAULT ' ',
+  `planet` VARCHAR(100) NOT NULL DEFAULT ' ',
+  `terrain` VARCHAR(100) NOT NULL DEFAULT ' ',
+  `theme` VARCHAR(45) DEFAULT ' ',
+  `attackers` TEXT NOT NULL,
+  `defenders` TEXT NOT NULL,
+  `attackerStartBV` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+  `defenderStartBV` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+  `attackerEndBV` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+  `defenderEndBV` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+  `attackerNumUnits` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+  `defenderNumUnits` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+  `attackerWon` BOOLEAN NOT NULL DEFAULT 0,
+  `drawGame` BOOLEAN NOT NULL DEFAULT 0,
+  `winner` TEXT NOT NULL,
+  `loser` TEXT NOT NULL,
+  `gameLength` VARCHAR(45) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`taskID`)
+)
+ENGINE = InnoDB;
+
+UPDATE config set config_value='29' WHERE config_key='mekwars_database_version';

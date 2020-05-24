@@ -1,0 +1,12 @@
+23 AC2 Carrier (LB-X).blk
+26 Manticore Heavy Tank (C3M).blk
+26 Manticore Heavy Tank (C3S).blk
+23 MRM Carrier.blk
+14 SRM Carrier (C3).blk
+53 Tokugawa Heavy Tank (C3).blk
+40 Tokugawa Heavy Tank (MRM).blk
+31 Tokugawa Heavy Tank (Streak).blk
+16 Ishtar Heavy Fire Support Tank.blk
+6 Shoden Assault Vehicle.blk
+29 Von Luckner Heavy Tank VNL-K75N.blk
+32 SLDF Royal

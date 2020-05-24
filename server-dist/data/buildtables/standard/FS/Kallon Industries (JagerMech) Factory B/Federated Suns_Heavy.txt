@@ -1,0 +1,7 @@
+38 JagerMech JM6-A.mtf
+106 JagerMech JM6-DD.mtf
+24 Jagermech JM6-DG.mtf
+22 JagerMech JM6-DGr.mtf
+32 JagerMech JM6-S.mtf
+163 JagerMech JM7-D.mtf
+128 JagerMech JM7-F.mtf

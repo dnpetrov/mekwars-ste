@@ -1,0 +1,34 @@
+CREATE TABLE `mekwars`.`votetopics` (
+  `voteID` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `voteType` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+  `voteScope` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+  `voteSubmitter` VARCHAR(45) NOT NULL,
+  `voteHouse` INTEGER UNSIGNED NOT NULL DEFAULT 0,
+  `voteSubfaction` VARCHAR(45) DEFAULT NULL,
+  `voteTitle` VARCHAR(100) NOT NULL,
+  `voteExpired` BOOLEAN NOT NULL DEFAULT 0,
+  `voteText` TEXT NOT NULL,
+  PRIMARY KEY (`voteID`)
+)
+ENGINE = InnoDB
+CHARACTER SET utf8;
+
+CREATE TABLE `mekwars`.`voteOptions` (
+  `optionID` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `optionText` VARCHAR(100) NOT NULL,
+  `optionTopic` INTEGER UNSIGNED NOT NULL,
+  PRIMARY KEY (`optionID`)
+)
+ENGINE = InnoDB
+CHARACTER SET utf8;
+
+CREATE TABLE `mekwars`.`playervotes` (
+  `playerVoteID` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `playerVoteTopic` INTEGER UNSIGNED NOT NULL,
+  `playerVoteResult` INTEGER UNSIGNED NOT NULL COMMENT 'For Yes/No, 1 = Yes, 2 = No.  Otherwise, it will map to an entry in voteoptions.  In both cases, -1 equates to abstain.',
+  PRIMARY KEY (`playerVoteID`)
+)
+ENGINE = InnoDB
+CHARACTER SET utf8;
+
+UPDATE config set config_value='33' WHERE config_key='mekwars_database_version';

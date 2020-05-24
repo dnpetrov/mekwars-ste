@@ -1,0 +1,11 @@
+59 IS Standard Battle Armor [Flamer].blk
+59 IS Standard Battle Armor [Laser].blk
+54 IS Standard Battle Armor [LRR].blk
+59 IS Standard Battle Armor [MG].blk
+59 IS Standard Battle Armor [SRM].blk
+9 Gray Death Scout Suit.blk
+3 Infiltrator Mk. I Battle Armor.blk
+6 Infiltrator Mk. II Battle Armor.blk
+6 Purifier Adaptive Battle Armor [Laser] (RAF).blk
+6 Purifier Adaptive Battle Armor [Narc] (RAF).blk
+6 Purifier Adaptive Battle Armor [TAG] (RAF).blk

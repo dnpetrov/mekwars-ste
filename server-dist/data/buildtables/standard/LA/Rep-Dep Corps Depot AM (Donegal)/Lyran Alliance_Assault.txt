@@ -1,0 +1,10 @@
+12 Thug THG-11E.mtf
+28 Victor VTR-10S.mtf
+6 Victor VTR-9A.mtf
+6 Victor VTR-9A1.mtf
+55 Victor VTR-9B.mtf
+212 Victor VTR-9D.mtf
+23 Victor VTR-9S.mtf
+4 Mad Cat Mk II.mtf
+13 Cerberus MR-V2.mtf
+12 Cerberus MR-V3.mtf

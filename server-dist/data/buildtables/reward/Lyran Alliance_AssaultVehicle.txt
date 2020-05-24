@@ -1,0 +1,9 @@
+27 Demolisher Heavy Tank (Arrow IV).blk
+7 Fortune Wheeled Assault Vehicle.blk
+11 Sturmfeur Heavy Tank (Heavy Gauss).blk
+29 Challenger MBT XI.blk
+14 Challenger MBT XII.blk
+26 Alacorn Heavy Tank Mk VII.blk
+14 Ontos Heavy Tank (Light Gauss).blk
+29 Behemoth Heavy Tank (Kurita).blk
+17 SLDF Royal

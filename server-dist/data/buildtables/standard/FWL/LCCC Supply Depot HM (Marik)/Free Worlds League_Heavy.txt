@@ -1,0 +1,9 @@
+13 Avatar AV1-O.mtf
+13 Avatar AV1-OA.mtf
+13 Avatar AV1-OB.mtf
+13 Avatar AV1-OC.mtf
+12 Avatar AV1-OD.mtf
+13 Avatar AV1-OG.mtf
+13 Gallowglas GAL-1GLS.mtf
+13 Gallowglas GAL-2GLS.mtf
+30 War Dog WR-DG-02FC.mtf

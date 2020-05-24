@@ -1,0 +1,37 @@
+10 Champion CHP-1N.mtf
+10 Champion CHP-1N2.mtf
+1 Champion CHP-1Nb.mtf
+1 Galahad GLH-2D.mtf
+10 Lancelot LNC25-01.mtf
+1 Lancelot LNC25-01sl.mtf
+5 Lancelot LNC25-05.mtf
+3 Ostroc OSR-2Cb.mtf
+10 Bombardier BMB-12D.mtf
+1 Catapult CPLT-C1b.mtf
+1 Cestus CTS-6X.mtf
+10 Cestus CTS-6Y.mtf
+3 Crusader CRD-2R.mtf
+1 Exterminator EXT-4C.mtf
+10 Exterminator EXT-4D.mtf
+1 Exterminator EXT-4Db.mtf
+1 Ostwar OWR-2Mb.mtf
+3 Thunderbolt TDR-5Sb.mtf
+3 Archer ARC-2Rb.mtf
+1 Dragoon AEM-01.mtf
+1 Dragoon AEM-02.mtf
+1 Dragoon AEM-03.mtf
+1 Dragoon AEM-04.mtf
+1 Excalibur EXC-B1.mtf
+8 Excalibur EXC-B2.mtf
+3 Excalibur EXC-B2b.mtf
+10 Guillotine GLT-3N.mtf
+8 Shootist ST-8A.mtf
+3 Warhammer WHM-6Rb.mtf
+1 Warhammer WHM-7A.mtf
+10 Black Knight BL-6-KNT.mtf
+10 Black Knight BL6b-KNT.mtf
+10 Flashman FLS-8K.mtf
+1 Helepolis HEP-2H.mtf
+1 Helepolis HEP-3H.mtf
+3 Marauder MAD-1R.mtf
+3 Marauder MAD-2R.mtf

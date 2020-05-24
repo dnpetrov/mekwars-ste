@@ -1,0 +1,4 @@
+30 Demolisher Heavy Tank (Arrow IV).blk
+14 Ontos Heavy Tank (Light Gauss).blk
+31 Behemoth Heavy Tank (Kurita).blk
+8 SLDF Royal

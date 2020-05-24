@@ -1,0 +1,13 @@
+1 Vali Artillery Vehicle.blk
+10 Zephyr Hovertank.blk
+3 Zephyr Hovertank (Royal).blk
+1 Zephyr Hovertank (SRM2).blk
+10 Chaparral.blk
+1 Kanga Medium Hovertank.blk
+1 Korvin KRV-3.blk
+10 Sabaku Kaze Heavy Scout Hover Tank.blk
+5 Turhan Urban Combat Vehicle (Standard FF 2583).blk
+10 Prowler Multi-Terrain Vehicle.blk
+10 Prowler Multi-Terrain Vehicle (ECM).blk
+5 Thor Artillery Vehicle.blk
+1 Tiger Medium Tank T-12.blk

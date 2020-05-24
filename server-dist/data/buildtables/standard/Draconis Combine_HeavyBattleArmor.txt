@@ -1,0 +1,17 @@
+37 IS Standard Battle Armor [Flamer].blk
+37 IS Standard Battle Armor [Laser].blk
+33 IS Standard Battle Armor [LRR].blk
+37 IS Standard Battle Armor [MG].blk
+37 IS Standard Battle Armor [SRM].blk
+7 Kage Light Battle Armor (DEST).blk
+59 Kage Light Battle Armor [ECM].blk
+59 Kage Light Battle Armor [Flamer].blk
+59 Kage Light Battle Armor [Laser].blk
+59 Kage Light Battle Armor [MG].blk
+59 Kage Light Battle Armor [TAG].blk
+8 Raiden Battle Armor (Anti-Infantry).blk
+55 Raiden Battle Armor [Flamer].blk
+55 Raiden Battle Armor [Laser].blk
+55 Raiden Battle Armor [MG].blk
+55 Raiden Battle Armor [Tsunami].blk
+84 Kanazuchi Assault Battle Armor [Battle Claw].blk

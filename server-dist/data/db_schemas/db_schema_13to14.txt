@@ -1,0 +1,8 @@
+ALTER TABLE `noplay_lists` DROP PRIMARY KEY,
+ ADD PRIMARY KEY  USING BTREE(`player_id`, `np_name`, `admin_exclude`);
+
+ALTER TABLE `players` DROP COLUMN `playerAdminExcludeList`;
+ALTER TABLE `players` DROP COLUMN `playerExcludeList`;
+
+
+UPDATE config set config_value='14' WHERE config_key='mekwars_database_version';

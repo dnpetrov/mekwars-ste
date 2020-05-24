@@ -1,0 +1,39 @@
+16 Cicada CDA-3F.mtf
+14 Cicada CDA-3M.mtf
+13 Hermes II HER-5S.mtf
+15 Hermes II HER-6D.mtf
+13 Sentinel STN-3L.mtf
+17 Strider SR1-O.mtf
+17 Strider SR1-OA.mtf
+17 Strider SR1-OB.mtf
+17 Strider SR1-OC.mtf
+17 Strider SR1-OD.mtf
+15 Strider SR1-OE.mtf
+15 Strider SR1-OF.mtf
+5 Strider SR1-OR.mtf
+19 Vulcan VL-2T.mtf
+10 Vulcan VL-5T.mtf
+75 Vulcan VT-5S.mtf
+34 Firestarter FS9-O.mtf
+26 Firestarter FS9-OA.mtf
+34 Firestarter FS9-OB.mtf
+26 Firestarter FS9-OC.mtf
+26 Firestarter FS9-OD.mtf
+23 Firestarter FS9-OE.mtf
+26 Firestarter FS9-OF.mtf
+8 Firestarter FS9-OR.mtf
+12 Hollander II BZK-F5.mtf
+4 Chameleon CLN-7V.mtf
+18 Chameleon CLN-7W.mtf
+18 Chameleon CLN-7Z.mtf
+3 Chameleon TRC-4B.mtf
+47 Nightsky NGS-4S.mtf
+15 Nightsky NGS-4T.mtf
+15 Nightsky NGS-5S.mtf
+20 Nightsky NGS-5T.mtf
+20 Starslayer STY-3C.mtf
+40 Bushwacker BSW-S2.mtf
+59 Bushwacker BSW-X1.mtf
+15 Bushwacker BSW-X2.mtf
+12 Lineholder KW1-LH2.mtf
+12 Lineholder KW1-LH3.mtf

@@ -1,0 +1,6 @@
+72 Pike Support Vehicle.blk
+8 Thumper Artillery Vehicle.blk
+95 Brutus Assault Tank.blk
+10 Brutus Assault Tank (LRM).blk
+6 Brutus Assault Tank (PPC 2).blk
+10 Brutus Assault Tank (PPC).blk

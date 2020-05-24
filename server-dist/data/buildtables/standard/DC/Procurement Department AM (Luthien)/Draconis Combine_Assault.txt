@@ -1,0 +1,14 @@
+18 Awesome AWS-8Q.mtf
+4 Awesome AWS-8R.mtf
+4 Awesome AWS-8T.mtf
+4 Awesome AWS-8V.mtf
+45 Awesome AWS-9M.mtf
+45 Awesome AWS-9Q.mtf
+12 Thug THG-11E.mtf
+15 BattleMaster BLR-1G.mtf
+2 BattleMaster BLR-1G-DC.mtf
+14 BattleMaster BLR-2C.mtf
+45 BattleMaster BLR-3M.mtf
+5 BattleMaster BLR-3M-DC.mtf
+4 Mad Cat Mk II.mtf
+13 Grand Titan T-IT-N10M.mtf

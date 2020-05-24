@@ -1,0 +1,22 @@
+40 Anvil ANV-3M.mtf
+12 Champion CHP-1N.mtf
+12 Champion CHP-1N2.mtf
+8 Champion CHP-2N.mtf
+43 Crusader CRD-3L.mtf
+19 Crusader CRD-3R.mtf
+31 Crusader CRD-4L.mtf
+105 Crusader CRD-5M.mtf
+13 Gallowglas GAL-1GLS.mtf
+13 Gallowglas GAL-2GLS.mtf
+21 Guillotine GLT-4L.mtf
+45 Guillotine GLT-5M.mtf
+3 Bandersnatch BNDR-01A.mtf
+1 Bandersnatch BNDR-01B.mtf
+15 Orion ON1-K.mtf
+4 Orion ON1-V.mtf
+10 Orion ON1-VA.mtf
+55 Orion ON1-M.mtf
+6 Orion ON1-M-DC.mtf
+28 Orion ON1-MA.mtf
+26 Orion ON1-MB.mtf
+18 War Dog WR-DG-02FC.mtf

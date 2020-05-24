@@ -1,0 +1,6 @@
+32 Stalker STK-3F.mtf
+18 Stalker STK-3H.mtf
+15 Stalker STK-4N.mtf
+7 Stalker STK-4P.mtf
+224 Stalker STK-5M.mtf
+40 Stalker STK-6M.mtf

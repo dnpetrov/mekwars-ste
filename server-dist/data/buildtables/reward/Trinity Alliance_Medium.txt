@@ -1,0 +1,24 @@
+31 Sha Yu SYU-2B.mtf
+19 Sha Yu SYU-4B.mtf
+45 Firestarter FS9-OF.mtf
+22 Firestarter FS9-OG.mtf
+15 Firestarter FS9-OR.mtf
+16 Firestarter FS9-OX.mtf
+13 Phoenix Hawk PXH-4L.mtf
+6 Snake SNK-2B.mtf
+33 Vindicator VND-4L.mtf
+66 Vindicator VND-5L.mtf
+38 Blackjack BJ2-OF.mtf
+2 Hunchback HBK-5H.mtf
+30 Huron Warrior HUR-WO-R4N.mtf
+19 Huron Warrior HUR-WO-R4O.mtf
+33 Marshal MHL-2L.mtf
+25 Men Shen MS1-O.mtf
+25 Men Shen MS1-OA.mtf
+25 Men Shen MS1-OB.mtf
+25 Men Shen MS1-OC.mtf
+25 Men Shen MS1-OD.mtf
+10 Shadow Hawk SHD-7M.mtf
+62 TA Special
+31 Clan
+6 Solaris

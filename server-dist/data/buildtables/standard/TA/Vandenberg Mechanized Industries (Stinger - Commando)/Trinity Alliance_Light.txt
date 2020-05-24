@@ -1,0 +1,4 @@
+27 Stinger STG-3G.mtf
+54 Stinger STG-3R.mtf
+57 Stinger STG-5M.mtf
+9 Commando COM-2D.mtf

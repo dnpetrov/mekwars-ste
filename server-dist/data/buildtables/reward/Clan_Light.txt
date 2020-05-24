@@ -1,0 +1,29 @@
+18 Dasher (Fire Moth) Prime.mtf
+18 Dasher (Fire Moth) A.mtf
+18 Dasher (Fire Moth) B.mtf
+18 Dasher (Fire Moth) C.mtf
+18 Dasher (Fire Moth) D.mtf
+15 Dasher (Fire Moth) E.mtf
+10 Dasher (Fire Moth) H.mtf
+10 Koshi (Mist Lynx) Prime.mtf
+10 Koshi (Mist Lynx) A.mtf
+10 Koshi (Mist Lynx) B.mtf
+10 Koshi (Mist Lynx) C.mtf
+10 Koshi (Mist Lynx) D.mtf
+8 Koshi (Mist Lynx) E.mtf
+5 Koshi (Mist Lynx) F.mtf
+5 Koshi (Mist Lynx) H.mtf
+5 Koshi (Mist Lynx) P.mtf
+12 Hankyu (Arctic Cheetah) Prime.mtf
+12 Hankyu (Arctic Cheetah) A.mtf
+12 Hankyu (Arctic Cheetah) B.mtf
+12 Hankyu (Arctic Cheetah) C.mtf
+12 Hankyu (Arctic Cheetah) D.mtf
+8 Hankyu (Arctic Cheetah) H.mtf
+15 Puma (Adder)  Prime.mtf
+15 Puma (Adder) A.mtf
+15 Puma (Adder) B.mtf
+15 Puma (Adder) C.mtf
+15 Puma (Adder) D.mtf
+10 Puma (Adder) E.mtf
+10 Puma (Adder) H.mtf

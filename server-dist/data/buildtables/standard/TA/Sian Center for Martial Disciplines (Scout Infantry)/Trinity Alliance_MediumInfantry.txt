@@ -1,0 +1,6 @@
+55 Scout Jump Laser Platoon (Plasma Rifle)(TC).blk
+146 Scout Jump Rifle Platoon (Radium Sniper)(TC).blk
+94 Scout Jump Sniper Platoon (Radium Sniper)(TC).blk
+55 Scout Motorized Laser Platoon (Plasma Rifle).blk
+146 Scout Motorized Rifle Platoon (Radium Sniper).blk
+94 Scout Motorized Sniper Platoon (Radium Sniper).blk

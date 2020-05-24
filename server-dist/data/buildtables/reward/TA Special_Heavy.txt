@@ -1,0 +1,7 @@
+324 SLDF Royal
+5 Catapult CPLT-C1b.mtf
+3 Koschei KSC-3I.mtf
+5 Koschei KSC-3L.mtf
+10 Koschei KSC-4I.mtf
+10 Koschei KSC-4L.mtf
+3 Warhammer WHM-6Rb.mtf

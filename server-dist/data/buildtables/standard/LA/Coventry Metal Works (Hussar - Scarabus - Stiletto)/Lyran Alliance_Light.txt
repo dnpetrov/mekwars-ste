@@ -1,0 +1,5 @@
+15 Hussar HSR-200-D.mtf
+18 Hussar HSR-400-D.mtf
+15 Scarabus SCB-9A.mtf
+15 Scarabus SCB-9T.mtf
+25 Stiletto STO-4A.mtf

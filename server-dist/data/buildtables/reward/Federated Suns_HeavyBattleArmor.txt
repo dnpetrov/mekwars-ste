@@ -1,0 +1,8 @@
+29 Infiltrator Mk. I Battle Armor (Special Ops).blk
+63 Infiltrator Mk. II Battle Armor.blk
+33 Infiltrator Mk. II Battle Armor (Sensor).blk
+20 Grenadier Battle Armor [Flamer].blk
+20 Grenadier Battle Armor [LRR].blk
+20 Grenadier Battle Armor [MagShot].blk
+20 Grenadier Battle Armor [SL].blk
+20 Grenadier Battle Armor [TAG].blk

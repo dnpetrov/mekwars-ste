@@ -1,0 +1,3 @@
+58 Stinger STG-3G.mtf
+84 Stinger STG-3R.mtf
+63 Stinger STG-5M.mtf

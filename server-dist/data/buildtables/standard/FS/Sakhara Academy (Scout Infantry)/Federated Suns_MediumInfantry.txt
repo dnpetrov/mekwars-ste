@@ -1,0 +1,6 @@
+50 Scout Jump Laser Platoon (Support Laser).blk
+78 Scout Jump Sniper Platoon (Federated-Barrett M42B).blk
+90 Scout Jump Sniper Platoon (Magshot).blk
+50 Scout Motorized Laser Platoon (Support Laser).blk
+78 Scout Motorized Sniper Platoon (Federated-Barrett M42B).blk
+90 Scout Motorized Sniper Platoon (Magshot).blk

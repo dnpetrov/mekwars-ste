@@ -1,0 +1,7 @@
+30 Avatar AV1-O.mtf
+30 Avatar AV1-OA.mtf
+30 Avatar AV1-OB.mtf
+30 Avatar AV1-OC.mtf
+28 Avatar AV1-OD.mtf
+30 Avatar AV1-OG.mtf
+12 Avatar AV1-OR.mtf

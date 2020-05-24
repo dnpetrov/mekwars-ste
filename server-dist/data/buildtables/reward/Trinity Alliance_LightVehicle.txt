@@ -1,0 +1,18 @@
+1 Gabriel Reconnaissance Hovercraft (TDF).blk
+1 Gabriel Reconnaissance Hovercraft (ERSL).blk
+32 Mantis Light Attack VTOL.blk
+19 Minion Advanced Tactical Vehicle.blk
+6 Minion Advanced Tactical Vehicle (TAG).blk
+23 Blizzard Hover Transport Black Blizzard.blk
+34 Blizzard Hover Transport (SRM).blk
+20 Cavalry Attack Helicopter (Infantry).blk
+41 Hawk Moth Gunship.blk
+41 Hawk Moth Gunship (Armor).blk
+50 Scorpion Light Tank (MRM).blk
+20 Karnov UR Transport (BA).blk
+2 Karnov UR Transport (Periphery).blk
+8 Yellow Jacket Gunship (RAC).blk
+15 Plainsman Medium Hovertank (Scout).blk
+32 Saladin Assault Hover Tank (LB-X).blk
+16 Saladin Assault Hover Tank (Ultra).blk
+40 SLDF Royal

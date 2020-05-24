@@ -1,0 +1,8 @@
+33 Strider SR1-O.mtf
+33 Strider SR1-OA.mtf
+33 Strider SR1-OB.mtf
+33 Strider SR1-OC.mtf
+33 Strider SR1-OD.mtf
+30 Strider SR1-OE.mtf
+30 Strider SR1-OF.mtf
+10 Strider SR1-OR.mtf

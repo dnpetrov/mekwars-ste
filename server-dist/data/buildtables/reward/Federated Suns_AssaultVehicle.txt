@@ -1,0 +1,16 @@
+27 Demolisher Heavy Tank (Arrow IV).blk
+26 Fury Command Tank.blk
+7 Partisan Air Defense Tank (RAC).blk
+36 Partisan Heavy Tank (C3).blk
+24 Schiltron Mobile Fire-Support Platform D.blk
+7 Glory Heavy Fire Support Vehicle.blk
+7 Glory Heavy Fire Support Vehicle (Light Gauss).blk
+13 Ajax Assault Tank Prime.blk
+13 Ajax Assault Tank A.blk
+13 Ajax Assault Tank B.blk
+31 Challenger MBT XI.blk
+16 Challenger MBT XII.blk
+24 Alacorn Heavy Tank Mk VII.blk
+14 Ontos Heavy Tank (Light Gauss).blk
+29 Behemoth Heavy Tank (Kurita).blk
+32 SLDF Royal
