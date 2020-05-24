@@ -1,0 +1,22 @@
+5 Flea FLE-14.mtf
+9 Hornet HNT-151.mtf
+4 Hornet HNT-152.mtf
+15 Locust LCT-1E.mtf
+155 Locust LCT-1V.mtf
+9 Locust LCT-3V.mtf
+36 Stinger STG-3G.mtf
+155 Stinger STG-3R.mtf
+260 Wasp WSP-1A.mtf
+4 Mongoose MON-67.mtf
+4 Falcon FLC-4N.mtf
+4 Hermes HER-1A.mtf
+4 Hermes HER-1B.mtf
+4 Javelin JVN-10F Fire Javelin.mtf
+20 Javelin JVN-10N.mtf
+9 Spider SDR-5V.mtf
+77 UrbanMech UM-R60.mtf
+15 Valkyrie VLK-QA.mtf
+4 Valkyrie VLK-QF.mtf
+72 Firestarter FS9-H.mtf
+4 Firestarter FS9-K.mtf
+9 Ostscout OTT-7J.mtf

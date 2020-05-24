@@ -1,0 +1,27 @@
+20 Gabriel Reconnaissance Hovercraft.blk
+20 Ripper Infantry Transport.blk
+10 Ripper Infantry Transport (SPL).blk
+10 Mantis Light Attack VTOL.blk
+10 Rotunda Scout Vehicle.blk
+5 Hawk Moth Gunship.blk
+5 Hawk Moth Gunship (Armor).blk
+60 Cyrano Gunship.blk
+28 Galleon Light Tank GAL-100.blk
+10 Galleon Light Tank GAL-102.blk
+10 Galleon Light Tank GAL-200.blk
+20 Karnov UR Transport (3055 Upgrade).blk
+42 Pinto Attack VTOL.blk
+16 Chevalier Light Tank.blk
+10 Chevalier Light Tank (BAP).blk
+10 Chevalier Light Tank (Speed).blk
+42 Lightning Attack Hovercraft.blk
+3 Saladin Assault Hover Tank (Standard).blk
+3 Saladin Assault Hover Tank (Armor).blk
+3 Saladin Assault Hover Tank (LB-X).blk
+40 Saracen Medium Hover Tank.blk
+5 Scimitar Medium Hover Tank.blk
+5 Scimitar Medium Hover Tank (Missile).blk
+10 Striker Light Tank.blk
+10 Striker Light Tank (LRM).blk
+10 Striker Light Tank (SRM).blk
+10 Striker Light Tank (Ammo).blk

@@ -1,0 +1,12 @@
+75 Assault Jump Laser Platoon (Heavy Support Laser).blk
+101 Assault Jump Rifle Platoon (King David).blk
+65 Assault Jump Rifle Platoon (MG).blk
+78 Assault Mechanized Hover Laser Platoon (Heavy Support Laser).blk
+101 Assault Mechanized Hover Rifle Platoon (King David).blk
+65 Assault Mechanized Hover Rifle Platoon (MG).blk
+75 Assault Mechanized Tracked Laser Platoon (Heavy Support Laser).blk
+101 Assault Mechanized Tracked Rifle Platoon (King David).blk
+65 Assault Mechanized Tracked Rifle Platoon (MG).blk
+75 Assault Mechanized Wheeled Laser Platoon (Heavy Support Laser).blk
+101 Assault Mechanized Wheeled Rifle Platoon (King David).blk
+65 Assault Mechanized Wheeled Rifle Platoon (MG).blk

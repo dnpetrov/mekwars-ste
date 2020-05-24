@@ -1,0 +1,114 @@
+67 Assassin ASN-21.mtf
+13 Cicada CDA-3F.mtf
+13 Cicada CDA-3G.mtf
+13 Cicada CDA-3M.mtf
+12 Clint CLNT-2-3T.mtf
+75 Daimyo DMO-1K.mtf
+20 Daimyo DMO-2K.mtf
+18 Daimyo DMO-4K.mtf
+18 Daimyo DMO-5K.mtf
+9 Hermes II HER-2S.mtf
+23 Hermes II HER-4K Hermes III.mtf
+13 Hermes II HER-5S.mtf
+15 Sentinel STN-3L.mtf
+61 Sentinel STN-3M.mtf
+33 Strider SR1-O.mtf
+33 Strider SR1-OA.mtf
+33 Strider SR1-OB.mtf
+33 Strider SR1-OC.mtf
+33 Strider SR1-OD.mtf
+30 Strider SR1-OE.mtf
+30 Strider SR1-OF.mtf
+10 Strider SR1-OR.mtf
+22 Vulcan VL-2T.mtf
+4 Vulcan VL-5T.mtf
+68 Vulcan VT-5M.mtf
+13 Watchman WTC-4M.mtf
+100 Whitworth WTH-2.mtf
+33 Bishamon BSN-3K.mtf
+19 Bishamon BSN-4K.mtf
+20 Blackjack BJ-1.mtf
+34 Firestarter FS9-O.mtf
+34 Firestarter FS9-OA.mtf
+34 Firestarter FS9-OB.mtf
+34 Firestarter FS9-OC.mtf
+34 Firestarter FS9-OD.mtf
+31 Firestarter FS9-OE.mtf
+31 Firestarter FS9-OF.mtf
+10 Firestarter FS9-OR.mtf
+11 Firestarter FS9-OX.mtf
+9 Hatchetman HCT-3F.mtf
+104 Komodo KIM-2.mtf
+56 Komodo KIM-2A.mtf
+32 Phoenix Hawk PXH-1.mtf
+63 Phoenix Hawk PXH-1K.mtf
+219 Phoenix Hawk PXH-3K.mtf
+19 Phoenix Hawk PXH-3M.mtf
+104 Wolf Trap (Tora) WFT-1.mtf
+18 Wolf Trap (Tora) WFT-C.mtf
+43 Wyvern WVE-5N.mtf
+40 Wyvern WVE-6N.mtf
+33 Blackjack BJ2-O.mtf
+33 Blackjack BJ2-OA.mtf
+33 Blackjack BJ2-OB.mtf
+33 Blackjack BJ2-OC.mtf
+33 Blackjack BJ2-OD.mtf
+30 Blackjack BJ2-OF.mtf
+13 Blackjack BJ2-OR.mtf
+19 Chameleon CLN-7V.mtf
+35 Chameleon CLN-7W.mtf
+35 Chameleon CLN-7Z.mtf
+3 Chameleon TRC-4B.mtf
+43 Crab CRB-27.mtf
+19 Crab CRB-C.mtf
+9 Enforcer ENF-4R.mtf
+5 Hellhound (Conjurer) 2.mtf
+71 Hunchback HBK-4G.mtf
+13 Hunchback HBK-4H.mtf
+13 Hunchback HBK-4J.mtf
+13 Hunchback HBK-4N.mtf
+13 Hunchback HBK-4P.mtf
+9 Hunchback HBK-4SP.mtf
+17 Tessen TSN-C3.mtf
+36 Trebuchet TBT-5N.mtf
+9 Trebuchet TBT-5S.mtf
+12 Trebuchet TBT-7K.mtf
+103 Trebuchet TBT-7M.mtf
+22 Trebuchet TBT-9K.mtf
+13 Apollo APL-1M.mtf
+13 Apollo APL-1R.mtf
+13 Apollo APL-2S.mtf
+13 Apollo APL-3T.mtf
+13 Centurion CN10-B.mtf
+28 Dervish DV-6M.mtf
+140 Griffin GRF-1DS.mtf
+42 Griffin GRF-1N.mtf
+114 Griffin GRF-3M.mtf
+70 Grim Reaper GRM-R-PR29.mtf
+10 Kintaro KTO-18.mtf
+14 Kintaro KTO-19.mtf
+45 Kintaro KTO-20.mtf
+19 Kintaro KTO-C.mtf
+17 Kintaro KTO-K.mtf
+12 Lineholder KW1-LH2.mtf
+12 Lineholder KW1-LH3.mtf
+60 Lynx LNX-9C.mtf
+66 Lynx LNX-9Q.mtf
+5 Ryoken (Stormcrow) Prime.mtf
+5 Ryoken (Stormcrow) A.mtf
+5 Ryoken (Stormcrow) B.mtf
+5 Ryoken (Stormcrow) C.mtf
+5 Ryoken (Stormcrow) D.mtf
+6 Ryoken (Stormcrow) E.mtf
+5 Ryoken (Stormcrow) H.mtf
+5 Ryoken (Stormcrow) I.mtf
+20 Scorpion SCP-1O.mtf
+29 Shadow Hawk C.mtf
+26 Shadow Hawk SHD-2H.mtf
+19 Shadow Hawk SHD-2K.mtf
+81 Shadow Hawk SHD-5M.mtf
+42 Wolverine WVR-6R.mtf
+133 Wolverine WVR-7K.mtf
+15 Wolverine WVR-7M.mtf
+13 Wraith TR1.mtf
+13 Wraith TR2.mtf

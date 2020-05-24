@@ -1,0 +1,15 @@
+14 Bulldog Medium Tank.blk
+5 Bulldog Medium Tank (AC2).blk
+5 Bulldog Medium Tank (LRM).blk
+60 Demon Tank.blk
+42 Manticore Heavy Tank.blk
+20 Pike Support Vehicle.blk
+50 Magi Infantry Support Vehicle.blk
+5 Brutus Assault Tank (LRM).blk
+5 Brutus Assault Tank (PPC 2).blk
+5 Brutus Assault Tank (PPC).blk
+5 Brutus Assault Tank.blk
+66 Burke Defense Tank.blk
+30 Padilla Heavy Artillery Tank.blk
+36 Von Luckner Heavy Tank VNL-K65N.blk
+36 Zhukov Heavy Tank.blk

@@ -1,0 +1,6 @@
+90 Scout Jump Laser Platoon (Heavy Support Laser).blk
+78 Scout Jump Laser Platoon (Support Laser).blk
+78 Scout Jump Sniper Platoon (King David).blk
+90 Scout Motorized Laser Platoon (Heavy Support Laser).blk
+78 Scout Motorized Laser Platoon (Support Laser).blk
+78 Scout Motorized Sniper Platoon (King David).blk

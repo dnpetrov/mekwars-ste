@@ -1,0 +1,6 @@
+75 Scout Jump Laser Platoon (Semi-Portable PPC).blk
+50 Scout Jump Laser Platoon (Support PPC).blk
+50 Scout Jump Sniper Platoon (MG).blk
+75 Scout Motorized Laser Platoon (Semi-Portable PPC).blk
+50 Scout Motorized Laser Platoon (Support PPC).blk
+50 Scout Motorized Sniper Platoon (MG).blk

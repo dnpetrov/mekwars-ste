@@ -1,0 +1,10 @@
+29 Infiltrator Mk. I Battle Armor (Special Ops).blk
+63 IS Standard Battle Armor [LRR].blk
+20 Rottweiler Battle Armor.blk
+26 Fenrir Battle Armor [ERML].blk
+119 Fenrir Battle Armor [MG].blk
+26 Fenrir Battle Armor [Mortar].blk
+119 Fenrir Battle Armor [MPL].blk
+119 Fenrir Battle Armor [SL].blk
+119 Fenrir Battle Armor [SPL].blk
+119 Fenrir Battle Armor [SRM].blk

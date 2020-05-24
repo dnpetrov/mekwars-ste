@@ -1,0 +1,6 @@
+16 IS Standard Battle Armor (Level I) [Flamer].blk
+16 IS Standard Battle Armor (Level I) [Laser].blk
+16 IS Standard Battle Armor (Level I) [LRR].blk
+16 IS Standard Battle Armor (Level I) [MG].blk
+16 IS Standard Battle Armor (Level I) [SRM].blk
+16 IS Standard Battle Armor (Level I) [Flamer].blk

@@ -1,0 +1,82 @@
+18 Awesome AWS-8Q.mtf
+4 Awesome AWS-8R.mtf
+4 Awesome AWS-8T.mtf
+4 Awesome AWS-8V.mtf
+45 Awesome AWS-9M.mtf
+45 Awesome AWS-9Q.mtf
+54 Charger CGR-1A1.mtf
+18 Charger CGR-1A9.mtf
+201 Charger CGR-3K.mtf
+49 Charger CGR-C.mtf
+30 Goliath GOL-1H.mtf
+15 Hatamoto-Chi HTM-26T.mtf
+172 Hatamoto-Chi HTM-27T.mtf
+20 Hatamoto-Chi HTM-28T.mtf
+58 Hatamoto-Hi HTM-27U.mtf
+73 Hatamoto-Hi HTM-C.mtf
+146 Hatamoto-Hi HTM-CM.mtf
+73 Hatamoto-Kaze HTM-27V.mtf
+48 Hatamoto-Ku HTM-27W.mtf
+87 Hatamoto-Mizo HTM-27Y.mtf
+36 O-Bakemono OBK-M10.mtf
+12 Thug THG-11E.mtf
+3 Victor VTR-9A.mtf
+3 Victor VTR-9A1.mtf
+26 Victor VTR-9B.mtf
+121 Victor VTR-9K.mtf
+29 Victor VTR-C.mtf
+8 Zeus ZEU-6S.mtf
+15 BattleMaster BLR-1G.mtf
+2 BattleMaster BLR-1G-DC.mtf
+14 BattleMaster BLR-2C.mtf
+45 BattleMaster BLR-3M.mtf
+5 BattleMaster BLR-3M-DC.mtf
+63 Gunslinger GUN-1ERD.mtf
+15 Gunslinger GUN-2ERD.mtf
+89 Katana (Crockett) CRK-5003-2.mtf
+21 Katana (Crockett) CRK-5003-C.mtf
+21 Katana (Crockett) CRK-5003-CM.mtf
+29 Longbow LGB-0W.mtf
+30 Longbow LGB-7Q.mtf
+14 Longbow LGB-7V.mtf
+33 Stalker STK-3F.mtf
+6 Stalker STK-3H.mtf
+6 Stalker STK-4N.mtf
+10 Stalker STK-4P.mtf
+71 Stalker STK-5M.mtf
+37 Tai-sho TSH-7S.mtf
+61 Akuma AKU-1X.mtf
+7 Cyclops CP-10-Q.mtf
+16 Cyclops CP-10-Z.mtf
+2 Cyclops CP-10-Z-DC.mtf
+21 Cyclops CP-11-A.mtf
+2 Cyclops CP-11-A-DC.mtf
+81 Cyclops CP-11-C.mtf
+28 Cyclops CP-12-K.mtf
+13 Emperor EMP-6A.mtf
+4 Mad Cat Mk II.mtf
+133 Mauler MAL-1R.mtf
+19 Mauler MAL-3R.mtf
+21 Mauler MAL-C.mtf
+37 Sunder SD1-O.mtf
+37 Sunder SD1-OA.mtf
+37 Sunder SD1-OB.mtf
+33 Sunder SD1-OC.mtf
+11 Sunder SD1-OR.mtf
+22 Banshee BNC-3E.mtf
+53 Banshee BNC-3S.mtf
+63 Cerberus MR-V2.mtf
+14 Cerberus MR-V3.mtf
+60 Naginata NG-C3A.mtf
+26 Atlas AS7-C.mtf
+26 Atlas AS7-CM.mtf
+35 Atlas AS7-D.mtf
+4 Atlas AS7-D-DC.mtf
+112 Atlas AS7-K.mtf
+12 Atlas AS7-K-DC.mtf
+5 Atlas AS7-RS.mtf
+7 Atlas C.mtf
+13 Grand Titan T-IT-N10M.mtf
+4 King Crab KGC-000.mtf
+6 King Crab KGC-0000.mtf
+34 King Crab KGC-001.mtf

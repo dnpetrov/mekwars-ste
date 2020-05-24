@@ -1,0 +1,33 @@
+22 Ferret Light Scout VTOL.blk
+5 Ferret Light Scout VTOL (Armor) Wild Weasel.blk
+13 Ripper Infantry Transport.blk
+13 Ripper Infantry Transport (ERML).blk
+15 Ripper Infantry Transport (MG).blk
+13 Ripper Infantry Transport (SPL).blk
+14 Sprint Scout Helicopter.blk
+14 Sprint Scout Helicopter (C3).blk
+14 Sprint Scout Helicopter (Laser).blk
+35 Mantis Light Attack VTOL.blk
+9 Marten Scout VTOL (Standard).blk
+9 Marten Scout VTOL (Infantry).blk
+15 Warrior H-7 Attack Helicopter.blk
+7 Warrior H-7A Attack Helicopter.blk
+4 Warrior H-7C Attack Helicopter.blk
+33 Warrior H-8 Attack Helicopter.blk
+37 Cavalry Attack Helicopter.blk
+23 Cavalry Attack Helicopter (LRM).blk
+23 Cavalry Attack Helicopter (SRM).blk
+21 Cavalry Attack Helicopter (TAG).blk
+53 Hawk Moth Gunship.blk
+42 Hawk Moth Gunship (Armor).blk
+12 Kestrel VTOL.blk
+12 Kestrel VTOL (ML).blk
+12 Kestrel VTOL (SL).blk
+12 Kestrel VTOL (SRM).blk
+12 Karnov UR Transport.blk
+12 Karnov UR Gunship.blk
+13 Karnov UR Transport (3055 Upgrade).blk
+12 Peregrine Attack VTOL.blk
+12 Peregrine Attack VTOL (Kurita).blk
+54 Yellow Jacket Gunship.blk
+21 Yellow Jacket Gunship (Ammo).blk

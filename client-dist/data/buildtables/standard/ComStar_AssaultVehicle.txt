@@ -1,0 +1,19 @@
+5 Demolisher Heavy Tank (Standard Mk. II).blk
+10 Demolisher Heavy Tank (Arrow IV).blk
+16 Demolisher Heavy Tank (Gauss).blk
+5 Devastator Heavy Tank.blk
+8 Partisan Air Defense Tank.blk
+10 Partisan Heavy Tank.blk
+3 Partisan Heavy Tank (AC2).blk
+3 Partisan Heavy Tank (LRM).blk
+12 Rhino Fire Support Tank.blk
+12 Rhino Fire Support Tank (Flamer).blk
+12 Rhino Fire Support Tank (MG).blk
+12 Rhino Fire Support Tank (SL).blk
+5 Schrek AC Carrier.blk
+43 Schrek PPC Carrier.blk
+30 Alacorn Heavy Tank Mk VI.blk
+35 Ontos Heavy Tank (3053 Upgrade).blk
+43 Puma Assault Tank PAT-005.blk
+8 Behemoth Heavy Tank.blk
+10 Behemoth Heavy Tank (Kurita).blk

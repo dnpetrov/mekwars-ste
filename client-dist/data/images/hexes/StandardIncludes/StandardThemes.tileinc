@@ -1,9 +1,6 @@
 # The Standard MM themes
 
-include "mars/ThemeMars.tileinc"
 include "lunar/ThemeLunar.tileinc"
+include "mars/ThemeMars.tileinc"
 include "volcano/ThemeVolcano.tileinc"
 include "grass/ThemeGrass.tileinc"
-include "snow/ThemeSnow.tileinc"
-include "jungle/ThemeTropical.tileinc"
-include "volcano/ThemeVolcano.tileinc"

@@ -1,0 +1,82 @@
+106 Fireball ALM-7D.mtf
+17 Fireball ALM-8D.mtf
+17 Fireball ALM-9D.mtf
+67 Hornet HNT-151.mtf
+17 Hornet HNT-152.mtf
+87 Hornet HNT-171.mtf
+30 Locust LCT-1E.mtf
+15 Locust LCT-1V.mtf
+65 Locust LCT-3D.mtf
+28 Locust LCT-3M.mtf
+7 Locust LCT-3V.mtf
+53 Stinger STG-3G.mtf
+68 Stinger STG-3R.mtf
+63 Stinger STG-5M.mtf
+52 Wasp WSP-1A.mtf
+62 Wasp WSP-1D.mtf
+106 Wasp WSP-1S.mtf
+82 Commando COM-5S.mtf
+55 Dart DRT-3S.mtf
+50 Dart DRT-4S.mtf
+50 Dart DRT-6S.mtf
+38 Raptor RTX1-O.mtf
+51 Raptor RTX1-OA.mtf
+42 Raptor RTX1-OB.mtf
+38 Raptor RTX1-OC.mtf
+51 Raptor RTX1-OD.mtf
+34 Raptor RTX1-OE.mtf
+34 Raptor RTX1-OF.mtf
+11 Raptor RTX1-OR.mtf
+16 Tarantula ZPH-1A.mtf
+13 Tarantula ZPH-2A.mtf
+87 Battle Hawk BH-K305.mtf
+17 Hitman HM-1.mtf
+32 Jackal JA-KL-1532.mtf
+34 Javelin JVN-10F Fire Javelin.mtf
+26 Javelin JVN-10N.mtf
+136 Javelin JVN-10P.mtf
+24 Javelin JVN-11A Fire Javelin.mtf
+33 Javelin JVN-11B.mtf
+139 Javelin JVN-11D.mtf
+40 Scarabus SCB-9A.mtf
+15 Scarabus SCB-9T.mtf
+5 Spider SDR-5D.mtf
+13 Spider SDR-5V.mtf
+32 Spider SDR-7M.mtf
+32 Spider SDR-C.mtf
+55 UrbanMech UM-R60.mtf
+53 Valkyrie VLK-QA.mtf
+169 Valkyrie VLK-QD.mtf
+29 Valkyrie VLK-QF.mtf
+13 Falcon Hawk FNHK-9K.mtf
+13 Falcon Hawk FNHK-9K1A.mtf
+43 Firestarter FS9-H.mtf
+109 Firestarter FS9-S.mtf
+78 Firestarter FS9-S1.mtf
+15 Garm GRM-01A.mtf
+75 Garm GRM-01B.mtf
+82 Garm GRM-01C.mtf
+64 Hollander BZK-F3.mtf
+15 Hollander BZK-G1.mtf
+15 Jenner JR7-C.mtf
+10 Jenner JR7-D.mtf
+29 Night Hawk NTK-2Q.mtf
+14 Night Hawk NTK-2S.mtf
+22 Ostscout OTT-7J.mtf
+24 Ostscout OTT-7K.mtf
+25 Owens OW-1.mtf
+25 Owens OW-1A.mtf
+28 Owens OW-1B.mtf
+34 Owens OW-1C.mtf
+25 Owens OW-1D.mtf
+23 Owens OW-1E.mtf
+8 Owens OW-1R.mtf
+9 Panther PNT-9R.mtf
+40 Raven RVN-3L.mtf
+15 Raven RVN-3M.mtf
+53 Spector SPR-5F.mtf
+17 Talon TLN-5W.mtf
+14 Talon TLN-5Z.mtf
+56 Venom SDR-9K.mtf
+40 Wolfhound WLF-1.mtf
+120 Wolfhound WLF-2.mtf

@@ -1,0 +1,22 @@
+12 O-Bakemono OBK-M10.mtf
+35 Spartan SPT-N2.mtf
+90 Thug THG-11E.mtf
+12 BattleMaster BLR-2C.mtf
+70 Crockett CRK-5003-1.mtf
+10 Crockett CRK-5003-3.mtf
+38 Longbow LGB-7Q.mtf
+10 Longbow LGB-7Q.mtf
+24 Stalker STK-5M.mtf
+12 Cyclops CP-11-A.mtf
+10 Cyclops CP-11-G.mtf
+89 Highlander HGN-732.mtf
+10 Highlander HGN-736.mtf
+8 Viking VKG-2F.mtf
+5 Viking VKG-2G.mtf
+24 Nightstar NSR-9J.mtf
+49 Atlas AS7-K.mtf
+51 King Crab KGC-000.mtf
+22 King Crab KGC-001.mtf
+10 King Crab KGC-005.mtf
+24 Pillager PLG-3Z.mtf
+36 Thunder Hawk TDK-7X.mtf

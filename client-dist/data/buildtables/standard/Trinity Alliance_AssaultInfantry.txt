@@ -1,0 +1,12 @@
+39 Assault Jump Laser Platoon (Plasma Rifle)(TC).blk
+55 Assault Jump Rifle Platoon (AA)(TC).blk
+50 Assault Jump SRM Platoon (Std, Two-Shot)(TC).blk
+39 Assault Mechanized Hover Laser Platoon (Plasma Rifle).blk
+55 Assault Mechanized Hover Rifle Platoon (AA).blk
+50 Assault Mechanized Hover SRM Platoon (Std, Two-Shot).blk
+39 Assault Mechanized Tracked Laser Platoon (Plasma Rifle).blk
+55 Assault Mechanized Tracked Rifle Platoon (AA).blk
+50 Assault Mechanized Tracked SRM Platoon (Std, Two-Shot).blk
+39 Assault Mechanized Wheeled Laser Platoon (Plasma Rifle).blk
+55 Assault Mechanized Wheeled Rifle Platoon (AA).blk
+50 Assault Mechanized Wheeled SRM Platoon (Std, Two-Shot).blk

@@ -1,0 +1,60 @@
+71 Awesome AWS-8Q.mtf
+30 Awesome AWS-8R.mtf
+30 Awesome AWS-8T.mtf
+30 Awesome AWS-8V.mtf
+200 Awesome AWS-9M.mtf
+25 Awesome AWS-9Ma.mtf
+23 Awesome AWS-9Q.mtf
+22 Charger CGR-1A1.mtf
+56 Goliath GOL-1H.mtf
+69 Goliath GOL-3M.mtf
+39 Grand Crusader GRN-D-01.mtf
+17 Grand Crusader GRN-D-02.mtf
+23 Thug THG-10E.mtf
+98 Thug THG-11E.mtf
+3 Victor VTR-9A.mtf
+3 Victor VTR-9A1.mtf
+19 Victor VTR-9B.mtf
+101 Victor VTR-9K.mtf
+12 Zeus ZEU-6S.mtf
+33 BattleMaster BLR-1G.mtf
+4 BattleMaster BLR-1G-DC.mtf
+136 BattleMaster BLR-3M.mtf
+15 BattleMaster BLR-3M-DC.mtf
+13 Gunslinger GUN-1ERD.mtf
+21 Longbow LGB-0W.mtf
+36 Longbow LGB-12C.mtf
+57 Longbow LGB-7Q.mtf
+37 Longbow LGB-7V.mtf
+32 Stalker STK-3F.mtf
+18 Stalker STK-3H.mtf
+15 Stalker STK-4N.mtf
+7 Stalker STK-4P.mtf
+224 Stalker STK-5M.mtf
+40 Stalker STK-6M.mtf
+10 Cyclops CP-10-Q.mtf
+32 Cyclops CP-10-Z.mtf
+4 Cyclops CP-10-Z-DC.mtf
+110 Cyclops CP-11-A.mtf
+12 Cyclops CP-11-A-DC.mtf
+21 Cyclops CP-11-C.mtf
+14 Emperor EMP-6A.mtf
+29 Albatross ALB-3U.mtf
+16 Banshee BNC-3E.mtf
+37 Banshee BNC-3M.mtf
+57 Banshee BNC-3Q.mtf
+13 Banshee BNC-3S.mtf
+15 Cerberus MR-5M.mtf
+52 Cerberus MR-V2.mtf
+13 Cerberus MR-V3.mtf
+67 Sirocco SRC-3C.mtf
+80 Sirocco SRC-5C.mtf
+38 Atlas AS7-D.mtf
+4 Atlas AS7-D-DC.mtf
+105 Atlas AS7-K.mtf
+11 Atlas AS7-K-DC.mtf
+6 Atlas AS7-RS.mtf
+61 Grand Titan T-IT-N10M.mtf
+18 Grand Titan T-IT-N11M.mtf
+4 King Crab KGC-0000.mtf
+21 King Crab KGC-001.mtf

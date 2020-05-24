@@ -1,0 +1,12 @@
+78 Assault Jump Laser Platoon (Federated-Barrett M61A).blk
+122 Assault Jump Rifle Platoon (Federated-Barrett M42B).blk
+140 Assault Jump Rifle Platoon (Thunderstroke II).blk
+78 Assault Mechanized Hover Laser Platoon (Federated-Barrett M61A).blk
+140 Assault Mechanized Hover Rifle Platoon (Grand Mauler).blk
+140 Assault Mechanized Hover Rifle Platoon (Magshot).blk
+78 Assault Mechanized Tracked Laser Platoon (Federated-Barrett M61A).blk
+140 Assault Mechanized Tracked Rifle Platoon (Grand Mauler).blk
+140 Assault Mechanized Tracked Rifle Platoon (Magshot).blk
+78 Assault Mechanized Wheeled Laser Platoon (Federated-Barrett M61A).blk
+140 Assault Mechanized Wheeled Rifle Platoon (Grand Mauler).blk
+140 Assault Mechanized Wheeled Rifle Platoon (Magshot).blk

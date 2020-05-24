@@ -1,0 +1,97 @@
+21 Assassin ASN-21.mtf
+19 Assassin ASN-30.mtf
+13 Cicada CDA-3F.mtf
+13 Cicada CDA-3M.mtf
+15 Clint CLNT-2-3T.mtf
+118 Clint CLNT-2-3U.mtf
+24 Clint CLNT-5U.mtf
+13 Hermes II HER-5S.mtf
+15 Sentinel STN-3L.mtf
+13 Strider SR1-O.mtf
+13 Strider SR1-OA.mtf
+13 Strider SR1-OB.mtf
+13 Strider SR1-OC.mtf
+13 Strider SR1-OD.mtf
+12 Strider SR1-OE.mtf
+12 Strider SR1-OF.mtf
+4 Strider SR1-OR.mtf
+21 Vulcan VL-2T.mtf
+15 Vulcan VL-5T.mtf
+143 Vulcan VT-5S.mtf
+28 Blackjack BJ-1.mtf
+136 Blackjack BJ-2.mtf
+48 Cobra CBR-02.mtf
+28 Firestarter FS9-O.mtf
+28 Firestarter FS9-OA.mtf
+28 Firestarter FS9-OB.mtf
+28 Firestarter FS9-OC.mtf
+28 Firestarter FS9-OD.mtf
+25 Firestarter FS9-OE.mtf
+25 Firestarter FS9-OF.mtf
+8 Firestarter FS9-OR.mtf
+9 Firestarter FS9-OX.mtf
+59 Hatchetman HCT-3F.mtf
+189 Hatchetman HCT-5S.mtf
+15 Hollander II BZK-F5.mtf
+25 Hollander II BZK-F7.mtf
+18 Phoenix Hawk PXH-1.mtf
+19 Phoenix Hawk PXH-3M.mtf
+122 Phoenix Hawk PXH-3S.mtf
+65 Stealth STH-1D.mtf
+14 Stealth STH-2D.mtf
+14 Stealth STH-2D1.mtf
+14 Stealth STH-2D2.mtf
+12 Wyvern WVE-6N.mtf
+13 Blackjack BJ2-O.mtf
+13 Blackjack BJ2-OA.mtf
+13 Blackjack BJ2-OB.mtf
+13 Blackjack BJ2-OC.mtf
+13 Blackjack BJ2-OD.mtf
+12 Blackjack BJ2-OF.mtf
+50 Blitzkrieg BTZ-3F.mtf
+19 Centurion CN9-A.mtf
+113 Centurion CN9-D.mtf
+20 Centurion CN10-B.mtf
+5 Chameleon CLN-7V.mtf
+20 Chameleon CLN-7W.mtf
+20 Chameleon CLN-7Z.mtf
+3 Chameleon TRC-4B.mtf
+15 Enfield END-6J.mtf
+32 Enfield END-6Q.mtf
+49 Enforcer ENF-4R.mtf
+130 Enforcer ENF-5D.mtf
+40 Hunchback HBK-4G.mtf
+12 Hunchback HBK-4H.mtf
+12 Hunchback HBK-4J.mtf
+12 Hunchback HBK-4N.mtf
+12 Hunchback HBK-4P.mtf
+8 Hunchback HBK-4SP.mtf
+16 Hunchback HBK-5S.mtf
+102 Nightsky NGS-4S.mtf
+55 Nightsky NGS-4T.mtf
+123 Nightsky NGS-5S.mtf
+17 Nightsky NGS-5T.mtf
+26 Starslayer STY-3C.mtf
+20 Starslayer STY-3D.mtf
+45 Trebuchet TBT-5N.mtf
+37 Trebuchet TBT-5S.mtf
+13 Apollo APL-1M.mtf
+59 Bushwacker BSW-S2.mtf
+46 Bushwacker BSW-X1.mtf
+17 Bushwacker BSW-X2.mtf
+22 Dervish DV-6M.mtf
+58 Dervish DV-7D.mtf
+133 Griffin GRF-1DS.mtf
+19 Griffin GRF-1N.mtf
+32 Griffin GRF-1S.mtf
+88 Griffin GRF-3M.mtf
+12 Lineholder KW1-LH2.mtf
+12 Lineholder KW1-LH3.mtf
+72 Lynx LNX-9Q.mtf
+21 Lynx LNX-9R.mtf
+11 Shadow Hawk C.mtf
+32 Shadow Hawk SHD-2D2.mtf
+19 Shadow Hawk SHD-2H.mtf
+30 Shadow Hawk SHD-5M.mtf
+27 Wolverine WVR-6R.mtf
+115 Wolverine WVR-7D.mtf

@@ -1,0 +1,26 @@
+5 Assassin ASN-21.mtf
+11 Cicada CDA-2A.mtf
+5 Clint CLNT-2-3T.mtf
+11 Hermes II HER-2S.mtf
+91 Vulcan VL-2T.mtf
+11 Vulcan VL-5T.mtf
+5 Whitworth WTH-1.mtf
+42 Blackjack BJ-1.mtf
+183 Phoenix Hawk PXH-1.mtf
+5 Wyvern WVE-6N.mtf
+42 Centurion CN9-A.mtf
+5 Crab CRB-20.mtf
+42 Hunchback HBK-4G.mtf
+5 Hunchback HBK-4H.mtf
+5 Hunchback HBK-4J.mtf
+5 Hunchback HBK-4N.mtf
+5 Hunchback HBK-4P.mtf
+42 Trebuchet TBT-5N.mtf
+5 Trebuchet TBT-5S.mtf
+24 Dervish DV-6M.mtf
+5 Gladiator GLD-3R.mtf
+5 Gladiator GLD-4R.mtf
+91 Griffin GRF-1N.mtf
+11 Scorpion SCP-1N.mtf
+122 Shadow Hawk SHD-2H.mtf
+91 Wolverine WVR-6R.mtf

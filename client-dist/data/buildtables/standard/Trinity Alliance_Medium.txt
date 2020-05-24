@@ -1,0 +1,89 @@
+2 Assassin ASN-21.mtf
+13 Assassin ASN-23.mtf
+13 Cicada CDA-3F.mtf
+14 Cicada CDA-3G.mtf
+71 Cicada CDA-3M.mtf
+11 Clint CLNT-2-3T.mtf
+3 Clint CLNT-2-4T.mtf
+94 Clint CLNT-2-3U.mtf
+4 Hermes II HER-2S.mtf
+17 Hermes II HER-5S.mtf
+33 Vulcan VL-2T.mtf
+9 Vulcan VL-5T.mtf
+3 Watchman WTC-4M.mtf
+4 Whitworth WTH-1.mtf
+1 Whitworth WTH-2.mtf
+24 Blackjack BJ-1.mtf
+79 Blackjack BJ-2.mtf
+105 Blackjack BJ-3.mtf
+13 Firestarter FS9-O.mtf
+13 Firestarter FS9-OA.mtf
+13 Firestarter FS9-OB.mtf
+13 Firestarter FS9-OC.mtf
+13 Firestarter FS9-OD.mtf
+11 Firestarter FS9-OE.mtf
+11 Firestarter FS9-OF.mtf
+4 Firestarter FS9-OR.mtf
+4 Firestarter FS9-OX.mtf
+4 Hatchetman HCT-3F.mtf
+18 Phoenix Hawk PXH-1.mtf
+61 Phoenix Hawk PXH-3M.mtf
+85 Snake SNK-1V.mtf
+65 Vindicator VND-1R.mtf
+3 Vindicator VND-1SIC.mtf
+184 Vindicator VND-3L.mtf
+14 Vindicator VND-5L.mtf
+7 Wyvern WVE-6N.mtf
+25 Blackjack BJ2-O.mtf
+23 Blackjack BJ2-OA.mtf
+23 Blackjack BJ2-OB.mtf
+23 Blackjack BJ2-OC.mtf
+23 Blackjack BJ2-OD.mtf
+24 Blackjack BJ2-OE.mtf
+21 Blackjack BJ2-OF.mtf
+2 Centurion CN9-A.mtf
+1 Centurion CN9-AH.mtf
+1 Centurion CN9-AL.mtf
+5 Centurion CN9-D.mtf
+13 Centurion CN10-B.mtf
+4 Chameleon CLN-7V.mtf
+18 Chameleon CLN-7W.mtf
+18 Chameleon CLN-7Z.mtf
+4 Chameleon TRC-4B.mtf
+9 Enforcer ENF-4R.mtf
+61 Hunchback HBK-4G.mtf
+13 Hunchback HBK-4H.mtf
+13 Hunchback HBK-4J.mtf
+13 Hunchback HBK-4N.mtf
+36 Hunchback HBK-4P.mtf
+9 Hunchback HBK-4SP.mtf
+73 Hunchback HBK-5M.mtf
+50 Hunchback HBK-5N.mtf
+102 Huron Warrior HUR-WO-R4L.mtf
+16 Huron Warrior HUR-WO-R4M.mtf
+13 Starslayer STY-3C.mtf
+1 Starslayer STY-3D.mtf
+24 Trebuchet TBT-5N.mtf
+9 Trebuchet TBT-5S.mtf
+64 Trebuchet TBT-7M.mtf
+15 Apollo APL-1M.mtf
+1 Cronus CNS-3M.mtf
+8 Dervish DV-6M.mtf
+12 Griffin GRF-1N.mtf
+37 Griffin GRF-3M.mtf
+11 Lineholder KW1-LH2.mtf
+10 Lineholder KW1-LH3.mtf
+42 Marshal MHL-X1.mtf
+58 Men Shen MS1-O.mtf
+45 Men Shen MS1-OA.mtf
+40 Men Shen MS1-OB.mtf
+40 Men Shen MS1-OC.mtf
+45 Men Shen MS1-OD.mtf
+1 Scorpion SCP-1N.mtf
+12 Scorpion SCP-1O.mtf
+12 Shadow Hawk SHD-2H.mtf
+37 Shadow Hawk SHD-5M.mtf
+11 Wolverine WVR-6R.mtf
+34 Wolverine WVR-7M.mtf
+49 Wraith TR1.mtf
+14 Wraith TR2.mtf

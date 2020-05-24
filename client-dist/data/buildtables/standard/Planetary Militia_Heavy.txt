@@ -1,0 +1,25 @@
+4 Champion CHP-2N.mtf
+9 Dragon DRG-1C.mtf
+33 Dragon DRG-1N.mtf
+9 Merlin MLN-1A.mtf
+33 Ostroc OSR-2C.mtf
+4 Ostroc OSR-2L.mtf
+4 Ostroc OSR-3C.mtf
+72 Ostsol OTL-4D.mtf
+33 Quickdraw QKD-4G.mtf
+4 Quickdraw QKD-4H.mtf
+4 Quickdraw QKD-5A.mtf
+97 Rifleman RFL-3N.mtf
+4 Bombardier BMB-10D.mtf
+145 Crusader CRD-3R.mtf
+97 Thunderbolt TDR-5S.mtf
+96 Archer ARC-2R.mtf
+48 Grasshopper GHR-5H.mtf
+9 Guillotine GLT-4L.mtf
+4 Guillotine GLT-4P.mtf
+97 Warhammer WHM-6R.mtf
+4 Black Knight BL-7-KNT.mtf
+9 Marauder MAD-3R.mtf
+33 Orion ON1-K.mtf
+4 Orion ON1-V.mtf
+4 Orion ON1-VA.mtf

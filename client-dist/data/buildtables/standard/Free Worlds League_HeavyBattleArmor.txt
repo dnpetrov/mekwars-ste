@@ -1,0 +1,13 @@
+28 Achileus [Flamer].blk
+28 Achileus [Laser].blk
+28 Achileus [MG].blk
+25 Achileus [TAG].blk
+37 IS Standard Battle Armor [Flamer].blk
+37 IS Standard Battle Armor [Laser].blk
+33 IS Standard Battle Armor [LRR].blk
+37 IS Standard Battle Armor [MG].blk
+37 IS Standard Battle Armor [SRM].blk
+51 Longinus Battle Armor [Flamer].blk
+51 Longinus Battle Armor [Laser].blk
+51 Longinus Battle Armor [MG].blk
+50 Tornado PA(L) G12.blk

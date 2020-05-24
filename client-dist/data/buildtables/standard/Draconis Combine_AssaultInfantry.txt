@@ -1,0 +1,12 @@
+68 Assault Jump Laser Platoon (Semi-Portable PPC).blk
+18 Assault Jump Rifle Platoon (MG).blk
+18 Assault Jump SRM Platoon (Std, Two-Shot).blk
+90 Assault Mechanized Hover Laser Platoon (Support PPC).blk
+18 Assault Mechanized Hover Rifle Platoon (MG).blk
+18 Assault Mechanized Hover SRM Platoon (Std, Two-Shot).blk
+90 Assault Mechanized Tracked Laser Platoon (Support PPC).blk
+18 Assault Mechanized Tracked Rifle Platoon (MG).blk
+18 Assault Mechanized Tracked SRM Platoon (Std, Two-Shot).blk
+90 Assault Mechanized Wheeled Laser Platoon (Support PPC).blk
+18 Assault Mechanized Wheeled Rifle Platoon (MG).blk
+18 Assault Mechanized Wheeled SRM Platoon (Std, Two-Shot).blk
