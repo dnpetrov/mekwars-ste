@@ -668,7 +668,7 @@ public class CHQPanel extends JPanel {
                     theEntity.loadAllWeapons();
                     infoWindow.getContentPane().add(unitdisplay);
                     infoWindow.setSize(300, 400);
-                    infoWindow.setResizable(false);
+                    infoWindow.setResizable(true);
                     infoWindow.setTitle(mek.getModelName());
                     infoWindow.setLocationRelativeTo(null);
                     infoWindow.setVisible(true);
