@@ -45,7 +45,10 @@ import java.awt.image.FilteredImageSource;
 import java.awt.image.RGBImageFilter;
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
+import java.util.Enumeration;
+import java.util.StringTokenizer;
+import java.util.TreeMap;
+import java.util.Vector;
 
 //@Salient
 //import client.gui.dialog.TableViewerDialog; //for testing/debug
@@ -60,6 +63,34 @@ public class CHQPanel extends JPanel {
      *
      */
     private static final long serialVersionUID = -5137503055464771160L;
+
+    public static final int DG = 220;
+    public static final int DB = 220;
+    public static final int DR = 220;
+    public static final Color DGRAY = new Color(DR, DG, DB);
+    public static final Color TAN_LIGHT = new Color(DR - 10, DB - 10, DG - 30);
+    public static final Color TAN_MEDIUM = new Color(DR - 30, DB - 30, DG - 50);
+    public static final Color TAN_HEAVY = new Color(DR - 55, DB - 55, DG - 75);
+    public static final Color TAN_ASSAULT = new Color(DR - 75, DB - 75, DG - 95);
+    public static final Color GRAY_LIGHT = new Color(DR, DG, DB);
+    public static final Color GRAY_MEDIUM = new Color(DR - 17, DB - 17, DG - 17);
+    public static final Color GRAY_HEAVY = new Color(DR - 40, DB - 40, DG - 40);
+    public static final Color GRAY_ASSAULT = new Color(DR - 65, DB - 65, DG - 65);
+    public static final Color CLASSIC_LIGHT = new Color(220, 220, 220);
+    public static final Color CLASSIC_MEDIUM = new Color(DR - 30, DB - 30, DG - 50);
+    public static final Color CLASSIC_HEAVY = new Color(DR - 65, DB - 65, DG - 25);
+    public static final Color CLASSIC_ASSAULT = new Color(DR - 45, DB - 93, DG - 45);
+    public static final Color FORSALE_COLOR = new Color(50, 170, 35);
+    public static final Color UNMAINTAINED_COLOR = new Color(190, 150, 55);
+    public static final Color LOCKED_COLOR = new Color(128, 0, 128);
+    public static final Color VACANT_COLOR = new Color(160, 190, 115);
+    public static final Color REPAIRING_COLOR = new Color(0, 255, 127);
+    public static final Color QUEUED_COLOR = new Color(75, 0, 130);
+    public static final Color CRITICAL_DAMAGE_COLOR = new Color(255, 0, 0);
+    public static final Color ARMOR_DAMAGE_COLOR = new Color(238, 238, 0);
+    public static final Color HAS_ALL_AMMO_COLOR = new Color(255, 128, 255);
+    public static final Color CLASSIC_IN_ARMIES_COLOR = new Color(65, 170, 55);
+    public static final Color OTHER_IN_ARMIES_COLOR = new Color(DR - 43, DB - 33, DG - 4);
 
     MWClient mwclient;
 
@@ -226,7 +257,7 @@ public class CHQPanel extends JPanel {
     public void refresh() {
         useAdvanceRepairs = mwclient.isUsingAdvanceRepairs();
         MekTable.refreshModel();
-        tblMeks.setPreferredSize(new Dimension(tblMeks.getWidth(), tblMeks.getRowHeight() * (MekTable.getRowCount())));
+        tblMeks.setPreferredSize(new Dimension(tblMeks.getWidth(), tblMeks.getRowHeight() * MekTable.getRowCount()));
         tblMeks.revalidate();
         mwclient.getPlayer().sortArmies();
     }
@@ -414,7 +445,7 @@ public class CHQPanel extends JPanel {
             dragUnit = MekTable.getMekAt(row, col);
             startArmy = MekTable.getArmyAt(row);
 
-            if ((dragUnit != null) && (e.getButton() == MouseEvent.BUTTON1)) {
+            if (dragUnit != null && e.getButton() == MouseEvent.BUTTON1) {
 
                 // make isDrag true and save origins
                 isDrag = true;
@@ -466,7 +497,7 @@ public class CHQPanel extends JPanel {
                 currArmy = MekTable.getArmyAt(row);
 
                 // null finish army. moving to hangar.
-                if ((currArmy == null) && validRelease) {
+                if (currArmy == null && validRelease) {
 
                     // if the unit is from an army, remove it
                     if (startArmy != null) {
@@ -490,7 +521,7 @@ public class CHQPanel extends JPanel {
                     }
 
                     // within the same army, change positions
-                    else if ((currArmy.getID() == startArmy.getID()) && (exchangeUnit != null) && (dragUnit.getId() != exchangeUnit.getId())) {
+                    else if (currArmy.getID() == startArmy.getID() && exchangeUnit != null && dragUnit.getId() != exchangeUnit.getId()) {
                         int newpos = 0;
                         for (Unit currU : currArmy.getUnits()) {
                             if (currU.getId() == exchangeUnit.getId()) {
@@ -539,7 +570,7 @@ public class CHQPanel extends JPanel {
                 if (currArmy == null) {
 
                     // if the unit is from an army, could remove. show minus.
-                    if ((startArmy != null) && (mwclient.getMyStatus() == MWClient.STATUS_RESERVE)) {
+                    if (startArmy != null && mwclient.getMyStatus() == MWClient.STATUS_RESERVE) {
                         tblMeks.setCursor(removeCursor);
                     } else if (startArmy != null) {
                         tblMeks.setCursor(notAllowedCursor);
@@ -571,7 +602,7 @@ public class CHQPanel extends JPanel {
                     // within the same army, change positions
                     else if (currArmy.getID() == startArmy.getID()) {
 
-                        if ((currUnit != null) && (dragUnit.getId() != currUnit.getId()) && (mwclient.getMyStatus() != MWClient.STATUS_FIGHTING)) {
+                        if (currUnit != null && dragUnit.getId() != currUnit.getId() && mwclient.getMyStatus() != MWClient.STATUS_FIGHTING) {
                             tblMeks.setCursor(positionCursor);
                         } else {
                             tblMeks.setCursor(notAllowedCursor);
@@ -623,7 +654,7 @@ public class CHQPanel extends JPanel {
                 int col = tblMeks.columnAtPoint(e.getPoint());
                 JMenuItem menuItem;
 
-                if ((col == 0) && (row >= MekTable.getRowsForArmies())) {
+                if (col == 0 && row >= MekTable.getRowsForArmies()) {
                     JMenu primeSortMenu = new JMenu("Sort (1st)");
                     JMenu secondarySortMenu = new JMenu("Sort (2nd)");
                     JMenu tertiarySortMenu = new JMenu("Sort (3rd)");
@@ -653,7 +684,7 @@ public class CHQPanel extends JPanel {
                         menuItem.addActionListener(this);
                         primeSortMenu.add(menuItem);
 
-                        if ((i + 2) == choices.length) {
+                        if (i + 2 == choices.length) {
                             primeSortMenu.addSeparator();
                         }
                     }
@@ -674,7 +705,7 @@ public class CHQPanel extends JPanel {
                         menuItem.addActionListener(this);
                         secondarySortMenu.add(menuItem);
 
-                        if ((i + 2) == choices.length) {
+                        if (i + 2 == choices.length) {
                             secondarySortMenu.addSeparator();
                         }
                     }
@@ -695,7 +726,7 @@ public class CHQPanel extends JPanel {
                         menuItem.addActionListener(this);
                         tertiarySortMenu.add(menuItem);
 
-                        if ((i + 2) == choices.length) {
+                        if (i + 2 == choices.length) {
                             tertiarySortMenu.addSeparator();
                         }
                     }
@@ -704,7 +735,7 @@ public class CHQPanel extends JPanel {
 
                 }
 
-                else if ((row < 0) || (col == 0)) {
+                else if (row < 0 || col == 0) {
 
                     CArmy l = MekTable.getArmyAt(row);
                     if (l != null) {
@@ -720,7 +751,7 @@ public class CHQPanel extends JPanel {
                             menuItem.setActionCommand("AO|" + lid);
                             menuItem.addActionListener(this);
                             boolean canCheckFromReserve = Boolean.parseBoolean(mwclient.getserverConfigs("ProbeInReserve"));
-                            if ((mwclient.getMyStatus() != MWClient.STATUS_ACTIVE) && !canCheckFromReserve) {
+                            if (mwclient.getMyStatus() != MWClient.STATUS_ACTIVE && !canCheckFromReserve) {
                                 menuItem.setEnabled(false);
                             }
                             popup.add(menuItem);
@@ -826,7 +857,7 @@ public class CHQPanel extends JPanel {
                             menuItem.addActionListener(this);
                             primeSortMenu.add(menuItem);
 
-                            if ((i + 2) == choices.length) {
+                            if (i + 2 == choices.length) {
                                 primeSortMenu.addSeparator();
                             }
                         }
@@ -1139,7 +1170,7 @@ public class CHQPanel extends JPanel {
                      * CONSTRUCT the ADD menu here. It will be added to the actual format later. @urgru 12/7/04
                      */
                     JMenu addMenu = new JMenu("Add");
-                    if ((mwclient.getPlayer().getHangar().size() > 0) && !l.isLocked()) {
+                    if (mwclient.getPlayer().getHangar().size() > 0 && !l.isLocked()) {
                         Object[] mechArray = mwclient.getPlayer().getHangar().toArray();
                         if (mechArray.length > 0) {
                             Vector<Vector<JMenuItem>> SubMenus = new Vector<>(1, 1);
@@ -1153,7 +1184,7 @@ public class CHQPanel extends JPanel {
 
                             for (Object element : mechArray) {
                                 CUnit mm = (CUnit) element;
-                                if ((mm.getStatus() == Unit.STATUS_UNMAINTAINED) || (mm.getStatus() == Unit.STATUS_FORSALE)) {
+                                if (mm.getStatus() == Unit.STATUS_UNMAINTAINED || mm.getStatus() == Unit.STATUS_FORSALE) {
                                     continue;
                                 }
                                 if (Player.getAmountOfTimesUnitExistsInArmies(mm.getId()) >= Integer.parseInt(mwclient.getserverConfigs("UnitsInMultipleArmiesAmount"))) {
@@ -1165,9 +1196,9 @@ public class CHQPanel extends JPanel {
                                     // already
                                     // in army
                                     hasUnitsFree = true;
-                                    if ((mm.getType() == Unit.MEK) || (mm.getType() == Unit.VEHICLE) || (mm.getType() == Unit.AERO)) {
+                                    if (mm.getType() == Unit.MEK || mm.getType() == Unit.VEHICLE || mm.getType() == Unit.AERO) {
                                         menuItem = new JMenuItem(mm.getModelName() + " (" + mm.getPilot().getGunnery() + "/" + mm.getPilot().getPiloting() + ") " + mm.getBVForMatch() + " BV");
-                                    } else if ((mm.getType() == Unit.INFANTRY) || (mm.getType() == Unit.BATTLEARMOR)) {
+                                    } else if (mm.getType() == Unit.INFANTRY || mm.getType() == Unit.BATTLEARMOR) {
                                         if (((Infantry) mm.getEntity()).canMakeAntiMekAttacks()) {
                                             menuItem = new JMenuItem(mm.getModelName() + " (" + mm.getPilot().getGunnery() + "/" + mm.getPilot().getPiloting() + ") " + mm.getBVForMatch() + " BV");
                                         } else {
@@ -1183,7 +1214,7 @@ public class CHQPanel extends JPanel {
                                         SubMenus.elementAt(4).add(menuItem);// into
                                         // proto
                                         // slot
-                                    } else if ((mm.getType() == Unit.INFANTRY) || (mm.getType() == Unit.BATTLEARMOR)) {
+                                    } else if (mm.getType() == Unit.INFANTRY || mm.getType() == Unit.BATTLEARMOR) {
                                         SubMenus.elementAt(5).add(menuItem);// into
                                         // BA
                                         // slot
@@ -1198,7 +1229,7 @@ public class CHQPanel extends JPanel {
                                 if (SizeMenu.size() > 10) {
                                     // More than one menu of the given size
                                     // class is needed
-                                    int iterations = (SizeMenu.size() / 10) + 1;
+                                    int iterations = SizeMenu.size() / 10 + 1;
                                     for (int j = 0; j < iterations; j++) {
                                         int mechcount = 0;
 
@@ -1212,7 +1243,7 @@ public class CHQPanel extends JPanel {
                                             menux = new JMenu("Infantry " + (j + 1));
                                         }
 
-                                        while (!SizeMenu.isEmpty() && (mechcount < 10)) {
+                                        while (!SizeMenu.isEmpty() && mechcount < 10) {
                                             menux.add(SizeMenu.elementAt(0));
                                             SizeMenu.removeElementAt(0);
                                             SizeMenu.trimToSize();
@@ -1225,7 +1256,7 @@ public class CHQPanel extends JPanel {
                                         if (i >= 4) {
 
                                             Component[] components = addMenu.getMenuComponents();
-                                            if ((i == 4) && (components.length != 0)) {
+                                            if (i == 4 && components.length != 0) {
                                                 addMenu.addSeparator();
                                             } else if (i == 5) {
                                                 boolean hasProtoMenu = false;
@@ -1237,7 +1268,7 @@ public class CHQPanel extends JPanel {
                                                         }
                                                     }
                                                 }
-                                                if (!hasProtoMenu && (components.length > 0) && (menux.getComponentCount() > 0)) {
+                                                if (!hasProtoMenu && components.length > 0 && menux.getComponentCount() > 0) {
                                                     addMenu.addSeparator();
                                                 }
                                             }
@@ -1276,9 +1307,9 @@ public class CHQPanel extends JPanel {
                                     for (int j = 0; j < SizeMenu.size(); j++) {
                                         menux.add(SizeMenu.elementAt(j));
 
-                                        if ((i == 5) && (j == 0) && !hasProtoMenu && (components.length > 0)) {
+                                        if (i == 5 && j == 0 && !hasProtoMenu && components.length > 0) {
                                             addMenu.addSeparator();
-                                        } else if ((i == 4) && (j == 0) && (components.length > 0)) {
+                                        } else if (i == 4 && j == 0 && components.length > 0) {
                                             addMenu.addSeparator();
                                         }
 
@@ -1300,7 +1331,7 @@ public class CHQPanel extends JPanel {
                          * the unit isnt null, so construct the link menu here. It will be added to the actual format later. @Torren 12/19/04
                          */
                         JMenu linkMenu = new JMenu("Link");
-                        if ((l.getUnits().size() > 0) && !l.isLocked()) {
+                        if (l.getUnits().size() > 0 && !l.isLocked()) {
                             Vector<CUnit> Masters = new Vector<>(1, 1);
                             Enumeration<Unit> c3M = l.getUnits().elements();
                             while (c3M.hasMoreElements()) {
@@ -1309,11 +1340,11 @@ public class CHQPanel extends JPanel {
                                     continue;
                                 }
                                 if (cm.getC3Level() != Unit.C3_IMPROVED) {
-                                    if (((c3Unit.getC3Level() == Unit.C3_MASTER) || (c3Unit.getC3Level() == Unit.C3_MMASTER)) && c3Unit.checkC3mNetworkHasOpen(l, cm.getC3Level())) {
+                                    if ((c3Unit.getC3Level() == Unit.C3_MASTER || c3Unit.getC3Level() == Unit.C3_MMASTER) && c3Unit.checkC3mNetworkHasOpen(l, cm.getC3Level())) {
                                         Masters.add(c3Unit);
                                     }
                                 } else if (cm.getC3Level() == Unit.C3_IMPROVED) {
-                                    if ((c3Unit.getC3Level() == Unit.C3_IMPROVED) && c3Unit.checkC3iNetworkHasOpen(l)) {
+                                    if (c3Unit.getC3Level() == Unit.C3_IMPROVED && c3Unit.checkC3iNetworkHasOpen(l)) {
                                         Masters.add(c3Unit);
                                     }
                                 }
@@ -1348,7 +1379,7 @@ public class CHQPanel extends JPanel {
                         /*
                          * EXCHANGE. Derived from ADD. Same, but returns clicked unit to hangar.
                          */
-                        if ((mwclient.getPlayer().getHangar().size() > 0) && !l.isLocked()) {
+                        if (mwclient.getPlayer().getHangar().size() > 0 && !l.isLocked()) {
                             JMenu jm = new JMenu("Exchange");
                             popup.add(jm);
                             Object[] mechs = mwclient.getPlayer().getHangar().toArray();
@@ -1364,7 +1395,7 @@ public class CHQPanel extends JPanel {
 
                                 for (Object mech : mechs) {
                                     CUnit mm = (CUnit) mech;
-                                    if ((mm.getStatus() == Unit.STATUS_UNMAINTAINED) || (mm.getStatus() == Unit.STATUS_FORSALE)) {
+                                    if (mm.getStatus() == Unit.STATUS_UNMAINTAINED || mm.getStatus() == Unit.STATUS_FORSALE) {
                                         continue;
                                     }
                                     if (Player.getAmountOfTimesUnitExistsInArmies(mm.getId()) >= Integer.parseInt(mwclient.getserverConfigs("UnitsInMultipleArmiesAmount"))) {
@@ -1379,9 +1410,9 @@ public class CHQPanel extends JPanel {
                                         // already
                                         // in
                                         // army
-                                        if ((mm.getType() == Unit.MEK) || (mm.getType() == Unit.VEHICLE) || (mm.getType() == Unit.AERO)) {
+                                        if (mm.getType() == Unit.MEK || mm.getType() == Unit.VEHICLE || mm.getType() == Unit.AERO) {
                                             menuItem = new JMenuItem(mm.getModelName() + " (" + mm.getPilot().getGunnery() + "/" + mm.getPilot().getPiloting() + ") " + mm.getBVForMatch() + " BV");
-                                        } else if ((mm.getType() == Unit.INFANTRY) || (mm.getType() == Unit.BATTLEARMOR)) {
+                                        } else if (mm.getType() == Unit.INFANTRY || mm.getType() == Unit.BATTLEARMOR) {
                                             if (((Infantry) mm.getEntity()).canMakeAntiMekAttacks()) {
                                                 menuItem = new JMenuItem(mm.getModelName() + " (" + mm.getPilot().getGunnery() + "/" + mm.getPilot().getPiloting() + ") " + mm.getBVForMatch() + " BV");
                                             } else {
@@ -1397,7 +1428,7 @@ public class CHQPanel extends JPanel {
                                             SubMenus.elementAt(4).add(menuItem);// into
                                             // proto
                                             // slot
-                                        } else if ((mm.getType() == Unit.INFANTRY) || (mm.getType() == Unit.BATTLEARMOR)) {
+                                        } else if (mm.getType() == Unit.INFANTRY || mm.getType() == Unit.BATTLEARMOR) {
                                             SubMenus.elementAt(5).add(menuItem);// into
                                             // BA
                                             // slot
@@ -1413,7 +1444,7 @@ public class CHQPanel extends JPanel {
                                     if (SizeMenu.size() > 10) {
                                         // More than one menu of the given size
                                         // class is needed
-                                        int iterations = (SizeMenu.size() / 10) + 1;
+                                        int iterations = SizeMenu.size() / 10 + 1;
                                         for (int j = 0; j < iterations; j++) {
                                             int mechcount = 0;
 
@@ -1425,7 +1456,7 @@ public class CHQPanel extends JPanel {
                                                 menux = new JMenu("Infantry " + (j + 1));
                                             }
 
-                                            while (!SizeMenu.isEmpty() && (mechcount < 10)) {
+                                            while (!SizeMenu.isEmpty() && mechcount < 10) {
                                                 menux.add(SizeMenu.elementAt(0));
                                                 SizeMenu.removeElementAt(0);
                                                 SizeMenu.trimToSize();
@@ -1439,7 +1470,7 @@ public class CHQPanel extends JPanel {
                                             if (i >= 4) {
 
                                                 Component[] components = addMenu.getMenuComponents();
-                                                if ((i == 4) && (components.length != 0)) {
+                                                if (i == 4 && components.length != 0) {
                                                     jm.addSeparator();
                                                 } else if (i == 5) {
                                                     boolean hasProtoMenu = false;
@@ -1451,7 +1482,7 @@ public class CHQPanel extends JPanel {
                                                             }
                                                         }
                                                     }
-                                                    if (!hasProtoMenu && (components.length > 0) && (menux.getComponentCount() > 0)) {
+                                                    if (!hasProtoMenu && components.length > 0 && menux.getComponentCount() > 0) {
                                                         jm.addSeparator();
                                                     }
                                                 }
@@ -1489,9 +1520,9 @@ public class CHQPanel extends JPanel {
                                         for (int j = 0; j < SizeMenu.size(); j++) {
                                             menux.add(SizeMenu.elementAt(j));
 
-                                            if ((i == 5) && (j == 0) && !hasProtoMenu && (components.length > 0)) {
+                                            if (i == 5 && j == 0 && !hasProtoMenu && components.length > 0) {
                                                 jm.addSeparator();
-                                            } else if ((i == 4) && (j == 0) && (components.length > 0)) {
+                                            } else if (i == 4 && j == 0 && components.length > 0) {
                                                 jm.addSeparator();
                                             }
 
@@ -1535,7 +1566,7 @@ public class CHQPanel extends JPanel {
                         if (cm.getC3Level() != Unit.C3_NONE) {
                             popup.add(linkMenu);
                         }
-                        if (cm.hasBeenC3LinkedTo(l) || (l.getC3Network().get(cm.getId()) != null)) {
+                        if (cm.hasBeenC3LinkedTo(l) || l.getC3Network().get(cm.getId()) != null) {
                             menuItem = new JMenuItem("Unlink");
                             menuItem.setActionCommand("LCN|" + lid + "|" + cm.getId() + "|-1");
                             menuItem.addActionListener(this);
@@ -1625,7 +1656,7 @@ public class CHQPanel extends JPanel {
 
                             }
 
-                            if (Boolean.parseBoolean(mwclient.getserverConfigs("UsePartsRepair")) && ((cm.getType() == Unit.MEK) || (cm.getType() == Unit.VEHICLE))) {
+                            if (Boolean.parseBoolean(mwclient.getserverConfigs("UsePartsRepair")) && (cm.getType() == Unit.MEK || cm.getType() == Unit.VEHICLE)) {
                                 menuItem = new JMenuItem("Salvage Unit Crits");
                                 menuItem.setActionCommand("SUC|" + row + "|" + col);
                                 menuItem.addActionListener(this);
@@ -1644,7 +1675,7 @@ public class CHQPanel extends JPanel {
                                 repairs.add(menuItem);
                             }
 
-                            if (((mwclient.getRMT() != null) && mwclient.getRMT().hasQueuedOrders(cm.getId())) || ((mwclient.getSMT() != null) && mwclient.getSMT().hasQueuedOrders(cm.getId()))) {
+                            if (mwclient.getRMT() != null && mwclient.getRMT().hasQueuedOrders(cm.getId()) || mwclient.getSMT() != null && mwclient.getSMT().hasQueuedOrders(cm.getId())) {
                                 // Add display pending job option
                                 menuItem = new JMenuItem("Display Pending Work Orders");
                                 menuItem.setActionCommand("DPWO|" + row + "|" + col);
@@ -1741,17 +1772,17 @@ public class CHQPanel extends JPanel {
                         if (cm.isChristmasUnit() && !Boolean.parseBoolean(mwclient.getserverConfigs("Christmas_AllowBM"))) {
                         	canSellUnit = false;
                         }
-                        if ((cm.getType() == Unit.MEK) && !Boolean.parseBoolean(mwclient.getserverConfigs("MeksMayBeSoldOnBM"))) {
+                        if (cm.getType() == Unit.MEK && !Boolean.parseBoolean(mwclient.getserverConfigs("MeksMayBeSoldOnBM"))) {
                             canSellUnit = false;
-                        } else if ((cm.getType() == Unit.VEHICLE) && !Boolean.parseBoolean(mwclient.getserverConfigs("VehsMayBeSoldOnBM"))) {
+                        } else if (cm.getType() == Unit.VEHICLE && !Boolean.parseBoolean(mwclient.getserverConfigs("VehsMayBeSoldOnBM"))) {
                             canSellUnit = false;
-                        } else if ((cm.getType() == Unit.BATTLEARMOR) && !Boolean.parseBoolean(mwclient.getserverConfigs("BAMayBeSoldOnBM"))) {
+                        } else if (cm.getType() == Unit.BATTLEARMOR && !Boolean.parseBoolean(mwclient.getserverConfigs("BAMayBeSoldOnBM"))) {
                             canSellUnit = false;
-                        } else if ((cm.getType() == Unit.AERO) && !Boolean.parseBoolean(mwclient.getserverConfigs("AerosMayBeSoldOnBM"))) {
+                        } else if (cm.getType() == Unit.AERO && !Boolean.parseBoolean(mwclient.getserverConfigs("AerosMayBeSoldOnBM"))) {
                             canSellUnit = false;
-                        } else if ((cm.getType() == Unit.PROTOMEK) && !Boolean.parseBoolean(mwclient.getserverConfigs("ProtosMayBeSoldOnBM"))) {
+                        } else if (cm.getType() == Unit.PROTOMEK && !Boolean.parseBoolean(mwclient.getserverConfigs("ProtosMayBeSoldOnBM"))) {
                             canSellUnit = false;
-                        } else if ((cm.getType() == Unit.INFANTRY) && !Boolean.parseBoolean(mwclient.getserverConfigs("InfantryMayBeSoldOnBM"))) {
+                        } else if (cm.getType() == Unit.INFANTRY && !Boolean.parseBoolean(mwclient.getserverConfigs("InfantryMayBeSoldOnBM"))) {
                             canSellUnit = false;
                         } else if (Boolean.parseBoolean(mwclient.getserverConfigs("BMNoClan")) && cm.getEntity().isClan()) {
                             canSellUnit = false;
@@ -1765,7 +1796,7 @@ public class CHQPanel extends JPanel {
                             }
                         }
 
-                        if (canSellUnit && (cm.getStatus() != Unit.STATUS_FORSALE)) {
+                        if (canSellUnit && cm.getStatus() != Unit.STATUS_FORSALE) {
                             menuItem = new JMenuItem("Sell on BM");
                             menuItem.setActionCommand("AB|" + cm.getId());
                             menuItem.addActionListener(this);
@@ -1779,7 +1810,7 @@ public class CHQPanel extends JPanel {
                             hm.add(menuItem);
                         }
 
-                        if (Boolean.parseBoolean(mwclient.getserverConfigs("UseDirectSell")) && (cm.getStatus() != Unit.STATUS_FORSALE)) {
+                        if (Boolean.parseBoolean(mwclient.getserverConfigs("UseDirectSell")) && cm.getStatus() != Unit.STATUS_FORSALE) {
                             menuItem = new JMenuItem("Direct Sell Unit");
                             menuItem.setActionCommand("DSU|" + cm.getId());
                             menuItem.addActionListener(this);
@@ -1814,7 +1845,7 @@ public class CHQPanel extends JPanel {
 
                         // Pilot Queues Block
                         boolean ppqsEnabled = Boolean.parseBoolean(mwclient.getserverConfigs("AllowPersonalPilotQueues"));
-                        if (ppqsEnabled && (cm.isSinglePilotUnit())) {
+                        if (ppqsEnabled && cm.isSinglePilotUnit()) {
 
                             // load possible pilots
                             Object[] pilots = Player.getPersonalPilotQueue().getPilotQueue(cm.getType(), cm.getWeightclass()).toArray();
@@ -1908,7 +1939,7 @@ public class CHQPanel extends JPanel {
                     }
 
                     else if (Player.getFreeBays() > 0) {
-                        int hangernum = (((row - MekTable.getRowsForArmies()) * (MekTable.getColumnCount() - 1)) + col) - 1;
+                        int hangernum = (row - MekTable.getRowsForArmies()) * (MekTable.getColumnCount() - 1) + col - 1;
                         if (hangernum == mwclient.getPlayer().getHangar().size()) {// only
                             // show in first free cell
                             if (useAdvanceRepairs) {
@@ -2043,7 +2074,7 @@ public class CHQPanel extends JPanel {
 
                 for (CArmy currArmy : mwclient.getPlayer().getArmies()) {
 
-                    if ((lid != -1) && (currArmy.getID() != lid)) {
+                    if (lid != -1 && currArmy.getID() != lid) {
                         continue;
                     }
 
@@ -2111,7 +2142,7 @@ public class CHQPanel extends JPanel {
                             CUnit currUnit = (CUnit) e.nextElement();
 
                             // mechs
-                            if ((currUnit.getType() == Unit.MEK) || (currUnit.getType() == Unit.QUAD)) {
+                            if (currUnit.getType() == Unit.MEK || currUnit.getType() == Unit.QUAD) {
                                 if (currUnit.getWeightclass() == Unit.ASSAULT) {
                                     assaultM++;
                                 } else if (currUnit.getWeightclass() == Unit.HEAVY) {
@@ -2442,7 +2473,7 @@ public class CHQPanel extends JPanel {
                         toSend.append(" \"").append(currArmy.getName()).append("\"");
                     }
 
-                    if ((operation.length() > 1) && !operation.equalsIgnoreCase("none")) {
+                    if (operation.length() > 1 && !operation.equalsIgnoreCase("none")) {
                         toSend.append(" (").append(operation).append(")");
                     }
 
@@ -2760,11 +2791,11 @@ public class CHQPanel extends JPanel {
         @Override
         public int filterRGB(int x, int y, int rgb) {
             // Adjust the alpha value
-            int alpha = (rgb >> 24) & 0xff;
-            alpha = (alpha * alphaLevel) / 255;
+            int alpha = rgb >> 24 & 0xff;
+            alpha = alpha * alphaLevel / 255;
 
             // Return the result
-            return ((rgb & 0x00ffffff) | (alpha << 24));
+            return rgb & 0x00ffffff | alpha << 24;
         }
     }
 
@@ -2833,7 +2864,7 @@ public class CHQPanel extends JPanel {
             for (CArmy currA : Player.getArmies()) {
                 int uses = getRowsForArmy(currA);
                 if (uses > row) {
-                    return (currA);
+                    return currA;
                 }
                 row -= uses;
             }
@@ -2864,14 +2895,14 @@ public class CHQPanel extends JPanel {
                 if (row < getRowsForArmies()) {
                     CArmy army = getArmyAt(row);
                     Vector<Unit> mechs = new Vector<>(army.getUnits());
-                    int offset = (getOffset(row) + col) - 1;
+                    int offset = getOffset(row) + col - 1;
                     if (offset < mechs.size()) {
                         return (CUnit) mechs.elementAt(offset);
                     }
                     return null;
                 }
-                int hangernum = (((row - getRowsForArmies()) * (getColumnCount() - 1)) + col) - 1;
-                if ((hangernum >= 0) && (hangernum < Player.getHangar().size())) {
+                int hangernum = (row - getRowsForArmies()) * (getColumnCount() - 1) + col - 1;
+                if (hangernum >= 0 && hangernum < Player.getHangar().size()) {
                     return Player.getHangar().get(hangernum);
                 }
             }
@@ -2887,119 +2918,18 @@ public class CHQPanel extends JPanel {
             if (col == 0) {
                 // System.err.println("Rows of armies: "+getRowsForArmies());
                 if (row < getRowsForArmies()) {
-                    CArmy army = getArmyAt(row);
-
-                    // only return the army description on the 1st row
-                    // ie - return w/ no content on 2nd/3rd/etc. row
-                    if (getRowsForArmy(army) > 1) {
-
-                        // yes, i know this code blows. sod off.
-                        int rowsUsed = 0;
-                        for (CArmy currArmy : Player.getArmies()) {
-                            if ((currArmy.getID() == army.getID()) && (rowsUsed != row)) {
-                                return "";
-                            }
-                            // else
-                            rowsUsed += getRowsForArmy(currArmy);
-                        }// end while
-                    }
-
-                    int lid = army.getID();
-                    String range = "";
-
-                    boolean limitsAllowed = Boolean.parseBoolean(mwclient.getserverConfigs("AllowLimiters"));
-                    if (limitsAllowed) {
-
-                        // lower limit
-                        if (army.getLowerLimiter() == Army.NO_LIMIT) {
-                            range = "No Lower";
-                        } else if ((army.getAmountOfUnits() - army.getLowerLimiter()) < 1) {
-                            range = "1";
-                        } else {
-                            range = "" + (army.getAmountOfUnits() - army.getLowerLimiter());
-                        }
-
-                        // divider
-                        range += " - ";
-
-                        // upper limit
-                        if (army.getUpperLimiter() == Army.NO_LIMIT) {
-                            range += "No Upper";
-                        } else {
-                            range += "" + (army.getAmountOfUnits() + army.getUpperLimiter());
-                        }
-
-                        // overwrite if there are no limits at all
-                        if ((army.getLowerLimiter() == Army.NO_LIMIT) && (army.getUpperLimiter() == Army.NO_LIMIT)) {
-                            range = "No Limits";
-                        }
-                    }
-
-                    String armyName = army.getName();
-                    if (armyName.length() > 11) {
-                        armyName = armyName.substring(0, 11);
-                    }
-
-                    String toReturn = "<html><center><b>Army #" + lid + "</b><br>";
-                    if (army.isPlayerLocked()) {
-                        toReturn += "(locked)<br>";
-                    }
-
-                    if (army.isDisabled()) {
-                        toReturn += "(disabled)<br>";
-                    }
-
-                    // only show army name if one is actually set
-                    boolean fakeName = false;
-                    if (armyName.equals("") || armyName.equals(" ")) {
-                        fakeName = true;
-                    } else if (armyName.toLowerCase().equals("no name")) {
-                        fakeName = true;
-                    } else if (armyName.toLowerCase().equals("none")) {
-                        fakeName = true;
-                    } else if (armyName.toLowerCase().equals("clear")) {
-                        fakeName = true;
-                    } else if (armyName.toLowerCase().equals("untitled")) {
-                        fakeName = true;
-                    }
-
-                    if (!fakeName) {
-                        if (armyName.length() > 10) {
-                            toReturn += armyName.subSequence(0, 9) + "...<br>";
-                        } else {
-                            toReturn += armyName + "<br>";
-                        }
-                    }
-
-                    boolean useOpRule = Boolean.parseBoolean(mwclient.getserverConfigs("UseOperationsRule"));
-                    String modifiedBV = "";
-                    if (useOpRule && (army.getOpForceSize() < army.getUnits().size()) && (army.getOpForceSize() > 0)) {
-                        modifiedBV = "(" + Math.round((army.getBV() * army.forceSizeModifier(army.getOpForceSize()))) + ")";
-                    }
-
-                    toReturn += "BV: " + army.getBV() + modifiedBV + "<br>" + range + "</center>";
-                    if (useOpRule && (army.getOpForceSize() < army.getUnits().size()) && (army.getOpForceSize() > 0) && (army.getOpForceSize() > 0)) {
-                        toReturn += "Force Size: " + army.getOpForceSize() + "<br>";
-                    }
-
-                    // Put in the tonnage info
-                    toReturn += "Tons: " + (int)army.getTotalTonnage() + "<br>";
-                    //toReturn += army.getSkillInfoForDisplay();
-                    toReturn += "</HTML>";
-                    return toReturn;
+                    return getArmyDescription(row);
                 }
                 // else
                 return "Hangar";
             }
 
-            CUnit cm = getMekAt(row, col);
-            if ((cm == null) && (row < getRowsForArmies())) {
+            CUnit unit = getMekAt(row, col);
+            if (unit == null && row < getRowsForArmies()) {
                 return " - ";
-            } else if (cm == null) {// and in hangar row
-                int hangernum = (((row - getRowsForArmies()) * (getColumnCount() - 1)) + col) - 1;
-                if (hangernum == Player.getHangar().size()) {// only show in
-                    // first free
-                    // cell
+            } else if (unit == null) {// and in hangar row
+                int hangarNum = (row - getRowsForArmies()) * (getColumnCount() - 1) + col - 1;
+                if (hangarNum == Player.getHangar().size()) { // only show in first free cell
                     if (useAdvanceRepairs) {
                         return "Free Bays: " + mwclient.getPlayer().getFreeBays();
                     }
@@ -3012,25 +2942,138 @@ public class CHQPanel extends JPanel {
 
             // else
             CArmy army = getArmyAt(row);
-            StringBuilder result = new StringBuilder(cm.getModelName());
-            String skillSet = cm.getPilot().getSkillString(false, mwclient.getData().getHouseByName(mwclient.getPlayer().getHouse()).getBasePilotSkill(cm.getType()));
+            StringBuilder result = new StringBuilder(unit.getModelName());
+            String basePilotSkill = mwclient.getData().getHouseByName(mwclient.getPlayer().getHouse())
+                    .getBasePilotSkill(unit.getType());
+            String skillSet = unit.getPilot().getSkillString(false, basePilotSkill);
             StringTokenizer skills = new StringTokenizer(skillSet, ",");
             while (skills.hasMoreElements()) {
                 skills.nextElement();
                 result.append("*");
             }
             if (army != null) {
-                if (cm.hasBeenC3LinkedTo(army)) {
+                if (unit.hasBeenC3LinkedTo(army)) {
                     result.append(" |M|");
-                } else if (army.getC3Network().get(cm.getId()) != null) {
+                } else if (army.getC3Network().get(unit.getId()) != null) {
                     result.append(" |L|");
                 }
-                if (!Boolean.parseBoolean(mwclient.getConfig().getParam("RIGHTCOMMANDER")) && !Boolean.parseBoolean(mwclient.getConfig().getParam("LEFTCOMMANDER")) && army.isCommander(cm.getId())) {
+                if (!Boolean.parseBoolean(mwclient.getConfig().getParam("RIGHTCOMMANDER")) &&
+                        !Boolean.parseBoolean(mwclient.getConfig().getParam("LEFTCOMMANDER")) &&
+                        army.isCommander(unit.getId())
+                ) {
                     result.append(" Cmdr");
                 }
             }
 
             return result.toString();
+        }
+
+        private Object getArmyDescription(int row) {
+            CArmy army = getArmyAt(row);
+
+            // only return the army description on the 1st row
+            // ie - return w/ no content on 2nd/3rd/etc. row
+            if (getRowsForArmy(army) > 1) {
+
+                // yes, i know this code blows. sod off.
+                int rowsUsed = 0;
+                for (CArmy currArmy : Player.getArmies()) {
+                    if (currArmy.getID() == army.getID() && rowsUsed != row) {
+                        return "";
+                    }
+                    // else
+                    rowsUsed += getRowsForArmy(currArmy);
+                }// end while
+            }
+
+            int lid = army.getID();
+
+            String armyName = army.getName();
+            if (armyName.length() > 11) {
+                armyName = armyName.substring(0, 11);
+            }
+
+            String htmlDesc = "<html><center><b>Army #" + lid + "</b><br>";
+            if (army.isPlayerLocked()) {
+                htmlDesc += "(locked)<br>";
+            }
+
+            if (army.isDisabled()) {
+                htmlDesc += "(disabled)<br>";
+            }
+
+            // only show army name if one is actually set
+            if (!isFakeName(armyName)) {
+                if (armyName.length() > 10) {
+                    htmlDesc += armyName.subSequence(0, 9) + "...<br>";
+                } else {
+                    htmlDesc += armyName + "<br>";
+                }
+            }
+
+            boolean useOpRule = Boolean.parseBoolean(mwclient.getserverConfigs("UseOperationsRule"));
+            String modifiedBV = "";
+            if (useOpRule && army.getOpForceSize() < army.getUnits().size() && army.getOpForceSize() > 0) {
+                modifiedBV = "(" + Math.round(army.getBV() * army.forceSizeModifier(army.getOpForceSize())) + ")";
+            }
+
+            htmlDesc += "BV: " + army.getBV() + modifiedBV + "<br>" + getRangeString(army) + "</center>";
+            if (useOpRule && army.getOpForceSize() < army.getUnits().size() && army.getOpForceSize() > 0) {
+                htmlDesc += "Force Size: " + army.getOpForceSize() + "<br>";
+            }
+
+            // Put in the tonnage info
+            htmlDesc += "Tons: " + (int)army.getTotalTonnage() + "<br>";
+            //toReturn += army.getSkillInfoForDisplay();
+            htmlDesc += "</HTML>";
+            return htmlDesc;
+        }
+
+        private String getRangeString(CArmy army) {
+            String range = "";
+
+            boolean limitsAllowed = Boolean.parseBoolean(mwclient.getserverConfigs("AllowLimiters"));
+            if (limitsAllowed) {
+                // lower limit
+                if (army.getLowerLimiter() == Army.NO_LIMIT) {
+                    range = "No Lower";
+                } else if (army.getAmountOfUnits() - army.getLowerLimiter() < 1) {
+                    range = "1";
+                } else {
+                    range = "" + (army.getAmountOfUnits() - army.getLowerLimiter());
+                }
+
+                range += " - ";
+
+                // upper limit
+                if (army.getUpperLimiter() == Army.NO_LIMIT) {
+                    range += "No Upper";
+                } else {
+                    range += "" + (army.getAmountOfUnits() + army.getUpperLimiter());
+                }
+
+                // overwrite if there are no limits at all
+                if (army.getLowerLimiter() == Army.NO_LIMIT && army.getUpperLimiter() == Army.NO_LIMIT) {
+                    range = "No Limits";
+                }
+            }
+            return range;
+        }
+
+        private boolean isFakeName(String armyName) {
+            if (armyName.equals("") || armyName.equals(" ")) {
+                return true;
+            } else if (armyName.toLowerCase().equals("no name")) {
+                return true;
+            } else if (armyName.toLowerCase().equals("none")) {
+                return true;
+            } else if (armyName.toLowerCase().equals("clear")) {
+                return true;
+            } else if (armyName.toLowerCase().equals("untitled")) {
+                return true;
+            } else {
+                return false;
+            }
         }
 
         @Override
@@ -3068,20 +3111,19 @@ public class CHQPanel extends JPanel {
             }
 
             public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-
                 Component c = this;
                 setOpaque(true);
                 setText(getValueAt(row, column).toString());
                 setToolTipText(null);
                 c.setBackground(dcolor);
                 String scheme = mwclient.getConfig().getParam("HQCOLORSCHEME").toLowerCase();
-                CArmy l = getArmyAt(row);
+                CArmy army = getArmyAt(row);
 
-                if (l != null) {
+                if (army != null) {
                     if (column == 0) {
                         setImageVisible(false);
-                        setToolTipText(l.getSkillInfoForDisplay());
-                        if (l.isLocked()) {
+                        setToolTipText(army.getSkillInfoForDisplay());
+                        if (army.isLocked()) {
                             c.setBackground(new Color(235, 225, 5));
                         }
                         return c;
@@ -3091,356 +3133,264 @@ public class CHQPanel extends JPanel {
                     c.setBackground(new Color(dcolor.getRed() - 33, dcolor.getBlue() - 33, dcolor.getGreen() - 7));
                     return c;
                 }
-                CUnit cm = getMekAt(row, column);
-                if (cm != null) {
+                CUnit unit = getMekAt(row, column);
+                if (unit != null) {
 
-                    int inNumberofArmies = Player.getAmountOfTimesUnitExistsInArmies(cm.getId());
-                    StringBuilder c3Text = new StringBuilder();
-                    String description;
-
-                    if (cm.getC3Level() > 0) {
-
-                        if (cm.getC3Level() == Unit.C3_SLAVE) {
-                            c3Text.append("C3 Slave");
-                        } else if (cm.getC3Level() == Unit.C3_MASTER) {
-                            c3Text.append("C3 Master");
-                        } else if (cm.getC3Level() == Unit.C3_MMASTER) {
-                            c3Text.append("C3 Dual Master");
-                        } else if (cm.getC3Level() == Unit.C3_IMPROVED) {
-                            c3Text.append("C3 Improved");
-                        }
-
-                        if ((l != null) && (l.getC3Network().get(cm.getId()) != null)) {
-                            Integer master = l.getC3Network().get(cm.getId());
-                            if (cm.getC3Level() == Unit.C3_IMPROVED) {
-                                c3Text.append(" linked to #").append(master);
-                            } else {
-                                c3Text.append(" to #").append(master);
-                            }
-                        }
-
-                        if ((l != null) && cm.hasBeenC3LinkedTo(l)) {
-                            if (cm.getC3Level() == Unit.C3_IMPROVED) {
-                                c3Text.append(" master for");
-                            } else {
-                                c3Text.append(" for");
-                            }
-
-                            Enumeration<Integer> c3Key = l.getC3Network().keys();
-                            Enumeration<Integer> c3Unit = l.getC3Network().elements();
-                            while (c3Key.hasMoreElements()) {
-                                Integer slave = c3Key.nextElement();
-                                Integer master = c3Unit.nextElement();
-                                if (master == cm.getId()) {
-                                    c3Text.append(" #").append(slave);
-                                }
-                            }
-
-                        }
-                    }
-                    if (mwclient.getPlayer().getMyHouse().getNonFactionUnitsCostMore()) {
-                        String techCostString = "";
-                        if (cm.getC3Level() > 0) {
-                            techCostString = c3Text.toString() + "<br>";
-                        }
-
-                        String techAmount = "TechsFor" + Unit.getWeightClassDesc(cm.getWeightclass()) + Unit.getTypeClassDesc(cm.getType());
-                        int numTechs = (int) (Integer.parseInt(mwclient.getserverConfigs(techAmount)) * (mwclient.getPlayer().getMyHouse().houseSupportsUnit(cm.getUnitFilename()) ? 1 : Float.parseFloat(mwclient.getserverConfigs("NonFactionUnitsIncreasedTechs"))));
-
-                        techCostString += "Techs required: " + numTechs;
-                        c3Text.setLength(0);
-                        c3Text.append(techCostString);
-                    }
-                    if (Boolean.parseBoolean(mwclient.getConfigParam("ShowUnitTechBase"))) {
-                        if (mwclient.getPlayer().getMyHouse().getNonFactionUnitsCostMore()) {
-                            c3Text.append("<br>");
-                        }
-                        if (cm.getEntity().isClan()) {
-                            c3Text.append("Tech Base: Clan<br>");
-                        } else {
-                            c3Text.append("Tech Base: IS<br>");
-                        }
-                    }
-                    c3Text.append("Targeting: ").append(cm.getTargetSystemTypeDesc()).append("<br>");
-                    if (cm.isSupportUnit()) {
-                    	c3Text.append("[Support]<br>");
-                    }
-
-                    //@salient EXPANDEDUNITTOOLTIP
-                    if(Boolean.parseBoolean(mwclient.getConfig().getParam("EXPANDEDUNITTOOLTIP")))
-                    {      	
-                    	c3Text.append("<font color=\"purple\">");
-                    	c3Text.append("<b>[General]</b><br>");
-                    	c3Text.append("Weight: ").append(cm.getEntity().getWeight()).append(" Tons (")
-                                .append(cm.getEntity().getWeightClassName()).append(")<br>");
-                    	c3Text.append("Armor: ").append(cm.getEntity().getArmorWeight()).append(" Tons (")
-                                .append(cm.getEntity().getTotalArmor()).append(" Pts)<br>");
-                    	int walk = cm.getEntity().getWalkMP();
-                    	int run = cm.getEntity().getRunMPwithoutMASC();
-                    	int jump = cm.getEntity().getJumpMP();
-                    	int masc = cm.getEntity().getRunMP();
-                    	c3Text.append("Movement: ").append(walk).append("/").append(run);
-                    	
-                    	if(cm.getEntity().getMASC() != null)
-                    		c3Text.append("(").append(masc).append(")");
-                    	
-                    	if(jump != 0)
-                    		c3Text.append("/").append(jump).append("<br>");
-                    	else
-                    		c3Text.append("<br>");
-                                	
-                    	c3Text.append("Heat Capacity: ").append(cm.getEntity().getHeatCapacity()).append("<br>");
-                    	                   	
-//                    	if(cm.getEntity().hasQuirk("no_twist"))
-//                    		C3Text.append("Torso Twist: <font color=\"green\">NO</font><br>");
-//                    	else
-//                    		C3Text.append("Torso Twist: <font color=\"red\">YES</font><br>");
-                    	
-                    	if(cm.getEntity().canFlipArms())
-                    		c3Text.append("Arms Flip: <font color=\"green\">YES</font><br>");
-                    	else
-                    		c3Text.append("Arms Flip: <font color=\"red\">NO</font><br>");
-                    	       
-                    	c3Text.append("</font>");
-                    	//End General (purple)
-                    	
-                    	c3Text.append("<font color=\"blue\">");
-                    	c3Text.append("<b>[Weapons]</b><br>");
-                    	cm.getEntity().getWeaponList().forEach(weapon -> {
-                    		c3Text.append(weapon.getName()).append(" (");
-                    		if(weapon.isRearMounted())
-                    			c3Text.append(cm.getEntity().getLocationAbbr(weapon.getLocation())).append(") (R)<br>");
-                    		else                  			
-                    			c3Text.append(cm.getEntity().getLocationAbbr(weapon.getLocation())).append(")<br>");
-                    		
-                    		});
-                		c3Text.append("</font>");
-                		//End Weapons (blue)
-                    	
-                		//Quirks...
-                		if(Boolean.parseBoolean(mwclient.getserverConfigs("EnableQuirks")))
-                		{
-                			c3Text.append("<font color=\"teal\">");
-                			c3Text.append("<b>[Quirks]</b><br>");
-
-                			StringTokenizer st = new StringTokenizer(cm.getHtmlQuirksList(), "*");
-              				
-            				while(st.hasMoreTokens())
-            					c3Text.append(TokenReader.readString(st));
-
-                			
-                			//C3Text.append(cm.quirkCheck());
-                			c3Text.append("</font>");
-                			//End Quirks (teal)                			
-                		}
-                    }
-
-                    // If you have a unit in more then one army, list all the
-                    // armies it is in.
-                    if (inNumberofArmies > 1) {
-                        String armiesText = "";
-                        if (cm.getC3Level() > 0) {
-                            armiesText = c3Text.toString() + "<br>";
-                        }
-
-                        armiesText += "In armies " + Player.getArmiesUnitIsIn(cm.getId());
-                        description = cm.getDisplayInfo(armiesText);
-                    } else {
-                        description = cm.getDisplayInfo(c3Text.toString());
-                    }
-                    setToolTipText(description);
-                    setUnit(cm, l);
+                    int inNumberofArmies = Player.getAmountOfTimesUnitExistsInArmies(unit.getId());
+                    String unitToolTip = getUnitToolTipText(army, unit, inNumberofArmies);
+                    setToolTipText(unitToolTip);
+                    setUnit(unit, army);
                     setImageVisible(true);
 
-                    if (cm.getStatus() == Unit.STATUS_FORSALE) {
-                        // a mild green for units that are on sale
-                        c.setBackground(new Color(50, 170, 35));
-                    } else if (cm.getStatus() == Unit.STATUS_UNMAINTAINED) {
-                        // a nice rusty orange for unmaintained units
-                        c.setBackground(new Color(190, 150, 55));
-                    } else if (useUnitLocking && cm.isLocked()) { //@Salient - mini campaign lock
-                        c.setBackground(new Color(128, 0, 128)); //purple, i think.
-                    } else if (!mwclient.getConfig().isUsingStatusIcons()) {
-
-                        if (cm.getPilot().getName().equals("Vacant")) {
-                        	// RFE 1545928 -Color for pilotless units
-                            c.setBackground(new Color(160, 190, 115));
-                        } else if (useAdvanceRepairs && UnitUtils.isRepairing(cm.getEntity())) {
-                            c.setBackground(new Color(0, 255, 127));
-                        } else if (useAdvanceRepairs && (mwclient.getRMT() != null) && mwclient.getRMT().hasQueuedOrders(cm.getId())) {
-                            c.setBackground(new Color(75, 0, 130));
-                        } else if (useAdvanceRepairs && UnitUtils.hasCriticalDamage(cm.getEntity())) {
-                            c.setBackground(Color.red);
-                        } else if (useAdvanceRepairs && UnitUtils.hasArmorDamage(cm.getEntity())) {
-                            c.setBackground(new Color(238, 238, 0));
-                        } else if (useAdvanceRepairs && !UnitUtils.hasAllAmmo(cm.getEntity())) {
-                            c.setBackground(new Color(255, 128, 255));
-                        }
-                        //@salient this is also irrelevant, due to else-if order of operations.
-//                        else if (cm.getStatus() == Unit.STATUS_UNMAINTAINED) {
-//                            // a nice rusty orange for unmaintained units
-//                            c.setBackground(new Color(190, 150, 55));
-//                        }
-                        //@salient, isnt this the same as the first if statement? duplicate condition.
-//                        else if (cm.getStatus() == Unit.STATUS_FORSALE) {
-//                            // a mild green for units that are on sale
-//                            c.setBackground(new Color(50, 170, 35));
-//                        }
-                        else if ((l == null) && (inNumberofArmies > 0)) {
-                            if (scheme.equals("classic")) {
-                                c.setBackground(new Color(65, 170, 55));// dark
-                                // green
-                            } else {
-                                // all non-classic sets (light blue)
-                                c.setBackground(new Color(dcolor.getRed() - 43, dcolor.getBlue() - 33, dcolor.getGreen() - 4));
-                            }
-                        } else {
-
-                            // TAN SET. Tan gradients.
-                            if (scheme.equals("tan")) {
-                                switch (cm.getWeightclass()) {
-
-                                case Unit.LIGHT:
-                                    c.setBackground(new Color(dcolor.getRed() - 10, dcolor.getBlue() - 10, dcolor.getGreen() - 30));
-                                    break;
-                                case Unit.MEDIUM:
-                                    c.setBackground(new Color(dcolor.getRed() - 30, dcolor.getBlue() - 30, dcolor.getGreen() - 50));
-                                    break;
-                                case Unit.HEAVY:
-                                    c.setBackground(new Color(dcolor.getRed() - 55, dcolor.getBlue() - 55, dcolor.getGreen() - 75));
-                                    break;
-                                case Unit.ASSAULT:
-                                    c.setBackground(new Color(dcolor.getRed() - 75, dcolor.getBlue() - 75, dcolor.getGreen() - 95));
-                                    break;
-
-                                }// end Tan Switch
-                            }
-
-                            // GREY SET. Grey gradients.
-                            else if (scheme.equals("grey")) {
-                                switch (cm.getWeightclass()) {
-
-                                case Unit.LIGHT:
-                                    c.setBackground(dcolor);
-                                    break;
-                                case Unit.MEDIUM:
-                                    c.setBackground(new Color(dcolor.getRed() - 17, dcolor.getBlue() - 17, dcolor.getGreen() - 17));
-                                    break;
-                                case Unit.HEAVY:
-                                    c.setBackground(new Color(dcolor.getRed() - 40, dcolor.getBlue() - 40, dcolor.getGreen() - 40));
-                                    break;
-                                case Unit.ASSAULT:
-                                    c.setBackground(new Color(dcolor.getRed() - 65, dcolor.getBlue() - 65, dcolor.getGreen() - 65));
-                                    break;
-
-                                }// end Grey Switch
-                            }
-
-                            else {// CLASSIC COLORS. White/Tan/Blue/Purple.
-
-                                switch (cm.getWeightclass()) {
-
-                                case Unit.LIGHT:
-                                    c.setBackground(dcolor);
-                                    break;
-                                case Unit.MEDIUM:
-                                    c.setBackground(new Color(dcolor.getRed() - 30, dcolor.getBlue() - 30, dcolor.getGreen() - 50));
-                                    break;
-                                case Unit.HEAVY:
-                                    c.setBackground(new Color(dcolor.getRed() - 65, dcolor.getBlue() - 65, dcolor.getGreen() - 25));
-                                    break;
-                                case Unit.ASSAULT:
-                                    c.setBackground(new Color(dcolor.getRed() - 45, dcolor.getBlue() - 93, dcolor.getGreen() - 45));
-                                    break;
-
-                                }// end Classic Switch
-                            }
-                        }// end else(should fill by weight)
-                    } else if ((l == null) && (inNumberofArmies > 0)) {
-                        if (scheme.equals("classic")) {
-                            c.setBackground(new Color(65, 170, 55));// dark
-                            // green
-                        } else {
-                            // all non-classic sets (light blue)
-                            c.setBackground(new Color(dcolor.getRed() - 43, dcolor.getBlue() - 33, dcolor.getGreen() - 4));
-                        }
-                    } else {
-
-                        // TAN SET. Tan gradients.
-                        if (scheme.equals("tan")) {
-                            switch (cm.getWeightclass()) {
-
-                            case Unit.LIGHT:
-                                c.setBackground(new Color(dcolor.getRed() - 10, dcolor.getBlue() - 10, dcolor.getGreen() - 30));
-                                break;
-                            case Unit.MEDIUM:
-                                c.setBackground(new Color(dcolor.getRed() - 30, dcolor.getBlue() - 30, dcolor.getGreen() - 50));
-                                break;
-                            case Unit.HEAVY:
-                                c.setBackground(new Color(dcolor.getRed() - 55, dcolor.getBlue() - 55, dcolor.getGreen() - 75));
-                                break;
-                            case Unit.ASSAULT:
-                                c.setBackground(new Color(dcolor.getRed() - 75, dcolor.getBlue() - 75, dcolor.getGreen() - 95));
-                                break;
-
-                            }// end Tan Switch
-                        }
-
-                        // GREY SET. Grey gradients.
-                        else if (scheme.equals("grey")) {
-                            switch (cm.getWeightclass()) {
-
-                            case Unit.LIGHT:
-                                c.setBackground(dcolor);
-                                break;
-                            case Unit.MEDIUM:
-                                c.setBackground(new Color(dcolor.getRed() - 17, dcolor.getBlue() - 17, dcolor.getGreen() - 17));
-                                break;
-                            case Unit.HEAVY:
-                                c.setBackground(new Color(dcolor.getRed() - 40, dcolor.getBlue() - 40, dcolor.getGreen() - 40));
-                                break;
-                            case Unit.ASSAULT:
-                                c.setBackground(new Color(dcolor.getRed() - 65, dcolor.getBlue() - 65, dcolor.getGreen() - 65));
-                                break;
-
-                            }// end Grey Switch
-                        }
-
-                        else {// CLASSIC COLORS. White/Tan/Blue/Purple.
-
-                            switch (cm.getWeightclass()) {
-
-                            case Unit.LIGHT:
-                                c.setBackground(dcolor);
-                                break;
-                            case Unit.MEDIUM:
-                                c.setBackground(new Color(dcolor.getRed() - 30, dcolor.getBlue() - 30, dcolor.getGreen() - 50));
-                                break;
-                            case Unit.HEAVY:
-                                c.setBackground(new Color(dcolor.getRed() - 65, dcolor.getBlue() - 65, dcolor.getGreen() - 25));
-                                break;
-                            case Unit.ASSAULT:
-                                c.setBackground(new Color(dcolor.getRed() - 45, dcolor.getBlue() - 93, dcolor.getGreen() - 45));
-                                break;
-
-                            }// end Classic Switch
-                        }
-                    }// end else(should fill by weight)
+                    c.setBackground(getBackgroundForUnit(scheme, army, unit, inNumberofArmies));
                 }
 
                 else {
                     setImageVisible(false);
-                    meknum = (((row - getRowsForArmies()) * getColumnCount()) - 1) + column;
+                    meknum = (row - getRowsForArmies()) * getColumnCount() - 1 + column;
                     int freebays = Player.getFreeBays();
                     if (freebays < 0) {
                         freebays = 0;
                     }
-                    if (meknum > (freebays + Player.getHangar().size())) {
+                    if (meknum > freebays + Player.getHangar().size()) {
                         setText("");
                     }
                 }
                 return c;
             }
+
+            private String getUnitToolTipText(CArmy army, CUnit unit, int inNumberofArmies) {
+                StringBuilder unitText = new StringBuilder();
+
+                if (unit.getC3Level() > 0) {
+
+                    if (unit.getC3Level() == Unit.C3_SLAVE) {
+                        unitText.append("C3 Slave");
+                    } else if (unit.getC3Level() == Unit.C3_MASTER) {
+                        unitText.append("C3 Master");
+                    } else if (unit.getC3Level() == Unit.C3_MMASTER) {
+                        unitText.append("C3 Dual Master");
+                    } else if (unit.getC3Level() == Unit.C3_IMPROVED) {
+                        unitText.append("C3 Improved");
+                    }
+
+                    if (army != null && army.getC3Network().get(unit.getId()) != null) {
+                        Integer master = army.getC3Network().get(unit.getId());
+                        if (unit.getC3Level() == Unit.C3_IMPROVED) {
+                            unitText.append(" linked to #").append(master);
+                        } else {
+                            unitText.append(" to #").append(master);
+                        }
+                    }
+
+                    if (army != null && unit.hasBeenC3LinkedTo(army)) {
+                        if (unit.getC3Level() == Unit.C3_IMPROVED) {
+                            unitText.append(" master for");
+                        } else {
+                            unitText.append(" for");
+                        }
+
+                        Enumeration<Integer> c3Key = army.getC3Network().keys();
+                        Enumeration<Integer> c3Unit = army.getC3Network().elements();
+                        while (c3Key.hasMoreElements()) {
+                            Integer slave = c3Key.nextElement();
+                            Integer master = c3Unit.nextElement();
+                            if (master == unit.getId()) {
+                                unitText.append(" #").append(slave);
+                            }
+                        }
+
+                    }
+                }
+                if (mwclient.getPlayer().getMyHouse().getNonFactionUnitsCostMore()) {
+                    String techCostString = "";
+                    if (unit.getC3Level() > 0) {
+                        techCostString = unitText.toString() + "<br>";
+                    }
+
+                    String techsForConfigKey = "TechsFor" + Unit.getWeightClassDesc(unit.getWeightclass()) + Unit.getTypeClassDesc(unit.getType());
+                    int baseTechAmount = Integer.parseInt(mwclient.getserverConfigs(techsForConfigKey));
+                    float nonFactionUnitsIncreasedTechs = Float.parseFloat(mwclient.getserverConfigs("NonFactionUnitsIncreasedTechs"));
+                    boolean houseSupportsUnit = mwclient.getPlayer().getMyHouse().houseSupportsUnit(unit.getUnitFilename());
+                    int numTechs = (int) (baseTechAmount * (houseSupportsUnit ? 1 : nonFactionUnitsIncreasedTechs));
+
+                    techCostString += "Techs required: " + numTechs;
+                    unitText.setLength(0);
+                    unitText.append(techCostString);
+                }
+                if (Boolean.parseBoolean(mwclient.getConfigParam("ShowUnitTechBase"))) {
+                    if (mwclient.getPlayer().getMyHouse().getNonFactionUnitsCostMore()) {
+                        unitText.append("<br>");
+                    }
+                    if (unit.getEntity().isClan()) {
+                        unitText.append("Tech Base: Clan<br>");
+                    } else {
+                        unitText.append("Tech Base: IS<br>");
+                    }
+                }
+                unitText.append("Targeting: ").append(unit.getTargetSystemTypeDesc()).append("<br>");
+                if (unit.isSupportUnit()) {
+                    unitText.append("[Support]<br>");
+                }
+
+                //@salient EXPANDEDUNITTOOLTIP
+                if(Boolean.parseBoolean(mwclient.getConfig().getParam("EXPANDEDUNITTOOLTIP"))) {
+                    unitText.append("<font color=\"purple\">");
+                    unitText.append("<b>[General]</b><br>");
+                    unitText.append("Weight: ").append(unit.getEntity().getWeight()).append(" Tons (")
+                            .append(unit.getEntity().getWeightClassName()).append(")<br>");
+                    unitText.append("Armor: ").append(unit.getEntity().getArmorWeight()).append(" Tons (")
+                            .append(unit.getEntity().getTotalArmor()).append(" Pts)<br>");
+                    int walk = unit.getEntity().getWalkMP();
+                    int run = unit.getEntity().getRunMPwithoutMASC();
+                    int jump = unit.getEntity().getJumpMP();
+                    int masc = unit.getEntity().getRunMP();
+                    unitText.append("Movement: ").append(walk).append("/").append(run);
+
+                    if(unit.getEntity().getMASC() != null)
+                        unitText.append("(").append(masc).append(")");
+
+                    if(jump != 0)
+                        unitText.append("/").append(jump).append("<br>");
+                    else
+                        unitText.append("<br>");
+
+                    unitText.append("Heat Capacity: ").append(unit.getEntity().getHeatCapacity()).append("<br>");
+
+                    if(unit.getEntity().canFlipArms())
+                        unitText.append("Arms Flip: <font color=\"green\">YES</font><br>");
+                    else
+                        unitText.append("Arms Flip: <font color=\"red\">NO</font><br>");
+
+                    unitText.append("</font>");
+                    //End General (purple)
+
+                    unitText.append("<font color=\"blue\">");
+                    unitText.append("<b>[Weapons]</b><br>");
+                    unit.getEntity().getWeaponList().forEach(weapon -> {
+                        unitText.append(weapon.getName()).append(" (");
+                        if(weapon.isRearMounted())
+                            unitText.append(unit.getEntity().getLocationAbbr(weapon.getLocation())).append(") (R)<br>");
+                        else
+                            unitText.append(unit.getEntity().getLocationAbbr(weapon.getLocation())).append(")<br>");
+
+                        });
+                    unitText.append("</font>");
+                    //End Weapons (blue)
+
+                    //Quirks...
+                    if(Boolean.parseBoolean(mwclient.getserverConfigs("EnableQuirks"))) {
+                        unitText.append("<font color=\"teal\">");
+                        unitText.append("<b>[Quirks]</b><br>");
+
+                        StringTokenizer st = new StringTokenizer(unit.getHtmlQuirksList(), "*");
+
+                        while(st.hasMoreTokens())
+                            unitText.append(TokenReader.readString(st));
+
+                        unitText.append("</font>");
+                        //End Quirks (teal)
+                    }
+                }
+
+                String unitToolTip;
+                // If you have a unit in more then one army, list all the armies it is in.
+                if (inNumberofArmies > 1) {
+                    String armiesText = "";
+                    if (unit.getC3Level() > 0) {
+                        armiesText = unitText.toString() + "<br>";
+                    }
+
+                    armiesText += "In armies " + Player.getArmiesUnitIsIn(unit.getId());
+                    unitToolTip = unit.getDisplayInfo(armiesText);
+                } else {
+                    unitToolTip = unit.getDisplayInfo(unitText.toString());
+                }
+                return unitToolTip;
+            }
+
+            private Color getBackgroundForUnit(String scheme, CArmy army, CUnit unit, int inNumberofArmies) {
+                if (unit.getStatus() == Unit.STATUS_FORSALE) {
+                    return FORSALE_COLOR;
+                } else if (unit.getStatus() == Unit.STATUS_UNMAINTAINED) {
+                    return UNMAINTAINED_COLOR;
+                } else if (useUnitLocking && unit.isLocked()) {
+                    return LOCKED_COLOR;
+                } else if (!mwclient.getConfig().isUsingStatusIcons()) {
+                    if (unit.getPilot().getName().equals("Vacant")) {
+                        // RFE 1545928 -Color for pilotless units
+                        return VACANT_COLOR;
+                    } else if (useAdvanceRepairs && UnitUtils.isRepairing(unit.getEntity())) {
+                        return REPAIRING_COLOR;
+                    } else if (useAdvanceRepairs && mwclient.getRMT() != null && mwclient.getRMT().hasQueuedOrders(unit.getId())) {
+                        return QUEUED_COLOR;
+                    } else if (useAdvanceRepairs && UnitUtils.hasCriticalDamage(unit.getEntity())) {
+                        return CRITICAL_DAMAGE_COLOR;
+                    } else if (useAdvanceRepairs && UnitUtils.hasArmorDamage(unit.getEntity())) {
+                        return ARMOR_DAMAGE_COLOR;
+                    } else if (useAdvanceRepairs && !UnitUtils.hasAllAmmo(unit.getEntity())) {
+                        return HAS_ALL_AMMO_COLOR;
+                    } else if (army == null && inNumberofArmies > 0) {
+                        if (scheme.equals("classic")) {
+                            return CLASSIC_IN_ARMIES_COLOR; // dark green
+                        } else {
+                            // all non-classic sets (light blue)
+                            return OTHER_IN_ARMIES_COLOR;
+                        }
+                    } else {
+                        return getUnitBackgroundByWeightClass(scheme, unit);
+                    } // end else(should fill by weight)
+                } else if (army == null && inNumberofArmies > 0) {
+                    if (scheme.equals("classic")) {
+                        return CLASSIC_IN_ARMIES_COLOR; // dark green
+                    } else {
+                        // all non-classic sets (light blue)
+                        return OTHER_IN_ARMIES_COLOR;
+                    }
+                } else {
+                    return getUnitBackgroundByWeightClass(scheme, unit);
+                }
+            }
+
+            private Color getUnitBackgroundByWeightClass(String scheme, CUnit unit) {
+                if (scheme.equals("tan")) {
+                    switch (unit.getWeightclass()) {
+                        case Unit.LIGHT:
+                            return TAN_LIGHT;
+                        case Unit.MEDIUM:
+                            return TAN_MEDIUM;
+                        case Unit.HEAVY:
+                            return TAN_HEAVY;
+                        case Unit.ASSAULT:
+                            return TAN_ASSAULT;
+                    }
+                } else if (scheme.equals("grey")) {
+                    switch (unit.getWeightclass()) {
+                        case Unit.LIGHT:
+                            return GRAY_LIGHT;
+                        case Unit.MEDIUM:
+                            return GRAY_MEDIUM;
+                        case Unit.HEAVY:
+                            return GRAY_HEAVY;
+                        case Unit.ASSAULT:
+                            return GRAY_ASSAULT;
+                    }
+                } else {
+                    switch (unit.getWeightclass()) {
+                        case Unit.LIGHT:
+                            return CLASSIC_LIGHT;
+                        case Unit.MEDIUM:
+                            return CLASSIC_MEDIUM;
+                        case Unit.HEAVY:
+                            return CLASSIC_HEAVY;
+                        case Unit.ASSAULT:
+                            return CLASSIC_ASSAULT;
+                    }
+                }
+                // fall-through
+                return DGRAY;
+            }
+            
         }// end Renderer
 
     }// end MekTableModel
