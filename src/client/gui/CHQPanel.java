@@ -12,16 +12,30 @@
 
 package client.gui;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Cursor;
-import java.awt.Dimension;
-import java.awt.Graphics2D;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Image;
-import java.awt.Point;
-import java.awt.Toolkit;
+import client.MWClient;
+import client.campaign.CArmy;
+import client.campaign.CBMUnit;
+import client.campaign.CPlayer;
+import client.campaign.CUnit;
+import client.gui.dialog.*;
+import common.Army;
+import common.CampaignData;
+import common.Unit;
+import common.campaign.pilot.Pilot;
+import common.util.SpringLayoutHelper;
+import common.util.TokenReader;
+import common.util.UnitUtils;
+import megamek.client.ui.swing.MechTileset;
+import megamek.client.ui.swing.unitDisplay.UnitDisplay;
+import megamek.common.Entity;
+import megamek.common.Infantry;
+import megamek.common.Mech;
+
+import javax.swing.*;
+import javax.swing.event.MouseInputAdapter;
+import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableCellRenderer;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -31,58 +45,10 @@ import java.awt.image.FilteredImageSource;
 import java.awt.image.RGBImageFilter;
 import java.io.File;
 import java.io.IOException;
-import java.util.Enumeration;
-import java.util.Iterator;
-import java.util.StringTokenizer;
-import java.util.TreeMap;
-import java.util.Vector;
+import java.util.*;
 
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JDialog;
-import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JPopupMenu;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.ListSelectionModel;
-import javax.swing.SpringLayout;
-import javax.swing.event.MouseInputAdapter;
-import javax.swing.table.AbstractTableModel;
-import javax.swing.table.TableCellRenderer;
-
-import megamek.client.ui.swing.MechTileset;
-import megamek.client.ui.swing.unitDisplay.UnitDisplay;
-import megamek.common.Entity;
-import megamek.common.EntityMovementType;
-import megamek.common.Infantry;
-import megamek.common.Mech;
-import megamek.common.options.Quirks;
-import client.MWClient;
-import client.campaign.CArmy;
-import client.campaign.CBMUnit;
-import client.campaign.CPlayer;
-import client.campaign.CUnit;
-import client.gui.dialog.AdvancedRepairDialog;
-import client.gui.dialog.BulkRepairDialog;
-import client.gui.dialog.CamoSelectionDialog;
-import client.gui.dialog.CustomUnitDialog;
-import client.gui.dialog.PromotePilotDialog;
 //@Salient
-import client.gui.dialog.SolFreeBuildDialog;
 //import client.gui.dialog.TableViewerDialog; //for testing/debug
-
-import common.Army;
-import common.CampaignData;
-import common.Unit;
-import common.campaign.pilot.Pilot;
-import common.util.SpringLayoutHelper;
-import common.util.TokenReader;
-import common.util.UnitUtils;
 
 /**
  * Headquarters Panel
@@ -120,7 +86,6 @@ public class CHQPanel extends JPanel {
     //@Salient (mwosux@gmail.com) added for SolFreeBuild option
     private JButton solFreeBuildButton;
     private boolean useAdvanceRepairs = false;
-    private boolean useMiniCampaign = false;
     private boolean useUnitLocking = false;
 
     public CHQPanel(MWClient client) {
@@ -295,7 +260,7 @@ public class CHQPanel extends JPanel {
         if (mwclient.getPlayer().getHangar().size() > 0) {
             new BulkRepairDialog(mwclient, mwclient.getPlayer().getHangar().firstElement().getId(), BulkRepairDialog.TYPE_BULK, BulkRepairDialog.UNIT_TYPE_ALL);
         }
-    };
+    }
 
     private void reloadAllUnitsButtonActionPerformed(ActionEvent evt) {
         if (mwclient.getPlayer().getHangar().size() > 0) {
@@ -311,7 +276,7 @@ public class CHQPanel extends JPanel {
             	refresh();
             }
         }
-    };
+    }
 
     private void btnAddLanceActionPerformed(ActionEvent evt) {
         mwclient.sendChat(MWClient.CAMPAIGN_PREFIX + "c cra#" + mwclient.getConfigParam("DEFAULTARMYNAME"));
@@ -334,19 +299,11 @@ public class CHQPanel extends JPanel {
         pnlMeksBtns.removeAll();
 
         btnAddLance.setText("Create New Army");
-        btnAddLance.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                btnAddLanceActionPerformed(evt);
-            }
-        });
+        btnAddLance.addActionListener(this::btnAddLanceActionPerformed);
         hqButtonSpring.add(btnAddLance);
 
         btnRemoveAllArmies.setText("Remove All Armies");
-        btnRemoveAllArmies.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                btnRemoveAllArmiesActionPerformed(evt);
-            }
-        });
+        btnRemoveAllArmies.addActionListener(this::btnRemoveAllArmiesActionPerformed);
         hqButtonSpring.add(btnRemoveAllArmies);
 
         /*
@@ -357,11 +314,7 @@ public class CHQPanel extends JPanel {
         if (player != null) {
             if (player.getMyHouse().getName().equalsIgnoreCase(mwclient.getserverConfigs("NewbieHouseName"))) {
                 newbieResetUnitsButton.setText("Reset Units");
-                newbieResetUnitsButton.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent evt) {
-                        newbieResetUnitsButtonActionPerformed(evt);
-                    }
-                });
+                newbieResetUnitsButton.addActionListener(this::newbieResetUnitsButtonActionPerformed);
                 hqButtonSpring.add(newbieResetUnitsButton);
                 numButtons++;
             }
@@ -369,30 +322,18 @@ public class CHQPanel extends JPanel {
 
         if (useAdvanceRepairs) {
             repairAllUnitsButton.setText("Repair All Units");
-            repairAllUnitsButton.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent evt) {
-                    repairAllUnitsButtonActionPerformed(evt);
-                }
-            });
+            repairAllUnitsButton.addActionListener(this::repairAllUnitsButtonActionPerformed);
             hqButtonSpring.add(repairAllUnitsButton);
             numButtons++;
 
             reloadAllUnitsButton.setText("Reload All Units");
-            reloadAllUnitsButton.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent evt) {
-                    reloadAllUnitsButtonActionPerformed(evt);
-                }
-            });
+            reloadAllUnitsButton.addActionListener(this::reloadAllUnitsButtonActionPerformed);
             hqButtonSpring.add(reloadAllUnitsButton);
             numButtons++;
         }
 
         setCamoButton.setText("Change Camo");
-        setCamoButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                setCamoButtonActionPerformed(evt);
-            }
-        });
+        setCamoButton.addActionListener(this::setCamoButtonActionPerformed);
         hqButtonSpring.add(setCamoButton);
 
         //@Salient add sol free build button
@@ -400,11 +341,7 @@ public class CHQPanel extends JPanel {
             if (player.getMyHouse().getName().equalsIgnoreCase(mwclient.getserverConfigs("NewbieHouseName"))
             		&& mwclient.getserverConfigs("Sol_FreeBuild").equalsIgnoreCase("true")) {
                 solFreeBuildButton.setText("Create Unit");
-                solFreeBuildButton.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent evt) {
-                    	solFreeBuildButtonActionPerformed(evt);
-                    }
-                });
+                solFreeBuildButton.addActionListener(this::solFreeBuildButtonActionPerformed);
                 hqButtonSpring.add(solFreeBuildButton);
                 numButtons++;
             }
@@ -412,11 +349,7 @@ public class CHQPanel extends JPanel {
             if (!player.getMyHouse().getName().equalsIgnoreCase(mwclient.getserverConfigs("NewbieHouseName"))
                     && mwclient.getserverConfigs("FreeBuild_PostDefection").equalsIgnoreCase("true")) {
                 solFreeBuildButton.setText("Create Unit");
-                solFreeBuildButton.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent evt) {
-                        solFreeBuildButtonActionPerformed(evt);
-                    }
-                });
+                solFreeBuildButton.addActionListener(this::solFreeBuildButtonActionPerformed);
                 hqButtonSpring.add(solFreeBuildButton);
                 numButtons++;
             }
@@ -429,6 +362,7 @@ public class CHQPanel extends JPanel {
         pnlMeksBtns.repaint();
     }
 
+    @SuppressWarnings({"StatementWithEmptyBody", "rawtypes", "unchecked"})
     class MechTableMouseAdapter extends MouseInputAdapter implements ActionListener {
 
         // VARS
@@ -443,13 +377,13 @@ public class CHQPanel extends JPanel {
         private CArmy startArmy = null;
         private CArmy currArmy = null;
 
-        private Cursor exchangeCursor;
-        private Cursor positionCursor;
-        private Cursor addCursor;
-        private Cursor removeCursor;
-        private Cursor notAllowedCursor;
-        private Cursor dupeCursor;
-        private Cursor maxCursor;
+        private final Cursor exchangeCursor;
+        private final Cursor positionCursor;
+        private final Cursor addCursor;
+        private final Cursor removeCursor;
+        private final Cursor notAllowedCursor;
+        private final Cursor dupeCursor;
+        private final Cursor maxCursor;
 
         // CONSTRUCTOR
         public MechTableMouseAdapter() {
@@ -687,7 +621,7 @@ public class CHQPanel extends JPanel {
             if (e.isPopupTrigger()) {
                 int row = tblMeks.rowAtPoint(e.getPoint());
                 int col = tblMeks.columnAtPoint(e.getPoint());
-                JMenuItem menuItem = null;
+                JMenuItem menuItem;
 
                 if ((col == 0) && (row >= MekTable.getRowsForArmies())) {
                     JMenu primeSortMenu = new JMenu("Sort (1st)");
@@ -703,7 +637,7 @@ public class CHQPanel extends JPanel {
                     String[] choices = { "Name", "Battle Value", "Gunnery Skill", "ID Number", "MP (Jumping)", "MP (Walking)", "Pilot Kills", "Unit Type", "Weight (Class)", "Weight (Tons)", "No Sort" };
 
                     // indicate current selections w/ Italics
-                    String menuName = "";
+                    String menuName;
                     // boolean selectionFound = true;
 
                     // prime sort menu construction
@@ -876,7 +810,7 @@ public class CHQPanel extends JPanel {
                         String[] choices = { "Name", "Battle Value", "ID Number", "Max Tonnage", "Avg Walk MP", "Avg Jump MP", "Number Of Units", "No Sort" };
 
                         // indicate current selections w/ Italics
-                        String menuName = "";
+                        String menuName;
                         // boolean selectionFound = true;
 
                         // prime sort menu construction
@@ -1194,9 +1128,9 @@ public class CHQPanel extends JPanel {
 
                     popup.show(e.getComponent(), e.getX(), e.getY());
                 } else if (row < MekTable.getRowsForArmies()) {
-                    CUnit cm = null;
+                    CUnit cm;
                     CArmy l = MekTable.getArmyAt(row);
-                    int mid = col;
+                    int mid;
                     int lid = l.getID();
                     cm = MekTable.getMekAt(row, col);
                     boolean hasUnitsFree = false;
@@ -1208,13 +1142,13 @@ public class CHQPanel extends JPanel {
                     if ((mwclient.getPlayer().getHangar().size() > 0) && !l.isLocked()) {
                         Object[] mechArray = mwclient.getPlayer().getHangar().toArray();
                         if (mechArray.length > 0) {
-                            Vector<Vector<JMenuItem>> SubMenus = new Vector<Vector<JMenuItem>>(1, 1);
+                            Vector<Vector<JMenuItem>> SubMenus = new Vector<>(1, 1);
 
                             /*
                              * 6 entries Weights: 0-3 Protomech: 4 Infantry: 5
                              */
                             for (int i = 0; i < 6; i++) {
-                                SubMenus.add(new Vector<JMenuItem>(1, 1));
+                                SubMenus.add(new Vector<>(1, 1));
                             }
 
                             for (Object element : mechArray) {
@@ -1268,7 +1202,7 @@ public class CHQPanel extends JPanel {
                                     for (int j = 0; j < iterations; j++) {
                                         int mechcount = 0;
 
-                                        JMenu menux = null;
+                                        JMenu menux;
                                         if (i < 4) {
                                             menux = new JMenu(Unit.getWeightClassDesc(i) + " " + (j + 1));
                                         } else if (i == 4) {// proto
@@ -1314,7 +1248,7 @@ public class CHQPanel extends JPanel {
                                 } else {// Only one menu for the given size
                                     // class is needed
 
-                                    JMenu menux = null;
+                                    JMenu menux;
                                     if (i < 4) {
                                         menux = new JMenu(Unit.getWeightClassDesc(i));
                                     } else if (i == 4) {// proto
@@ -1352,28 +1286,6 @@ public class CHQPanel extends JPanel {
                                     }
                                 }
                             }
-                        } else {
-                            for (Object element : mechArray) {
-                                CUnit mm = (CUnit) element;
-                                if ((mm.getStatus() == Unit.STATUS_UNMAINTAINED) || (mm.getStatus() == Unit.STATUS_FORSALE)) {
-                                    continue;
-                                }
-                                if ((mm.getType() == Unit.MEK) || (mm.getType() == Unit.VEHICLE) || (mm.getType() == Unit.AERO)) {
-                                    menuItem = new JMenuItem(mm.getModelName() + " (" + mm.getPilot().getGunnery() + "/" + mm.getPilot().getPiloting() + ") " + mm.getBVForMatch() + " BV");
-                                } else if ((mm.getType() == Unit.INFANTRY) || (mm.getType() == Unit.BATTLEARMOR)) {
-                                    if (((Infantry) mm.getEntity()).canMakeAntiMekAttacks()) {
-                                        menuItem = new JMenuItem(mm.getModelName() + " (" + mm.getPilot().getGunnery() + "/" + mm.getPilot().getPiloting() + ") " + mm.getBVForMatch() + " BV");
-                                    } else {
-                                        menuItem = new JMenuItem(mm.getModelName() + " (" + mm.getPilot().getGunnery() + ") " + mm.getBVForMatch() + " BV");
-                                    }
-                                } else {
-                                    menuItem = new JMenuItem(mm.getModelName() + " (" + mm.getPilot().getGunnery() + ") " + mm.getBVForMatch() + " BV");
-                                }
-
-                                menuItem.setActionCommand("EXM|" + lid + "|" + mid + "|" + mm.getId());
-                                menuItem.addActionListener(this);
-                                addMenu.add(menuItem);
-                            }
                         }
 
                         // disable the menu if there are no units to add
@@ -1389,7 +1301,7 @@ public class CHQPanel extends JPanel {
                          */
                         JMenu linkMenu = new JMenu("Link");
                         if ((l.getUnits().size() > 0) && !l.isLocked()) {
-                            Vector<CUnit> Masters = new Vector<CUnit>(1, 1);
+                            Vector<CUnit> Masters = new Vector<>(1, 1);
                             Enumeration<Unit> c3M = l.getUnits().elements();
                             while (c3M.hasMoreElements()) {
                                 CUnit c3Unit = (CUnit) c3M.nextElement();
@@ -1441,13 +1353,13 @@ public class CHQPanel extends JPanel {
                             popup.add(jm);
                             Object[] mechs = mwclient.getPlayer().getHangar().toArray();
                             if (mechs.length > 0) {
-                                Vector<Vector<JMenuItem>> SubMenus = new Vector<Vector<JMenuItem>>();
+                                Vector<Vector<JMenuItem>> SubMenus = new Vector<>();
 
                                 /*
                                  * 6 entries Weights: 0-3 Protomech: 4 Infantry: 5
                                  */
                                 for (int i = 0; i < 6; i++) {
-                                    SubMenus.add(new Vector<JMenuItem>(1, 1));
+                                    SubMenus.add(new Vector<>(1, 1));
                                 }
 
                                 for (Object mech : mechs) {
@@ -1497,7 +1409,7 @@ public class CHQPanel extends JPanel {
                                 }
                                 for (int i = 0; i < SubMenus.size(); i++) {
                                     Vector<JMenuItem> SizeMenu = SubMenus.elementAt(i);
-                                    JMenu menux = null;
+                                    JMenu menux;
                                     if (SizeMenu.size() > 10) {
                                         // More than one menu of the given size
                                         // class is needed
@@ -1588,28 +1500,8 @@ public class CHQPanel extends JPanel {
                                     }
 
                                 }
-                            } else {
-                                for (Object mech : mechs) {
-                                    CUnit mm = (CUnit) mech;
-                                    if ((mm.getStatus() == Unit.STATUS_UNMAINTAINED) || (mm.getStatus() == Unit.STATUS_FORSALE)) {
-                                        continue;
-                                    }
-                                    if ((mm.getType() == Unit.MEK) || (mm.getType() == Unit.VEHICLE) || (mm.getType() == Unit.AERO)) {
-                                        menuItem = new JMenuItem(mm.getModelName() + " (" + mm.getPilot().getGunnery() + "/" + mm.getPilot().getPiloting() + ") " + mm.getBVForMatch() + " BV");
-                                    } else if ((mm.getType() == Unit.INFANTRY) || (mm.getType() == Unit.BATTLEARMOR)) {
-                                        if (((Infantry) mm.getEntity()).canMakeAntiMekAttacks()) {
-                                            menuItem = new JMenuItem(mm.getModelName() + " (" + mm.getPilot().getGunnery() + "/" + mm.getPilot().getPiloting() + ") " + mm.getBVForMatch() + " BV");
-                                        } else {
-                                            menuItem = new JMenuItem(mm.getModelName() + " (" + mm.getPilot().getGunnery() + ") " + mm.getBVForMatch() + " BV");
-                                        }
-                                    } else {
-                                        menuItem = new JMenuItem(mm.getModelName() + " (" + mm.getPilot().getGunnery() + ") " + mm.getBVForMatch() + " BV");
-                                    }
-                                    menuItem.setActionCommand("EXM|" + lid + "|" + cm.getId() + "|" + mm.getId());
-                                    menuItem.addActionListener(this);
-                                    jm.add(menuItem);
-                                }
-                            }// end exchange
+                            }  // end exchange
+
 
                             // hasUnitsFree is set during add menu creation, but
                             // applies equally to the Exchange menu.
@@ -1643,7 +1535,7 @@ public class CHQPanel extends JPanel {
                         if (cm.getC3Level() != Unit.C3_NONE) {
                             popup.add(linkMenu);
                         }
-                        if (cm.hasBeenC3LinkedTo(l) || (l.getC3Network().get(new Integer(cm.getId())) != null)) {
+                        if (cm.hasBeenC3LinkedTo(l) || (l.getC3Network().get(cm.getId()) != null)) {
                             menuItem = new JMenuItem("Unlink");
                             menuItem.setActionCommand("LCN|" + lid + "|" + cm.getId() + "|-1");
                             menuItem.addActionListener(this);
@@ -1671,27 +1563,23 @@ public class CHQPanel extends JPanel {
                             if (mech.isAutoEject()) {
                                 menuItem = new JMenuItem("Disable Autoeject");
                                 menuItem.setActionCommand("DAE|" + row + "|" + col);
-                                menuItem.addActionListener(this);
-                                popup.add(menuItem);
                             } else {
                                 menuItem = new JMenuItem("Enable Autoeject");
                                 menuItem.setActionCommand("EAE|" + row + "|" + col);
-                                menuItem.addActionListener(this);
-                                popup.add(menuItem);
                             }
+                            menuItem.addActionListener(this);
+                            popup.add(menuItem);
                         }
 
                         if (l.isCommander(cm.getId())) {
                             menuItem = new JMenuItem("Remove Commander");
                             menuItem.setActionCommand("REMOVEUNITCOMMANDER|" + row + "|" + col + "|" + lid);
-                            menuItem.addActionListener(this);
-                            popup.add(menuItem);
                         } else {
                             menuItem = new JMenuItem("Set Commander");
                             menuItem.setActionCommand("SETUNITCOMMANDER|" + row + "|" + col + "|" + lid);
-                            menuItem.addActionListener(this);
-                            popup.add(menuItem);
                         }
+                        menuItem.addActionListener(this);
+                        popup.add(menuItem);
 
                     }// end if(cm in click area != null)
                     else {
@@ -1786,14 +1674,12 @@ public class CHQPanel extends JPanel {
                             if (mech.isAutoEject()) {
                                 menuItem = new JMenuItem("Disable Autoeject");
                                 menuItem.setActionCommand("DAE|" + row + "|" + col);
-                                menuItem.addActionListener(this);
-                                popup.add(menuItem);
                             } else {
                                 menuItem = new JMenuItem("Enable Autoeject");
                                 menuItem.setActionCommand("EAE|" + row + "|" + col);
-                                menuItem.addActionListener(this);
-                                popup.add(menuItem);
                             }
+                            menuItem.addActionListener(this);
+                            popup.add(menuItem);
                         }
 
                         popup.addSeparator();
@@ -1802,14 +1688,12 @@ public class CHQPanel extends JPanel {
                             if (cm.getStatus() == Unit.STATUS_UNMAINTAINED) {
                                 menuItem = new JMenuItem("Maintain");
                                 menuItem.setActionCommand("MM|" + cm.getId());
-                                menuItem.addActionListener(this);
-                                popup.add(menuItem);
                             } else {
                                 menuItem = new JMenuItem("Unmaintain");
                                 menuItem.setActionCommand("UMM|" + cm.getId());
-                                menuItem.addActionListener(this);
-                                popup.add(menuItem);
                             }
+                            menuItem.addActionListener(this);
+                            popup.add(menuItem);
                         }
                         if (cm.isOmni()) {
                             menuItem = new JMenuItem("Repod Unit");
@@ -1962,9 +1846,10 @@ public class CHQPanel extends JPanel {
 
                                 for (int i = 0; i < pilots.length; i++) {
                                     Pilot mm = (Pilot) pilots[i];
+                                    String pilotString;
+                                    String skills = mm.getSkillString(true);
                                     if (cm.getType() == Unit.MEK) {
-                                        String pilotString = mm.getName() + " (" + mm.getGunnery() + "/" + mm.getPiloting();
-                                        String skills = mm.getSkillString(true);
+                                        pilotString = mm.getName() + " (" + mm.getGunnery() + "/" + mm.getPiloting();
                                         if (skills.trim().equals("")) {
                                             pilotString += ")";
                                         } else {
@@ -1975,17 +1860,15 @@ public class CHQPanel extends JPanel {
                                             pilotString += " Hits: " + mm.getHits();
                                         }
 
-                                        menuItem = new JMenuItem(pilotString);
                                     } else {
-                                        String pilotString = mm.getName() + " (" + mm.getGunnery();
-                                        String skills = mm.getSkillString(true);
+                                        pilotString = mm.getName() + " (" + mm.getGunnery();
                                         if (skills.trim().equals("")) {
                                             pilotString += ")";
                                         } else {
                                             pilotString += ", " + skills + ")";
                                         }
-                                        menuItem = new JMenuItem(pilotString);
                                     }
+                                    menuItem = new JMenuItem(pilotString);
 
                                     menuItem.setActionCommand("EXP|" + cm.getId() + "|" + i);
                                     menuItem.addActionListener(this);
@@ -2027,24 +1910,17 @@ public class CHQPanel extends JPanel {
                     else if (Player.getFreeBays() > 0) {
                         int hangernum = (((row - MekTable.getRowsForArmies()) * (MekTable.getColumnCount() - 1)) + col) - 1;
                         if (hangernum == mwclient.getPlayer().getHangar().size()) {// only
-                            // show
-                            // in
-                            // first
-                            // free
-                            // cell
+                            // show in first free cell
                             if (useAdvanceRepairs) {
                                 menuItem = new JMenuItem("Sell Excess Bays");
                                 menuItem.setActionCommand("SEB");
-                                menuItem.addActionListener(this);
-                                popup.add(menuItem);
-                                popup.show(e.getComponent(), e.getX(), e.getY());
                             } else {
                                 menuItem = new JMenuItem("Fire Excess Techs");
                                 menuItem.setActionCommand("FET");
-                                menuItem.addActionListener(this);
-                                popup.add(menuItem);
-                                popup.show(e.getComponent(), e.getX(), e.getY());
                             }
+                            menuItem.addActionListener(this);
+                            popup.add(menuItem);
+                            popup.show(e.getComponent(), e.getX(), e.getY());
                         }
                     }
                     // {
@@ -2171,7 +2047,8 @@ public class CHQPanel extends JPanel {
                         continue;
                     }
 
-                    String toSend = mwclient.getConfigParam("CHALLENGESTRING");
+                    String challengeString = mwclient.getConfigParam("CHALLENGESTRING");
+                    StringBuilder toSend = new StringBuilder(challengeString != null ? challengeString : "");
 
                     if (useForceSize) {
                         opForceSize = currArmy.getOpForceSize();
@@ -2180,31 +2057,31 @@ public class CHQPanel extends JPanel {
                         }
                     }
                     // load the default if a non-entry is set.
-                    if (toSend.trim().equals("")) {
-                        toSend = "Looking for a game at";// matches default
+                    if (toSend.toString().trim().equals("")) {
+                        toSend = new StringBuilder("Looking for a game at");// matches default
                         // config
                     }
 
                     // BV only
                     if (mode == 1) {
-                        toSend += " " + Math.round(currArmy.getBV() * forceSizeMod) + " BV";
+                        toSend.append(" ").append(Math.round(currArmy.getBV() * forceSizeMod)).append(" BV");
                         if (forceSizeMod > 1) {
-                            toSend += " vs " + opForceSize + " units";
+                            toSend.append(" vs ").append(opForceSize).append(" units");
                         }
-                        toSend += ".";
+                        toSend.append(".");
                     }
                     // BV and Count
                     else if (mode == 2) {
                         int armySize = currArmy.getUnits().size();
-                        toSend += " " + Math.round(currArmy.getBV() * forceSizeMod) + " BV";
+                        toSend.append(" ").append(Math.round(currArmy.getBV() * forceSizeMod)).append(" BV");
                         if (forceSizeMod > 1) {
-                            toSend += " vs " + opForceSize + " units";
+                            toSend.append(" vs ").append(opForceSize).append(" units");
                         }
-                        toSend += ", with  " + armySize + " unit";
+                        toSend.append(", with  ").append(armySize).append(" unit");
                         if (armySize > 1) {
-                            toSend += "s.";
+                            toSend.append("s.");
                         } else {
-                            toSend += ".";
+                            toSend.append(".");
                         }
                     }
 
@@ -2275,58 +2152,58 @@ public class CHQPanel extends JPanel {
                         }
 
                         // assemble the string
-                        toSend += " " + Math.round(currArmy.getBV() * forceSizeMod) + " BV";
+                        toSend.append(" ").append(Math.round(currArmy.getBV() * forceSizeMod)).append(" BV");
                         if (forceSizeMod > 1) {
-                            toSend += " vs " + opForceSize + " units";
+                            toSend.append(" vs ").append(opForceSize).append(" units");
                         }
-                        toSend += ".";
+                        toSend.append(".");
                         if (assaultM > 0) {
-                            toSend += " " + assaultM + "A,";
+                            toSend.append(" ").append(assaultM).append("A,");
                         }
                         if (heavyM > 0) {
-                            toSend += " " + heavyM + "H,";
+                            toSend.append(" ").append(heavyM).append("H,");
                         }
                         if (mediumM > 0) {
-                            toSend += " " + mediumM + "M,";
+                            toSend.append(" ").append(mediumM).append("M,");
                         }
                         if (lightM > 0) {
-                            toSend += " " + lightM + "L,";
+                            toSend.append(" ").append(lightM).append("L,");
                         }
                         if (protoM > 0) {
-                            toSend += " " + protoM + " Protos,";
+                            toSend.append(" ").append(protoM).append(" Protos,");
                         }
                         if (ba > 0) {
-                            toSend += " " + ba + " BAs,";
+                            toSend.append(" ").append(ba).append(" BAs,");
                         }
                         if (ba > 0) {
-                            toSend += " " + aero + " Aeros,";
+                            toSend.append(" ").append(aero).append(" Aeros,");
                         }
                         if (vehs > 0) {
                             if (showVeeWeights) {
                                 if (assaultV > 0) {
-                                    toSend += " " + assaultV + "A Vehs,";
+                                    toSend.append(" ").append(assaultV).append("A Vehs,");
                                 }
                                 if (heavyV > 0) {
-                                    toSend += " " + heavyV + "H Vehs,";
+                                    toSend.append(" ").append(heavyV).append("H Vehs,");
                                 }
                                 if (mediumV > 0) {
-                                    toSend += " " + mediumV + "M Vehs,";
+                                    toSend.append(" ").append(mediumV).append("M Vehs,");
                                 }
                                 if (lightV > 0) {
-                                    toSend += " " + lightV + "L Vehs,";
+                                    toSend.append(" ").append(lightV).append("L Vehs,");
                                 }
                             } else {
-                                toSend += " " + vehs + " Vehs,";
+                                toSend.append(" ").append(vehs).append(" Vehs,");
                             }
                         }
 
                         else if (inf > 0) {
-                            toSend += " " + inf + " Inf,";
+                            toSend.append(" ").append(inf).append(" Inf,");
                         }
 
                         // replace final comma with a period.
                         int sendLength = toSend.lastIndexOf(",");
-                        toSend = toSend.substring(0, sendLength) + ".";
+                        toSend = new StringBuilder(toSend.substring(0, sendLength) + ".");
                     }
 
                     else if (mode == 4) {
@@ -2336,7 +2213,7 @@ public class CHQPanel extends JPanel {
                             CUnit unit = (CUnit) e.nextElement();
                             Tonnage += (int) unit.getEntity().getWeight();
                         }
-                        toSend += " " + Tonnage + " tons.";
+                        toSend.append(" ").append(Tonnage).append(" tons.");
 
                     }
 
@@ -2347,11 +2224,11 @@ public class CHQPanel extends JPanel {
                             CUnit unit = (CUnit) e.nextElement();
                             Tonnage += (int) unit.getEntity().getWeight();
                         }
-                        toSend += " " + Math.round(currArmy.getBV() * forceSizeMod) + " BV";
+                        toSend.append(" ").append(Math.round(currArmy.getBV() * forceSizeMod)).append(" BV");
                         if (forceSizeMod > 1) {
-                            toSend += " vs " + opForceSize + " units";
+                            toSend.append(" vs ").append(opForceSize).append(" units");
                         }
-                        toSend += ", at " + Tonnage + " tons";
+                        toSend.append(", at ").append(Tonnage).append(" tons");
                     }
 
                     else if (mode == 6) {
@@ -2361,11 +2238,11 @@ public class CHQPanel extends JPanel {
                             CUnit unit = (CUnit) e.nextElement();
                             Tonnage += (int) unit.getEntity().getWeight();
                         }
-                        toSend += " " + Tonnage + " tons, with " + currArmy.getUnits().size();
+                        toSend.append(" ").append(Tonnage).append(" tons, with ").append(currArmy.getUnits().size());
                         if (currArmy.getUnits().size() == 1) {
-                            toSend += " unit.";
+                            toSend.append(" unit.");
                         } else {
-                            toSend += " units.";
+                            toSend.append(" units.");
                         }
                     }
 
@@ -2376,15 +2253,15 @@ public class CHQPanel extends JPanel {
                             CUnit unit = (CUnit) e.nextElement();
                             Tonnage += (int) unit.getEntity().getWeight();
                         }
-                        toSend += " " + Math.round(currArmy.getBV() * forceSizeMod) + " BV";
+                        toSend.append(" ").append(Math.round(currArmy.getBV() * forceSizeMod)).append(" BV");
                         if (forceSizeMod > 1) {
-                            toSend += " vs " + opForceSize + " units";
+                            toSend.append(" vs ").append(opForceSize).append(" units");
                         }
-                        toSend += ", at " + Tonnage + " tons, with " + currArmy.getUnits().size();
+                        toSend.append(", at ").append(Tonnage).append(" tons, with ").append(currArmy.getUnits().size());
                         if (currArmy.getUnits().size() == 1) {
-                            toSend += " unit.";
+                            toSend.append(" unit.");
                         } else {
-                            toSend += " units.";
+                            toSend.append(" units.");
                         }
                     }
 
@@ -2413,20 +2290,20 @@ public class CHQPanel extends JPanel {
                             }
                         }
                         if (assault > 0) {
-                            toSend += " " + assault + "A,";
+                            toSend.append(" ").append(assault).append("A,");
                         }
                         if (heavy > 0) {
-                            toSend += " " + heavy + "H,";
+                            toSend.append(" ").append(heavy).append("H,");
                         }
                         if (medium > 0) {
-                            toSend += " " + medium + "M,";
+                            toSend.append(" ").append(medium).append("M,");
                         }
                         if (light > 0) {
-                            toSend += " " + light + "L,";
+                            toSend.append(" ").append(light).append("L,");
                         }
                         // replace final comma with a period.
                         int sendLength = toSend.lastIndexOf(",");
-                        toSend = toSend.substring(0, sendLength) + ".";
+                        toSend = new StringBuilder(toSend.substring(0, sendLength) + ".");
 
                     }
 
@@ -2454,26 +2331,26 @@ public class CHQPanel extends JPanel {
                                 break;
                             }
                         }
-                        toSend += " " + Math.round(currArmy.getBV() * forceSizeMod) + " BV";
+                        toSend.append(" ").append(Math.round(currArmy.getBV() * forceSizeMod)).append(" BV");
                         if (forceSizeMod > 1) {
-                            toSend += " vs " + opForceSize + " units";
+                            toSend.append(" vs ").append(opForceSize).append(" units");
                         }
-                        toSend += ", with";
+                        toSend.append(", with");
                         if (assault > 0) {
-                            toSend += " " + assault + "A,";
+                            toSend.append(" ").append(assault).append("A,");
                         }
                         if (heavy > 0) {
-                            toSend += " " + heavy + "H,";
+                            toSend.append(" ").append(heavy).append("H,");
                         }
                         if (medium > 0) {
-                            toSend += " " + medium + "M,";
+                            toSend.append(" ").append(medium).append("M,");
                         }
                         if (light > 0) {
-                            toSend += " " + light + "L,";
+                            toSend.append(" ").append(light).append("L,");
                         }
                         // replace final comma with a period.
                         int sendLength = toSend.lastIndexOf(",");
-                        toSend = toSend.substring(0, sendLength) + ".";
+                        toSend = new StringBuilder(toSend.substring(0, sendLength) + ".");
 
                     }
 
@@ -2481,36 +2358,44 @@ public class CHQPanel extends JPanel {
                         Enumeration<Unit> e = currArmy.getUnits().elements();
                         while (e.hasMoreElements()) {
                             CUnit unit = (CUnit) e.nextElement();
-                            toSend += " <a href=\"MEKINFO" + unit.getUnitFilename() + "#" + unit.getBVForMatch() + "#" + unit.getPilot().getGunnery() + "#" + unit.getPilot().getPiloting() + "\">" + unit.getModelName() + "</a>,";
+                            toSend.append(" <a href=\"MEKINFO").append(unit.getUnitFilename())
+                                    .append("#").append(unit.getBVForMatch())
+                                    .append("#").append(unit.getPilot().getGunnery())
+                                    .append("#").append(unit.getPilot().getPiloting()).append("\">")
+                                    .append(unit.getModelName()).append("</a>,");
                         }
                         // replace final comma with a period.
                         int sendLength = toSend.lastIndexOf(",");
-                        toSend = toSend.substring(0, sendLength) + ".";
+                        toSend = new StringBuilder(toSend.substring(0, sendLength) + ".");
 
                     }
 
                     else if (mode == 11) {
 
-                        toSend += " " + Math.round(currArmy.getBV() * forceSizeMod) + " BV";
+                        toSend.append(" ").append(Math.round(currArmy.getBV() * forceSizeMod)).append(" BV");
                         if (forceSizeMod > 1) {
-                            toSend += " vs " + opForceSize + " units";
+                            toSend.append(" vs ").append(opForceSize).append(" units");
                         }
-                        toSend += ",";
+                        toSend.append(",");
                         Enumeration<Unit> e = currArmy.getUnits().elements();
                         while (e.hasMoreElements()) {
                             CUnit unit = (CUnit) e.nextElement();
-                            toSend += " <a href=\"MEKINFO" + unit.getUnitFilename() + "#" + unit.getBVForMatch() + "#" + unit.getPilot().getGunnery() + "#" + unit.getPilot().getPiloting() + "\">" + unit.getModelName() + "</a>,";
+                            toSend.append(" <a href=\"MEKINFO").append(unit.getUnitFilename())
+                                    .append("#").append(unit.getBVForMatch())
+                                    .append("#").append(unit.getPilot().getGunnery())
+                                    .append("#").append(unit.getPilot().getPiloting()).append("\">")
+                                    .append(unit.getModelName()).append("</a>,");
                         }
                         // replace final comma with a period.
                         int sendLength = toSend.lastIndexOf(",");
-                        toSend = toSend.substring(0, sendLength) + ".";
+                        toSend = new StringBuilder(toSend.substring(0, sendLength) + ".");
 
                     }
 
                     else if (mode == 12) {
 
                         Enumeration<Unit> e = currArmy.getUnits().elements();
-                        TreeMap<Double, Integer> unitWeights = new TreeMap<Double, Integer>();
+                        TreeMap<Double, Integer> unitWeights = new TreeMap<>();
                         while (e.hasMoreElements()) {
                             CUnit unit = (CUnit) e.nextElement();
                             if (!unitWeights.containsKey(unit.getEntity().getWeight())) {
@@ -2521,19 +2406,20 @@ public class CHQPanel extends JPanel {
                         }
 
                         for (Double weight : unitWeights.keySet()) {
-                            toSend += " " + Integer.toString(unitWeights.get(weight)) + "x " + weight.intValue() + " tons,";
+                            toSend.append(" ").append(unitWeights.get(weight)).append("x ")
+                                    .append(weight.intValue()).append(" tons,");
                         }
                         // replace final comma with a period.
                         int sendLength = toSend.lastIndexOf(",");
-                        toSend = toSend.substring(0, sendLength) + ".";
+                        toSend = new StringBuilder(toSend.substring(0, sendLength) + ".");
 
                     }
 
                     else if (mode == 13) {
 
-                        toSend += " " + currArmy.getBV() + " BV,";
+                        toSend.append(" ").append(currArmy.getBV()).append(" BV,");
                         Enumeration<Unit> e = currArmy.getUnits().elements();
-                        TreeMap<Double, Integer> unitWeights = new TreeMap<Double, Integer>();
+                        TreeMap<Double, Integer> unitWeights = new TreeMap<>();
                         while (e.hasMoreElements()) {
                             CUnit unit = (CUnit) e.nextElement();
                             if (!unitWeights.containsKey(unit.getEntity().getWeight())) {
@@ -2544,23 +2430,23 @@ public class CHQPanel extends JPanel {
                         }
 
                         for (Double weight : unitWeights.keySet()) {
-                            toSend += " " + Integer.toString(unitWeights.get(weight)) + "x " + weight.intValue() + " tons,";
+                            toSend.append(" ").append(unitWeights.get(weight)).append("x ").append(weight.intValue()).append(" tons,");
                         }
                         // replace final comma with a period.
                         int sendLength = toSend.lastIndexOf(",");
-                        toSend = toSend.substring(0, sendLength) + ".";
+                        toSend = new StringBuilder(toSend.substring(0, sendLength) + ".");
 
                     }
 
                     if (currArmy.getName().trim().length() > 0) {
-                        toSend += " \"" + currArmy.getName() + "\"";
+                        toSend.append(" \"").append(currArmy.getName()).append("\"");
                     }
 
                     if ((operation.length() > 1) && !operation.equalsIgnoreCase("none")) {
-                        toSend += " (" + operation + ")";
+                        toSend.append(" (").append(operation).append(")");
                     }
 
-                    mwclient.sendChat(toSend);
+                    mwclient.sendChat(toSend.toString());
                     // if lid != -1 it means only send one army and if we've
                     // gotten this far that means we've matched
                     // the army with the correct ID.
@@ -2690,32 +2576,26 @@ public class CHQPanel extends JPanel {
                 int col = Integer.parseInt(st.nextToken());
                 int year = Integer.parseInt(mwclient.getserverConfigs("CampaignYear"));
                 CUnit mek = MekTable.getMekAt(row, col);
-                int greenTechCost = 0;
-                int regTechCost = 0;
-                int vetTechCost = 0;
-                int eliteTechCost = 0;
+                int greenTechCost;
+                int regTechCost;
+                int vetTechCost;
+                int eliteTechCost;
 
-                double repairCost = 0;
+                double repairCost;
                 if (Boolean.parseBoolean(mwclient.getserverConfigs("UseRealRepairCosts"))) {
                     repairCost = UnitUtils.getTotalDamagedPartCost(mek.getEntity(), year);
                     repairCost *= Double.parseDouble(mwclient.getserverConfigs("RealRepairCostMod"));
-                    greenTechCost = mwclient.getTechLaborCosts(mek.getEntity(), UnitUtils.TECH_GREEN);
-                    regTechCost = mwclient.getTechLaborCosts(mek.getEntity(), UnitUtils.TECH_REG);
-                    vetTechCost = mwclient.getTechLaborCosts(mek.getEntity(), UnitUtils.TECH_VET);
-                    eliteTechCost = mwclient.getTechLaborCosts(mek.getEntity(), UnitUtils.TECH_ELITE);
 
-                    mwclient.systemMessage("It'll cost you at least the following to repair your " + mek.getModelName() + ".<br><table>" + "<tr><th>Green Tech:</th><th>" + mwclient.moneyOrFluMessage(true, true, (int) repairCost, false) + " in parts and " + mwclient.moneyOrFluMessage(true, true, greenTechCost, false) + " in labor for a total of " + mwclient.moneyOrFluMessage(true, true, (int) repairCost + greenTechCost, false) + ".</th></tr>" + "<tr><th>Reg Tech:</th><th>" + mwclient.moneyOrFluMessage(true, true, (int) repairCost, false) + " in parts and " + mwclient.moneyOrFluMessage(true, true, regTechCost, false) + " in labor for a total of " + mwclient.moneyOrFluMessage(true, true, (int) repairCost + regTechCost, false) + ".</th></tr>" + "<tr><th>Vet Tech:</th><th>" + mwclient.moneyOrFluMessage(true, true, (int) repairCost, false) + " in parts and "
-                            + mwclient.moneyOrFluMessage(true, true, vetTechCost, false) + " in labor for a total of " + mwclient.moneyOrFluMessage(true, true, (int) repairCost + vetTechCost, false) + ".</th></tr>" + "<tr><th>Elite Tech:</th><th>" + mwclient.moneyOrFluMessage(true, true, (int) repairCost, false) + " in parts and " + mwclient.moneyOrFluMessage(true, true, eliteTechCost, false) + " in labor for a total of " + mwclient.moneyOrFluMessage(true, true, (int) repairCost + eliteTechCost, false) + ".</th></tr></table>");
                 } else {
                     repairCost = mwclient.getTotalRepairCosts(mek.getEntity());
-                    greenTechCost = mwclient.getTechLaborCosts(mek.getEntity(), UnitUtils.TECH_GREEN);
-                    regTechCost = mwclient.getTechLaborCosts(mek.getEntity(), UnitUtils.TECH_REG);
-                    vetTechCost = mwclient.getTechLaborCosts(mek.getEntity(), UnitUtils.TECH_VET);
-                    eliteTechCost = mwclient.getTechLaborCosts(mek.getEntity(), UnitUtils.TECH_ELITE);
 
-                    mwclient.systemMessage("It'll cost you at least the following to repair your " + mek.getModelName() + ".<br><table>" + "<tr><th>Green Tech:</th><th>" + mwclient.moneyOrFluMessage(true, true, (int) repairCost, false) + " in parts and " + mwclient.moneyOrFluMessage(true, true, greenTechCost, false) + " in labor for a total of " + mwclient.moneyOrFluMessage(true, true, (int) repairCost + greenTechCost, false) + ".</th></tr>" + "<tr><th>Reg Tech:</th><th>" + mwclient.moneyOrFluMessage(true, true, (int) repairCost, false) + " in parts and " + mwclient.moneyOrFluMessage(true, true, regTechCost, false) + " in labor for a total of " + mwclient.moneyOrFluMessage(true, true, (int) repairCost + regTechCost, false) + ".</th></tr>" + "<tr><th>Vet Tech:</th><th>" + mwclient.moneyOrFluMessage(true, true, (int) repairCost, false) + " in parts and "
-                            + mwclient.moneyOrFluMessage(true, true, vetTechCost, false) + " in labor for a total of " + mwclient.moneyOrFluMessage(true, true, (int) repairCost + vetTechCost, false) + ".</th></tr>" + "<tr><th>Elite Tech:</th><th>" + mwclient.moneyOrFluMessage(true, true, (int) repairCost, false) + " in parts and " + mwclient.moneyOrFluMessage(true, true, eliteTechCost, false) + " in labor for a total of " + mwclient.moneyOrFluMessage(true, true, (int) repairCost + eliteTechCost, false) + ".</th></tr></table>");
                 }
+                greenTechCost = mwclient.getTechLaborCosts(mek.getEntity(), UnitUtils.TECH_GREEN);
+                regTechCost = mwclient.getTechLaborCosts(mek.getEntity(), UnitUtils.TECH_REG);
+                vetTechCost = mwclient.getTechLaborCosts(mek.getEntity(), UnitUtils.TECH_VET);
+                eliteTechCost = mwclient.getTechLaborCosts(mek.getEntity(), UnitUtils.TECH_ELITE);
+                mwclient.systemMessage("It'll cost you at least the following to repair your " + mek.getModelName() + ".<br><table>" + "<tr><th>Green Tech:</th><th>" + mwclient.moneyOrFluMessage(true, true, (int) repairCost, false) + " in parts and " + mwclient.moneyOrFluMessage(true, true, greenTechCost, false) + " in labor for a total of " + mwclient.moneyOrFluMessage(true, true, (int) repairCost + greenTechCost, false) + ".</th></tr>" + "<tr><th>Reg Tech:</th><th>" + mwclient.moneyOrFluMessage(true, true, (int) repairCost, false) + " in parts and " + mwclient.moneyOrFluMessage(true, true, regTechCost, false) + " in labor for a total of " + mwclient.moneyOrFluMessage(true, true, (int) repairCost + regTechCost, false) + ".</th></tr>" + "<tr><th>Vet Tech:</th><th>" + mwclient.moneyOrFluMessage(true, true, (int) repairCost, false) + " in parts and "
+                        + mwclient.moneyOrFluMessage(true, true, vetTechCost, false) + " in labor for a total of " + mwclient.moneyOrFluMessage(true, true, (int) repairCost + vetTechCost, false) + ".</th></tr>" + "<tr><th>Elite Tech:</th><th>" + mwclient.moneyOrFluMessage(true, true, (int) repairCost, false) + " in parts and " + mwclient.moneyOrFluMessage(true, true, eliteTechCost, false) + " in labor for a total of " + mwclient.moneyOrFluMessage(true, true, (int) repairCost + eliteTechCost, false) + ".</th></tr></table>");
 
             }// remove from all armies
             else if (command.equalsIgnoreCase("RFAA")) {
@@ -2896,8 +2776,7 @@ public class CHQPanel extends JPanel {
         private static final long serialVersionUID = -7918520064078379615L;
 
         public int getColumnCount() {
-            int count = Integer.parseInt(mwclient.getConfigParam("UNITAMOUNT")) + 1;
-            return count;
+            return Integer.parseInt(mwclient.getConfigParam("UNITAMOUNT")) + 1;
             // return this.columnNames.length;
         }
 
@@ -2911,10 +2790,7 @@ public class CHQPanel extends JPanel {
         // number of rows consumed by given army
         public int getRowsForArmy(CArmy army) {
             int toReturn = (int) Math.ceil((double) army.getAmountOfUnits() / (double) (getColumnCount() - 1));
-            if (toReturn < 1) {
-                return 1;
-            }
-            return toReturn;
+            return Math.max(toReturn, 1);
         }
 
         // number of rows consumed by hangar
@@ -2987,7 +2863,7 @@ public class CHQPanel extends JPanel {
             if (col != 0) {
                 if (row < getRowsForArmies()) {
                     CArmy army = getArmyAt(row);
-                    Vector<Unit> mechs = new Vector<Unit>(army.getUnits());
+                    Vector<Unit> mechs = new Vector<>(army.getUnits());
                     int offset = (getOffset(row) + col) - 1;
                     if (offset < mechs.size()) {
                         return (CUnit) mechs.elementAt(offset);
@@ -3019,10 +2895,7 @@ public class CHQPanel extends JPanel {
 
                         // yes, i know this code blows. sod off.
                         int rowsUsed = 0;
-                        boolean shouldContinue = true;
-                        Iterator<CArmy> e = Player.getArmies().iterator();
-                        while (e.hasNext() && shouldContinue) {
-                            CArmy currArmy = e.next();
+                        for (CArmy currArmy : Player.getArmies()) {
                             if ((currArmy.getID() == army.getID()) && (rowsUsed != row)) {
                                 return "";
                             }
@@ -3067,7 +2940,7 @@ public class CHQPanel extends JPanel {
                         armyName = armyName.substring(0, 11);
                     }
 
-                    String toReturn = "<html><center><b>Army #" + new Integer(lid) + "</b><br>";
+                    String toReturn = "<html><center><b>Army #" + lid + "</b><br>";
                     if (army.isPlayerLocked()) {
                         toReturn += "(locked)<br>";
                     }
@@ -3101,7 +2974,7 @@ public class CHQPanel extends JPanel {
                     boolean useOpRule = Boolean.parseBoolean(mwclient.getserverConfigs("UseOperationsRule"));
                     String modifiedBV = "";
                     if (useOpRule && (army.getOpForceSize() < army.getUnits().size()) && (army.getOpForceSize() > 0)) {
-                        modifiedBV = "(" + Long.toString(Math.round((army.getBV() * army.forceSizeModifier(army.getOpForceSize())))) + ")";
+                        modifiedBV = "(" + Math.round((army.getBV() * army.forceSizeModifier(army.getOpForceSize()))) + ")";
                     }
 
                     toReturn += "BV: " + army.getBV() + modifiedBV + "<br>" + range + "</center>";
@@ -3149,7 +3022,7 @@ public class CHQPanel extends JPanel {
             if (army != null) {
                 if (cm.hasBeenC3LinkedTo(army)) {
                     result.append(" |M|");
-                } else if (army.getC3Network().get(new Integer(cm.getId())) != null) {
+                } else if (army.getC3Network().get(cm.getId()) != null) {
                     result.append(" |L|");
                 }
                 if (!Boolean.parseBoolean(mwclient.getConfig().getParam("RIGHTCOMMANDER")) && !Boolean.parseBoolean(mwclient.getConfig().getParam("LEFTCOMMANDER")) && army.isCommander(cm.getId())) {
@@ -3222,35 +3095,35 @@ public class CHQPanel extends JPanel {
                 if (cm != null) {
 
                     int inNumberofArmies = Player.getAmountOfTimesUnitExistsInArmies(cm.getId());
-                    StringBuilder C3Text = new StringBuilder();
-                    String description = "";
+                    StringBuilder c3Text = new StringBuilder();
+                    String description;
 
                     if (cm.getC3Level() > 0) {
 
                         if (cm.getC3Level() == Unit.C3_SLAVE) {
-                            C3Text.append("C3 Slave");
+                            c3Text.append("C3 Slave");
                         } else if (cm.getC3Level() == Unit.C3_MASTER) {
-                            C3Text.append("C3 Master");
+                            c3Text.append("C3 Master");
                         } else if (cm.getC3Level() == Unit.C3_MMASTER) {
-                            C3Text.append("C3 Dual Master");
+                            c3Text.append("C3 Dual Master");
                         } else if (cm.getC3Level() == Unit.C3_IMPROVED) {
-                            C3Text.append("C3 Improved");
+                            c3Text.append("C3 Improved");
                         }
 
-                        if ((l != null) && (l.getC3Network().get(new Integer(cm.getId())) != null)) {
-                            Integer master = l.getC3Network().get(new Integer(cm.getId()));
+                        if ((l != null) && (l.getC3Network().get(cm.getId()) != null)) {
+                            Integer master = l.getC3Network().get(cm.getId());
                             if (cm.getC3Level() == Unit.C3_IMPROVED) {
-                                C3Text.append(" linked to #" + master.intValue());
+                                c3Text.append(" linked to #").append(master);
                             } else {
-                                C3Text.append(" to #" + master.intValue());
+                                c3Text.append(" to #").append(master);
                             }
                         }
 
                         if ((l != null) && cm.hasBeenC3LinkedTo(l)) {
                             if (cm.getC3Level() == Unit.C3_IMPROVED) {
-                                C3Text.append(" master for");
+                                c3Text.append(" master for");
                             } else {
-                                C3Text.append(" for");
+                                c3Text.append(" for");
                             }
 
                             Enumeration<Integer> c3Key = l.getC3Network().keys();
@@ -3258,8 +3131,8 @@ public class CHQPanel extends JPanel {
                             while (c3Key.hasMoreElements()) {
                                 Integer slave = c3Key.nextElement();
                                 Integer master = c3Unit.nextElement();
-                                if (master.intValue() == cm.getId()) {
-                                    C3Text.append(" #" + slave.intValue());
+                                if (master == cm.getId()) {
+                                    c3Text.append(" #").append(slave);
                                 }
                             }
 
@@ -3268,53 +3141,55 @@ public class CHQPanel extends JPanel {
                     if (mwclient.getPlayer().getMyHouse().getNonFactionUnitsCostMore()) {
                         String techCostString = "";
                         if (cm.getC3Level() > 0) {
-                            techCostString = C3Text.toString() + "<br>";
+                            techCostString = c3Text.toString() + "<br>";
                         }
 
                         String techAmount = "TechsFor" + Unit.getWeightClassDesc(cm.getWeightclass()) + Unit.getTypeClassDesc(cm.getType());
                         int numTechs = (int) (Integer.parseInt(mwclient.getserverConfigs(techAmount)) * (mwclient.getPlayer().getMyHouse().houseSupportsUnit(cm.getUnitFilename()) ? 1 : Float.parseFloat(mwclient.getserverConfigs("NonFactionUnitsIncreasedTechs"))));
 
                         techCostString += "Techs required: " + numTechs;
-                        C3Text.setLength(0);
-                        C3Text.append(techCostString);
+                        c3Text.setLength(0);
+                        c3Text.append(techCostString);
                     }
                     if (Boolean.parseBoolean(mwclient.getConfigParam("ShowUnitTechBase"))) {
                         if (mwclient.getPlayer().getMyHouse().getNonFactionUnitsCostMore()) {
-                            C3Text.append("<br>");
+                            c3Text.append("<br>");
                         }
                         if (cm.getEntity().isClan()) {
-                            C3Text.append("Tech Base: Clan<br>");
+                            c3Text.append("Tech Base: Clan<br>");
                         } else {
-                            C3Text.append("Tech Base: IS<br>");
+                            c3Text.append("Tech Base: IS<br>");
                         }
                     }
-                    C3Text.append("Targeting: " + cm.getTargetSystemTypeDesc() + "<br>");
+                    c3Text.append("Targeting: ").append(cm.getTargetSystemTypeDesc()).append("<br>");
                     if (cm.isSupportUnit()) {
-                    	C3Text.append("[Support]<br>");
+                    	c3Text.append("[Support]<br>");
                     }
 
                     //@salient EXPANDEDUNITTOOLTIP
                     if(Boolean.parseBoolean(mwclient.getConfig().getParam("EXPANDEDUNITTOOLTIP")))
                     {      	
-                    	C3Text.append("<font color=\"purple\">");
-                    	C3Text.append("<b>[General]</b><br>");
-                    	C3Text.append("Weight: "+cm.getEntity().getWeight()+" Tons ("+ cm.getEntity().getWeightClassName() +")<br>");
-                    	C3Text.append("Armor: "+cm.getEntity().getArmorWeight()+" Tons ("+ cm.getEntity().getTotalArmor() + " Pts)<br>");
+                    	c3Text.append("<font color=\"purple\">");
+                    	c3Text.append("<b>[General]</b><br>");
+                    	c3Text.append("Weight: ").append(cm.getEntity().getWeight()).append(" Tons (")
+                                .append(cm.getEntity().getWeightClassName()).append(")<br>");
+                    	c3Text.append("Armor: ").append(cm.getEntity().getArmorWeight()).append(" Tons (")
+                                .append(cm.getEntity().getTotalArmor()).append(" Pts)<br>");
                     	int walk = cm.getEntity().getWalkMP();
                     	int run = cm.getEntity().getRunMPwithoutMASC();
                     	int jump = cm.getEntity().getJumpMP();
                     	int masc = cm.getEntity().getRunMP();
-                    	C3Text.append("Movement: "+walk+"/"+run); 
+                    	c3Text.append("Movement: ").append(walk).append("/").append(run);
                     	
                     	if(cm.getEntity().getMASC() != null)
-                    		C3Text.append("("+masc+")"); 
+                    		c3Text.append("(").append(masc).append(")");
                     	
                     	if(jump != 0)
-                    		C3Text.append("/"+jump+"<br>");
+                    		c3Text.append("/").append(jump).append("<br>");
                     	else
-                    		C3Text.append("<br>");
+                    		c3Text.append("<br>");
                                 	
-                    	C3Text.append("Heat Capacity: "+cm.getEntity().getHeatCapacity()+"<br>");
+                    	c3Text.append("Heat Capacity: ").append(cm.getEntity().getHeatCapacity()).append("<br>");
                     	                   	
 //                    	if(cm.getEntity().hasQuirk("no_twist"))
 //                    		C3Text.append("Torso Twist: <font color=\"green\">NO</font><br>");
@@ -3322,40 +3197,40 @@ public class CHQPanel extends JPanel {
 //                    		C3Text.append("Torso Twist: <font color=\"red\">YES</font><br>");
                     	
                     	if(cm.getEntity().canFlipArms())
-                    		C3Text.append("Arms Flip: <font color=\"green\">YES</font><br>");
+                    		c3Text.append("Arms Flip: <font color=\"green\">YES</font><br>");
                     	else
-                    		C3Text.append("Arms Flip: <font color=\"red\">NO</font><br>");
+                    		c3Text.append("Arms Flip: <font color=\"red\">NO</font><br>");
                     	       
-                    	C3Text.append("</font>"); 
+                    	c3Text.append("</font>");
                     	//End General (purple)
                     	
-                    	C3Text.append("<font color=\"blue\">");
-                    	C3Text.append("<b>[Weapons]</b><br>");
+                    	c3Text.append("<font color=\"blue\">");
+                    	c3Text.append("<b>[Weapons]</b><br>");
                     	cm.getEntity().getWeaponList().forEach(weapon -> {
-                    		C3Text.append(weapon.getName() + " (");
+                    		c3Text.append(weapon.getName()).append(" (");
                     		if(weapon.isRearMounted())
-                    			C3Text.append(cm.getEntity().getLocationAbbr(weapon.getLocation()) + ") (R)<br>"); 
+                    			c3Text.append(cm.getEntity().getLocationAbbr(weapon.getLocation())).append(") (R)<br>");
                     		else                  			
-                    			C3Text.append(cm.getEntity().getLocationAbbr(weapon.getLocation()) + ")<br>"); 
+                    			c3Text.append(cm.getEntity().getLocationAbbr(weapon.getLocation())).append(")<br>");
                     		
                     		});
-                		C3Text.append("</font>"); 
+                		c3Text.append("</font>");
                 		//End Weapons (blue)
                     	
                 		//Quirks...
                 		if(Boolean.parseBoolean(mwclient.getserverConfigs("EnableQuirks")))
                 		{
-                			C3Text.append("<font color=\"teal\">");
-                			C3Text.append("<b>[Quirks]</b><br>");
+                			c3Text.append("<font color=\"teal\">");
+                			c3Text.append("<b>[Quirks]</b><br>");
 
                 			StringTokenizer st = new StringTokenizer(cm.getHtmlQuirksList(), "*");
               				
             				while(st.hasMoreTokens())
-            					C3Text.append(TokenReader.readString(st));                				
+            					c3Text.append(TokenReader.readString(st));
 
                 			
                 			//C3Text.append(cm.quirkCheck());
-                			C3Text.append("</font>"); 
+                			c3Text.append("</font>");
                 			//End Quirks (teal)                			
                 		}
                     }
@@ -3365,13 +3240,13 @@ public class CHQPanel extends JPanel {
                     if (inNumberofArmies > 1) {
                         String armiesText = "";
                         if (cm.getC3Level() > 0) {
-                            armiesText = C3Text.toString() + "<br>";
+                            armiesText = c3Text.toString() + "<br>";
                         }
 
                         armiesText += "In armies " + Player.getArmiesUnitIsIn(cm.getId());
                         description = cm.getDisplayInfo(armiesText);
                     } else {
-                        description = cm.getDisplayInfo(C3Text.toString());
+                        description = cm.getDisplayInfo(c3Text.toString());
                     }
                     setToolTipText(description);
                     setUnit(cm, l);
@@ -3393,7 +3268,7 @@ public class CHQPanel extends JPanel {
                         } else if (useAdvanceRepairs && UnitUtils.isRepairing(cm.getEntity())) {
                             c.setBackground(new Color(0, 255, 127));
                         } else if (useAdvanceRepairs && (mwclient.getRMT() != null) && mwclient.getRMT().hasQueuedOrders(cm.getId())) {
-                            c.setBackground(new Color(75, 00, 130));
+                            c.setBackground(new Color(75, 0, 130));
                         } else if (useAdvanceRepairs && UnitUtils.hasCriticalDamage(cm.getEntity())) {
                             c.setBackground(Color.red);
                         } else if (useAdvanceRepairs && UnitUtils.hasArmorDamage(cm.getEntity())) {
